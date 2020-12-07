@@ -1,0 +1,12 @@
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE DATABASE "cryptbase_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "cryptbase_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (37.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "cryptbase_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (34.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "cryptbase_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (196.9ms)[0m  [1m[35mCREATE DATABASE "cryptbase_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (56.5ms)[0m  [1m[35mCREATE DATABASE "cryptbase_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
