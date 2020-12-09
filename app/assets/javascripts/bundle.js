@@ -1,9 +1,4 @@
 /******/ (() => { // webpackBootstrap
-<<<<<<< HEAD
-/******/ 	"use strict";
-/******/ })()
-;
-=======
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/@babel/runtime/helpers/esm/extends.js":
@@ -37499,4 +37494,3 @@ function valueEqual(a, b) {
 /******/ })()
 ;
 //# sourceMappingURL=bundle.js.map
->>>>>>> user_auth_2
