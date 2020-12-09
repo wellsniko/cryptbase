@@ -129,7 +129,7 @@ html {
 
 
 header>h1 {
-    color: rgba(255, 255, 255);
+    color: rgba(255, 255, 255, 255);
     cursor: pointer;
     font-size: 22px;
     text-decoration: none;
