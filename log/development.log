@@ -1400,3 +1400,14 @@ Completed 200 OK in 66ms (Views: 59.9ms | ActiveRecord: 1.1ms)
 
 =======
 >>>>>>> 502112a1d597ebe120e189a22d35887e70393ea4
+Started GET "/" for ::1 at 2020-12-08 16:53:54 -0800
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nikowells/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 769ms (Views: 754.0ms | ActiveRecord: 4.6ms)
+
+
