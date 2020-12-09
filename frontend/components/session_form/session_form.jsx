@@ -37,13 +37,13 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
+        <h1>Sign in to Cryptbase</h1>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to the form
-          <br/>
+ 
           Please {this.props.formType} or {this.props.navLink}
           {this.renderErrors()}
           <div className="login-form">
-            <br/>
+     
             <label>Email:
               <input type="text"
                 value={this.state.email}

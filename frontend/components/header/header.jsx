@@ -3,23 +3,23 @@ import { Link } from 'react-router-dom';
 
 
 
-const Home = ({ currentUser, logout }) => {
+const Header = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
-      <Link to="/login">Login</Link>
-      &nbsp;or&nbsp;
-      <Link to="/signup">Sign up</Link>
+      <Link className="sign-in" to="/login">Sign in</Link>
+      &nbsp;&nbsp;
+      <Link className="get-started" to="/signup">Get started</Link>
     </nav>
   );
-  const homePage = () => (
+  const header = () => (
     <hgroup className="header-group">
       <h2 className="header-name">Welcome to Cryptbase, {currentUser.email}!</h2>
       <button className="header-button" onClick={logout}>Log Out</button>
     </hgroup>
   );
 
-  return currentUser ? homePage() : sessionLinks();
+  return currentUser ? header() : sessionLinks();
 };
 
 
-export default Home;
+export default Header;

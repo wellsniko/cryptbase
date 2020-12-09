@@ -1,5 +1,5 @@
 import React from "react";
-import HomeContainer from "./home/home_container";
+import HeaderContainer from "./header/header_container";
 // import {Route} from 'react-router-dom'
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
@@ -9,7 +9,7 @@ const App = () => (
   <div>
     <header>
         <h1>Cryptbase</h1>
-        <HomeContainer/>
+        <HeaderContainer/>
     </header>
 
       <AuthRoute exact path="/login" component={LogInFormContainer} />
