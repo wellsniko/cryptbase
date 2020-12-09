@@ -4,6 +4,7 @@ import HeaderContainer from "./header/header_container";
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import HomepageContainer from './homepage/homepage_container'
 
 const App = () => (
   <div>
@@ -14,6 +15,9 @@ const App = () => (
 
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      <div>
+        <HomepageContainer/>
+      </div>
   </div>
 );
 

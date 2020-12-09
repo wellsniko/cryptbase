@@ -11,14 +11,14 @@ const Header = ({ currentUser, logout }) => {
       <Link className="get-started" to="/signup">Get started</Link>
     </nav>
   );
-  const header = () => (
+  const headerTop = () => (
     <hgroup className="header-group">
-      <h2 className="header-name">Welcome to Cryptbase, {currentUser.email}!</h2>
+      <h2 className="header-name">{currentUser.email}is signed in</h2>
       <button className="header-button" onClick={logout}>Log Out</button>
     </hgroup>
   );
 
-  return currentUser ? header() : sessionLinks();
+  return currentUser ? headerTop() : sessionLinks();
 };
 
 
