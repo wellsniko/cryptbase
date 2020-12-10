@@ -7,7 +7,6 @@ const Header = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
       <Link className="sign-in" to="/login">Sign in</Link>
-      &nbsp;&nbsp;
       <Link className="get-started" to="/signup">Get started</Link>
     </nav>
   );
