@@ -15,7 +15,7 @@ import DashboardContainer from '../dashboard/dashboard_container'
 
 const Direction = ({ currentUser, logout }) => {
   const noUserDirect = () => (
-   <div>
+   <div className="home-body">
       <header>
           <Link to="/" className="cryptbase-logo">Cryptbase</Link>
           
@@ -31,7 +31,7 @@ const Direction = ({ currentUser, logout }) => {
         <Switch>
           <AuthRoute exact path="/login" component={LogInFormContainer} />
           <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-          <Route exact pat="/" component={HomepageContainer}/>
+          <Route exact path="/" component={HomepageContainer}/>
         </Switch>
     </div>
   );

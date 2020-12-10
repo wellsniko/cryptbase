@@ -34,6 +34,9 @@ class SessionForm extends React.Component {
     );
   }
   
+  componentWillUnmount() {						
+		this.props.removeErrors();
+	}
 
   render() {
     let nameInput;
@@ -41,35 +44,39 @@ class SessionForm extends React.Component {
     <label><input type="text" placeholder="Last name" className="last-name-form"/></label></div> : nameInput = null
     
     return (
-      <div className={`${this.props.formType}-form-container`}>
-        <h1>{this.props.formText[0]}</h1>
-        <form onSubmit={this.handleSubmit} className={`${this.props.formType}-form-box`}>
-          {this.renderErrors()}
-          <div className={`${this.props.formType}-form`}>
-            {nameInput}
-            <label>
-              <input type="text"
-                name="email"
-                placeholder="Email"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className={`${this.props.formType}-input`}
-              />
-            </label>
-      
-            <label>
-              <input type="password"
-                name="password"
-                placeholder="Password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className={`${this.props.formType}-input`}
-              />
-            </label>
+      <div>
+        <div className>{this.renderErrors()}</div>
+        <div className={`${this.props.formType}-form-container`}>
+          <h1>{this.props.formText[0]}</h1>
+          <form onSubmit={this.handleSubmit} className={`${this.props.formType}-form-box`}>
+            
+            <div className={`${this.props.formType}-form`}>
+              {nameInput}
+              <label>
+                <input type="text"
+                  name="email"
+                  placeholder="Email"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  className={`${this.props.formType}-input`}
+                />
+              </label>
         
-            <input className={`${this.props.formType}-session-submit`} type="submit" value={this.props.formText[1]} />
-          </div>
-        </form>
+              <label>
+                <input type="password"
+                  name="password"
+                  placeholder="Password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className={`${this.props.formType}-input`}
+                />
+              </label>
+          
+              <input className={`${this.props.formType}-session-submit`} type="submit" value={this.props.formText[1]} />
+            </div>
+          </form>
+        </div>
+        <div className="bottom-blue"></div>
       </div>
     );
   }

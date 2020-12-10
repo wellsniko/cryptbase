@@ -9,20 +9,15 @@ import HeaderContainer from "../header/header_container";
 // import NavContainer from '../nav/nav_container';
 // import Nav2Container from '../nav2/nav2_container';
 // import {Link, Redirect, Switch, HashRouter, Route} from 'react-router-dom'
-import TopNavContainer from '../top_nav/top_nav_container'
 
-const Dashboard = ({ currentUser, logout }) => (
-    <div className="user-whole-page">
-        <TopNavContainer/>
-        <div className="main-dashboard">
-          <h1>Dashboard and Other Tabs Go Here</h1><br/>
-        
-            <button className="temp-button" onClick={logout}>Log Out</button>
-          
-        </div>
-    </div>
+const TopNav = ({ currentUser, logout }) => (
+    <nav className="main-top-nav">
+     
+        <h1>Home</h1><br/>
+        <button className="temp-button" onClick={logout}>Log Out</button>
+    </nav>
   );
 
 
 
-export default Dashboard;
+export default TopNav;
