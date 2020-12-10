@@ -1,0 +1,1 @@
+json.extract! @coin, :id, :symbol, :name, :description
