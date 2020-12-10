@@ -447,3 +447,72 @@ nav>div>a {
     display: flex;
     border-radius: 8px;
 }
+
+.side-nav {
+    position: fixed;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    min-height: var(--full-view-height,100vh);
+    z-index: 1;
+    overflow-y: auto;
+    min-width: 237px;
+    max-width: 237px;
+    border-right: 1px solid rgb(241, 243, 245);
+    background: rgb(255, 255, 255);
+}
+
+.temp-button {
+    color: black;
+    background-color: black;
+    size: 100px;
+    cursor: pointer;
+}
+
+.main-dashboard {
+    display: flex;
+    flex: 1 1 auto;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 24px;
+    background: rgb(246, 249, 252);
+    
+}
+
+
+.side-nav ul {
+    margin: 18px 8px;
+    list-style-type: none;
+    padding: 0px;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.side-nav h3 {
+    margin-left: 16px;
+    min-height: 68px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+ul li { 
+    margin-bottom: 22px;
+}
+
+#logo-logged-in {
+    position: absolute;
+    padding-left: 5px;
+    position: absolute;
+    top: 0;
+}
+
+.dashboard-holder {
+    height: 1000px;
+}
