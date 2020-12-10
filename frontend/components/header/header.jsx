@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 const Header = ({ currentUser, logout }) => {
   const sessionLinks = () => (
-    <nav className="login-signup">
+    <div className="login-signup">
       <Link className="sign-in" to="/login">Sign in</Link>
       <Link className="get-started" to="/signup">Get started</Link>
-    </nav>
+    </div>
   );
   const headerTop = () => (
     <hgroup className="header-group">

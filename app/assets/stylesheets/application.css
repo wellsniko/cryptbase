@@ -129,12 +129,15 @@ html {
 }
 
 
-header>h1 {
+.cryptbase-logo, .cryptbase-logo>a {
     color: rgba(255, 255, 255, 255);
     cursor: pointer;
     font-size: 22px;
     text-decoration: none;
     transition: color 0.25s ease 0s;
+    margin-right: 30px;
+    color: rgba(255, 255, 255, 255);
+    font-weight: bold;
 }
 
 div {
@@ -223,6 +226,8 @@ div {
     flex-direction: row; 
     justify-content: center; 
     align-items: flex-end;
+    font-size: 28px;
+    margin: 0px;
 }
 
 .intro {
@@ -261,7 +266,7 @@ div {
     width: 100%;
     max-width: 1180px;
     margin: 0px auto;
-    padding: 48px;
+    padding: 60px;
     justify-content: center;
 }
 
@@ -281,10 +286,6 @@ div {
     size: 24px;
 }
 
-.cryptbase-logo {
-    color: white;
-    text-decoration: none;
-}
 
 
 .welcome-home-page {
@@ -375,4 +376,74 @@ div {
 }
 .last-name-form {
     margin-left: 16px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+
+nav > * {
+    flex-shrink: 0;
+    margin-right: 24px;
+    display: flex;
+    align-items: center;
+    
+}
+
+nav>div>a {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.25s ease 0s;
+}
+
+#promotion {
+    user-select: none;
+    display: inline-flex;
+    border-radius: 3px;
+    background: rgb(5, 177, 105);
+    color: rgb(255, 255, 255);
+    align-self: center;
+    position: relative;
+    padding: 3px 8px;
+    margin-left: 6px;
+}
+
+.homepage-spacer {
+    margin: 24px 0px 28px;
+}
+
+#home-email-address {
+    flex: 1 1 0%;
+    margin-right: 10px;
+    padding: 13px 16px 15px;
+    border-radius: 4px;
+    appearance: none;
+    border: none;
+    font-family: Graphik, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.75;
+    color: rgb(11, 52, 102);
+}
+
+.home-email-address-div {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.home-email-address {
+    margin-top: 8px;
+    width: 455px;
+    display: flex;
+    border-radius: 8px;
 }

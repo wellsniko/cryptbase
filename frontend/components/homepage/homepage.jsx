@@ -8,15 +8,19 @@ const Homepage = ({ currentUser, logout }) => {
     <div className="main-body-home">
         <div className="home-get-started">
             <span className="buy-and-sell">Buy and sell cryptocurrency</span>
-                <br/>
-                <h3 className="five-free"> <div id="bitcoin-html">&#x0e3f; </div>   &nbsp; &nbsp; Get $5 in free Bitcoin</h3>
-                <br/>
+                <div className="homepage-spacer"></div>
+                <h1 className="five-free"> <div id="bitcoin-html">&#x0e3f; </div>    &nbsp; Get $5 in free Bitcoin</h1>
                 <p className="intro">
                 Cryptbase is the easiest place to buy, sell, and manage your cryptocurrency 
-                portfolio. <br/>Jump start your crypto portfolio with $5 in free Bitcoin after you sign up. 
+                portfolio. Jump <br/>start your crypto portfolio with $5 in free Bitcoin after you sign up. 
                 Terms apply.
             </p>
-        <Link className="home-link-get-started" to="/signup">Get started</Link>
+        <div className="home-email-address-div">
+          <form className="home-email-address"> 
+            <input id="home-email-address" type="text" placeholder="email"/>  
+            <Link className="home-link-get-started" to="/signup">Get started</Link>
+          </form> 
+        </div>
         </div> 
     </div>
   )
