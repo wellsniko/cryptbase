@@ -1,11 +1,11 @@
 class Api::CoinsController < ApplicationController
     def show
-        @coin = Currency.find_by(coin_params)
+        @coin = Coin.find_by(coin_params)
         render :show 
     end
 
     def index
-        @coins = Currency.all
+        @coins = Coin.all
         render :index
     end
 

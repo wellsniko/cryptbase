@@ -10,15 +10,16 @@ import HeaderContainer from "../header/header_container";
 // import Nav2Container from '../nav2/nav2_container';
 // import {Link, Redirect, Switch, HashRouter, Route} from 'react-router-dom'
 import TopNavContainer from '../top_nav/top_nav_container'
+import CoinIndexContainer from '../coins/coin_index_container'
 
 const Dashboard = ({ currentUser, logout }) => (
     <div className="user-whole-page">
         <TopNavContainer/>
         <div className="main-dashboard">
-          <h1>Dashboard and Other Tabs Go Here</h1><br/>
-        
-            
-          
+            <h1>Dashboard and Other Tabs Go Here</h1><br/>
+            <div className="coin-index-dashboard">
+              <CoinIndexContainer/>
+            </div>
         </div>
     </div>
   );

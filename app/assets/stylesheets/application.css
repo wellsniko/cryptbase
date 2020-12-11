@@ -587,4 +587,8 @@ ul li {
     border-color: #eed3d7;
     color: #b94a48;
     text-align: center;
+    width: 300px;
+    margin: auto;
+    border-radius: 4px;
+    line-height: 1.5;
 }
