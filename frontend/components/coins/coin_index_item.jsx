@@ -18,10 +18,14 @@ this: `formatDate(report.createdAt)`.
 /* <Link to={`/coins/${props.coin.id}`}>{props.coin.symbol}</Link> */
 
 const CoinIndexItem = props => (
-  <li className="coin-index-item">
-    
-    {props.coin.symbol} &nbsp;&nbsp;{props.coin.name}
-  </li>
+  <tr className="coin-index-item">
+    <td id="t1-1">ID</td>
+    <td id="t1-2">{props.coin.name}&nbsp;&nbsp;{props.coin.symbol}</td>
+    <td id="t1-3">Price</td>
+    <td id="t1-4">Daily Change</td>
+    <td id="t1-5">Mini Chart</td>
+    <td id="t1-6"><button id="t1b">Trade</button></td>
+  </tr>
 );
 
 export default CoinIndexItem;

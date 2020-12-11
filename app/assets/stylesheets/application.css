@@ -100,13 +100,20 @@ body, html {
 .home-body {
     background-color: rgb(22, 82, 240);
     /* height: 100%; !TEMPORARY*/   
-    height: 1000px;
+    height: 687px;
     margin: 0;
     font-family: Graphik,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
 }
 
+.bottom-blue {
+    background-color: rgb(22, 82, 240);
+    /* height: 100%; !TEMPORARY*/   
+    height: 700px;
+    margin: 0;
+    
+}
 
 html {
     line-height: 1.15;
@@ -215,6 +222,7 @@ div {
     border-width: 1px;
     border-radius: 2.5px;
 }
+
 
 
 .buy-and-sell {
@@ -591,4 +599,99 @@ ul li {
     margin: auto;
     border-radius: 4px;
     line-height: 1.5;
+}
+
+.home-coins {
+    display: flex;
+    flex-shrink: 0;
+    width: 100%;
+    margin: 0px auto;
+    flex-direction: column;
+    padding: 0px;
+    max-width: 1142px;
+    border: 1px solid rgb(236, 239, 241);
+    border-radius: 4px;
+    box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
+    width: 100%;
+    padding: 0px;
+    background: rgb(255, 255, 255);
+    border-spacing: 0px;
+    border-collapse: separate;
+    caption-side: top;
+
+}
+
+
+#coin-table-body {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+#coin-table-body tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+#coin-table-body :first-child {
+    padding-left: 32px;
+}
+#coin-table-body * {
+    padding: 14px 48px 14px 0px;
+    border-top: 1px solid rgb(236, 239, 241);
+    cursor: default;
+    position: relative;
+    width: 85px;
+}
+
+#t1-1 {
+    padding: 14px 48px 14px 0px;
+    border-top: 1px solid rgb(236, 239, 241);
+    cursor: default;
+    position: relative;
+    width: 85px;
+}
+#t1-2 {
+    padding: 14px 48px 14px 0px;
+    border-top: 1px solid rgb(236, 239, 241);
+    cursor: pointer;
+    min-width: 140px;
+}
+
+#t1-3 {
+    padding: 14px 48px 14px 0px;
+    border-top: 1px solid rgb(236, 239, 241);
+    cursor: default;
+    width: 132px;
+}
+
+#t1-4 {
+    padding: 14px 48px 14px 0px;
+    border-top: 1px solid rgb(236, 239, 241);
+    cursor: default;
+    width: 100px;
+    margin-right: 20px;
+    text-align: left;
+}
+
+#t1-5 {
+    border-top: 1px solid rgb(236, 239, 241);
+    cursor: default;
+    width: 100px;
+    padding: 5px 25px 5px 5px;
+}
+#t1-5 {
+    padding: 14px 48px 14px 0px;
+    border-top: 1px solid rgb(236, 239, 241);
+    cursor: default;
+    width: 70px;
+}
+
+#coin-table {
+    width: 100%;
+    padding: 0px;
+    background: rgb(255, 255, 255);
+    border-spacing: 0px;
+    border-collapse: separate;
+    caption-side: top;
 }

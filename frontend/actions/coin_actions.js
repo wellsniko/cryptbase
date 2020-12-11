@@ -16,7 +16,7 @@ export const receiveCoin = coin => ({
 
 export const fetchCoins = () => dispatch => (
   APIUtil.fetchCoins()
-  .then(coins => dispatch(receiveCoins(coins.coins)))
+  .then(coins => dispatch(receiveCoins(coins)))  //coins.coins
 );
 
 export const fetchCoin = id => dispatch => (

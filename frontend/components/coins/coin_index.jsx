@@ -19,13 +19,16 @@ class CoinIndex extends React.Component {
     const { coins} = this.props;
     return (
       <div className="coin-index">
-        <ul>
-          {
-            coins.map(coin => (
-              <CoinIndexItem coin={coin}  key={coin.id}/>
-            ))
-          }
-        </ul>
+        <table id="coin-table">
+          <thead id="t1-head"></thead>
+          <tbody id="coin-table-body">
+            {
+              coins.map(coin => (
+                <CoinIndexItem coin={coin}  key={coin.id}/>
+              ))
+            }
+          </tbody>
+        </table>
       </div>
     );
   }
