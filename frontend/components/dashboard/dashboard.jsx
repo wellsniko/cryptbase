@@ -17,7 +17,7 @@ const Dashboard = ({ currentUser, logout }) => (
         <div className="main-dashboard">
           <h1>Dashboard and Other Tabs Go Here</h1><br/>
         
-            <button className="temp-button" onClick={logout}>Log Out</button>
+            
           
         </div>
     </div>

@@ -336,13 +336,13 @@ div {
     margin-bottom: 24px;
 }
 
-.singup-form {
+.signup-form {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
 }
 
-.signup-form input {
+.signup-input, .first-name-form, .last-name-form {
     z-index: 0;
     flex: 1 1 0px;
     width: 100%;
@@ -466,8 +466,8 @@ nav>div>a {
 }
 
 .temp-button {
-    color: black;
-    background-color: black;
+    
+    
     size: 100px;
     cursor: pointer;
 }
@@ -566,4 +566,25 @@ ul li {
     flex-direction: column;
     padding: 0px 24px;
     background: rgb(246, 249, 252);
+}
+
+.signup-session-submit {
+    position: relative;
+    width: auto;
+    margin: 0px;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 80ms ease-in-out 0s;
+    padding: 24px;
+    font-size: 16px;
+    border: 1px solid rgb(22, 82, 240);
+    background-color: rgb(22, 82, 240);
+}
+
+.error-danger {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: center;
 }

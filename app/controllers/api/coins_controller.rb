@@ -1,7 +1,7 @@
 class Api::CoinsController < ApplicationController
     def show
         @coin = Currency.find_by(coin_params)
-        render :show
+        render :show 
     end
 
     def index
@@ -11,7 +11,7 @@ class Api::CoinsController < ApplicationController
 
     private
     def coin_params
-        params.permit(:symbol)
+        params.permit(:id)
     end  #! Does this work
 
 end

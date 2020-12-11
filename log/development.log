@@ -8727,3 +8727,370 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 456ms (Views: 448.2ms | ActiveRecord: 4.9ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(40759325699341305)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeCoins (20201211004045)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.7ms)[0m  [1m[35mALTER TABLE "coins" DROP COLUMN "description"[0m
+  ↳ db/migrate/20201211004045_change_coins.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "coins" ADD "description" text[0m
+  ↳ db/migrate/20201211004045_change_coins.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201211004045"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(40759325699341305)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCoin Load (4.2ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCoin Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "BTC"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mCoin Create (1.3ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "BTC"], ["name", "Bitcoin"], ["created_at", "2020-12-11 00:42:50.856264"], ["updated_at", "2020-12-11 00:42:50.856264"], ["description", "The world’s first cryptocurrency, Bitcoin is stored and exchanged securely on the internet through a digital ledger known as a blockchain. Bitcoins are divisible into smaller units known as satoshis — each satoshi is worth 0.00000001 bitcoin."]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCoin Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "ETH"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mCoin Create (0.3ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "ETH"], ["name", "Ethereum"], ["created_at", "2020-12-11 00:42:50.860093"], ["updated_at", "2020-12-11 00:42:50.860093"], ["description", "Ethereum is both a cryptocurrency and a decentralized computing platform. Developers can use the platform to create decentralized applications and issue new crypto assets, known as Ethereum tokens."]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "BCH"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "BCH"], ["name", "Bitcoin Cash"], ["created_at", "2020-12-11 00:42:50.862456"], ["updated_at", "2020-12-11 00:42:50.862456"], ["description", "Bitcoin Cash is a fork of Bitcoin that seeks to add more transaction capacity to the network in order to be useful for everyday transactions."]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "XRP"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mCoin Create (0.7ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "XRP"], ["name", "XRP"], ["created_at", "2020-12-11 00:42:50.864526"], ["updated_at", "2020-12-11 00:42:50.864526"], ["description", "XRP is the cryptocurrency used by the Ripple payment network. Built for enterprise use, XRP aims to be a fast, cost-efficient cryptocurrency for cross-border payments."]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "LTC"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "LTC"], ["name", "Litecoin"], ["created_at", "2020-12-11 00:42:50.867664"], ["updated_at", "2020-12-11 00:42:50.867664"], ["description", "Litecoin is a cryptocurrency that uses a faster payment confirmation schedule and a different cryptographic algorithm than Bitcoin."]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "LINK"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "LINK"], ["name", "Chainlink"], ["created_at", "2020-12-11 00:42:50.869828"], ["updated_at", "2020-12-11 00:42:50.869828"], ["description", "Chainlink (LINK) is an Ethereum token that powers the Chainlink decentralized oracle network. This network allows smart contracts on Ethereum to securely connect to external data sources, APIs, and payment systems."]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:46
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "XLM"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:46
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "XLM"], ["name", "Stellar Lumens"], ["created_at", "2020-12-11 00:42:50.871888"], ["updated_at", "2020-12-11 00:42:50.871888"], ["description", "Stellar’s cryptocurrency, the Stellar Lumen (XLM), powers the Stellar payment network. Stellar aims to connect banks, payment systems, and individuals quickly and reliably."]]
+  ↳ db/seeds.rb:46
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:52
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "USDC"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mCoin Create (0.3ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "USDC"], ["name", "USD Coin"], ["created_at", "2020-12-11 00:42:50.874315"], ["updated_at", "2020-12-11 00:42:50.874315"], ["description", "USD Coin (USDC) is a stablecoin fully backed by the US dollar and developed by the CENTRE consortium. Coinbase customers with US dollar accounts may exchange 1 USDC for US$1.00 (and vice versa) on Coinbase in jurisdictions where USDC support is available. The graph above reflects USDC’s current and historical redemption value of US$1.00, which may not match the price of USDC on other exchanges. USDC is an Ethereum token and is the only fiat-backed stablecoin currently supported by Coinbase."]]
+  ↳ db/seeds.rb:52
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:58
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "EOS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:58
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "EOS"], ["name", "EOS"], ["created_at", "2020-12-11 00:42:50.876913"], ["updated_at", "2020-12-11 00:42:50.876913"], ["description", "EOS is a cryptocurrency designed to support large-scale applications. There are no fees to send or receive EOS. Instead, the protocol rewards the entities that run the network periodically with new EOS, effectively substituting inflation for transaction fees."]]
+  ↳ db/seeds.rb:58
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:58
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:64
+  [1m[36mCoin Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "WBTC"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:64
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "WBTC"], ["name", "Wrapped Bitcoin"], ["created_at", "2020-12-11 00:42:50.879330"], ["updated_at", "2020-12-11 00:42:50.879330"], ["description", "Wrapped Bitcoin (WBTC) is an Ethereum token that is intended to represent Bitcoin (BTC) on the Ethereum blockchain. It is not Bitcoin, but rather a separate ERC-20 token that’s designed to track Bitcoin’s value. WBTC was created to allow Bitcoin holders to participate in decentralized finance (“DeFi”) apps that are popular on Ethereum. Through a WBTC partner, 1 Bitcoin can be exchanged for 1 Wrapped Bitcoin, and vice-versa. The BTC that backs WBTC is verifiable through a “proof of reserve” system that verifies the 1:1 backing between minted WBTC tokens and Bitcoin stored by custodians. WBTC is maintained by a group called the WBTC DAO that consists of over 30 members. It was originally started by BitGo, Ren, and Kyber."]]
+  ↳ db/seeds.rb:64
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:64
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:70
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "XTZ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:70
+  [1m[36mCoin Create (0.4ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "XTZ"], ["name", "Tezos"], ["created_at", "2020-12-11 00:42:50.881646"], ["updated_at", "2020-12-11 00:42:50.881646"], ["description", "Tezos is a cryptocurrency and decentralized computing platform. Its features include proof of stake consensus, formal verification (which lets developers verify the correctness of their code), and the ability to let stakeholders vote on changes to the protocol. Tezos's block creation process is called \"baking\" — Tezos holders who stake their tokens can receive Tezos tokens as a reward for creating and verifying blocks."]]
+  ↳ db/seeds.rb:70
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:70
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:76
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "FIL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:76
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "FIL"], ["name", "Filecoin"], ["created_at", "2020-12-11 00:42:50.884269"], ["updated_at", "2020-12-11 00:42:50.884269"], ["description", "Filecoin (FIL) is a cryptocurrency that powers the Filecoin network, a decentralized peer-to-peer file storage network that aims to let anyone store, retrieve, and host digital information. FIL tokens are used as payment for these services and as an economic incentive to ensure files are stored reliably over time."]]
+  ↳ db/seeds.rb:76
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:82
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "ATOM"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:82
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "ATOM"], ["name", "Cosmos"], ["created_at", "2020-12-11 00:42:50.886791"], ["updated_at", "2020-12-11 00:42:50.886791"], ["description", "When you hold Cosmos in your Coinbase account, you can earn a staking reward. 5.00% is the estimated annual rewards rate, which may change over time. It’s based on the Cosmos staking rewards generated.\n\nTo get started, add Cosmos to your account with a purchase or transfer. Your first Cosmos reward should then appear in your account after 35–40 days. After that, you’ll earn rewards every 3 days until you sell or withdraw your Cosmos from Coinbase."]]
+  ↳ db/seeds.rb:82
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:82
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCoin Load (0.8ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCoin Destroy (0.5ms)[0m  [1m[31mDELETE FROM "coins" WHERE "coins"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCoin Destroy (0.2ms)[0m  [1m[31mDELETE FROM "coins" WHERE "coins"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCoin Destroy (0.2ms)[0m  [1m[31mDELETE FROM "coins" WHERE "coins"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCoin Destroy (0.2ms)[0m  [1m[31mDELETE FROM "coins" WHERE "coins"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCoin Destroy (0.4ms)[0m  [1m[31mDELETE FROM "coins" WHERE "coins"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCoin Destroy (0.3ms)[0m  [1m[31mDELETE FROM "coins" WHERE "coins"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCoin Destroy (0.3ms)[0m  [1m[31mDELETE FROM "coins" WHERE "coins"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCoin Destroy (0.2ms)[0m  [1m[31mDELETE FROM "coins" WHERE "coins"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCoin Destroy (0.2ms)[0m  [1m[31mDELETE FROM "coins" WHERE "coins"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCoin Destroy (0.2ms)[0m  [1m[31mDELETE FROM "coins" WHERE "coins"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCoin Destroy (0.2ms)[0m  [1m[31mDELETE FROM "coins" WHERE "coins"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCoin Destroy (0.2ms)[0m  [1m[31mDELETE FROM "coins" WHERE "coins"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCoin Destroy (0.1ms)[0m  [1m[31mDELETE FROM "coins" WHERE "coins"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCoin Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "BTC"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mCoin Create (0.3ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "BTC"], ["name", "Bitcoin"], ["created_at", "2020-12-11 00:43:16.936278"], ["updated_at", "2020-12-11 00:43:16.936278"], ["description", "The world’s first cryptocurrency, Bitcoin is stored and exchanged securely on the internet through a digital ledger known as a blockchain. Bitcoins are divisible into smaller units known as satoshis — each satoshi is worth 0.00000001 bitcoin."]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCoin Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "ETH"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "ETH"], ["name", "Ethereum"], ["created_at", "2020-12-11 00:43:16.938690"], ["updated_at", "2020-12-11 00:43:16.938690"], ["description", "Ethereum is both a cryptocurrency and a decentralized computing platform. Developers can use the platform to create decentralized applications and issue new crypto assets, known as Ethereum tokens."]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "BCH"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "BCH"], ["name", "Bitcoin Cash"], ["created_at", "2020-12-11 00:43:16.940745"], ["updated_at", "2020-12-11 00:43:16.940745"], ["description", "Bitcoin Cash is a fork of Bitcoin that seeks to add more transaction capacity to the network in order to be useful for everyday transactions."]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "XRP"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "XRP"], ["name", "XRP"], ["created_at", "2020-12-11 00:43:16.942595"], ["updated_at", "2020-12-11 00:43:16.942595"], ["description", "XRP is the cryptocurrency used by the Ripple payment network. Built for enterprise use, XRP aims to be a fast, cost-efficient cryptocurrency for cross-border payments."]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "LTC"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mCoin Create (0.3ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "LTC"], ["name", "Litecoin"], ["created_at", "2020-12-11 00:43:16.944733"], ["updated_at", "2020-12-11 00:43:16.944733"], ["description", "Litecoin is a cryptocurrency that uses a faster payment confirmation schedule and a different cryptographic algorithm than Bitcoin."]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mCoin Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "LINK"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "LINK"], ["name", "Chainlink"], ["created_at", "2020-12-11 00:43:16.947414"], ["updated_at", "2020-12-11 00:43:16.947414"], ["description", "Chainlink (LINK) is an Ethereum token that powers the Chainlink decentralized oracle network. This network allows smart contracts on Ethereum to securely connect to external data sources, APIs, and payment systems."]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:46
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "XLM"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:46
+  [1m[36mCoin Create (0.4ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "XLM"], ["name", "Stellar Lumens"], ["created_at", "2020-12-11 00:43:16.949474"], ["updated_at", "2020-12-11 00:43:16.949474"], ["description", "Stellar’s cryptocurrency, the Stellar Lumen (XLM), powers the Stellar payment network. Stellar aims to connect banks, payment systems, and individuals quickly and reliably."]]
+  ↳ db/seeds.rb:46
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:52
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "USDC"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "USDC"], ["name", "USD Coin"], ["created_at", "2020-12-11 00:43:16.951777"], ["updated_at", "2020-12-11 00:43:16.951777"], ["description", "USD Coin (USDC) is a stablecoin fully backed by the US dollar and developed by the CENTRE consortium. Coinbase customers with US dollar accounts may exchange 1 USDC for US$1.00 (and vice versa) on Coinbase in jurisdictions where USDC support is available. The graph above reflects USDC’s current and historical redemption value of US$1.00, which may not match the price of USDC on other exchanges. USDC is an Ethereum token and is the only fiat-backed stablecoin currently supported by Coinbase."]]
+  ↳ db/seeds.rb:52
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:58
+  [1m[36mCoin Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "EOS"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:58
+  [1m[36mCoin Create (0.3ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "EOS"], ["name", "EOS"], ["created_at", "2020-12-11 00:43:16.953931"], ["updated_at", "2020-12-11 00:43:16.953931"], ["description", "EOS is a cryptocurrency designed to support large-scale applications. There are no fees to send or receive EOS. Instead, the protocol rewards the entities that run the network periodically with new EOS, effectively substituting inflation for transaction fees."]]
+  ↳ db/seeds.rb:58
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:58
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:64
+  [1m[36mCoin Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "WBTC"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:64
+  [1m[36mCoin Create (0.3ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "WBTC"], ["name", "Wrapped Bitcoin"], ["created_at", "2020-12-11 00:43:16.956720"], ["updated_at", "2020-12-11 00:43:16.956720"], ["description", "Wrapped Bitcoin (WBTC) is an Ethereum token that is intended to represent Bitcoin (BTC) on the Ethereum blockchain. It is not Bitcoin, but rather a separate ERC-20 token that’s designed to track Bitcoin’s value. WBTC was created to allow Bitcoin holders to participate in decentralized finance (“DeFi”) apps that are popular on Ethereum. Through a WBTC partner, 1 Bitcoin can be exchanged for 1 Wrapped Bitcoin, and vice-versa. The BTC that backs WBTC is verifiable through a “proof of reserve” system that verifies the 1:1 backing between minted WBTC tokens and Bitcoin stored by custodians. WBTC is maintained by a group called the WBTC DAO that consists of over 30 members. It was originally started by BitGo, Ren, and Kyber."]]
+  ↳ db/seeds.rb:64
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:64
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:70
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "XTZ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:70
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "XTZ"], ["name", "Tezos"], ["created_at", "2020-12-11 00:43:16.958936"], ["updated_at", "2020-12-11 00:43:16.958936"], ["description", "Tezos is a cryptocurrency and decentralized computing platform. Its features include proof of stake consensus, formal verification (which lets developers verify the correctness of their code), and the ability to let stakeholders vote on changes to the protocol. Tezos's block creation process is called \"baking\" — Tezos holders who stake their tokens can receive Tezos tokens as a reward for creating and verifying blocks."]]
+  ↳ db/seeds.rb:70
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:70
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:76
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "FIL"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:76
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "FIL"], ["name", "Filecoin"], ["created_at", "2020-12-11 00:43:16.961048"], ["updated_at", "2020-12-11 00:43:16.961048"], ["description", "Filecoin (FIL) is a cryptocurrency that powers the Filecoin network, a decentralized peer-to-peer file storage network that aims to let anyone store, retrieve, and host digital information. FIL tokens are used as payment for these services and as an economic incentive to ensure files are stored reliably over time."]]
+  ↳ db/seeds.rb:76
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:82
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "ATOM"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:82
+  [1m[36mCoin Create (0.4ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "ATOM"], ["name", "Cosmos"], ["created_at", "2020-12-11 00:43:16.962901"], ["updated_at", "2020-12-11 00:43:16.962901"], ["description", "When you hold Cosmos in your Coinbase account, you can earn a staking reward. 5.00% is the estimated annual rewards rate, which may change over time. It’s based on the Cosmos staking rewards generated.\n\nTo get started, add Cosmos to your account with a purchase or transfer. Your first Cosmos reward should then appear in your account after 35–40 days. After that, you’ll earn rewards every 3 days until you sell or withdraw your Cosmos from Coinbase."]]
+  ↳ db/seeds.rb:82
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:82
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:92
+  [1m[36mCoin Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "DASH"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:92
+  [1m[36mCoin Create (0.3ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "DASH"], ["name", "Dash"], ["created_at", "2020-12-11 00:43:16.965736"], ["updated_at", "2020-12-11 00:43:16.965736"], ["description", "Dash is a cryptocurrency with optional speed and privacy features. Its unique network architecture consists of both regular miners and privileged machines called Masternodes."]]
+  ↳ db/seeds.rb:92
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:92
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:98
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "UNI"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:98
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "UNI"], ["name", "Uniswap"], ["created_at", "2020-12-11 00:43:16.967834"], ["updated_at", "2020-12-11 00:43:16.967834"], ["description", "Uniswap (UNI) is an Ethereum token that powers Uniswap, an automated liquidity provider that’s designed to make it easy to exchange Ethereum (ERC-20) tokens. There is no orderbook or central facilitator on Uniswap. Instead, tokens are exchanged through liquidity pools that are defined by smart contracts."]]
+  ↳ db/seeds.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:104
+  [1m[36mCoin Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "YFI"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:104
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "YFI"], ["name", "yearn.finance"], ["created_at", "2020-12-11 00:43:16.969953"], ["updated_at", "2020-12-11 00:43:16.969953"], ["description", "Yearn.finance (YFI) is an Ethereum token that governs the Yearn.finance platform. The platform is a yield optimizer that moves funds around the decentralized finance (“defi”) ecosystem in an effort to generate a high return."]]
+  ↳ db/seeds.rb:104
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:104
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:110
+  [1m[36mCoin Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "ZEC"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:110
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "ZEC"], ["name", "Zcash"], ["created_at", "2020-12-11 00:43:16.972288"], ["updated_at", "2020-12-11 00:43:16.972288"], ["description", "Zcash is a cryptocurrency that offers two types of addresses: transparent addresses that are publicly visible on the Zcash blockchain and shielded addresses that are more private. Coinbase customers can receive Zcash from both transparent and shielded addresses and send Zcash to transparent addresses. Sending to shielded addresses is not supported at this time."]]
+  ↳ db/seeds.rb:110
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:110
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:116
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "ETC"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:116
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "ETC"], ["name", "Ethereum Classic"], ["created_at", "2020-12-11 00:43:16.974339"], ["updated_at", "2020-12-11 00:43:16.974339"], ["description", "Ethereum Classic is a cryptocurrency with a special focus on immutability, popularly expressed as \"code is law.\""]]
+  ↳ db/seeds.rb:116
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:116
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:122
+  [1m[36mCoin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "COMP"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:122
+  [1m[36mCoin Create (0.2ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "name", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["symbol", "COMP"], ["name", "Compound"], ["created_at", "2020-12-11 00:43:16.976171"], ["updated_at", "2020-12-11 00:43:16.976171"], ["description", "Compound (COMP) is an Ethereum token that enables community governance of the Compound protocol. The protocol is a series of decentralized interest rate markets that allow users to supply and borrow Ethereum tokens at variable interest rates. COMP token holders and their delegates can also debate, propose, and vote on changes to the protocol."]]
+  ↳ db/seeds.rb:122
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:122

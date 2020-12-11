@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_10_222049) do
+ActiveRecord::Schema.define(version: 2020_12_11_004045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 2020_12_10_222049) do
   create_table "coins", force: :cascade do |t|
     t.string "symbol", null: false
     t.string "name", null: false
-    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
     t.index ["symbol"], name: "index_coins_on_symbol", unique: true
   end
 
