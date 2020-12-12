@@ -41,7 +41,7 @@ const Nav = ({ currentUser, logout }) => {
     </nav>
   );
 
-  return currentUser ? currentUserNavBar() : noUserNavBar();
+  return currentUser ? null : noUserNavBar();
 };
 
 

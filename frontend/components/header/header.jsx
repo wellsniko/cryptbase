@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 
@@ -17,7 +17,7 @@ const Header = ({ currentUser, logout }) => {
     </hgroup>
   );
 
-  return currentUser ? headerTop() : sessionLinks();
+  return currentUser ? <Redirect to="/dashboard"/> : sessionLinks();
 };
 
 

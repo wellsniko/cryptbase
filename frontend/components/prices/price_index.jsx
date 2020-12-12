@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CoinIndexItem from './coin_index_item';
+import CoinIndexItem from '../coins/coin_index_item';
 
 
-class CoinIndex extends React.Component {
+class PriceIndex extends React.Component {
   componentDidMount() {
     this.props.fetchCoins();
   }
@@ -37,4 +37,10 @@ class CoinIndex extends React.Component {
   }
 }
 
-export default CoinIndex;
+export default PriceIndex;            
+                    
+                    
+                    
+                    // <div className="coin-index-dashboard">
+                    //   <CoinIndexContainer/>
+                    // </div>

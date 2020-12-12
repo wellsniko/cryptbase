@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import CoinIndexContainer from '../coins/coin_index_container'
 
 
@@ -28,7 +28,7 @@ const Homepage = ({ currentUser, logout }) => {
       <div className="home-coins">
             <CoinIndexContainer/>
       </div>
-      <div className="bottom-blue"></div>
+      
     </section>
   )
   const userPresent = () => (
@@ -38,7 +38,7 @@ const Homepage = ({ currentUser, logout }) => {
     </hgroup>
   );
 
-  return currentUser ? userPresent() : noCurrentUser();
+  return currentUser ? <Redirect to="/dashboard"/> : noCurrentUser();
 };
 
 

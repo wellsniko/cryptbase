@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Dashboard from './dashboard';
+import PriceIndex from './price_index';
 import { fetchCoins } from '../../actions/coin_actions';
 
 
@@ -13,6 +13,6 @@ const mapDispatchToProps = dispatch => ({
   fetchCoins: () => dispatch(fetchCoins()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(PriceIndex);
 
 

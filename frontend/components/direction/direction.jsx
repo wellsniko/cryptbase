@@ -11,44 +11,72 @@ import Nav2Container from '../nav2/nav2_container';
 import {Link, Redirect, Switch, HashRouter, Route} from 'react-router-dom'
 import DirectionContainer from './direction_container'
 import SideNavContainer from '../side_nav/side_nav_container'
-import DashboardContainer from '../dashboard/dashboard_container'
+import UserHomeContainer from '../user_home/user_home_container'
 
 const Direction = ({ currentUser, logout }) => {
   const noUserDirect = () => (
-   <div className="home-body">
+  
+     <div className="home-body">
       <header>
           <Link to="/" className="cryptbase-logo">Cryptbase</Link>
           
           <Switch>
+            
             <Route exact path="/" component={NavContainer}/>
             <AuthRoute exact path="/login" component={Nav2Container}/>
             <AuthRoute exact path="/signup" component={Nav2Container}/>
+            <ProtectedRoute exact path="/dashboard" component={UserHomeContainer}/>
+           
           </Switch>
+
           <HeaderContainer/>
+            
       </header>
       
+        <Switch> 
+          
+          <AuthRoute exact path="/login" component={LogInFormContainer} />
+          <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+         
+          <ProtectedRoute exact path="/dashboard" component={UserHomeContainer}/>
+          <Route path="/" component={HomepageContainer}/>
+        </Switch>
+    </div>
+    
+  );
 
+  // const userDirect = () => (
+  //   <HashRouter>
+  //     <ProtectedRoute exact path="/dashboard" component={UserHomeContainer}/>
+      
+  //   </HashRouter>
+  // );
+
+  const user2Direct = () => (
+  
+   <div className="home-whatever">
+         
+          
+          <Switch>
+            
+            <Route exact path="/" component={NavContainer}/>
+            <AuthRoute exact path="/login" component={Nav2Container}/>
+            <AuthRoute exact path="/signup" component={Nav2Container}/>
+            <ProtectedRoute exact path="/dashboard" component={UserHomeContainer}/>
+           
+          </Switch>
+    
         <Switch>
           <AuthRoute exact path="/login" component={LogInFormContainer} />
           <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-          <Route exact path="/" component={HomepageContainer}/>
+          <Route path="/" component={HomepageContainer}/>
+          <ProtectedRoute exact path="/dashboard" component={UserHomeContainer}/>
         </Switch>
     </div>
-  );
-  const userDirect = () => (
-      <div className="signed-in-body" style={{backgroundColor: 'rgb(250, 251, 252)'}}>
-        <div>
-            <div className="side-nav-holder">
-                <SideNavContainer/>
-            </div>
-            <div className='dashboard-holder'>
-                <DashboardContainer/>
-            </div>
-        </div>
-      </div>
+ 
   );
 
-  return currentUser ? userDirect() : noUserDirect();
+  return currentUser ?  user2Direct() : noUserDirect();
 };
 
 

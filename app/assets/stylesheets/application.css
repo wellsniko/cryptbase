@@ -633,39 +633,37 @@ ul li {
     vertical-align: inherit;
     border-color: inherit;
 }
-#coin-table-body :first-child {
-    padding-left: 32px;
-}
-#coin-table-body * {
-    padding: 14px 48px 14px 0px;
+
+.coin-index-item * {
+    
     border-top: 1px solid rgb(236, 239, 241);
     cursor: default;
     position: relative;
     width: 85px;
 }
 
-#t1-1 {
-    padding: 14px 48px 14px 0px;
+#t1-1, #t1-h1 {
+    padding: 14px 0px 14px 32px;
     border-top: 1px solid rgb(236, 239, 241);
     cursor: default;
     position: relative;
     width: 85px;
 }
-#t1-2 {
-    padding: 14px 48px 14px 0px;
+#t1-2, #t1-h2 {
+    padding: 14px 220px 14px 0px;
     border-top: 1px solid rgb(236, 239, 241);
     cursor: pointer;
     min-width: 140px;
 }
 
-#t1-3 {
+#t1-3, #t1-h3 {
     padding: 14px 48px 14px 0px;
     border-top: 1px solid rgb(236, 239, 241);
     cursor: default;
     width: 132px;
 }
 
-#t1-4 {
+#t1-4, #t1-h4 {
     padding: 14px 48px 14px 0px;
     border-top: 1px solid rgb(236, 239, 241);
     cursor: default;
@@ -674,18 +672,20 @@ ul li {
     text-align: left;
 }
 
-#t1-5 {
+#t1-5, #t1-h5 {
     border-top: 1px solid rgb(236, 239, 241);
     cursor: default;
     width: 100px;
     padding: 5px 25px 5px 5px;
 }
-#t1-5 {
-    padding: 14px 48px 14px 0px;
+#t1-6, #t1-h6 {
+    padding: 14px 48px 14px 20px;
     border-top: 1px solid rgb(236, 239, 241);
     cursor: default;
     width: 70px;
 }
+
+
 
 #coin-table {
     width: 100%;
@@ -695,3 +695,16 @@ ul li {
     border-collapse: separate;
     caption-side: top;
 }
+
+#t1-head {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    text-align: left;
+}
+
+#coin-table-body * :not(#t1-1){
+    padding: 14px 48px 14px 0px;
+}
+
+

@@ -16,13 +16,14 @@ const SideNav = ({ currentUser, logout }) => (
         <nav className="side-nav">
             <h3 id="logo-logged-in">Cryptbase</h3>
             <ul className="nav-logged-in">
-                <li>Home</li>
-                <li>Portfolio</li>
-                <li>Prices</li>
-                <li>Earn Rewards</li>
-                <li>Notification</li>
+                <li><Link to="/dashboard">Home</Link></li>
+                <li><Link to="/accounts">Portfolio</Link></li>
+                <li><Link to="/price">Prices</Link></li>
+                <li><Link to="/rewards">Earn Rewards</Link></li>
+                <li><Link to="/notifications">Notifications</Link></li>
             </ul>
         </nav>
+        
     </div>
   );
 

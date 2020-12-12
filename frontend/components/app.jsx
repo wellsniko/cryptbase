@@ -9,12 +9,19 @@ import NavContainer from './nav/nav_container';
 import Nav2Container from './nav2/nav2_container';
 import {Link, Redirect, Switch, HashRouter, Route} from 'react-router-dom'
 import DirectionContainer from './direction/direction_container'
+import UserHomeContainer from './user_home/user_home_container'
 
 const App = () => (
   
   <HashRouter>
     <DirectionContainer/>
+ 
   </HashRouter>
 );
 
-export default App;
+export default App;   
+
+{/* <Switch>
+      <AuthRoute path="/" component={DirectionContainer}/>
+      <ProtectedRoute exact path="/dashboard" component={UserHomeContainer}/>
+    </Switch> */}
