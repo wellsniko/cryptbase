@@ -12,28 +12,30 @@ class PriceIndex extends React.Component {
   render() {
     const { coins} = this.props;
     return (
-      <div className ="home-coins">
-      <div className="coin-index">
-        <table id="coin-table">
-          <thead id="t1-head">
-            <tr id="t1-head-row">
-              <th id="t1-h1">#</th>
-              <th id="t1-h2">Name</th>
-              <th id="t1-h3">Price</th>
-              <th id="t1-h4">Change</th>
-              <th id="t1-h5">Chart</th>
-              <th id="t1-h6">Trade</th>
-            </tr>
-          </thead>
-          <tbody id="coin-table-body">
-            {
-              coins.map(coin => (
-                <CoinIndexItem coin={coin}  key={coin.id}/>
-              ))
-            }
-          </tbody>
-        </table>
-      </div>
+      <div className="user-box">
+        <div className ="home-coins">
+        <div className="coin-index">
+          <table id="coin-table">
+            <thead id="t1-head">
+              <tr id="t1-head-row">
+                <th id="t1-h1">#</th>
+                <th id="t1-h2">Name</th>
+                <th id="t1-h3">Price</th>
+                <th id="t1-h4">Change</th>
+                <th id="t1-h5">Chart</th>
+                <th id="t1-h6">Trade</th>
+              </tr>
+            </thead>
+            <tbody id="coin-table-body">
+              {
+                coins.map(coin => (
+                  <CoinIndexItem coin={coin}  key={coin.id}/>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        </div>
       </div>
     );
   }
