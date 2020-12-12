@@ -24,12 +24,7 @@ const UserHome = ({ currentUser, logout }) => (
               <div className="user-whole-page">
                 <TopNavContainer/>
                 <div className="main-dashboard">
-                 
-                   
-                      <Switch>
-                        <AuthRoute exact path="/dashboard" component={DashboardContainer}/>
-                        <AuthRoute exact path="/price" component={PriceIndexContainer}/>
-                      </Switch>
+                  <DashboardContainer/>
                     
                 </div>
             </div>

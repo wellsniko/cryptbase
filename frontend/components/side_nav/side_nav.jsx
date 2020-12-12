@@ -11,21 +11,24 @@ import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 import {Link, Redirect, Switch, HashRouter, Route} from 'react-router-dom'
 
 
-const SideNav = ({ currentUser, logout }) => (
+const SideNav = ({ currentUser, logout }) => {
+    const userHere = () => (
     <div>
         <nav className="side-nav">
             <h3 id="logo-logged-in">Cryptbase</h3>
             <ul className="nav-logged-in">
                 <li><Link to="/dashboard">Home</Link></li>
                 <li><Link to="/accounts">Portfolio</Link></li>
-                <li><Link to="/price">Prices</Link></li>
+                <li><Link to="/prices">Prices</Link></li>
                 <li><Link to="/rewards">Earn Rewards</Link></li>
                 <li><Link to="/notifications">Notifications</Link></li>
             </ul>
-        </nav>
-        
+        </nav> 
     </div>
-  );
+    )
+
+     return currentUser ?  userHere() : <> </>
+}
 
 
 

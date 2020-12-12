@@ -10,13 +10,18 @@ import HeaderContainer from "../header/header_container";
 // import Nav2Container from '../nav2/nav2_container';
 // import {Link, Redirect, Switch, HashRouter, Route} from 'react-router-dom'
 
-const TopNav = ({ currentUser, logout }) => (
+const TopNav = ({ currentUser, logout }) => {
+
+  const userHere = () => (
     <nav className="main-top-nav">
      
         <h1>Home</h1><br/>
         <button className="temp-button" onClick={logout}>Log Out</button>
     </nav>
-  );
+  )
+
+   return currentUser ?  userHere() : <> </>
+};
 
 
 

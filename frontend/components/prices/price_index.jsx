@@ -12,6 +12,7 @@ class PriceIndex extends React.Component {
   render() {
     const { coins} = this.props;
     return (
+      <div className ="home-coins">
       <div className="coin-index">
         <table id="coin-table">
           <thead id="t1-head">
@@ -32,6 +33,7 @@ class PriceIndex extends React.Component {
             }
           </tbody>
         </table>
+      </div>
       </div>
     );
   }

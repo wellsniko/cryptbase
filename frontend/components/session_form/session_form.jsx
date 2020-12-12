@@ -1,4 +1,7 @@
 import React from 'react';
+import Nav2Container from '../nav2/nav2_container'
+import HeaderContainer from '../header/header_container'
+import { Link, Redirect } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -44,6 +47,14 @@ class SessionForm extends React.Component {
     <label><input type="text" placeholder="Last name" className="last-name-form"/></label></div> : nameInput = null
     
     return (
+      <div className="home-body">
+      <header>
+        
+        <Link to="/" className="cryptbase-logo">Cryptbase</Link>
+        <Nav2Container/>
+        <HeaderContainer/>
+      </header>
+          
       <div>
         <div >{this.renderErrors()}</div>
         <div className={`${this.props.formType}-form-container`}>
@@ -77,6 +88,7 @@ class SessionForm extends React.Component {
           </form>
         </div>
         <div className="bottom-blue"></div>
+      </div>
       </div>
     );
   }
