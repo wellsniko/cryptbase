@@ -19,8 +19,8 @@ export const fetchCoins = () => dispatch => (
   .then(coins => dispatch(receiveCoins(coins)))  //coins.coins
 );
 
-export const fetchCoin = id => dispatch => (
-  APIUtil.fetchCoin(id).then(coin=> (
-    dispatch(receiveCoin(coin))
+export const fetchCoinPriceData = id => dispatch => (
+  APIUtil.fetchCoinPriceData(id)
+  .then(coin=> (dispatch(receiveCoin(coin))
   ))
 );

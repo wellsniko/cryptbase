@@ -5,12 +5,23 @@
 //     })
 // )
 
-export const fetchCoin = (id) => (
+
+// https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&order=market_cap_desc&per_page=100&page=1&sparkline=false
+
+export const fetchCoinPriceData = (id) => (
     $.ajax({
         method: 'GET',
-        url: `/api/coins/${id}`
+        url: `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${id}&order=market_cap_desc&per_page=100&page=1&sparkline=false`
     })
 )
+
+
+// export const fetchCoinPriceData = (coinId) => (
+//     $.ajax({
+//         method: 'GET',
+//         url: `https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=false`
+//     })
+// )
 
 export const fetchCoins = () => (
     $.ajax({
@@ -18,3 +29,10 @@ export const fetchCoins = () => (
         method: 'GET',
     })
 )
+
+// .then(coins => coins.map(coin => (
+//         {[coin.id]:coin}
+//     )))
+
+
+

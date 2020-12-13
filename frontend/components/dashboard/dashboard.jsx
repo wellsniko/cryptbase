@@ -14,7 +14,7 @@ class CoinIndex extends React.Component {
     return (
         <div className="user-box">
             <div className="portfolio-value">
-                <h1>-User Portfolio Value-  <br/> Click Prices on right.</h1>
+                <h1>-User Portfolio Value-  <br/> Click Prices on left.</h1>
             </div>
         </div>
     );

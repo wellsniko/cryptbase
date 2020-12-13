@@ -1,17 +1,29 @@
-import {RECEIVE_COINS, RECEIVE_COIN} from '../actions/coin_actions';
+import {RECEIVE_COINS} from '../actions/coin_actions';
 
-
+// RECEIVE_COIN
 const CoinsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
 
-  switch (action.type) {
-    case RECEIVE_COINS:
-      return Object.assign({}, oldState, action.coins)
-    case RECEIVE_COIN:
-      return Object.assign({}, oldState, { [action.coin.id]: action.coin })
-    default:
-      return oldState;
+  if (action.type === RECEIVE_COINS) {
+
+      return Object.values(action.coins)
+      
+
+  } else {
+    return oldState;
   }
+    //   return Object.values(newCoins).map(coin => (
+    //     {[coin.id]:coin}
+    // ))
+    // case RECEIVE_COIN:
+    //   // console.log(action.coin, action.coin.id)
+    //   return Object.assign({}, oldState, action.coin )
+    // default:
+    //   return oldState;
+
 };
 
 export default CoinsReducer;
+ 
+
+// object = {1 : {name: "btc", id: "bitcoin"}}

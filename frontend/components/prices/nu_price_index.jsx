@@ -6,6 +6,7 @@ import NuPriceIndexItem from './nu_price_index_item';
 
 class NuPriceIndex extends React.Component {
   componentDidMount() {
+  
     this.props.fetchCoins();
   }
 

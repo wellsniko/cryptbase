@@ -6,6 +6,7 @@ import PriceIndexItem from './price_index_item';
 
 class PriceIndex extends React.Component {
   componentDidMount() {
+    
     this.props.fetchCoins();
   }
 
@@ -28,8 +29,8 @@ class PriceIndex extends React.Component {
             </thead>
             <tbody id="coin-table-body">
               {
-                coins.map(coin => (
-                  <PriceIndexItem coin={coin}  key={coin.id}/>
+                coins.map((coin, idx) => (
+                  <PriceIndexItem coin={coin}  key={idx} id={idx}/> //"bitcoin"
                 ))
               }
             </tbody>
