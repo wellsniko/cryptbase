@@ -4,12 +4,13 @@ class User < ApplicationRecord
     validates :password_digest, presence: true
     validates :password, length: {minimum: 6}, allow_nil: true
 
-    
-
     attr_reader :password
-    
+
+    after_create :create_wallets
     after_initialize :ensure_session_token
     
+   
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email.downcase)
         return nil unless user
@@ -33,5 +34,54 @@ class User < ApplicationRecord
     
     def is_password?(password)
         BCrypt::Password.new(self.password_digest).is_password?(password)
+    end
+
+
+
+
+
+    def create_wallets
+        
+        supported_coins = [
+            'bitcoin',
+            'ethereum',
+            'ripple',
+            'tether',
+            'litecoin',
+            'bitcoin-cash',
+            'chainlink',
+            'cardano',
+            'polkadot',
+            'binancecoin',
+            'stellar',
+            'usd-coin',
+            'bitcoin-cash-sv',
+            'eos',
+            'monero',
+            'nem',
+            'wrapped-bitcoin',
+            'tron',
+            'tezos',
+            'okb',
+            'cdai',
+            'filecoin',
+            'crypto-com-chain',
+            'leo-token',
+            'cosmos',
+            'neo',
+            'dai',
+            'vechain',
+            'aave'
+        ]
+
+
+        supported_coins.each do |coin_id|
+            Wallet.create(
+                :coin_id => coin_id,
+                :quantity => 0,
+                :user_id => self.id,
+                :wallet_address => SecureRandom.hex(16)
+            )
+        end
     end
 end

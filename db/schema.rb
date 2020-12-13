@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_13_091100) do
+ActiveRecord::Schema.define(version: 2020_12_13_231312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_12_13_091100) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "cash_balance", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
@@ -38,7 +39,6 @@ ActiveRecord::Schema.define(version: 2020_12_13_091100) do
     t.string "coin_id", null: false
     t.integer "user_id", null: false
     t.decimal "quantity"
-    t.decimal "total_value"
     t.string "wallet_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
