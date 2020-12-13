@@ -13,7 +13,7 @@ import {Link, Redirect, Switch, HashRouter, Route} from 'react-router-dom'
 
 const SideNav = ({ currentUser, logout }) => {
     const userHere = () => (
-    <div>
+    <>
         <nav className="side-nav">
             <h3 id="logo-logged-in">Cryptbase</h3>
             <ul className="nav-logged-in">
@@ -24,7 +24,7 @@ const SideNav = ({ currentUser, logout }) => {
                 <li><Link to="/notifications">Notifications</Link></li>
             </ul>
         </nav> 
-    </div>
+    </>
     )
 
      return currentUser ?  userHere() : <> </>

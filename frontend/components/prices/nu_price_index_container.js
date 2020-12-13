@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import CoinIndex from './coin_index';
+import NuPriceIndex from './nu_price_index';
 import { fetchCoins } from '../../actions/coin_actions';
 
 
@@ -13,6 +13,6 @@ const mapDispatchToProps = dispatch => ({
   fetchCoins: () => dispatch(fetchCoins()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CoinIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(NuPriceIndex);
 
 

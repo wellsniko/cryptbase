@@ -15,7 +15,6 @@ import SideNavContainer from '../side_nav/side_nav_container'
 import DashboardContainer from '../dashboard/dashboard_container'
 
 const UserHome = ({ currentUser, logout }) => (
-    
       <div className="signed-in-body" style={{backgroundColor: 'rgb(250, 251, 252)'}}>
         <div className="side-nav-holder">
             <SideNavContainer/>
@@ -25,14 +24,12 @@ const UserHome = ({ currentUser, logout }) => (
                 <TopNavContainer/>
                 <div className="main-dashboard">
                   <DashboardContainer/>
-                    
+  
                 </div>
             </div>
           </div>
       </div>
-  
-  );
-
+);
 
 
 export default UserHome;

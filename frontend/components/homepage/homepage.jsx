@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import CoinIndexContainer from '../coins/coin_index_container'
+import CoinIndexContainer from '../prices/nu_price_index_container'
 import NavContainer from '../nav/nav_container'
 import HeaderContainer from '../header/header_container'
 

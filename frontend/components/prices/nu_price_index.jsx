@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CoinIndexItem from './coin_index_item';
+import NuPriceIndexItem from './nu_price_index_item';
 
 
-class CoinIndex extends React.Component {
+class NuPriceIndex extends React.Component {
   componentDidMount() {
     this.props.fetchCoins();
   }
@@ -27,7 +27,7 @@ class CoinIndex extends React.Component {
           <tbody id="coin-table-body">
             {
               coins.map(coin => (
-                <CoinIndexItem coin={coin}  key={coin.id}/>
+                <NuPriceIndexItem coin={coin}  key={coin.id}/>
               ))
             }
           </tbody>
@@ -37,4 +37,4 @@ class CoinIndex extends React.Component {
   }
 }
 
-export default CoinIndex;
+export default NuPriceIndex;

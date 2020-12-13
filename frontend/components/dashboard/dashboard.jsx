@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CoinIndexItem from '../coins/coin_index_item';
+import CoinIndexItem from '../prices/nu_price_index_item';
 
 
 class CoinIndex extends React.Component {

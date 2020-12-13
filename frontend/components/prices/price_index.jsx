@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CoinIndexItem from '../coins/coin_index_item';
+import PriceIndexItem from './price_index_item';
 
 
 class PriceIndex extends React.Component {
@@ -29,7 +29,7 @@ class PriceIndex extends React.Component {
             <tbody id="coin-table-body">
               {
                 coins.map(coin => (
-                  <CoinIndexItem coin={coin}  key={coin.id}/>
+                  <PriceIndexItem coin={coin}  key={coin.id}/>
                 ))
               }
             </tbody>
