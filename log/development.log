@@ -27753,3 +27753,867 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 96ms (Views: 92.1ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for ::1 at 2020-12-13 19:32:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LibT9G6wFTZueA1l1BN3JQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 43ms (Views: 39.4ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 19:33:58 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LibT9G6wFTZueA1l1BN3JQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "C3iSmfh-JS3U8uAOsMpjVA"], ["updated_at", "2020-12-14 03:33:58.188694"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 17ms (Views: 10.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 19:34:47 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["updated_at", "2020-12-14 03:34:48.181083"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 222ms (Views: 7.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 19:37:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 19:44:28 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.7ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (3.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 38ms (Views: 33.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 19:56:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.7ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (16.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 410ms (Views: 393.3ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 19:56:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 19:56:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (3.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 37ms (Views: 32.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 19:56:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (3.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 34ms (Views: 30.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 19:56:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.4ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 385ms (Views: 382.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 20:00:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.4ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (16.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 397ms (Views: 383.4ms | ActiveRecord: 10.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 20:03:48 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "PWsvABJWRglsxDzuxxhxyg"], ["updated_at", "2020-12-14 04:03:48.040034"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:4
+  Rendered api/users/_user.json.jbuilder (310.7ms)
+  Rendered api/users/show.json.jbuilder (311.8ms)
+Completed 500 Internal Server Error in 327ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `wallets' for #<#<Class:0x00007fcea77a2f60>:0x00007fcea77510c0>
+Did you mean?  wallet):
+     5:     json.id wallet.id
+     6:     json.coin_id wallet.coin_id
+     7:     json.quantity wallet.quantity
+     8:     json.array! wallets.orders do |order|
+     9:         json.id order.id
+    10:         json.coin_id order.id
+    11:     end
+  
+app/views/api/users/_user.json.jbuilder:8:in `block (2 levels) in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262720674180'
+app/views/api/users/_user.json.jbuilder:4:in `block in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262720674180'
+app/views/api/users/_user.json.jbuilder:2:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262720674180'
+app/views/api/users/show.json.jbuilder:1:in `_app_views_api_users_show_json_jbuilder___2661982111605522380_70262750104980'
+app/controllers/api/sessions_controller.rb:20:in `destroy'
+Started DELETE "/api/session" for ::1 at 2020-12-13 20:03:52 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 20:03:53 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 20:03:53 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 20:03:53 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 20:03:57 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 20:03:58 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 20:03:58 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 20:03:58 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 20:03:58 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 20:03:58 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 20:05:05 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 20:05:09 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 20:05:15 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "HJvL2Y5Opj5eFfBoC9H4Kg"], ["updated_at", "2020-12-14 04:05:15.796461"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:4
+  [1m[36mOrder Load (1.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 89]]
+  ↳ app/views/api/users/_user.json.jbuilder:8
+  Rendered api/users/_user.json.jbuilder (16.9ms)
+  Rendered api/users/show.json.jbuilder (18.0ms)
+Completed 500 Internal Server Error in 239ms (ActiveRecord: 5.0ms)
+
+
+  
+ActionView::Template::Error (Can't merge [] into {"id"=>89, "coin_id"=>"usd", "quantity"=>0.1e6}):
+     5:     json.id wallet.id
+     6:     json.coin_id wallet.coin_id
+     7:     json.quantity wallet.quantity
+     8:     json.array! wallet.orders do |order|
+     9:         json.id order.id
+    10:         json.coin_id order.id
+    11:     end
+  
+app/views/api/users/_user.json.jbuilder:8:in `block (2 levels) in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262814979140'
+app/views/api/users/_user.json.jbuilder:4:in `block in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262814979140'
+app/views/api/users/_user.json.jbuilder:2:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262814979140'
+app/views/api/users/show.json.jbuilder:1:in `_app_views_api_users_show_json_jbuilder___2661982111605522380_70262731777580'
+app/controllers/api/sessions_controller.rb:10:in `create'
+Started GET "/" for ::1 at 2020-12-13 20:06:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 42ms (Views: 38.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 20:06:51 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko2", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko2"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko2"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "S-37aXyO2TBFl_PJKJ6Czw"], ["updated_at", "2020-12-14 04:06:51.927387"], ["id", 8]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:4
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 119]]
+  ↳ app/views/api/users/_user.json.jbuilder:8
+  Rendered api/users/_user.json.jbuilder (4.9ms)
+  Rendered api/users/show.json.jbuilder (6.0ms)
+Completed 500 Internal Server Error in 226ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (Can't merge [] into {"id"=>119, "coin_id"=>"usd", "quantity"=>0.1e6}):
+     5:     json.id wallet.id
+     6:     json.coin_id wallet.coin_id
+     7:     json.quantity wallet.quantity
+     8:     json.array! wallet.orders do |order|
+     9:         json.id order.id
+    10:         json.coin_id order.id
+    11:     end
+  
+app/views/api/users/_user.json.jbuilder:8:in `block (2 levels) in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262799441960'
+app/views/api/users/_user.json.jbuilder:4:in `block in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262799441960'
+app/views/api/users/_user.json.jbuilder:2:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262799441960'
+app/views/api/users/show.json.jbuilder:1:in `_app_views_api_users_show_json_jbuilder___2661982111605522380_70262799479760'
+app/controllers/api/sessions_controller.rb:10:in `create'
+Started GET "/" for ::1 at 2020-12-13 20:12:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 20:12:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mtoB7tp8T8QzkhbFmpFvhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 48ms (Views: 42.0ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 20:12:22 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "WwGuKlmbrmXe4UdARtSNlg"], ["updated_at", "2020-12-14 04:12:22.447697"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 223ms (Views: 8.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 20:13:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WwGuKlmbrmXe4UdARtSNlg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.6ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:4
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 89]]
+  ↳ app/views/api/users/_user.json.jbuilder:8
+  Rendered api/users/_user.json.jbuilder (22.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (44.1ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 16.0ms)
+
+
+  
+ActionView::Template::Error (Can't merge [] into {"id"=>89, "coin_id"=>"usd", "quantity"=>0.1e6}):
+     5:     json.id wallet.id
+     6:     json.coin_id wallet.coin_id
+     7:     json.quantity wallet.quantity
+     8:     json.array! wallet.orders do |order|
+     9:         json.id order.id
+    10:         json.coin_id order.id
+    11:     end
+  
+app/views/api/users/_user.json.jbuilder:8:in `block (2 levels) in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262799410280'
+app/views/api/users/_user.json.jbuilder:4:in `block in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262799410280'
+app/views/api/users/_user.json.jbuilder:2:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262799410280'
+app/views/static_pages/root.html.erb:4:in `_app_views_static_pages_root_html_erb___958979461181707531_70262815237280'
+Started GET "/" for ::1 at 2020-12-13 20:14:51 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WwGuKlmbrmXe4UdARtSNlg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/Users/nikowells/Documents/fsp/cryptbase/app/views/api/users/_user.json.jbuilder:25: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/api/users/_user.json.jbuilder:25: syntax error, unexpected end-of-input, expecting keyword_end
+app/views/static_pages/root.html.erb:4:in `_app_views_static_pages_root_html_erb___958979461181707531_70262728338020'
+Started GET "/" for ::1 at 2020-12-13 20:15:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WwGuKlmbrmXe4UdARtSNlg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:4
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 89]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 90]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 91]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 92]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 93]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 94]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 95]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 96]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 97]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 98]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 99]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 100]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 101]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 102]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 103]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 104]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 105]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 106]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 107]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 108]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 109]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 110]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 111]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 112]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 113]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 114]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 115]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 116]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 117]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 118]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  Rendered api/users/_user.json.jbuilder (27.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 60ms (Views: 51.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 20:15:18 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WwGuKlmbrmXe4UdARtSNlg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.4ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:4
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 89]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 90]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 91]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 92]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 93]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 94]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 95]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 96]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 97]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 98]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 99]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 100]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 101]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 102]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 103]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 104]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 105]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 106]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 107]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 108]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 109]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 110]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 111]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 112]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 113]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 114]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 115]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 116]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 117]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 118]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  Rendered api/users/_user.json.jbuilder (26.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 57ms (Views: 49.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 20:15:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WwGuKlmbrmXe4UdARtSNlg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.4ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:4
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 89]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 90]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 91]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 92]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 93]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 94]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 95]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 96]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 97]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 98]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 99]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 100]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 101]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 102]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 103]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 104]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 105]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 106]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 107]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 108]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 109]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 110]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 111]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 112]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 113]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 114]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 115]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 116]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 117]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 118]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  Rendered api/users/_user.json.jbuilder (51.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (69.5ms)
+Completed 200 OK in 96ms (Views: 77.0ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 20:15:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WwGuKlmbrmXe4UdARtSNlg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.4ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:4
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 89]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 90]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 91]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 92]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 93]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 94]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 95]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 96]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 97]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 98]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 99]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 100]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 101]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 102]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 103]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 104]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 105]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 106]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 107]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 108]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 109]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 110]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 111]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 112]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 113]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 114]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 115]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 116]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 117]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 118]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  Rendered api/users/_user.json.jbuilder (30.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 60ms (Views: 50.7ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 20:15:57 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WwGuKlmbrmXe4UdARtSNlg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.4ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:4
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 89]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 90]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 91]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 92]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 93]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 94]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 95]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 96]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 97]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 98]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 99]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 100]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 101]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 102]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 103]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 104]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 105]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 106]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 107]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 108]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 109]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 110]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 111]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 112]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 113]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 114]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 115]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 116]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 117]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 118]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  Rendered api/users/_user.json.jbuilder (29.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 59ms (Views: 51.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 20:16:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WwGuKlmbrmXe4UdARtSNlg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:4
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 89]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 90]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 91]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 92]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 93]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 94]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 95]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 96]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 97]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 98]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 99]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 100]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 101]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 102]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 103]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 104]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 105]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 106]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 107]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 108]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 109]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 110]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 111]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 112]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 113]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 114]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 115]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 116]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 117]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."wallet_id" = $1[0m  [["wallet_id", 118]]
+  ↳ app/views/api/users/_user.json.jbuilder:9
+  Rendered api/users/_user.json.jbuilder (40.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (56.8ms)
+Completed 200 OK in 83ms (Views: 65.7ms | ActiveRecord: 14.4ms)
+
+

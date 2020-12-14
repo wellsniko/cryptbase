@@ -49,7 +49,7 @@ class User < ApplicationRecord
     def create_wallets
         
         supported_coins = [
-            "usd",
+            'usd',
             'bitcoin',
             'ethereum',
             'ripple',

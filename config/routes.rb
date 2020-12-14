@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
     # resources :coins, only: [:show, :index]
     resource :session, only: [:create, :destroy, :show]
-    resources :orders, only: [ :create ]
+    resources :orders, only: [ :create, :index ]
     
   end
 
