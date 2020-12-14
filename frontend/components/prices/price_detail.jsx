@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
+import TradingBoxContainer from '../trading_box/trading_box_container'
 {/* <Link to={`/price/${props.coin.id}`}></Link> */}
 
 
@@ -9,19 +9,15 @@ class PriceDetail extends React.Component {
 		// super(props);
         //     this.props.fetchCoinPriceData(this.props.coinId)
 		// }
-    
     // componentWillMount() {
     //     // console.log(this.props)
     //     //  debugger
-    //     this.props.fetchCoinPriceData(this.props.coinId);
-        
+    //     this.props.fetchCoinPriceData(this.props.coinId); 
     // }
 
     componentDidMount() {
         // console.log(this.props)
-        
-        this.props.fetchCoinPriceData(this.props.coinId);
-        
+        this.props.fetchCoinPriceData(this.props.coinId);   
     }
 
     render() {
@@ -36,16 +32,17 @@ class PriceDetail extends React.Component {
                    
                     <h1>{coin.name}</h1>
                     <h1>{coin.symbol}</h1>
+                    <h1>{coin.price}</h1>
+                    
                 </div>
                     <section className="detail-main-section">
                         <div id="main-chart">
                         Charts And Detail Page goes Here
                         </div>
                         <div id="detail-buy-box">
-                            Buy Box
+                            <TradingBoxContainer coin={coin} coinId={coinId}/>
                         </div>
                     </section>
-               
             </div>
         );
     }
