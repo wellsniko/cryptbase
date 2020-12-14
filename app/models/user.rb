@@ -9,7 +9,13 @@ class User < ApplicationRecord
     after_create :create_wallets
     after_initialize :ensure_session_token
     
-   
+    has_many :wallets,
+        foreign_key: :user_id,
+        class_name: :Wallet
+
+    has_many :orders,
+        through: :wallets,
+        source: :orders
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email.downcase)
@@ -43,6 +49,7 @@ class User < ApplicationRecord
     def create_wallets
         
         supported_coins = [
+            "usd",
             'bitcoin',
             'ethereum',
             'ripple',
@@ -74,14 +81,22 @@ class User < ApplicationRecord
             'aave'
         ]
 
-
         supported_coins.each do |coin_id|
-            Wallet.create(
-                :coin_id => coin_id,
-                :quantity => 0,
-                :user_id => self.id,
-                :wallet_address => SecureRandom.hex(16)
-            )
+            if coin_id == "usd"
+                Wallet.create( 
+                    :coin_id => coin_id,
+                    :quantity => 100000,
+                    :user_id => self.id,
+                    :wallet_address => SecureRandom.hex(16))
+            else
+                Wallet.create(
+                    :coin_id => coin_id,
+                    :quantity => 0,
+                    :user_id => self.id,
+                    :wallet_address => SecureRandom.hex(16))
+            end
         end
     end
+
+
 end

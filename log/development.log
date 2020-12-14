@@ -25262,3 +25262,769 @@ Completed 200 OK in 298ms (Views: 8.2ms | ActiveRecord: 22.5ms)
 
   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
   [1m[36mWallet Load (1.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+Started GET "/" for ::1 at 2020-12-13 15:44:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "R5t_lsDYMZX7XAkKFXE0Aw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 31ms (Views: 25.0ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/api/users" for ::1 at 2020-12-13 15:44:45 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "session_token", "password_digest", "created_at", "updated_at", "cash_balance") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "niko"], ["session_token", "Oa-MZBqxVE2MVL6KmCQZ5Q"], ["password_digest", "$2a$12$4yhp1ewbq/UnSRvjKrlQQeqLlCw6cmRRVVKUXPz6m7Y4iThim2KUq"], ["created_at", "2020-12-13 23:44:45.958723"], ["updated_at", "2020-12-13 23:44:45.958723"], ["cash_balance", "100000.0"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:80
+  [1m[36mWallet Create (0.5ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "usd"], ["user_id", 6], ["quantity", "100000.0"], ["wallet_address", "065d69312f7f270bcc5b38b63ae7cce3"], ["created_at", "2020-12-13 23:44:45.977789"], ["updated_at", "2020-12-13 23:44:45.977789"]]
+  ↳ app/models/user.rb:80
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "bitcoin"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "cec15accbf646659d3dcdd240fec14cd"], ["created_at", "2020-12-13 23:44:45.980042"], ["updated_at", "2020-12-13 23:44:45.980042"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "ethereum"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "bca43384d112d300b0c5d01bd595ecf6"], ["created_at", "2020-12-13 23:44:45.981960"], ["updated_at", "2020-12-13 23:44:45.981960"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "ripple"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "6f309e40708a373998f635d0c7fd363b"], ["created_at", "2020-12-13 23:44:45.983986"], ["updated_at", "2020-12-13 23:44:45.983986"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "tether"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "0322304955b8a51c25eeff66a619453f"], ["created_at", "2020-12-13 23:44:45.985838"], ["updated_at", "2020-12-13 23:44:45.985838"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "litecoin"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "2e41366c8c2585715287b91834164bd1"], ["created_at", "2020-12-13 23:44:45.987671"], ["updated_at", "2020-12-13 23:44:45.987671"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "bitcoin-cash"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "f4a034b475f69bd281d443278bd4d094"], ["created_at", "2020-12-13 23:44:45.989413"], ["updated_at", "2020-12-13 23:44:45.989413"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "chainlink"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "077074e8e1eecf128b34800f2b531c99"], ["created_at", "2020-12-13 23:44:45.991121"], ["updated_at", "2020-12-13 23:44:45.991121"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "cardano"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "d301ecfb01d70519a20a7e3ce9c064e7"], ["created_at", "2020-12-13 23:44:45.992716"], ["updated_at", "2020-12-13 23:44:45.992716"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "polkadot"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "28b44c8a28281f14eb9bfbd041797fc8"], ["created_at", "2020-12-13 23:44:45.994409"], ["updated_at", "2020-12-13 23:44:45.994409"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "binancecoin"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "b7844f4814474e93fa1bff91af67f5f8"], ["created_at", "2020-12-13 23:44:45.996139"], ["updated_at", "2020-12-13 23:44:45.996139"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "stellar"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "bdd9f78e8f47fb4a96500d22440e9f05"], ["created_at", "2020-12-13 23:44:45.997812"], ["updated_at", "2020-12-13 23:44:45.997812"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "usd-coin"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "03a2ccb31daaa5ba0071e473bbac17f0"], ["created_at", "2020-12-13 23:44:45.999599"], ["updated_at", "2020-12-13 23:44:45.999599"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "bitcoin-cash-sv"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "5f2a2c29066f937857996fc48d6456f4"], ["created_at", "2020-12-13 23:44:46.001467"], ["updated_at", "2020-12-13 23:44:46.001467"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "eos"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "194c8c3fbd4bf9b22c618238f215931d"], ["created_at", "2020-12-13 23:44:46.003553"], ["updated_at", "2020-12-13 23:44:46.003553"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "monero"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "298da8886510b3b703a93acab15e93b1"], ["created_at", "2020-12-13 23:44:46.005698"], ["updated_at", "2020-12-13 23:44:46.005698"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "nem"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "8360bafd432dc565ed2ab124eeeb156a"], ["created_at", "2020-12-13 23:44:46.007575"], ["updated_at", "2020-12-13 23:44:46.007575"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "wrapped-bitcoin"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "89a3158278c35276ff23bc3328330421"], ["created_at", "2020-12-13 23:44:46.009221"], ["updated_at", "2020-12-13 23:44:46.009221"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "tron"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "ac969cd6a8dab973579987c6754e7741"], ["created_at", "2020-12-13 23:44:46.011074"], ["updated_at", "2020-12-13 23:44:46.011074"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "tezos"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "8600c59e538a3eb902b03f71d7c7681a"], ["created_at", "2020-12-13 23:44:46.012859"], ["updated_at", "2020-12-13 23:44:46.012859"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.8ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "okb"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "01859e74a897e9136ca9e718281190d2"], ["created_at", "2020-12-13 23:44:46.014750"], ["updated_at", "2020-12-13 23:44:46.014750"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "cdai"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "8c686706806585ee9bb14e15946ac8ca"], ["created_at", "2020-12-13 23:44:46.017364"], ["updated_at", "2020-12-13 23:44:46.017364"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "filecoin"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "cffe0bdad0afeaf5dbecc390f34472c9"], ["created_at", "2020-12-13 23:44:46.019629"], ["updated_at", "2020-12-13 23:44:46.019629"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "crypto-com-chain"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "b8d4c33c6c85422c1ed27dd33cec03d2"], ["created_at", "2020-12-13 23:44:46.021487"], ["updated_at", "2020-12-13 23:44:46.021487"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "leo-token"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "3e89bafc086feea57819a4373184fd6f"], ["created_at", "2020-12-13 23:44:46.023320"], ["updated_at", "2020-12-13 23:44:46.023320"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "cosmos"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "c9582f4e16aba4ec74a875ce09b30f39"], ["created_at", "2020-12-13 23:44:46.025057"], ["updated_at", "2020-12-13 23:44:46.025057"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "neo"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "e6d42ec31359acae97d8df993d171923"], ["created_at", "2020-12-13 23:44:46.026859"], ["updated_at", "2020-12-13 23:44:46.026859"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "dai"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "7d05a3859795e379057e956e188413f9"], ["created_at", "2020-12-13 23:44:46.028621"], ["updated_at", "2020-12-13 23:44:46.028621"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "vechain"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "4f4dd723e884df0a08110a3f3ca279ca"], ["created_at", "2020-12-13 23:44:46.030641"], ["updated_at", "2020-12-13 23:44:46.030641"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "aave"], ["user_id", 6], ["quantity", "0.0"], ["wallet_address", "f57bb979ee439439c41112c82f86b28b"], ["created_at", "2020-12-13 23:44:46.033287"], ["updated_at", "2020-12-13 23:44:46.033287"]]
+  ↳ app/models/user.rb:86
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "sRZT9Xmqa6B8JT5Ezcou2Q"], ["updated_at", "2020-12-13 23:44:46.036467"], ["id", 6]]
+  ↳ app/models/user.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 299ms (Views: 7.6ms | ActiveRecord: 25.0ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mWallet Load (1.6ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mWallet Load (0.9ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.3ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.3ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.3ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 16]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 17]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 18]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 19]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 20]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 21]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 22]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 23]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.6ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 24]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.4ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 25]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 26]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 27]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 28]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 29]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 30]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 31]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 32]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 33]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 34]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 35]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 36]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 37]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 38]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 39]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 40]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 41]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 42]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 43]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 44]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 45]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 46]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 47]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 48]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 49]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 50]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 51]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 52]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 53]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 54]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 55]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 56]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 57]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 58]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 59]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 60]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 61]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 62]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 63]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 64]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 65]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 66]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 67]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 68]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 69]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 70]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 71]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 72]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 73]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 74]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 75]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 76]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 77]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 78]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 79]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 80]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 81]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 82]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.1ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 83]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.3ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 84]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 85]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.3ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 86]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 87]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mWallet Destroy (0.2ms)[0m  [1m[31mDELETE FROM "wallets" WHERE "wallets"."id" = $1[0m  [["id", 88]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(40759325699341305)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to EditUserAgain (20201213234712)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "cash_balance"[0m
+  ↳ db/migrate/20201213234712_edit_user_again.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201213234712"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(40759325699341305)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(40759325699341305)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateOrders (20201214000255)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (20.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "wallet_id" integer NOT NULL, "coin_id" character varying, "quantity" decimal NOT NULL, "price" decimal NOT NULL, "transaction_type" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20201214000255_create_orders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201214000255"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(40759325699341305)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9

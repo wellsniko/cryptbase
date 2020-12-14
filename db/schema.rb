@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_13_231312) do
+ActiveRecord::Schema.define(version: 2020_12_14_000255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,13 +24,22 @@ ActiveRecord::Schema.define(version: 2020_12_13_231312) do
     t.index ["symbol"], name: "index_coins_on_symbol", unique: true
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer "wallet_id", null: false
+    t.string "coin_id"
+    t.decimal "quantity", null: false
+    t.decimal "price", null: false
+    t.string "transaction_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "session_token", null: false
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "cash_balance", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
