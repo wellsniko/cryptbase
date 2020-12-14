@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';  
 
-import { buyCurrency, sellCurrency } from '../../actions/trading_actions';
+import { buyCoin, sellCoin } from '../../actions/trading_actions';
 import TradingBox from './trading_box';
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,8 +19,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    buyCurrency: (orderParams) => dispatch(buyCurrency(orderParams)),
-    sellCurrency: (orderParams) => dispatch(sellCurrency(orderParams))
+    buyCoin: (orderParams) => dispatch(buyCoin(orderParams)),
+    sellCoin: (orderParams) => dispatch(sellCoin(orderParams))
   });
 };
 
