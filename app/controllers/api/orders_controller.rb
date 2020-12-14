@@ -1,7 +1,10 @@
+# require 'byebug'
+
 class Api::OrdersController < ApplicationController
 
 
     def create
+        # debugger
         unless logged_in? && (current_user.id == order_params[:user_id].to_i)
             render json: ['Invalid params'], status: 422
         end
@@ -18,10 +21,10 @@ class Api::OrdersController < ApplicationController
 
                 @order = Order.new(
                     wallet_id: user_wallet.id,
-                    user_id: order_params[:user_id]
+                    user_id: order_params[:user_id],
                     quantity: order_params[:quantity],                             
                     price: order_params[:price],
-                    total_value: order_params[:total_value]
+                    total_value: order_params[:total_value],
                     transaction_type: 'BUY'
                 )
             
@@ -46,6 +49,7 @@ class Api::OrdersController < ApplicationController
             
                 @order.save
             end
+        end
      else
 
         render json: ['Insufficient funds and/or invalid params'], status: 422

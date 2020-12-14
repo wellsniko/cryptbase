@@ -18,16 +18,18 @@ class TradingBox extends React.Component {
 
 
     handleBuy() {
+        
         const { userId, coinId, current_price, coin } = this.props;
         const { quantity } = this.state;
         const orderParams = { 
-            quantity: quantity,
+            quantity: Number(quantity),
             price: current_price,
             total_value: (current_price * quantity),
             coin_id: coinId, 
             user_id: userId,
             type: "BUY" 
         };
+        debugger
         this.props.buyCoin(orderParams);                   
         alert(`You purchased ${quantity} ${coin.symbol}`);
 
