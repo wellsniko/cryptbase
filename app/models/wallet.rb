@@ -13,6 +13,10 @@ class Wallet < ApplicationRecord
         wallet = Wallet.find_by(user_id: user_id, coin_id: coin_id)				
 	end
 
+	def self.find_user_wallets(user_id)
+        wallets = Wallet.where(user_id: user_id)				
+	end
+
 	def update_quantity(order_quantity)															
         self.quantity = self.quantity + order_quantity
 		save!

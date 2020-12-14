@@ -6,7 +6,7 @@ class Order < ApplicationRecord
         class_name: :Wallet
 
     belongs_to :user,
-        through: :wallet,
-        source: :user
+        foreign_key: :user_id,
+        class_name: :User
 
 end

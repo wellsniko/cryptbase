@@ -26028,3 +26028,1728 @@ Migrating to CreateOrders (20201214000255)
   ↳ bin/rails:9
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCoin Load (0.7ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mWallet Load (0.9ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(40759325699341305)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeOrders (20201214011347)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "orders" ADD "total_value" decimal NOT NULL[0m
+  ↳ db/migrate/20201214011347_change_orders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201214011347"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(40759325699341305)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-12-13 18:04:28 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nikowells/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sRZT9Xmqa6B8JT5Ezcou2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 292ms (Views: 282.5ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:04:31 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko2", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko2"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:04:33 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:04:35 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/users" for ::1 at 2020-12-13 18:04:41 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "niko"], ["session_token", "9AjkZ4Dxb0jcsVQmOBumbA"], ["password_digest", "$2a$12$vHjz1dv7parh9XeCXtE2LOgPoWFlFO6Dyf4HfNi9m1h0nSpRHh4uy"], ["created_at", "2020-12-14 02:04:41.920848"], ["updated_at", "2020-12-14 02:04:41.920848"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.6ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "usd"], ["user_id", 7], ["quantity", "100000.0"], ["wallet_address", "39032dc665c2d89c54cba8ea02ec9a09"], ["created_at", "2020-12-14 02:04:41.935824"], ["updated_at", "2020-12-14 02:04:41.935824"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "bitcoin"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "acea5e6bda5e52ebe3ccaeac84357d99"], ["created_at", "2020-12-14 02:04:41.938194"], ["updated_at", "2020-12-14 02:04:41.938194"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "ethereum"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "25a08ba831d5db51cf5d933b3130eb7b"], ["created_at", "2020-12-14 02:04:41.939934"], ["updated_at", "2020-12-14 02:04:41.939934"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "ripple"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "f25e2c40271c64cc65c536653e135bf4"], ["created_at", "2020-12-14 02:04:41.941754"], ["updated_at", "2020-12-14 02:04:41.941754"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "tether"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "608568578b6490816c202803fe3c016e"], ["created_at", "2020-12-14 02:04:41.943699"], ["updated_at", "2020-12-14 02:04:41.943699"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "litecoin"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "a6b9e9f695e7e5d488b248893281d67c"], ["created_at", "2020-12-14 02:04:41.945469"], ["updated_at", "2020-12-14 02:04:41.945469"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "bitcoin-cash"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "8780ca2720fe129fd56c78a2b4155c5a"], ["created_at", "2020-12-14 02:04:41.947163"], ["updated_at", "2020-12-14 02:04:41.947163"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "chainlink"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "2714df1031e34a016835d93340284d92"], ["created_at", "2020-12-14 02:04:41.948819"], ["updated_at", "2020-12-14 02:04:41.948819"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "cardano"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "6fba26a817c06fb1c3e2e9d2b709c109"], ["created_at", "2020-12-14 02:04:41.950417"], ["updated_at", "2020-12-14 02:04:41.950417"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "polkadot"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "b668c781197e9423b3937ce608f611e2"], ["created_at", "2020-12-14 02:04:41.952034"], ["updated_at", "2020-12-14 02:04:41.952034"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "binancecoin"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "a9adec7053da8bc7fb3173852ab3bef0"], ["created_at", "2020-12-14 02:04:41.953725"], ["updated_at", "2020-12-14 02:04:41.953725"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "stellar"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "b7943170df96fbb380d604620be1ac30"], ["created_at", "2020-12-14 02:04:41.955270"], ["updated_at", "2020-12-14 02:04:41.955270"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "usd-coin"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "92a325fc15545e3f657b5d76c621217d"], ["created_at", "2020-12-14 02:04:41.956791"], ["updated_at", "2020-12-14 02:04:41.956791"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "bitcoin-cash-sv"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "2596027f989d7f695ca9cea98185791b"], ["created_at", "2020-12-14 02:04:41.958548"], ["updated_at", "2020-12-14 02:04:41.958548"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "eos"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "643ff4499ea72c4ea726e67c4e881615"], ["created_at", "2020-12-14 02:04:41.960247"], ["updated_at", "2020-12-14 02:04:41.960247"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "monero"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "3f35043f12b4db22939cdcca79f6ef02"], ["created_at", "2020-12-14 02:04:41.961884"], ["updated_at", "2020-12-14 02:04:41.961884"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "nem"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "f5f5dd375e145507b7128c635da9b224"], ["created_at", "2020-12-14 02:04:41.963522"], ["updated_at", "2020-12-14 02:04:41.963522"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "wrapped-bitcoin"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "a7fa81b19953c88a74cd344320b1df43"], ["created_at", "2020-12-14 02:04:41.965197"], ["updated_at", "2020-12-14 02:04:41.965197"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "tron"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "1e902eb15404d11f64996af9ce45069b"], ["created_at", "2020-12-14 02:04:41.966826"], ["updated_at", "2020-12-14 02:04:41.966826"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "tezos"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "943ca024acd460bd89188dadbd01d264"], ["created_at", "2020-12-14 02:04:41.968488"], ["updated_at", "2020-12-14 02:04:41.968488"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "okb"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "87eb30c572836990dfba176b604601f7"], ["created_at", "2020-12-14 02:04:41.970151"], ["updated_at", "2020-12-14 02:04:41.970151"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "cdai"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "b369a2537addcec01e9f2d35b6908a48"], ["created_at", "2020-12-14 02:04:41.971746"], ["updated_at", "2020-12-14 02:04:41.971746"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "filecoin"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "1091ce62d4e60356335eecdc45594e08"], ["created_at", "2020-12-14 02:04:41.973353"], ["updated_at", "2020-12-14 02:04:41.973353"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "crypto-com-chain"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "26ae56e4847a2aa1876a042f50327276"], ["created_at", "2020-12-14 02:04:41.975199"], ["updated_at", "2020-12-14 02:04:41.975199"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "leo-token"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "57b29a49d3f13b61988260483400f282"], ["created_at", "2020-12-14 02:04:41.976943"], ["updated_at", "2020-12-14 02:04:41.976943"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "cosmos"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "23c129121475c18168332d27437d6ef2"], ["created_at", "2020-12-14 02:04:41.978663"], ["updated_at", "2020-12-14 02:04:41.978663"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "neo"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "9e7ed6f9f36980438f20e517f4256216"], ["created_at", "2020-12-14 02:04:41.980386"], ["updated_at", "2020-12-14 02:04:41.980386"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "dai"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "4f0d3c559ba6cb5f3c9e5cb91b446b94"], ["created_at", "2020-12-14 02:04:41.982132"], ["updated_at", "2020-12-14 02:04:41.982132"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "vechain"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "0e12005ff6bbeb49f50de5a432cc5acf"], ["created_at", "2020-12-14 02:04:41.983889"], ["updated_at", "2020-12-14 02:04:41.983889"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "aave"], ["user_id", 7], ["quantity", "0.0"], ["wallet_address", "c8c82c55456ce012a8516c2b004cd5e8"], ["created_at", "2020-12-14 02:04:41.985649"], ["updated_at", "2020-12-14 02:04:41.985649"]]
+  ↳ app/models/user.rb:92
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["updated_at", "2020-12-14 02:04:41.988493"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 293ms (Views: 8.7ms | ActiveRecord: 24.0ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:05:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 42ms (Views: 38.3ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mWallet Load (0.9ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets"[0m
+  [1m[36mWallet Load (0.4ms)[0m  [1m[34mSELECT  "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1 LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  [1m[36mWallet Load (0.4ms)[0m  [1m[34mSELECT  "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1 LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  [1m[36mWallet Load (0.6ms)[0m  [1m[34mSELECT  "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1 LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  [1m[36mWallet Load (0.4ms)[0m  [1m[34mSELECT  "wallets".* FROM "wallets" WHERE "wallets"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mWallet Load (0.6ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+Started GET "/" for ::1 at 2020-12-13 18:24:17 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (24.5ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 9.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `wallets' for nil:NilClass):
+    2: json.extract! user, :id, :email
+    3: 
+    4: json.wallets do
+    5:   @user.wallets do |wallet|  #current_user?
+    6:     json.set! wallet.id do
+    7:         json.extract! wallet, :coin_id, :user_id, :quantity, :wallet_address
+    8:     end
+  
+app/views/api/users/_user.json.jbuilder:5:in `block in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262727586180'
+app/views/api/users/_user.json.jbuilder:4:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262727586180'
+app/views/static_pages/root.html.erb:4:in `_app_views_static_pages_root_html_erb___958979461181707531_70262728569520'
+Started GET "/" for ::1 at 2020-12-13 18:24:22 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (3.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `wallets' for nil:NilClass):
+    2: json.extract! user, :id, :email
+    3: 
+    4: json.wallets do
+    5:   @user.wallets do |wallet|  #current_user?
+    6:     json.set! wallet.id do
+    7:         json.extract! wallet, :coin_id, :user_id, :quantity, :wallet_address
+    8:     end
+  
+app/views/api/users/_user.json.jbuilder:5:in `block in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262771361320'
+app/views/api/users/_user.json.jbuilder:4:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262771361320'
+app/views/static_pages/root.html.erb:4:in `_app_views_static_pages_root_html_erb___958979461181707531_70262771528180'
+Started GET "/" for ::1 at 2020-12-13 18:24:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (3.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.4ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `wallets' for nil:NilClass):
+    2: json.extract! user, :id, :email
+    3: 
+    4: json.wallets do
+    5:   @user.wallets do |wallet|  #current_user?
+    6:     json.set! wallet.id do
+    7:         json.extract! wallet, :coin_id, :user_id, :quantity, :wallet_address
+    8:     end
+  
+app/views/api/users/_user.json.jbuilder:5:in `block in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262812981980'
+app/views/api/users/_user.json.jbuilder:4:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262812981980'
+app/views/static_pages/root.html.erb:4:in `_app_views_static_pages_root_html_erb___958979461181707531_70262813292820'
+Started GET "/" for ::1 at 2020-12-13 18:24:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (3.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `wallets' for nil:NilClass):
+    2: json.extract! user, :id, :email
+    3: 
+    4: json.wallets do
+    5:   @user.wallets do |wallet|  #current_user?
+    6:     json.set! wallet.id do
+    7:         json.extract! wallet, :coin_id, :user_id, :quantity, :wallet_address
+    8:     end
+  
+app/views/api/users/_user.json.jbuilder:5:in `block in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262774652860'
+app/views/api/users/_user.json.jbuilder:4:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262774652860'
+app/views/static_pages/root.html.erb:4:in `_app_views_static_pages_root_html_erb___958979461181707531_70262714050740'
+Started GET "/" for ::1 at 2020-12-13 18:25:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 58ms (Views: 50.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:25:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 62ms (Views: 54.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:25:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 45ms (Views: 41.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:25:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:25:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (3.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `wallets' for nil:NilClass):
+    2: json.extract! user, :id, :email
+    3: 
+    4: json.wallets do
+    5:   @user.wallets do |wallet|  #current_user?
+    6:     json.set! wallet.id do
+    7:         json.extract! wallet, :coin_id, :user_id, :quantity, :wallet_address
+    8:     end
+  
+app/views/api/users/_user.json.jbuilder:5:in `block in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262812915500'
+app/views/api/users/_user.json.jbuilder:4:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262812915500'
+app/views/static_pages/root.html.erb:4:in `_app_views_static_pages_root_html_erb___958979461181707531_70262812975800'
+Started GET "/" for ::1 at 2020-12-13 18:26:12 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (15.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 46ms (Views: 42.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:26:14 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 30ms (Views: 27.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:26:38 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:26:55 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YpTNM3TK_b-gdvcQ-g7OpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "qQpKy4qBWHFE5fL03P2cGw"], ["updated_at", "2020-12-14 02:26:55.103379"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 17ms (Views: 9.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:27:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:27:01 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:27:09 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "sn8dc7hzwHSXPDzld9INzQ"], ["updated_at", "2020-12-14 02:27:09.285873"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 217ms (Views: 7.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:29:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sn8dc7hzwHSXPDzld9INzQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (1.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (15.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.9ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 5.5ms)
+
+
+  
+ActionView::Template::Error (Can't merge [{"quantity"=>0.1e6, "name"=>"usd"}, {"quantity"=>0.0, "name"=>"bitcoin"}, {"quantity"=>0.0, "name"=>"ethereum"}, {"quantity"=>0.0, "name"=>"ripple"}, {"quantity"=>0.0, "name"=>"tether"}, {"quantity"=>0.0, "name"=>"litecoin"}, {"quantity"=>0.0, "name"=>"bitcoin-cash"}, {"quantity"=>0.0, "name"=>"chainlink"}, {"quantity"=>0.0, "name"=>"cardano"}, {"quantity"=>0.0, "name"=>"polkadot"}, {"quantity"=>0.0, "name"=>"binancecoin"}, {"quantity"=>0.0, "name"=>"stellar"}, {"quantity"=>0.0, "name"=>"usd-coin"}, {"quantity"=>0.0, "name"=>"bitcoin-cash-sv"}, {"quantity"=>0.0, "name"=>"eos"}, {"quantity"=>0.0, "name"=>"monero"}, {"quantity"=>0.0, "name"=>"nem"}, {"quantity"=>0.0, "name"=>"wrapped-bitcoin"}, {"quantity"=>0.0, "name"=>"tron"}, {"quantity"=>0.0, "name"=>"tezos"}, {"quantity"=>0.0, "name"=>"okb"}, {"quantity"=>0.0, "name"=>"cdai"}, {"quantity"=>0.0, "name"=>"filecoin"}, {"quantity"=>0.0, "name"=>"crypto-com-chain"}, {"quantity"=>0.0, "name"=>"leo-token"}, {"quantity"=>0.0, "name"=>"cosmos"}, {"quantity"=>0.0, "name"=>"neo"}, {"quantity"=>0.0, "name"=>"dai"}, {"quantity"=>0.0, "name"=>"vechain"}, {"quantity"=>0.0, "name"=>"aave"}] into {"id"=>7, "email"=>"niko"}):
+    1: json.extract! user, :id, :email
+    2:   json.array! current_user.wallets do |wallet|
+    3:     json.quantity wallet.quantity
+    4:     json.name wallet.coin_id
+    5: 
+  
+app/views/api/users/_user.json.jbuilder:2:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262726595720'
+app/views/static_pages/root.html.erb:4:in `_app_views_static_pages_root_html_erb___958979461181707531_70262726746980'
+Started GET "/" for ::1 at 2020-12-13 18:31:51 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sn8dc7hzwHSXPDzld9INzQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (16.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (34.6ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 9.1ms)
+
+
+  
+ActionView::Template::Error (Can't merge [{"quantity"=>0.1e6, "name"=>"usd"}, {"quantity"=>0.0, "name"=>"bitcoin"}, {"quantity"=>0.0, "name"=>"ethereum"}, {"quantity"=>0.0, "name"=>"ripple"}, {"quantity"=>0.0, "name"=>"tether"}, {"quantity"=>0.0, "name"=>"litecoin"}, {"quantity"=>0.0, "name"=>"bitcoin-cash"}, {"quantity"=>0.0, "name"=>"chainlink"}, {"quantity"=>0.0, "name"=>"cardano"}, {"quantity"=>0.0, "name"=>"polkadot"}, {"quantity"=>0.0, "name"=>"binancecoin"}, {"quantity"=>0.0, "name"=>"stellar"}, {"quantity"=>0.0, "name"=>"usd-coin"}, {"quantity"=>0.0, "name"=>"bitcoin-cash-sv"}, {"quantity"=>0.0, "name"=>"eos"}, {"quantity"=>0.0, "name"=>"monero"}, {"quantity"=>0.0, "name"=>"nem"}, {"quantity"=>0.0, "name"=>"wrapped-bitcoin"}, {"quantity"=>0.0, "name"=>"tron"}, {"quantity"=>0.0, "name"=>"tezos"}, {"quantity"=>0.0, "name"=>"okb"}, {"quantity"=>0.0, "name"=>"cdai"}, {"quantity"=>0.0, "name"=>"filecoin"}, {"quantity"=>0.0, "name"=>"crypto-com-chain"}, {"quantity"=>0.0, "name"=>"leo-token"}, {"quantity"=>0.0, "name"=>"cosmos"}, {"quantity"=>0.0, "name"=>"neo"}, {"quantity"=>0.0, "name"=>"dai"}, {"quantity"=>0.0, "name"=>"vechain"}, {"quantity"=>0.0, "name"=>"aave"}] into {"id"=>7, "email"=>"niko"}):
+    1: json.extract! user, :id, :email
+    2:   json.array! current_user.wallets do |wallet|
+    3:     json.quantity wallet.quantity
+    4:     json.name wallet.coin_id
+    5: 
+  
+app/views/api/users/_user.json.jbuilder:2:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262797857720'
+app/views/static_pages/root.html.erb:4:in `_app_views_static_pages_root_html_erb___958979461181707531_70262774895860'
+Started GET "/" for ::1 at 2020-12-13 18:32:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sn8dc7hzwHSXPDzld9INzQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.4ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (15.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (36.2ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 8.9ms)
+
+
+  
+ActionView::Template::Error (Can't merge [{"quantity"=>0.1e6, "name"=>"usd"}, {"quantity"=>0.0, "name"=>"bitcoin"}, {"quantity"=>0.0, "name"=>"ethereum"}, {"quantity"=>0.0, "name"=>"ripple"}, {"quantity"=>0.0, "name"=>"tether"}, {"quantity"=>0.0, "name"=>"litecoin"}, {"quantity"=>0.0, "name"=>"bitcoin-cash"}, {"quantity"=>0.0, "name"=>"chainlink"}, {"quantity"=>0.0, "name"=>"cardano"}, {"quantity"=>0.0, "name"=>"polkadot"}, {"quantity"=>0.0, "name"=>"binancecoin"}, {"quantity"=>0.0, "name"=>"stellar"}, {"quantity"=>0.0, "name"=>"usd-coin"}, {"quantity"=>0.0, "name"=>"bitcoin-cash-sv"}, {"quantity"=>0.0, "name"=>"eos"}, {"quantity"=>0.0, "name"=>"monero"}, {"quantity"=>0.0, "name"=>"nem"}, {"quantity"=>0.0, "name"=>"wrapped-bitcoin"}, {"quantity"=>0.0, "name"=>"tron"}, {"quantity"=>0.0, "name"=>"tezos"}, {"quantity"=>0.0, "name"=>"okb"}, {"quantity"=>0.0, "name"=>"cdai"}, {"quantity"=>0.0, "name"=>"filecoin"}, {"quantity"=>0.0, "name"=>"crypto-com-chain"}, {"quantity"=>0.0, "name"=>"leo-token"}, {"quantity"=>0.0, "name"=>"cosmos"}, {"quantity"=>0.0, "name"=>"neo"}, {"quantity"=>0.0, "name"=>"dai"}, {"quantity"=>0.0, "name"=>"vechain"}, {"quantity"=>0.0, "name"=>"aave"}] into {"id"=>7, "email"=>"niko"}):
+    1: json.extract! user, :id, :email
+    2:   json.array! current_user.wallets do |wallet|
+    3:     json.quantity wallet.quantity
+    4:     json.name wallet.coin_id
+    5: 
+  
+app/views/api/users/_user.json.jbuilder:2:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262814306160'
+app/views/static_pages/root.html.erb:4:in `_app_views_static_pages_root_html_erb___958979461181707531_70262814293480'
+Started GET "/" for ::1 at 2020-12-13 18:32:45 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sn8dc7hzwHSXPDzld9INzQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.4ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (4.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (Can't merge [{"quantity"=>0.1e6, "name"=>"usd"}, {"quantity"=>0.0, "name"=>"bitcoin"}, {"quantity"=>0.0, "name"=>"ethereum"}, {"quantity"=>0.0, "name"=>"ripple"}, {"quantity"=>0.0, "name"=>"tether"}, {"quantity"=>0.0, "name"=>"litecoin"}, {"quantity"=>0.0, "name"=>"bitcoin-cash"}, {"quantity"=>0.0, "name"=>"chainlink"}, {"quantity"=>0.0, "name"=>"cardano"}, {"quantity"=>0.0, "name"=>"polkadot"}, {"quantity"=>0.0, "name"=>"binancecoin"}, {"quantity"=>0.0, "name"=>"stellar"}, {"quantity"=>0.0, "name"=>"usd-coin"}, {"quantity"=>0.0, "name"=>"bitcoin-cash-sv"}, {"quantity"=>0.0, "name"=>"eos"}, {"quantity"=>0.0, "name"=>"monero"}, {"quantity"=>0.0, "name"=>"nem"}, {"quantity"=>0.0, "name"=>"wrapped-bitcoin"}, {"quantity"=>0.0, "name"=>"tron"}, {"quantity"=>0.0, "name"=>"tezos"}, {"quantity"=>0.0, "name"=>"okb"}, {"quantity"=>0.0, "name"=>"cdai"}, {"quantity"=>0.0, "name"=>"filecoin"}, {"quantity"=>0.0, "name"=>"crypto-com-chain"}, {"quantity"=>0.0, "name"=>"leo-token"}, {"quantity"=>0.0, "name"=>"cosmos"}, {"quantity"=>0.0, "name"=>"neo"}, {"quantity"=>0.0, "name"=>"dai"}, {"quantity"=>0.0, "name"=>"vechain"}, {"quantity"=>0.0, "name"=>"aave"}] into {"id"=>7, "email"=>"niko"}):
+    1: json.extract! user, :id, :email
+    2:   json.array! current_user.wallets do |wallet|
+    3:     json.quantity wallet.quantity
+    4:     json.name wallet.coin_id
+    5: 
+  
+app/views/api/users/_user.json.jbuilder:2:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262731948140'
+app/views/static_pages/root.html.erb:4:in `_app_views_static_pages_root_html_erb___958979461181707531_70262714233120'
+Started GET "/" for ::1 at 2020-12-13 18:33:02 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sn8dc7hzwHSXPDzld9INzQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (14.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (28.8ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 8.6ms)
+
+
+  
+ActionView::Template::Error (Can't merge [{"quantity"=>0.1e6, "name"=>"usd"}, {"quantity"=>0.0, "name"=>"bitcoin"}, {"quantity"=>0.0, "name"=>"ethereum"}, {"quantity"=>0.0, "name"=>"ripple"}, {"quantity"=>0.0, "name"=>"tether"}, {"quantity"=>0.0, "name"=>"litecoin"}, {"quantity"=>0.0, "name"=>"bitcoin-cash"}, {"quantity"=>0.0, "name"=>"chainlink"}, {"quantity"=>0.0, "name"=>"cardano"}, {"quantity"=>0.0, "name"=>"polkadot"}, {"quantity"=>0.0, "name"=>"binancecoin"}, {"quantity"=>0.0, "name"=>"stellar"}, {"quantity"=>0.0, "name"=>"usd-coin"}, {"quantity"=>0.0, "name"=>"bitcoin-cash-sv"}, {"quantity"=>0.0, "name"=>"eos"}, {"quantity"=>0.0, "name"=>"monero"}, {"quantity"=>0.0, "name"=>"nem"}, {"quantity"=>0.0, "name"=>"wrapped-bitcoin"}, {"quantity"=>0.0, "name"=>"tron"}, {"quantity"=>0.0, "name"=>"tezos"}, {"quantity"=>0.0, "name"=>"okb"}, {"quantity"=>0.0, "name"=>"cdai"}, {"quantity"=>0.0, "name"=>"filecoin"}, {"quantity"=>0.0, "name"=>"crypto-com-chain"}, {"quantity"=>0.0, "name"=>"leo-token"}, {"quantity"=>0.0, "name"=>"cosmos"}, {"quantity"=>0.0, "name"=>"neo"}, {"quantity"=>0.0, "name"=>"dai"}, {"quantity"=>0.0, "name"=>"vechain"}, {"quantity"=>0.0, "name"=>"aave"}] into {"id"=>7, "email"=>"niko"}):
+    1: json.extract! user, :id, :email
+    2:   json.array! current_user.wallets do |wallet|
+    3:     json.quantity wallet.quantity
+    4:     json.name wallet.coin_id
+    5: 
+  
+app/views/api/users/_user.json.jbuilder:2:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262799608260'
+app/views/static_pages/root.html.erb:4:in `_app_views_static_pages_root_html_erb___958979461181707531_70262815288900'
+Started GET "/" for ::1 at 2020-12-13 18:33:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sn8dc7hzwHSXPDzld9INzQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.4ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (5.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (Can't merge [{"quantity"=>0.1e6, "name"=>"usd"}, {"quantity"=>0.0, "name"=>"bitcoin"}, {"quantity"=>0.0, "name"=>"ethereum"}, {"quantity"=>0.0, "name"=>"ripple"}, {"quantity"=>0.0, "name"=>"tether"}, {"quantity"=>0.0, "name"=>"litecoin"}, {"quantity"=>0.0, "name"=>"bitcoin-cash"}, {"quantity"=>0.0, "name"=>"chainlink"}, {"quantity"=>0.0, "name"=>"cardano"}, {"quantity"=>0.0, "name"=>"polkadot"}, {"quantity"=>0.0, "name"=>"binancecoin"}, {"quantity"=>0.0, "name"=>"stellar"}, {"quantity"=>0.0, "name"=>"usd-coin"}, {"quantity"=>0.0, "name"=>"bitcoin-cash-sv"}, {"quantity"=>0.0, "name"=>"eos"}, {"quantity"=>0.0, "name"=>"monero"}, {"quantity"=>0.0, "name"=>"nem"}, {"quantity"=>0.0, "name"=>"wrapped-bitcoin"}, {"quantity"=>0.0, "name"=>"tron"}, {"quantity"=>0.0, "name"=>"tezos"}, {"quantity"=>0.0, "name"=>"okb"}, {"quantity"=>0.0, "name"=>"cdai"}, {"quantity"=>0.0, "name"=>"filecoin"}, {"quantity"=>0.0, "name"=>"crypto-com-chain"}, {"quantity"=>0.0, "name"=>"leo-token"}, {"quantity"=>0.0, "name"=>"cosmos"}, {"quantity"=>0.0, "name"=>"neo"}, {"quantity"=>0.0, "name"=>"dai"}, {"quantity"=>0.0, "name"=>"vechain"}, {"quantity"=>0.0, "name"=>"aave"}] into {"id"=>7, "email"=>"niko"}):
+    1: json.extract! user, :id, :email
+    2:   json.array! current_user.wallets do |wallet|
+    3:     json.quantity wallet.quantity
+    4:     json.name wallet.coin_id
+    5: 
+  
+app/views/api/users/_user.json.jbuilder:2:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262731718480'
+app/views/static_pages/root.html.erb:4:in `_app_views_static_pages_root_html_erb___958979461181707531_70262814470540'
+Started GET "/" for ::1 at 2020-12-13 18:33:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sn8dc7hzwHSXPDzld9INzQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:33:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sn8dc7hzwHSXPDzld9INzQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:34:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sn8dc7hzwHSXPDzld9INzQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 47ms (Views: 40.3ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:34:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sn8dc7hzwHSXPDzld9INzQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:34:55 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sn8dc7hzwHSXPDzld9INzQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "8fey1gliIKMn_ul6GW32qA"], ["updated_at", "2020-12-14 02:34:55.360304"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:35:01 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "JtdRYJo2p_hA25b90ljZAg"], ["updated_at", "2020-12-14 02:35:01.550529"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 218ms (Views: 7.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:35:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JtdRYJo2p_hA25b90ljZAg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (14.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.1ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 4.8ms)
+
+
+  
+ActionView::Template::Error (Can't merge [{"quantity"=>0.1e6, "name"=>"usd"}, {"quantity"=>0.0, "name"=>"bitcoin"}, {"quantity"=>0.0, "name"=>"ethereum"}, {"quantity"=>0.0, "name"=>"ripple"}, {"quantity"=>0.0, "name"=>"tether"}, {"quantity"=>0.0, "name"=>"litecoin"}, {"quantity"=>0.0, "name"=>"bitcoin-cash"}, {"quantity"=>0.0, "name"=>"chainlink"}, {"quantity"=>0.0, "name"=>"cardano"}, {"quantity"=>0.0, "name"=>"polkadot"}, {"quantity"=>0.0, "name"=>"binancecoin"}, {"quantity"=>0.0, "name"=>"stellar"}, {"quantity"=>0.0, "name"=>"usd-coin"}, {"quantity"=>0.0, "name"=>"bitcoin-cash-sv"}, {"quantity"=>0.0, "name"=>"eos"}, {"quantity"=>0.0, "name"=>"monero"}, {"quantity"=>0.0, "name"=>"nem"}, {"quantity"=>0.0, "name"=>"wrapped-bitcoin"}, {"quantity"=>0.0, "name"=>"tron"}, {"quantity"=>0.0, "name"=>"tezos"}, {"quantity"=>0.0, "name"=>"okb"}, {"quantity"=>0.0, "name"=>"cdai"}, {"quantity"=>0.0, "name"=>"filecoin"}, {"quantity"=>0.0, "name"=>"crypto-com-chain"}, {"quantity"=>0.0, "name"=>"leo-token"}, {"quantity"=>0.0, "name"=>"cosmos"}, {"quantity"=>0.0, "name"=>"neo"}, {"quantity"=>0.0, "name"=>"dai"}, {"quantity"=>0.0, "name"=>"vechain"}, {"quantity"=>0.0, "name"=>"aave"}] into {"id"=>7, "email"=>"niko"}):
+    1: json.extract! user, :id, :email
+    2:   json.array! user.wallets do |wallet|
+    3:     json.quantity wallet.quantity
+    4:     json.name wallet.coin_id
+    5: 
+  
+app/views/api/users/_user.json.jbuilder:2:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262814276520'
+app/views/static_pages/root.html.erb:4:in `_app_views_static_pages_root_html_erb___958979461181707531_70262814323920'
+Started GET "/" for ::1 at 2020-12-13 18:36:39 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JtdRYJo2p_hA25b90ljZAg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:36:57 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JtdRYJo2p_hA25b90ljZAg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:36:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JtdRYJo2p_hA25b90ljZAg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:37:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JtdRYJo2p_hA25b90ljZAg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (14.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 54ms (Views: 43.0ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:37:14 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JtdRYJo2p_hA25b90ljZAg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:37:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JtdRYJo2p_hA25b90ljZAg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (14.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 64ms (Views: 52.7ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:37:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JtdRYJo2p_hA25b90ljZAg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 34ms (Views: 30.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:37:57 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JtdRYJo2p_hA25b90ljZAg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (13.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 50ms (Views: 39.6ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:37:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JtdRYJo2p_hA25b90ljZAg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.4ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:38:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JtdRYJo2p_hA25b90ljZAg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:38:20 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JtdRYJo2p_hA25b90ljZAg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "wkka5gFs8Vyd0W1cUp80iA"], ["updated_at", "2020-12-14 02:38:20.756525"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  Rendered api/users/show.json.jbuilder (3.5ms)
+Completed 200 OK in 16ms (Views: 10.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/users" for ::1 at 2020-12-13 18:38:26 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko2", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko2"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "session_token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "niko2"], ["session_token", "SvC7OTb8R8OTT_MnG64giw"], ["password_digest", "$2a$12$wrG79LYodefrudnGIXIir.RrceUaXh6Gr.CCGUpSzAV7F/H1SYtnm"], ["created_at", "2020-12-14 02:38:27.044232"], ["updated_at", "2020-12-14 02:38:27.044232"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:86
+  [1m[36mWallet Create (0.4ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "usd"], ["user_id", 8], ["quantity", "100000.0"], ["wallet_address", "0913f162288d508db8e778c3affe76ee"], ["created_at", "2020-12-14 02:38:27.048127"], ["updated_at", "2020-12-14 02:38:27.048127"]]
+  ↳ app/models/user.rb:86
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "bitcoin"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "b91de90b2631370f6b9e6b9987160b04"], ["created_at", "2020-12-14 02:38:27.050388"], ["updated_at", "2020-12-14 02:38:27.050388"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.4ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "ethereum"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "ff3c1b0fb90c4ece2c4bb7ac18bc0431"], ["created_at", "2020-12-14 02:38:27.052510"], ["updated_at", "2020-12-14 02:38:27.052510"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "ripple"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "b1c7cd12ee0e0a9af7e99f0543aa6800"], ["created_at", "2020-12-14 02:38:27.054936"], ["updated_at", "2020-12-14 02:38:27.054936"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "tether"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "e1668c5594c46a63acf9ba50b8762426"], ["created_at", "2020-12-14 02:38:27.056768"], ["updated_at", "2020-12-14 02:38:27.056768"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "litecoin"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "d0dca658730b90507244ed3fdbba722c"], ["created_at", "2020-12-14 02:38:27.058524"], ["updated_at", "2020-12-14 02:38:27.058524"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.4ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "bitcoin-cash"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "07c93ae192b5a7b7fb1bbf3901011ccb"], ["created_at", "2020-12-14 02:38:27.060071"], ["updated_at", "2020-12-14 02:38:27.060071"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "chainlink"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "58bfff8dc9cd4572ca395981feda3f02"], ["created_at", "2020-12-14 02:38:27.062280"], ["updated_at", "2020-12-14 02:38:27.062280"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "cardano"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "6c0d162476de5a3436625290f83b182a"], ["created_at", "2020-12-14 02:38:27.064120"], ["updated_at", "2020-12-14 02:38:27.064120"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "polkadot"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "14b4b98f4dec8b26ef1bfa25a2ff2d72"], ["created_at", "2020-12-14 02:38:27.065795"], ["updated_at", "2020-12-14 02:38:27.065795"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.4ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "binancecoin"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "5f3a406b76761ff2bd68cc6cd4fcf218"], ["created_at", "2020-12-14 02:38:27.067662"], ["updated_at", "2020-12-14 02:38:27.067662"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.4ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "stellar"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "8f52d7433a50b5907f27ce2a89a85bf9"], ["created_at", "2020-12-14 02:38:27.069985"], ["updated_at", "2020-12-14 02:38:27.069985"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "usd-coin"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "5280e9b91dd186bb6c2dbdc41b3aa4fa"], ["created_at", "2020-12-14 02:38:27.072290"], ["updated_at", "2020-12-14 02:38:27.072290"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "bitcoin-cash-sv"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "38a5d5c7c25d9ed1730d0afbab095b26"], ["created_at", "2020-12-14 02:38:27.073987"], ["updated_at", "2020-12-14 02:38:27.073987"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "eos"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "71277fb3f53c301b2f84ee6b74524945"], ["created_at", "2020-12-14 02:38:27.075588"], ["updated_at", "2020-12-14 02:38:27.075588"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "monero"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "fcb4c521d9485a8c6304c56db1db30c8"], ["created_at", "2020-12-14 02:38:27.077601"], ["updated_at", "2020-12-14 02:38:27.077601"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "nem"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "05bab6f3c0b1a8d77781f6f861d307dd"], ["created_at", "2020-12-14 02:38:27.079653"], ["updated_at", "2020-12-14 02:38:27.079653"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "wrapped-bitcoin"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "4b87bd3bc5a182a37e114ea0fec9a1ce"], ["created_at", "2020-12-14 02:38:27.081291"], ["updated_at", "2020-12-14 02:38:27.081291"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "tron"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "77aa6423c739d6be5d6b9285cc21f9ed"], ["created_at", "2020-12-14 02:38:27.083114"], ["updated_at", "2020-12-14 02:38:27.083114"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "tezos"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "6c9d23ed2ba57f74f15474fe5f1d2f64"], ["created_at", "2020-12-14 02:38:27.084849"], ["updated_at", "2020-12-14 02:38:27.084849"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "okb"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "843bd0822a8c2ce4d75e59ad03fecac8"], ["created_at", "2020-12-14 02:38:27.086965"], ["updated_at", "2020-12-14 02:38:27.086965"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "cdai"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "fc93367b2caf6b397269451856d6ddfb"], ["created_at", "2020-12-14 02:38:27.088736"], ["updated_at", "2020-12-14 02:38:27.088736"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "filecoin"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "1a632dffd89e0abf5acad1b104a67966"], ["created_at", "2020-12-14 02:38:27.090419"], ["updated_at", "2020-12-14 02:38:27.090419"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "crypto-com-chain"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "509761a2c1f369f3c8a410709a8aafeb"], ["created_at", "2020-12-14 02:38:27.092148"], ["updated_at", "2020-12-14 02:38:27.092148"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "leo-token"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "e353ad17a43f356e162b0942396ff591"], ["created_at", "2020-12-14 02:38:27.094237"], ["updated_at", "2020-12-14 02:38:27.094237"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "cosmos"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "3ba84abef4597a99f0b6919596f111a3"], ["created_at", "2020-12-14 02:38:27.096133"], ["updated_at", "2020-12-14 02:38:27.096133"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "neo"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "3289a0f62b025c22ad5e57f26a7accc1"], ["created_at", "2020-12-14 02:38:27.097794"], ["updated_at", "2020-12-14 02:38:27.097794"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "dai"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "ff6f88695461e1e71730c2e8b513c82d"], ["created_at", "2020-12-14 02:38:27.099478"], ["updated_at", "2020-12-14 02:38:27.099478"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "vechain"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "034604cd706d4524bec7747ec6391b8e"], ["created_at", "2020-12-14 02:38:27.101564"], ["updated_at", "2020-12-14 02:38:27.101564"]]
+  ↳ app/models/user.rb:92
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:92
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("coin_id", "user_id", "quantity", "wallet_address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["coin_id", "aave"], ["user_id", 8], ["quantity", "0.0"], ["wallet_address", "a049d97d4f82a282df8442122aff708f"], ["created_at", "2020-12-14 02:38:27.103656"], ["updated_at", "2020-12-14 02:38:27.103656"]]
+  ↳ app/models/user.rb:92
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko2"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "BeqSqCxDTwJRcEqvrd8tBw"], ["updated_at", "2020-12-14 02:38:27.106798"], ["id", 8]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  Rendered api/users/show.json.jbuilder (3.6ms)
+Completed 200 OK in 282ms (Views: 9.7ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:38:46 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BeqSqCxDTwJRcEqvrd8tBw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (19.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 58ms (Views: 47.2ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:38:48 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BeqSqCxDTwJRcEqvrd8tBw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:39:24 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BeqSqCxDTwJRcEqvrd8tBw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:39:38 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BeqSqCxDTwJRcEqvrd8tBw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (12.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 50ms (Views: 39.9ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:39:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BeqSqCxDTwJRcEqvrd8tBw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:39:52 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BeqSqCxDTwJRcEqvrd8tBw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko2"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "h8q28I2kIiy6TBJojC3PYw"], ["updated_at", "2020-12-14 02:39:52.792912"], ["id", 8]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  Rendered api/users/show.json.jbuilder (4.3ms)
+Completed 200 OK in 18ms (Views: 11.7ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:39:58 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "nzbD-7OPKR2qrEpRz6yJGg"], ["updated_at", "2020-12-14 02:39:59.130595"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  Rendered api/users/show.json.jbuilder (3.9ms)
+Completed 200 OK in 224ms (Views: 10.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:40:18 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nzbD-7OPKR2qrEpRz6yJGg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:40:27 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nzbD-7OPKR2qrEpRz6yJGg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "aDb1NC5Qj1o160z1Se2gkQ"], ["updated_at", "2020-12-14 02:40:27.198682"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  Rendered api/users/show.json.jbuilder (3.9ms)
+Completed 200 OK in 18ms (Views: 11.1ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:40:32 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "CZZ6rmSMbxhuTPEsauOcsQ"], ["updated_at", "2020-12-14 02:40:32.762343"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  Rendered api/users/show.json.jbuilder (3.8ms)
+Completed 200 OK in 220ms (Views: 10.1ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:40:42 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CZZ6rmSMbxhuTPEsauOcsQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "e05Ov51wjeexJc7gPL_fDQ"], ["updated_at", "2020-12-14 02:40:42.647507"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  Rendered api/users/show.json.jbuilder (3.8ms)
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:40:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 27ms (Views: 24.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:40:48 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko2", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko2"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko2"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["updated_at", "2020-12-14 02:40:48.895237"], ["id", 8]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  Rendered api/users/show.json.jbuilder (3.4ms)
+Completed 200 OK in 220ms (Views: 9.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:41:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (13.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 52ms (Views: 40.5ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:41:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (3.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 36ms (Views: 32.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:42:26 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (13.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 55ms (Views: 43.5ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:42:28 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:42:30 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko2"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ljnbgxQh-SNIoUtljKGy0w"], ["updated_at", "2020-12-14 02:42:30.032595"], ["id", 8]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (4.5ms)
+  Rendered api/users/show.json.jbuilder (5.8ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `wallets' for nil:NilClass):
+    1: json.extract! user, :id, :email
+    2: json.wallets do  
+    3: json.array! current_user.wallets do |wallet|
+    4:     json.quantity wallet.quantity
+    5:     json.name wallet.coin_id
+    6: 
+  
+app/views/api/users/_user.json.jbuilder:3:in `block in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262743350940'
+app/views/api/users/_user.json.jbuilder:2:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262743350940'
+app/views/api/users/show.json.jbuilder:1:in `_app_views_api_users_show_json_jbuilder___2661982111605522380_70262725968720'
+app/controllers/api/sessions_controller.rb:20:in `destroy'
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:42:31 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:42:32 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:42:32 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:42:32 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:42:32 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:42:33 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:42:34 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:42:35 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:42:35 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:42:36 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:42:37 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0wZv4bBZ_p5h2Rk9_KWlag"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 30ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:42:43 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "7QTtG1jhnJw_QcOc4_9iNA"], ["updated_at", "2020-12-14 02:42:44.163014"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7QTtG1jhnJw_QcOc4_9iNA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.7ms)
+  Rendered api/users/show.json.jbuilder (4.2ms)
+Completed 200 OK in 222ms (Views: 10.0ms | ActiveRecord: 2.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:43:29 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7QTtG1jhnJw_QcOc4_9iNA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "m-T3KYXGS1Tnf4A2sDY5JQ"], ["updated_at", "2020-12-14 02:43:29.077879"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (5.0ms)
+  Rendered api/users/show.json.jbuilder (6.2ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `wallets' for nil:NilClass):
+    1: json.extract! user, :id, :email
+    2: json.wallets do  
+    3: json.array! current_user.wallets do |wallet|
+    4:     json.quantity wallet.quantity
+    5:     json.name wallet.coin_id
+    6: 
+  
+app/views/api/users/_user.json.jbuilder:3:in `block in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262714312420'
+app/views/api/users/_user.json.jbuilder:2:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262714312420'
+app/views/api/users/show.json.jbuilder:1:in `_app_views_api_users_show_json_jbuilder___2661982111605522380_70262796561760'
+app/controllers/api/sessions_controller.rb:20:in `destroy'
+Started GET "/" for ::1 at 2020-12-13 18:43:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7QTtG1jhnJw_QcOc4_9iNA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:44:03 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "GcwQ1q6WtHO-_H5_U-D5-g"], ["updated_at", "2020-12-14 02:44:04.069674"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "GcwQ1q6WtHO-_H5_U-D5-g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (13.7ms)
+  Rendered api/users/show.json.jbuilder (15.2ms)
+Completed 200 OK in 238ms (Views: 17.2ms | ActiveRecord: 9.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:44:27 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "GcwQ1q6WtHO-_H5_U-D5-g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "jtjRNdTzuKABB6jqKUagBw"], ["updated_at", "2020-12-14 02:44:27.670611"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (4.7ms)
+  Rendered api/users/show.json.jbuilder (5.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `wallets' for nil:NilClass):
+    1: json.extract! user, :id, :email
+    2: json.wallets do  
+    3: json.array! current_user.wallets do |wallet|
+    4:     json.quantity wallet.quantity
+    5:     json.name wallet.coin_id
+    6: 
+  
+app/views/api/users/_user.json.jbuilder:3:in `block in _app_views_api_users__user_json_jbuilder__1053123932136694001_70262813111800'
+app/views/api/users/_user.json.jbuilder:2:in `_app_views_api_users__user_json_jbuilder__1053123932136694001_70262813111800'
+app/views/api/users/show.json.jbuilder:1:in `_app_views_api_users_show_json_jbuilder___2661982111605522380_70262813145860'
+app/controllers/api/sessions_controller.rb:20:in `destroy'
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:44:37 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "GcwQ1q6WtHO-_H5_U-D5-g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:44:39 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "GcwQ1q6WtHO-_H5_U-D5-g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:44:43 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "RErYmS7RUJPajmcG3wH-Rg"], ["updated_at", "2020-12-14 02:44:43.896440"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  Rendered api/users/show.json.jbuilder (3.5ms)
+Completed 200 OK in 222ms (Views: 9.9ms | ActiveRecord: 3.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:44:55 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RErYmS7RUJPajmcG3wH-Rg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "BbZOfcZChm0MvlKsub8lyQ"], ["updated_at", "2020-12-14 02:44:55.424744"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  Rendered api/users/show.json.jbuilder (4.0ms)
+Completed 200 OK in 17ms (Views: 11.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:45:17 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko2", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko2"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko2"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "6WdLUkB8gCSRYEXKhH2B1Q"], ["updated_at", "2020-12-14 02:45:17.249120"], ["id", 8]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  Rendered api/users/show.json.jbuilder (3.5ms)
+Completed 200 OK in 220ms (Views: 9.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:47:28 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6WdLUkB8gCSRYEXKhH2B1Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (3.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:47:43 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6WdLUkB8gCSRYEXKhH2B1Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko2"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "U8NWsIFRhZpjCrPGNS4tUA"], ["updated_at", "2020-12-14 02:47:43.621385"], ["id", 8]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  Rendered api/users/show.json.jbuilder (4.0ms)
+Completed 200 OK in 19ms (Views: 11.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:48:38 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 30ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:48:39 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 35ms (Views: 31.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:48:48 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "8c96AnDednp43do598Rnhw"], ["updated_at", "2020-12-14 02:48:49.072667"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  Rendered api/users/show.json.jbuilder (12.6ms)
+Completed 200 OK in 233ms (Views: 18.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:52:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8c96AnDednp43do598Rnhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (3.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 348ms (Views: 344.8ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:52:53 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8c96AnDednp43do598Rnhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ap5UWWqWVKik0cU-PULvwg"], ["updated_at", "2020-12-14 02:52:53.295051"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  Rendered api/users/show.json.jbuilder (3.8ms)
+Completed 200 OK in 19ms (Views: 12.5ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:53:35 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko2", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko2"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko2"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "myDSfvU2b5F4he3pdxC6OA"], ["updated_at", "2020-12-14 02:53:35.780653"], ["id", 8]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  Rendered api/users/show.json.jbuilder (3.6ms)
+Completed 200 OK in 219ms (Views: 10.1ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-12-13 18:53:50 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "myDSfvU2b5F4he3pdxC6OA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko2"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "M8_S3rCRFoZtQ_8YFiqsRQ"], ["updated_at", "2020-12-14 02:53:50.778307"], ["id", 8]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  Rendered api/users/show.json.jbuilder (3.6ms)
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/session" for ::1 at 2020-12-13 18:54:05 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"niko", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "niko"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "niko"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "LibT9G6wFTZueA1l1BN3JQ"], ["updated_at", "2020-12-14 02:54:05.999502"], ["id", 7]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  Rendered api/users/show.json.jbuilder (3.2ms)
+Completed 200 OK in 222ms (Views: 10.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-12-13 18:54:23 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LibT9G6wFTZueA1l1BN3JQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mWallet Load (0.4ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (3.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 96ms (Views: 92.1ms | ActiveRecord: 1.0ms)
+
+
