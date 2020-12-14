@@ -13,47 +13,49 @@ class Api::OrdersController < ApplicationController
         user_usd_wallet = Wallet.find_wallet(order_params[:user_id], "usd")
 
         if order_params[:type] == "BUY"
-            if order_params[:total_value] > user_usd_wallet
+            if order_params[:total_value].to_f > user_usd_wallet.quantity
                 render json: ['Not enough USD to make purchase'], status: 422   
             else
-                user_usd_wallet.update_quantity(order_params[:total_value] * -1)
-                user_wallet.update_quantity(order_params[:quantity])
+                user_usd_wallet.update_quantity(order_params[:total_value].to_f * -1)
+                user_wallet.update_quantity(order_params[:quantity].to_f)
 
                 @order = Order.new(
                     wallet_id: user_wallet.id,
-                    user_id: order_params[:user_id],
-                    quantity: order_params[:quantity],                             
-                    price: order_params[:price],
-                    total_value: order_params[:total_value],
+                    # user_id: order_params[:user_id],
+                    coin_id: order_params[:coin_id],
+                    quantity: order_params[:quantity].to_f,                             
+                    price: order_params[:price].to_f,
+                    total_value: order_params[:total_value].to_f,
                     transaction_type: 'BUY'
                 )
             
-                @order.save
+                @order.save!
             end
 
         elsif order_params[:type] == "SELL"
-            if order_params[:quantity] > user_wallet
+            if order_params[:quantity].to_f > user_wallet.quantity
                 render json: ['Not enough to sell'], status: 422   
             else
-                user_usd_wallet.update_quantity(order_params[:total_value])
-                user_wallet.update_quantity(order_params[:quantity] * -1)
+                user_usd_wallet.update_quantity(order_params[:total_value].to_f)
+                user_wallet.update_quantity(order_params[:quantity].to_f * -1)
 
                 @order = Order.new(
                     wallet_id: user_wallet.id,
-                    user_id: order_params[:user_id]
-                    quantity: order_params[:quantity],                             
-                    price: order_params[:price],
-                    total_value: order_params[:total_value]
+                    # user_id: order_params[:user_id],
+                    coin_id: order_params[:coin_id],
+                    quantity: order_params[:quantity].to_f,                             
+                    price: order_params[:price].to_f,
+                    total_value: order_params[:total_value].to_f,
                     transaction_type: 'SELL'
                 )
             
-                @order.save
+                @order.save!
             end
+        
+        else
+
+            render json: ['Insufficient funds and/or invalid params'], status: 422
         end
-     else
-
-        render json: ['Insufficient funds and/or invalid params'], status: 422
-
     end
 
 

@@ -14,8 +14,8 @@ class User < ApplicationRecord
         class_name: :Wallet
 
     has_many :orders,
-        foreign_key: :user_id,
-        class_name: :Order
+        through: :wallets,
+        source: :orders
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email.downcase)

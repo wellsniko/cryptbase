@@ -5,8 +5,8 @@ class Order < ApplicationRecord
         foreign_key: :wallet_id,
         class_name: :Wallet
 
-    belongs_to :user,
-        foreign_key: :user_id,
-        class_name: :User
+    has_one :user,
+        through: :wallet,
+        source: :user
 
 end

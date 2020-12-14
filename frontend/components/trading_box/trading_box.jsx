@@ -29,7 +29,7 @@ class TradingBox extends React.Component {
             user_id: userId,
             type: "BUY" 
         };
-        debugger
+        // debugger
         this.props.buyCoin(orderParams);                   
         alert(`You purchased ${quantity} ${coin.symbol}`);
 
