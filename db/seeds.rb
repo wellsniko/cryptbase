@@ -9,6 +9,7 @@
 Coin.destroy_all
 User.destroy_all
 Wallet.destroy_all
+Order.delete_all
 
 # bitcoin = Coin.create({
 #     symbol: 'BTC',
