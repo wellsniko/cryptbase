@@ -23,14 +23,14 @@ class PriceDetail extends React.Component {
     render() {
        
         const { coinId, coin} = this.props;
-        // console.log(coin)
+        // console.log(coin) 
 
         return (
             <>
-              <div className="main-user-page">
+            <div className="main-user-page">
               <div className="main-user-page-2">
-                
-                <div className="price-detail-title">
+                <div className="price-detail-body">
+                    <div className="price-detail-title">
                    
                     <h1>{coin.name}</h1>
                     <h1>{coin.symbol}</h1>
@@ -45,6 +45,7 @@ class PriceDetail extends React.Component {
                             <TradingBoxContainer coin={coin} coinId={coinId}/>
                         </div>
                     </section>
+                    </div>
                 </div>
             </div>
             </>
