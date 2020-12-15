@@ -37,14 +37,16 @@ class PriceDetail extends React.Component {
                     <h1>{coin.price}</h1>
                     
                 </div>
-                    <section className="detail-main-section">
-                        <div id="main-chart">
-                        Charts And Detail Page goes Here
+                    <div className="detail-main-section">
+                        <div className="detail-page-separate">
+                            <div id="main-chart">
+                            Charts And Detail Page goes Here
+                            </div>
+                            <div id="detail-buy-box">
+                                <TradingBoxContainer coin={coin} coinId={coinId}/>
+                            </div>
                         </div>
-                        <div id="detail-buy-box">
-                            <TradingBoxContainer coin={coin} coinId={coinId}/>
-                        </div>
-                    </section>
+                    </div>
                     </div>
                 </div>
             </div>

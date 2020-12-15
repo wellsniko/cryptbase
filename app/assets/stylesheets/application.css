@@ -644,10 +644,12 @@ div {
 
 .detail-main-section {
     display: flex;
-    -webkit-box-align: stretch;
-    align-items: stretch;
-    margin-bottom: 32px;
-    flex-direction: row;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    flex: 1 1 auto;
+    padding: 0px 24px;
 }
 
 #main-chart{
@@ -1178,4 +1180,12 @@ ul li a {
     position: relative;
     width: 100%;
     height: 392px;
+}
+
+.detail-page-separate {
+    display: flex;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    margin-bottom: 32px;
+    flex-direction: row;
 }
