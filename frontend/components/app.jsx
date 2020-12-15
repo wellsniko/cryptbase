@@ -8,7 +8,7 @@ import HomepageContainer from './homepage/homepage_container'
 import NavContainer from './nav/nav_container';
 import Nav2Container from './nav2/nav2_container';
 import {Link, Redirect, Switch, HashRouter, Route} from 'react-router-dom'
-import UserHomeContainer from './user_home/user_home_container'
+
 import PriceIndexContainer from './prices/price_index_container'
 import SideNavContainer from './side_nav/side_nav_container'
 import TopNavContainer from './top_nav/top_nav_container'
@@ -22,17 +22,17 @@ const App = () => (
           <SideNavContainer/>
             <TopNavContainer/>
           <Switch>
-            
             <Route exact path="/" component={HomepageContainer}/>
             <AuthRoute exact path="/login" component={LogInFormContainer}/>
             <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
-            <ProtectedRoute exact path="/dashboard" component={DashboardContainer}/>
-            <ProtectedRoute exact path="/prices" component={PriceIndexContainer}/>
-            <ProtectedRoute exact path="/prices/:coinId" component={PriceDetailContainer}/>
+         
+                <ProtectedRoute exact path="/dashboard" component={DashboardContainer}/>
+                <ProtectedRoute exact path="/prices" component={PriceIndexContainer}/>
+                <ProtectedRoute exact path="/prices/:coinId" component={PriceDetailContainer}/>
+        
           </Switch>
-
     </>
-    
+     
 );
 
 export default App;   

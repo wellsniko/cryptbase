@@ -30,6 +30,7 @@ class Api::OrdersController < ApplicationController
                 )
             
                 @order.save!
+                # render :json {}
             end
 
         elsif order_params[:type] == "SELL"
@@ -50,8 +51,12 @@ class Api::OrdersController < ApplicationController
                 )
             
                 @order.save!
+                
+                # render :json { 
+                #     current_user.id {wallets : order_params[:coin_id] { quantity: user_wallet.quantity }}, 
+                #  }
             end
-        
+                
         else
 
             render json: ['Insufficient funds and/or invalid params'], status: 422

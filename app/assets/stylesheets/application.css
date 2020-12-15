@@ -15,6 +15,7 @@
  */
  /* @import url(//db.onlinewebfonts.com/c/225b22c7518d7553e706ace4943e37d7?family=FF+Daxline); */
 
+ 
 header {
     display: flex;
     align-items: center;
@@ -612,6 +613,132 @@ ul li a {
     line-height: 1.5;
 }
 
+/* 
+.user-box {
+    display: flex;
+    flex: 1 1 auto;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 24px;
+    background: rgb(246, 249, 252);
+    left: 235px;
+    top: 65px;
+} */
+
+.portfolio-value {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    margin: 0px;
+    padding: 500px;
+    width: 100%;
+    border: 5px;
+    border-color: grey;
+    left: 235px;
+    top: 65px;
+}
+
+.main-user-page {
+    /* flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    opacity: 1;
+    flex: 1 1 auto;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
+    background: rgb(246, 249, 252);
+    left: 235px;
+    top: 65px;
+    padding: 0px 24px;
+    .iSFnzL { */
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    margin-left: 237px;
+    padding-top: 68px;
+    min-height: var(--full-view-height,100vh);
+/* } */
+    
+}
+
+.main-user-page-2 {
+    display: flex;
+    flex: 1 1 auto;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 24px;
+    background: rgb(246, 249, 252);
+}
+
+.price-detail-page *. .price-index * {
+  box-sizing: inherit;
+}
+
+
+::selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}
+
+.price-detail-title {
+    border-bottom-color: rgb(53, 57, 59);
+    width: 100%;
+    margin: 40px 0px;
+    border-bottom: 1px solid rgb(236, 239, 241);
+    padding: 0px 24px;
+}
+
+
+
+.detail-main-section {
+    display: flex;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    margin-bottom: 32px;
+    flex-direction: row;
+}
+
+#main-chart{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-color: rgb(53, 57, 59);
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    box-shadow: rgba(14, 41, 66, 0.02) 0px 4px 12px 0px;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    min-height: 310px;
+    border: 1px solid rgb(236, 239, 241);
+    background: rgb(255, 255, 255);
+    overflow: visible;
+    border-radius: 6px;
+    box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
+}
+
+:root {
+    --darkreader-neutral-background: #131516;
+    --darkreader-neutral-text: #d8d4cf;
+    --darkreader-selection-background: #004daa;
+    --darkreader-selection-text: #e8e6e3;
+}
+
+#detail-buy-box {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 370px;
+    margin-left: 24px;
+}
+
+
+
 .home-coins {
     display: flex;
     flex-shrink: 0;
@@ -719,105 +846,193 @@ ul li a {
 }
 
 
-.user-box {
+/* price index price_index */
+
+.price-index-title {
+    /* border-bottom-color: rgb(53, 57, 59); */
+
     display: flex;
-    flex: 1 1 auto;
-    -webkit-box-align: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0px 24px;
-    background: rgb(246, 249, 252);
-    left: 235px;
-    top: 65px;
+    align-items: flex-end;
+    margin-bottom: 32px;
 }
 
-.portfolio-value {
+.price-index-body {
     display: flex;
     flex-direction: column;
     flex: 0 1 auto;
     margin: 0px;
-    padding: 500px;
+    padding: 25px 0px;
     width: 100%;
-    border: 5px;
-    border-color: grey;
-    left: 235px;
-    top: 65px;
+    max-width: 1450px;
 }
 
-.price-detail-page {
-    flex: 1 1 0%;
+.price-index-section {
+    width: 100%;
+}
+
+.price-index {
+    border: 1px solid rgb(236, 239, 241);
+    box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
+    width: auto;
+    border-radius: 5px;
+}
+
+#price-table {
+    width: 100%;
+    padding: 0px;
+    background: rgb(255, 255, 255);
+    border-spacing: 0px;
+    border-collapse: separate;
+    caption-side: top;
+}
+
+
+#t2-head {
+    border: none;
+    display: table-header-group;
+    vertical-align: middle;
+}
+
+#t2-head-row {
+    border-bottom: 1px solid rgb(236, 239, 241);
+}
+
+.t2-h1 {
+    padding: 16px 48px 16px 0px;
+    text-align: left;
+}
+/* .t2-h1 label {
+    width: 100%;
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: rgba(17, 51, 83, 0.6);
+    transition: color 80ms ease-in-out 0s;
+} */
+
+.t2-h1:first-child {
+    padding-left: 32px;
+}
+
+.div-t2-h1{
     display: flex;
-    flex-direction: column;
-    position: relative;
-    opacity: 1;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.label-t2-h1 {
+    font-weight: 400;
+    white-space: nowrap;
+     color: rgba(17, 51, 83, 0.6);
+    font-size: 14px;
+}
+
+th label {
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.t2-h2 {
+    padding: 16px 48px 16px 0px;
+    cursor: pointer;
+    text-align: left;
+}
+
+/* .dpbZwc {
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: rgba(17, 51, 83, 0.6);
+    transition: color 80ms ease-in-out 0s;
+} */
+
+.t2-body {
+    padding: 0px;
+    border: none;
+    transition: opacity 300ms ease 0s;
+}
+
+.price-index-row {
+    background: rgb(255, 255, 255);
+    user-select: none;
+}
+
+.t2-r1:first-child {
+    padding-left: 32px;
+}
+
+.t2-r1 {
+    padding: 14px 48px 14px 0px;
+    border-top: 1px solid rgb(236, 239, 241);
+    cursor: pointer;
+    min-width: 140px;
+}
+
+.index-link {
+    display: flex;
     flex: 1 1 auto;
     -webkit-box-align: center;
     align-items: center;
-    flex-direction: column;
-    padding: 0px;
-    background: rgb(246, 249, 252);
-    left: 235px;
-    top: 65px;
-}
-
-.price-detail-page * {
-  box-sizing: inherit;
-}
-
-
-::selection {
-    background-color: #004daa !important;
-    color: #e8e6e3 !important;
-}
-
-.price-detail-title {
-    border-bottom-color: rgb(53, 57, 59);
-    width: 100%;
-    margin: 40px 0px;
-    border-bottom: 1px solid rgb(236, 239, 241);
-    padding: 0px 24px;
-}
-
-
-
-.detail-main-section {
-    display: flex;
-    -webkit-box-align: stretch;
-    align-items: stretch;
-    margin-bottom: 32px;
     flex-direction: row;
 }
 
-#main-chart{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border-color: rgb(53, 57, 59);
-    background-image: initial;
-    background-color: rgb(24, 26, 27);
-    box-shadow: rgba(14, 41, 66, 0.02) 0px 4px 12px 0px;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    min-height: 310px;
-    border: 1px solid rgb(236, 239, 241);
-    background: rgb(255, 255, 255);
-    overflow: visible;
-    border-radius: 6px;
-    box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
+.index-image {
+    width: 36px;
+    height: 36px;
 }
 
-:root {
-    --darkreader-neutral-background: #131516;
-    --darkreader-neutral-text: #d8d4cf;
-    --darkreader-selection-background: #004daa;
-    --darkreader-selection-text: #e8e6e3;
+#index-trade-button {
+    position: relative;
+    width: auto;
+    margin: 0px;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 80ms ease-in-out 0s;
+    padding: 12px 16px;
+    font-size: 14px;
+    border: 1px solid rgb(22, 82, 240);
+    background-color: rgb(22, 82, 240);
 }
 
-#detail-buy-box {
+#price-index-star {
+    fill: rgb(244, 198, 34);
+    stroke-width: 1px;
+    cursor: pointer;
+}
+
+.price-index-title {
     display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    width: 370px;
-    margin-left: 24px;
+    align-items: flex-end;
+    margin-bottom: 32px;
+}
+
+#in-last-24 {
+    display: block;
+    color: rgba(17, 51, 83, 0.6);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#market-is {
+    margin: 8px 0px 0px;
+    color: rgb(5, 15, 25);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#nu-index-trade-button {
+    position: relative;
+    width: auto;
+    margin: 0px;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 80ms ease-in-out 0s;
+    padding: 12px 16px;
+    font-size: 14px;
+    border: 1px solid rgb(5, 177, 105);
+    background-color: rgb(5, 177, 105);
 }

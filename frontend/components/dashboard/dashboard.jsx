@@ -12,11 +12,19 @@ class CoinIndex extends React.Component {
   render() {
     const { coins} = this.props;
     return (
-        <div className="user-box">
-            <div className="portfolio-value">
+        <div className="main-user-page">
+          <div className="main-user-page-2">
+                
+               <div className="portfolio-value">
                 <h1>-User Portfolio Value-  <br/> Click Prices on left.</h1>
-            </div>
+            </div> 
+                
+        
+          </div>
         </div>
+        
+            
+       
     );
   }
 }

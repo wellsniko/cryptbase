@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';  
-
+import { fetchUser } from '../../actions/session_actions';
 import { buyCoin, sellCoin } from '../../actions/trading_actions';
 import TradingBox from './trading_box';
 
@@ -10,9 +10,10 @@ const mapStateToProps = (state, ownProps) => {
   const buyingPower = state.entities.users[userId].wallets.usd.quantity
   const coinId = ownProps.coinId
   const current_price = ownProps.coin.current_price
+  
 
   return ({
-    buyingPower, userId, coinId, current_price
+    buyingPower, userId, coinId, current_price, state
   });
 };
 
@@ -20,7 +21,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return ({
     buyCoin: (orderParams) => dispatch(buyCoin(orderParams)),
-    sellCoin: (orderParams) => dispatch(sellCoin(orderParams))
+    sellCoin: (orderParams) => dispatch(sellCoin(orderParams)),
+    fetchUser: (userId) => dispatch(fetchUser(userId))
   });
 };
 

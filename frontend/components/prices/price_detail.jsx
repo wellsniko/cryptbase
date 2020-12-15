@@ -26,7 +26,9 @@ class PriceDetail extends React.Component {
         // console.log(coin)
 
         return (
-            <div className="price-detail-page">
+            <>
+              <div className="main-user-page">
+              <div className="main-user-page-2">
                 
                 <div className="price-detail-title">
                    
@@ -43,7 +45,9 @@ class PriceDetail extends React.Component {
                             <TradingBoxContainer coin={coin} coinId={coinId}/>
                         </div>
                     </section>
+                </div>
             </div>
+            </>
         );
     }
 }

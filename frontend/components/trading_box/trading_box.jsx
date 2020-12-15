@@ -16,10 +16,11 @@ class TradingBox extends React.Component {
         this.setState({quantity: e.target.value});
     }
 
+    
 
     handleBuy() {
         
-        const { userId, coinId, current_price, coin } = this.props;
+        const { userId, coinId, current_price, coin, fetchUser } = this.props;
         const { quantity } = this.state;
         const orderParams = { 
             quantity: Number(quantity),
@@ -31,14 +32,16 @@ class TradingBox extends React.Component {
         };
         // debugger
         this.props.buyCoin(orderParams);                   
-        alert(`You purchased ${quantity} ${coin.symbol}`);
-
+        // alert(`You purchased ${quantity} ${coin.symbol}`);
+        setTimeout(() => fetchUser(userId), 100)
+        
     }
 
 
 
     render() {
         // console.log(this.props.current_price)
+       
         return (
         <div >
             <div  >&times;</div>
@@ -48,6 +51,8 @@ class TradingBox extends React.Component {
             <input type="text" placeholder={this.state.quantity} onChange={this.onQuantityChange}/>
             <button onClick={this.handleBuy}>BUY</button>
             <button>SELL</button>
+
+            <h1>you own {this.props.state.entities.users[this.props.userId].wallets[this.props.coinId].quantity} of {this.props.coin.name}</h1>
         </div>
         );
   }
