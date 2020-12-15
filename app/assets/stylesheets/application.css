@@ -622,7 +622,7 @@ div {
     background: rgb(246, 249, 252);
 }
 
-.price-detail-page *. .price-index * {
+.price-detail-page *, .price-index * {
   box-sizing: inherit;
 }
 
