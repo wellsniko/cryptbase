@@ -7,7 +7,7 @@ class TradingBox extends React.Component {
     this.state = {
       quantity: "Quantity"
     }
-    // console.log(this.state)
+ 
     this.handleBuy = this.handleBuy.bind(this);
     this.onQuantityChange = this.onQuantityChange.bind(this);
     this.handleSell = this.handleSell.bind(this);
@@ -61,7 +61,7 @@ class TradingBox extends React.Component {
 
 
     render() {
-        // console.log(this.props.current_price)
+   
        
         return (
         <div >

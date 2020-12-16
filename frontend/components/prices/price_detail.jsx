@@ -2,28 +2,47 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import TradingBoxContainer from '../trading_box/trading_box_container'
 {/* <Link to={`/price/${props.coin.id}`}></Link> */}
-
+import ChartDetailContainer from '../charts/chart_detail_container'
+import { Line } from "react-chartjs-2";
 
 class PriceDetail extends React.Component {
-    	// constructor(props) {
-		// super(props);
-        //     this.props.fetchCoinPriceData(this.props.coinId)
-		// }
-    // componentWillMount() {
-    //     // console.log(this.props)
-    //     //  debugger
-    //     this.props.fetchCoinPriceData(this.props.coinId); 
-    // }
+ 
 
     componentDidMount() {
-        // console.log(this.props)
+        
         this.props.fetchCoinPriceData(this.props.coinId);   
+        this.props.fetchCoin24hrData(this.props.coinId)
     }
 
     render() {
        
         const { coinId, coin} = this.props;
-        // console.log(coin) 
+        
+        // const priceData = []
+
+        //     coin.prices.forEach(day => {
+        //         priceData.push(day[1])
+        //     })
+                
+        // const dateData = []
+
+        //     coin.prices.forEach(day => {
+        //         dateData.push(day[0])
+        //     })
+            
+
+        //     const data = {
+        //         labels: dateData,
+        //         datasets: [
+        //         {
+        //         label: "First dataset",
+        //         data: priceData,
+        //         fill: true,
+        //         backgroundColor: "rgba(75,192,192,0.2)",
+        //         borderColor: "rgba(75,192,192,1)"
+        //         }
+        //     ]
+        //     }
 
         return (
             <>
@@ -40,7 +59,7 @@ class PriceDetail extends React.Component {
                     <div className="detail-main-section">
                         <div className="detail-page-separate">
                             <div id="main-chart">
-                            Charts And Detail Page goes Here
+                            <ChartDetailContainer coin={coin}/>
                             </div>
                             <div id="detail-buy-box">
                                 <TradingBoxContainer coin={coin} coinId={coinId}/>

@@ -6,7 +6,7 @@ const usersReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
-    case RECEIVE_ORDER_DATA:
+    // case RECEIVE_ORDER_DATA:
       
 			// newState = merge({}, oldState, { [action.orderData.id]: action.userData });  {3: {bitcoin: {4: }
 			// // debugger

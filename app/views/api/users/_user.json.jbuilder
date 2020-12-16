@@ -14,7 +14,12 @@ json.wallets do
     end
 end
 
-
+# json.portoflio do 
+#     user.orders.each do |order|
+#         json.set! order.id
+#         json
+#     end
+# end
             # json.orders do
             #     wallet.orders.each do |order|
             #         json.set! order.coin_id do

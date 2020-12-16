@@ -1,20 +1,29 @@
-import {RECEIVE_COIN} from '../actions/coin_actions';
+import {RECEIVE_COIN, RECEIVE_HISTORICAL_PRICES} from '../actions/coin_actions';
 
 
 const CoinReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
-
-  if (action.type === RECEIVE_COIN) {
-      console.log(action.coin)
-      // console.log(action.coin, action.coin.id)
-      return action.coin[0]
-  } else {
+  switch (action.type){
+  case RECEIVE_COIN: 
+      return Object.assign({}, oldState, action.coin[0])
+  case RECEIVE_HISTORICAL_PRICES:
+    return Object.assign({}, oldState, action.data );
+  default:
     return oldState;
+  
   }
-
-};
-
+// };
+//   switch (action.type) {
+//     case RECEIVE_SESSION_ERRORS:
+//       return action.errors;
+//     case RECEIVE_CURRENT_USER:
+//       return [];
+//     case REMOVE_ERRORS:
+//       return [];
+//     default:
+//       return state;
+//   }
+// };
+}
 export default CoinReducer;
- 
 
-// object = {1 : {name: "btc", id: "bitcoin"}}

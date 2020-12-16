@@ -4,8 +4,7 @@ import { buyCoin, sellCoin } from '../../actions/trading_actions';
 import TradingBox from './trading_box';
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(ownProps)
-    // console.log(this.state)
+  
   const userId = state.session.id;
   const buyingPower = state.entities.users[userId].wallets.usd.quantity
   const coinId = ownProps.coinId

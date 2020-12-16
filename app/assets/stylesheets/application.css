@@ -655,15 +655,16 @@ div {
 #main-chart{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    /* width: 100%; */
     border-color: rgb(53, 57, 59);
     background-image: initial;
     background-color: rgb(24, 26, 27);
     box-shadow: rgba(14, 41, 66, 0.02) 0px 4px 12px 0px;
     display: flex;
     flex: 0 0 auto;
-    flex-direction: column;
-    min-height: 310px;
+    height: 522;
+    width: 1088;
+    /* min-height: 310px; */
     border: 1px solid rgb(236, 239, 241);
     background: rgb(255, 255, 255);
     overflow: visible;
@@ -1188,4 +1189,15 @@ ul li a {
     align-items: stretch;
     margin-bottom: 32px;
     flex-direction: row;
+}
+
+#chart-component canvas, #main-chart canvas{
+    width: 1088 !important;
+    height: 362 !important;
+   
+}
+
+.chartjs-size-monitor {
+    width: 1088 !important;
+    height: 362 !important;
 }

@@ -16,7 +16,7 @@ const CoinsReducer = (oldState = {}, action) => {
     //     {[coin.id]:coin}
     // ))
     // case RECEIVE_COIN:
-    //   // console.log(action.coin, action.coin.id)
+ 
     //   return Object.assign({}, oldState, action.coin )
     // default:
     //   return oldState;

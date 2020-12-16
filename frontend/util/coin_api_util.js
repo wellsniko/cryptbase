@@ -8,6 +8,8 @@
 
 // https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&order=market_cap_desc&per_page=100&page=1&sparkline=false
 
+
+
 export const fetchCoinPriceData = (id) => (
     $.ajax({
         method: 'GET',
@@ -15,6 +17,14 @@ export const fetchCoinPriceData = (id) => (
     })
 )
 
+// https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1
+
+export const fetchCoin24hrData = (id) => (
+    $.ajax({
+        method: 'GET',
+        url: `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=1`
+    })
+)
 
 // export const fetchCoinPriceData = (coinId) => (
 //     $.ajax({
