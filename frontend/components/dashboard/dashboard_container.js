@@ -6,7 +6,9 @@ import { fetchCoins } from '../../actions/coin_actions';
 
 
 const mapStateToProps = state => ({
-  coins: Object.values(state.entities.coins)
+  coins: Object.values(state.entities.coins),
+  state: state,
+  currentUser: state.entities.users[state.session.id]
 });
 
 const mapDispatchToProps = dispatch => ({
