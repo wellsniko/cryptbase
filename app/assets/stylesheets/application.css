@@ -672,6 +672,18 @@ div {
     box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
 }
 
+.chart-and-under {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    min-height: 310px;
+    border: 1px solid rgb(236, 239, 241);
+    background: rgb(255, 255, 255);
+    overflow: visible;
+    border-radius: 6px;
+    box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
+}
+
 :root {
     --darkreader-neutral-background: #131516;
     --darkreader-neutral-text: #d8d4cf;
@@ -679,7 +691,7 @@ div {
     --darkreader-selection-text: #e8e6e3;
 }
 
-#detail-buy-box {
+#buy-box-column {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
@@ -918,6 +930,20 @@ th label {
     border-top: 1px solid rgb(236, 239, 241);
     cursor: pointer;
     min-width: 140px;
+}
+
+.josh {
+    padding: 14px 48px 14px 0px;
+    border-top: 1px solid rgb(236, 239, 241);
+    cursor: pointer;
+    width: 46vw;
+}
+
+.josh2 {
+    padding: 14px 48px 14px 0px;
+    border-top: 1px solid rgb(236, 239, 241);
+    cursor: pointer;
+    width: 45vw;
 }
 
 .index-link {
@@ -1189,15 +1215,416 @@ ul li a {
     align-items: stretch;
     margin-bottom: 32px;
     flex-direction: row;
+    width: 100%;
 }
 
-#chart-component canvas, #main-chart canvas{
+/* #chart-component canvas, #main-chart canvas{
     width: 1088 !important;
     height: 362 !important;
    
-}
-
+} */
+/* 
 .chartjs-size-monitor {
     width: 1088 !important;
     height: 362 !important;
+} */
+
+.under-chart  {
+    position: relative;
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: none 0s ease 0s;
+}
+
+.under-under-chart {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    opacity: 1;
+}
+
+.under-under-under-chart {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    padding: 8px 24px;
+    border-radius: 4px;
+    margin: 0px -12px;
+}
+
+.div-under-chart {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    width: 25%;
+    margin: 14px 0px;
+    padding-left: 12px;
+}
+
+.div-under-chart-2 {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: 14px 0px;
+    padding-left: 12px;
+}
+.chart-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.div-under-text-1 {
+    margin-bottom: 6px;
+}
+
+.chart-div-label {
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: rgba(17, 51, 83, 0.6);
+    transition: color 80ms ease-in-out 0s;
+}
+
+.span-under-text {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(5, 15, 25);
+}
+
+.div-under-text-2 {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+#holding-chart {
+    position: relative;
+    left: -5px;
+}
+
+
+.span-under-text-r {
+    text-transform: uppercase;
+}
+
+.buy-box-main {
+    display: flex;
+    width: 100%;
+    position: relative;
+    background: rgb(255, 255, 255);
+    border-right: 1px solid rgb(236, 239, 241);
+    border-bottom: 1px solid rgb(236, 239, 241);
+    border-left: 1px solid rgb(236, 239, 241);
+    border-image: initial;
+    border-radius: 4px;
+    box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
+    border-top: none;
+    margin-bottom: 24px;
+    height: 544px;
+}
+
+
+
+.buy-box-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1 1 0%;
+    min-width: 0px;
+}
+
+.buy-box-3 {
+    display: flex;
+    flex: 1 1 0%;
+    z-index: 0;
+    transition: z-index 0ms ease-out 1000ms;
+}
+
+.buy-box-4 {
+    position: relative;
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: none 0s ease 0s;
+}
+
+.buy-box-5 {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    opacity: 1;
+}
+
+.buy-box-6 {
+    display: flex;
+    user-select: none;
+    background-color: rgb(255, 255, 255);
+    align-self: stretch;
+    flex-direction: column;
+    flex: 1 1 0%;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 4px;
+    max-width: 100%;
+}
+
+.buy-sell-convert {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    min-height: 64px;
+}
+.buy-sell-convert:first-child {
+    border-top-left-radius: 4px;
+}
+
+.buy-select  {
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+    flex: 1 1 0%;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(22, 82, 240);
+    background-color: rgb(255, 255, 255);
+    border-bottom: none;
+    border-top: 2px solid rgb(22, 82, 240);
+}
+
+.sell-select {
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+    flex: 1 1 0%;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid rgb(236, 239, 241);
+    padding-top: 2px;
+    color: rgba(17, 51, 83, 0.6);
+    background-color: rgba(17, 51, 83, 0.02);
+    border-top: 1px solid rgb(236, 239, 241);
+}
+
+.convert-select {
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+    flex: 1 1 0%;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid rgb(236, 239, 241);
+    padding-top: 2px;
+    color: rgba(17, 51, 83, 0.6);
+    background-color: rgba(17, 51, 83, 0.02);
+    border-top: 1px solid rgb(236, 239, 241);
+}
+
+.buy-box-body {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+    flex: 1 0 0%;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 0px;
+}
+
+.buy-box-body-inside {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-quantity-area {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    min-height: 60px;
+    flex-direction: row;
+    overflow: hidden;
+    height: 60px;
+}
+
+.one-time-purchase-1 {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    min-height: 60px;
+    flex-direction: row;
+}
+
+.you-can-buy-up-to {
+    color: rgba(17, 51, 83, 0.6);
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 16px 0px;
+}
+
+.one-time-purchase-2 {
+    cursor: pointer;
+    border-radius: 18px;
+    border: none;
+    outline: none;
+    height: 36px;
+    display: flex;
+    padding: 0px 16px;
+    -webkit-box-align: center;
+    align-items: center;
+    background: rgb(233, 246, 255);
+}
+
+.input-quantity-area-2 {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    transform: scale(1);
+    flex: 1 1 0%;
+    max-width: 250px;
+}
+
+.input-quantity-area-3 {
+    display: flex;
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    text-align: left;
+    color: rgb(22, 82, 240);
+    font-weight: 400;
+}
+
+.input-quantity-input {
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 62px;
+    text-align: left;
+    color: rgb(22, 82, 240);
+    font-weight: 400;
+    width: 40px;
+    padding: 0px;
+    margin: 0px;
+    box-shadow: none;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background: rgb(255, 255, 255);
+}
+
+.input-span-buy {
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-weight: 500;
+    color: rgba(17, 51, 83, 0.3);
+    font-size: 31px;
+    line-height: 1.5;
+    align-self: flex-start;
+    margin-top: 8px;
+}
+
+.buy-sell-button {
+    position: relative;
+    width: 100%;
+    margin: 0px;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 80ms ease-in-out 0s;
+    padding: 24px;
+    font-size: 16px;
+    border: 1px solid rgb(22, 82, 240);
+    background-color: rgb(22, 82, 240);
+    margin-bottom: 2px;
+}
+
+.buy-sell-button-span {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    pointer-events: none;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-weight: 500;
+}
+
+.buy-box-bottom {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 0px 24px;
+    min-height: 56px;
+    width: 100%;
+}
+
+.balance-buy-box {
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 400;
+    color: rgba(17, 51, 83, 0.6);
+}
+
+.balance-buy-box-2 {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    flex: 1 0 auto;
+}
+
+.balance-buy-box-2 {
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 400;
+    color: rgb(5, 15, 25);
+    text-transform: uppercase;
+}
+
+
+#floating-price {
+    position: absolute;
+    left: 420px;
+    top: 280px;
 }

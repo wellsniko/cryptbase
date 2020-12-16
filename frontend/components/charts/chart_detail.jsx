@@ -59,11 +59,11 @@ class ChartDetail extends React.Component {
         const data = {
             labels: dateData,
             datasets: [{
-                label: "First dataset",
+                label: "Temporary",
                 data: priceData,
-                fill: true,
-                backgroundColor: "rgba(75,192,192,0.2)",
-                borderColor: "rgba(75,192,192,1)"
+                fill: false,
+                backgroundColor: "rgb(22, 82, 240)",
+                borderColor: "rgb(22, 82, 240)"
             }]
         }
     
@@ -120,7 +120,7 @@ class ChartDetail extends React.Component {
     
         
         return (
-            <div style={{height: 362, width: 1088}}>
+            <div id="holding-chart" style={{height: 340, width: 1006}}>
             <Line data={data} options={options} />
             </div>
          );
