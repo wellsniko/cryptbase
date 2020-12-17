@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import WalletIndexItem from './wallet_index_item';
-
+import OrderIndexItem from './order_index_item';
 
 class Dashboard extends React.Component {
   componentDidMount() {
@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
     if (!this.props.currentUser) {
       return <> </> 
     }
-    const { coins, currentUser} = this.props;
+    const { coins, currentUser, ordersArray} = this.props;
 
     // const allocationCalc = ()=> {
     
@@ -30,13 +30,13 @@ class Dashboard extends React.Component {
                 <div className="dashboard-body">
                   <div className="dashboard-body-2">
                   <div className="dashboard-body-left">
-                    <div className="dashboard-left-down-1">
+                    {/* <div className="dashboard-left-down-1">
                       <div className="dashboard-left-chart">
                         <div className="chart-box">
                         
                         </div>
                         </div>
-                          </div>
+                          </div> */}
                           <div className="dashboard-left-down-2">
                               <div className="your-assets-1">
                                 <div className="your-assets-top">
@@ -87,14 +87,6 @@ class Dashboard extends React.Component {
                               </td>
 
                             </tr>
-
-
-
-
-
-
-
-
                           {Object.values(wallets).map((wallet, idx) => (
                             <WalletIndexItem wallet={wallet} key={idx} id={idx} wallets={wallets} coins={coins} coin={coins.find(o => o.id === wallet.coin_id)}/>
                           ))}
@@ -105,7 +97,23 @@ class Dashboard extends React.Component {
                     </div>
                   </div>
                   <div className="dashboard-body-right">
-                         
+                         <div className="order-list">
+                           <div className="order-header-div">
+                             <h3 className="order-header-h3">
+                               Recent Transactions
+                             </h3>
+                           </div>
+                           <div className="order-body-div-1">
+                             <div className="order-body-div-2">
+                                  <div>
+                                    {ordersArray.map((order, idx) => (  
+                                      <OrderIndexItem order={order} key={idx}/>
+                                      ))}
+
+                                  </div>
+                             </div>
+                           </div>
+                         </div>
                   </div>
               </div>  
            </div>
@@ -114,7 +122,7 @@ class Dashboard extends React.Component {
         
             
        
-    );
+    )
   }
 }
 

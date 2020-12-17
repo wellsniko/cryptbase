@@ -1923,3 +1923,68 @@ ul li a {
     /* align-items: center; */
     text-align: right;
 }
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 24px;
+    flex-shrink: 0;
+}
+
+.order-header-div {
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgb(236, 239, 241);
+    border-top: none;
+    flex-shrink: 0;
+}
+
+.order-header-div {
+    font-variant: tabular-nums;
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.3;
+    color: rgb(5, 15, 25);
+    font-size: 18px;
+    display: block;
+    margin: 0px;
+}
+
+.order-body-div-1 {
+    position: relative;
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: none 0s ease 0s;
+}
+
+.order-body-div-2 {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    opacity: 1;
+}
+
+
+.order-row-item {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgb(236, 239, 241);
+    border-top: none;
+    flex-shrink: 0;
+    cursor: pointer;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+}

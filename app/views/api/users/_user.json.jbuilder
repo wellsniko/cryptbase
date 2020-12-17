@@ -15,6 +15,7 @@ json.wallets do
 end
 
 
+
 json.orders do 
     json.array!(user.orders.sort_by{|o| o[:created_at]}) do |order|
         json.id order.id
