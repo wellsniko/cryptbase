@@ -8,5 +8,5 @@ export default combineReducers({
   users: usersReducer,
   coins: CoinsReducer,
   coin: CoinReducer,
-  watchlistReducer: WatchlistReducer
+  watchlist: WatchlistReducer
 });

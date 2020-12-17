@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import MiniChartContainer from '../charts/mini_chart_container'
 import WalletIndexItem from './wallet_index_item';
 import OrderIndexItem from './order_index_item';
 
@@ -36,7 +36,11 @@ class Portfolio extends React.Component {
                       <div className="portfolio-left-chart">
                         <div className="chart-box">
                           <div className="watchlist-header"></div>
-                          <div className="watchlist-body"></div>
+                          <div className="watchlist-body">
+
+                            <MiniChartContainer coinId={"bitcoin"} fetchHistory={this.props.fetchBitcoinHistory}/>
+                            <MiniChartContainer coinId={"ethereum"} fetchHistory={this.props.fetchEthereumHistory}/>
+                          </div>
                           <div className="watchlist-bottom"></div>
                         </div>
                       </div>
