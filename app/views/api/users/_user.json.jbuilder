@@ -14,6 +14,23 @@ json.wallets do
     end
 end
 
+
+json.orders do 
+    json.array!(user.orders.sort_by{|o| o[:created_at]}) do |order|
+        json.id order.id
+        json.coin_id order.coin_id
+        json.quantity order.quantity
+        json.transaction_type order.transaction_type
+        json.created_at order.created_at
+    end
+end
+
+# json.quote_items do
+#   json.array!(@quote.quote_items.sort_by{|o| o[:item_order]}) do |item|
+#   json.id item.id
+#   .....
+# end
+
 # json.portoflio do 
 #     user.orders.each do |order|
 #         json.set! order.id

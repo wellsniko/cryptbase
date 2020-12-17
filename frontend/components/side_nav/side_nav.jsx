@@ -17,11 +17,76 @@ const SideNav = ({ currentUser, logout }) => {
         <nav className="side-nav">
             <h3 id="logo-logged-in">Cryptbase</h3>
             <ul className="side-nav-logged-in">
-                <li><Link to="/dashboard" className="side-nav-links">Home</Link></li>
-                <li><Link to="/accounts" className="side-nav-links">Portfolio</Link></li>
-                <li><Link to="/prices" className="side-nav-links">Prices</Link></li>
-                <li><Link to="/rewards" className="side-nav-links">Earn Rewards</Link></li>
-                <li><Link to="/notifications" className="side-nav-links">Notifications</Link></li>
+                <li className="side-nav-li"><Link to="/dashboard" className="side-nav-links">
+                    <div className="side-div-1">
+                        <div className="side-div-2">
+                            <img src={window.homeImage} className="side-image-new"/>
+                        </div>
+
+                    </div>
+                    
+                    
+                    
+                    <span className="side-span">Home</span>
+                    </Link>
+                </li>
+
+                <li className="side-nav-li"><Link to="/dashboard" className="side-nav-links">
+                    <div className="side-div-1">
+                        <div className="side-div-2">
+                            <img src={window.portfolioImage} className="side-image-new"/>
+                        </div>
+
+                    </div>
+                    
+                    
+                    
+                    <span className="side-span">Portfolio</span>
+                    </Link>
+                </li>
+
+                <li className="side-nav-li"><Link to="/prices" className="side-nav-links">
+                    <div className="side-div-1">
+                        <div className="side-div-2">
+                            <img src={window.pricesImage} className="side-image-new"/>
+                        </div>
+
+                    </div>
+                    
+                    
+                    
+                    <span className="side-span">Prices</span>
+                    </Link>
+                </li>
+
+                <li className="side-nav-li"><Link to="/prices" className="side-nav-links">
+                    <div className="side-div-1">
+                        <div className="side-div-2">
+                            <img src={window.giftImage} className="side-image-new"/>
+                        </div>
+
+                    </div>
+                    
+                    
+                    
+                    <span className="side-span">Earn Reward</span>
+                    </Link>
+                </li>
+
+                <li className="side-nav-li"><Link to="/prices" className="side-nav-links">
+                    <div className="side-div-1">
+                        <div className="side-div-2">
+                            <img src={window.bellImage} className="side-image-new"/>
+                        </div>
+
+                    </div>
+                    
+                    
+                    
+                    <span className="side-span">Notifications</span>
+                    </Link>
+                </li>
+               
             </ul>
         </nav> 
     </>

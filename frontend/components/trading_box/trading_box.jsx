@@ -91,7 +91,7 @@ class TradingBox extends React.Component {
                       <span className="you-can-buy-up-to">You can buy up to ${this.props.state.entities.users[this.props.userId].wallets["usd"].quantity} of {this.props.coin.name}</span>
                       <div className="one-time-purchase-1">
                         <button className="one-time-purchase-2">
-
+                          One time purchase
                         </button>
                       </div>
                       <div className="buy-box-body-inside">

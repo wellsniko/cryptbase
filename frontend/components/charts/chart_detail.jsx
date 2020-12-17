@@ -53,7 +53,7 @@ class ChartDetail extends React.Component {
         } 
         const { coinId, coin, pricesData} = this.props;
         // console.log(coin)  
-        const dateData = pricesData.map(element => element[0])
+        const dateData = pricesData.map(element => new Date (element[0]-28800).toLocaleString("en-US", {hour: "numeric", minute: "numeric"}))
         const priceData = pricesData.map(element => element[1])
 
         const data = {
@@ -63,10 +63,52 @@ class ChartDetail extends React.Component {
                 data: priceData,
                 fill: false,
                 backgroundColor: "rgb(22, 82, 240)",
-                borderColor: "rgb(22, 82, 240)"
+                borderColor: "rgb(22, 82, 240)",
+                pointRadius: 1
             }]
         }
     
+
+
+        const options = {
+            responsive: true, 
+            maintainAspectRatio: false,
+            ticks: {display: false},
+            showScale: false,
+            scales: 
+                { 
+                yAxes: [{ 
+                    gridLines: { display: false,},
+                     ticks: {display: false}
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: true,
+                        drawBorder: true,
+                        drawOnChartArea: false
+                    }, 
+                    ticks: {
+                        autoskip: true,
+                        maxTicksLimit: 6,
+                        maxRotation: 0,
+                        minRotation: 0
+                    },
+                
+                }]
+            }
+        }
+        
+        return (
+            <div id="holding-chart" style={{height: 340, width: 1006}}>
+            <Line data={data} options={options} />
+            </div>
+         );
+    }
+}
+
+export default ChartDetail;    
+
+
         
         // return (
         //     <>
@@ -96,35 +138,3 @@ class ChartDetail extends React.Component {
 
 // export default ChartDetail;            
                     
-
-
-        const options = {
-            responsive: true, 
-            maintainAspectRatio: false,
-            ticks: {display: false},
-            showScale: false,
-            scales: 
-                { 
-                yAxes: [{ 
-                    gridLines: { display: false,},
-                     ticks: {display: false}
-                }],
-                xAxes: [{
-                    gridLines: { display: false}, 
-                    ticks: {display: false}
-                }]
-            }
-        }
-       
-        
-    
-        
-        return (
-            <div id="holding-chart" style={{height: 340, width: 1006}}>
-            <Line data={data} options={options} />
-            </div>
-         );
-    }
-}
-
-export default ChartDetail;    

@@ -15,8 +15,27 @@ const TopNav = ({ currentUser, logout }) => {
   const userHere = () => (
     <nav className="main-top-nav">
      
-        <h1>Home</h1><br/>
-        <button className="temp-button" onClick={logout}>Log Out</button>
+        <div className="top-nav-div-1">Home</div>
+        <div className="top-nav-div-2"></div>
+        <div className="top-nav-div-3">
+          <div className="top-nav-div-3-3">
+            <div className="top-nav-div-1-1">
+              <button className="top-nav-buy-sell">
+                <span className="span-top-buy-sell">Buy / Sell</span>
+              </button>
+            
+            </div>
+            <div className="top-nav-div-1-2">
+              <button className="logout-top-nav" onClick={logout}>
+                <span className="logout-span-top">Log Out</span>
+                
+                </button>
+            
+            </div>
+          </div>
+          
+        </div>
+        
     </nav>
   )
 
