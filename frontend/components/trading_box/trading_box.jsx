@@ -5,7 +5,7 @@ class TradingBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      quantity: "0"
+      quantity: "0",
     }
  
     this.handleBuy = this.handleBuy.bind(this);
@@ -33,8 +33,10 @@ class TradingBox extends React.Component {
             type: "BUY" 
         };
         // debugger
+        debugger
         this.props.buyCoin(orderParams);                   
         alert(`You purchased ${quantity} ${coin.symbol}`);
+        
         setTimeout(() => fetchUser(userId), 100)
         
     }
@@ -81,7 +83,7 @@ class TradingBox extends React.Component {
                           <div className="input-quantity-area-2">
                             <div className="input-quantity-area-3">
                               <span className="input-span-buy">$</span>
-                              <input className="input-quantity-input" type="text" placeholder={this.state.quantity} onChange={this.onQuantityChange}/>
+                              <input className="input-quantity-input" type="decimal" placeholder={this.state.quantity} onChange={this.onQuantityChange}/>
                             </div>
                           </div>
                         </div>

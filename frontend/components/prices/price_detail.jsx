@@ -75,9 +75,18 @@ class PriceDetail extends React.Component {
               <div className="main-user-page-2">
                 <div className="price-detail-body">
                     <div className="price-detail-title">
-                   
-                    <h1>{coin.name}</h1>
-                    <h1>{coin.symbol}</h1>
+                   <div className="detail-header">
+                       <div className="detail-header-image-div">
+                           <img className="lil-detail-image" src={`${coin.image}`} alt=""/>
+                       </div>
+                       <div className="name-and-sym-detail">
+                          <h1 className="detail-name-main"> &nbsp; &nbsp;{coin.name}</h1> 
+                          <h1 className="detail-sym-main">{coin.symbol}</h1>
+                       </div>
+                       
+                    </div>
+                    <div className="overview">Overview</div>
+                    
                     <div id="floating-price"><h1 >{(!coin.current_price) ? coin.current_price : (coin.current_price).toLocaleString('en-US', {style: 'currency',currency: 'USD',
 })}</h1></div>
                     
