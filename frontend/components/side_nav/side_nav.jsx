@@ -31,7 +31,7 @@ const SideNav = ({ currentUser, logout }) => {
                     </Link>
                 </li>
 
-                <li className="side-nav-li"><Link to="/dashboard" className="side-nav-links">
+                <li className="side-nav-li"><Link to="/portfolio" className="side-nav-links">
                     <div className="side-div-1">
                         <div className="side-div-2">
                             <img src={window.portfolioImage} className="side-image-new"/>

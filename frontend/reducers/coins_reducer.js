@@ -26,4 +26,3 @@ const CoinsReducer = (oldState = {}, action) => {
 export default CoinsReducer;
  
 
-// object = {1 : {name: "btc", id: "bitcoin"}}
