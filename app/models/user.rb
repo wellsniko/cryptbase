@@ -42,10 +42,6 @@ class User < ApplicationRecord
         BCrypt::Password.new(self.password_digest).is_password?(password)
     end
 
-
-
-
-
     def create_wallets
         
         supported_coins = [

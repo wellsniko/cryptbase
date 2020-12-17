@@ -11,8 +11,7 @@ const PriceIndexItem = props => {
     return Math.abs(Number(num)) >= 1.0e+9
     ? "$" +(Math.abs(Number(num)) / 1.0e+9).toFixed(1) + "B"
     : Math.abs(Number(num)) >= 1.0e+6
-    ? "$" +(Math.abs(Number(num)) / 1.0e+6).toFixed(1) + "M"
-    : Math.abs(Number(num)) >= 1.0e+3
+    ? "$" +(Math.abs(Number(num)) / 1.0e+6).toFixed(1) + "M" : Math.abs(Number(num)) >= 1.0e+3
     ? "$" +(Math.abs(Number(num)) / 1.0e+3).toFixed(1) + "K"
     : Math.abs(Number(num));
 }

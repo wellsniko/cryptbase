@@ -3,7 +3,7 @@ json.extract! user, :id, :email
 json.wallets do  
     user.wallets.each do |wallet|
         json.set! wallet.coin_id do
-            json.extract! wallet, :id, :quantity
+            json.extract! wallet, :id, :quantity, :coin_id
             json.orders do
                 json.array! wallet.orders do |order|
                     json.id order.id
