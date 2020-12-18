@@ -6,7 +6,7 @@ import { Line } from "react-chartjs-2";
 
 class MiniChart extends React.Component {
       componentDidMount() {
-        // this.props.fetchCoins();
+        this.props.fetchCoins();
         
         // this.props.fetchHistory(this.props.coinId)
     }
@@ -19,6 +19,12 @@ class MiniChart extends React.Component {
         } 
         if (!this.props.state.entities.watchlist[this.props.coinId]){
             return <> </>
+        }
+        if (!this.props.state) {
+            return <> </>
+        }
+        if (!this.props.state.entities.coins) {
+            return <></>
         }
         const pricesData = this.props.state.entities.watchlist[this.props.coinId].prices
         // const { coinId, coin, pricesData} = this.props;
@@ -34,7 +40,7 @@ class MiniChart extends React.Component {
         const data = {
             labels: dateData,
             datasets: [{
-                label: "Temporary",
+                label: coin.name,
                 data: priceData,
                 fill: false,
                 backgroundColor: this.props.color,

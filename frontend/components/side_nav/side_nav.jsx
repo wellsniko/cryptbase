@@ -8,7 +8,7 @@ import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 // import HomepageContainer from '../homepage/homepage_container'
 // import NavContainer from '../nav/nav_container';
 // import Nav2Container from '../nav2/nav2_container';
-import {Link, Redirect, Switch, HashRouter, Route} from 'react-router-dom'
+import {Link, NavLink, Redirect, Switch, HashRouter, Route} from 'react-router-dom'
 
 
 const SideNav = ({ currentUser, logout }) => {
@@ -21,7 +21,7 @@ const SideNav = ({ currentUser, logout }) => {
         <nav className="side-nav">
             <h3 id="logo-logged-in">Cryptbase</h3>
             <ul className="side-nav-logged-in">
-                <li className="side-nav-li"><Link to="/dashboard" className="side-nav-links">
+                <li className="side-nav-li"><NavLink to="/dashboard" activeClassName="selected-side-nav-links" className="side-nav-links">
                     <div className="side-div-1">
                         <div className="side-div-2">
                             <img src={window.homeImage} className="side-image-new"/>
@@ -32,10 +32,10 @@ const SideNav = ({ currentUser, logout }) => {
                     
                     
                     <span className="side-span">Home</span>
-                    </Link>
+                    </NavLink>
                 </li>
 
-                <li className="side-nav-li"><Link to="/portfolio" className="side-nav-links">
+                <li className="side-nav-li"><NavLink activeClassName="selected-side-nav-links" to="/portfolio" className="side-nav-links">
                     <div className="side-div-1">
                         <div className="side-div-2">
                             <img src={window.portfolioImage} className="side-image-new"/>
@@ -46,10 +46,10 @@ const SideNav = ({ currentUser, logout }) => {
                     
                     
                     <span className="side-span">Portfolio</span>
-                    </Link>
+                    </NavLink>
                 </li>
 
-                <li className="side-nav-li"><Link to="/prices" className="side-nav-links">
+                <li className="side-nav-li"><NavLink activeClassName="selected-side-nav-links" to="/prices" className="side-nav-links">
                     <div className="side-div-1">
                         <div className="side-div-2">
                             <img src={window.pricesImage} className="side-image-new"/>
@@ -60,10 +60,10 @@ const SideNav = ({ currentUser, logout }) => {
                     
                     
                     <span className="side-span">Prices</span>
-                    </Link>
+                    </NavLink>
                 </li>
 
-                <li className="side-nav-li"><Link to="/prices" className="side-nav-links">
+                <li className="side-nav-li"><NavLink activeClassName="selected-side-nav-links" to="/rewards" className="side-nav-links">
                     <div className="side-div-1">
                         <div className="side-div-2">
                             <img src={window.giftImage} className="side-image-new"/>
@@ -74,10 +74,10 @@ const SideNav = ({ currentUser, logout }) => {
                     
                     
                     <span className="side-span">Earn Reward</span>
-                    </Link>
+                    </NavLink>
                 </li>
 
-                <li className="side-nav-li"><Link to="/prices" className="side-nav-links">
+                <li className="side-nav-li"><NavLink activeClassName="selected-side-nav-links" to="/notifications" className="side-nav-links">
                     <div className="side-div-1">
                         <div className="side-div-2">
                             <img src={window.bellImage} className="side-image-new"/>
@@ -88,7 +88,7 @@ const SideNav = ({ currentUser, logout }) => {
                     
                     
                     <span className="side-span">Notifications</span>
-                    </Link>
+                    </NavLink>
                 </li>
                
             </ul>
@@ -96,7 +96,7 @@ const SideNav = ({ currentUser, logout }) => {
     </>
     )
 
-     return currentUser ?  userHere() : <> </>
+     return currentUser ?  userHere() : <Redirect to="/"/>
 }
 
 

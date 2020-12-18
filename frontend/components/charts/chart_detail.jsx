@@ -51,6 +51,12 @@ class ChartDetail extends React.Component {
         if (!this.props.pricesData){
             return <></>
         } 
+        if (!this.props.coin){
+            return <></>
+        } 
+        if (!this.props.coin.current_price) {
+            return <> </>
+        }
         const { coinId, coin, pricesData} = this.props;
         // console.log(coin)  
         const dateData = pricesData.map(element => new Date (element[0]-28800).toLocaleString("en-US", {hour: "numeric", minute: "numeric"}))
@@ -59,7 +65,7 @@ class ChartDetail extends React.Component {
         const data = {
             labels: dateData,
             datasets: [{
-                label: "Temporary",
+                label: coin.name,
                 data: priceData,
                 fill: false,
                 backgroundColor: "rgb(22, 82, 240)",

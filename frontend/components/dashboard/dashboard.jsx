@@ -44,23 +44,23 @@ class Dashboard extends React.Component {
                               <MiniChartContainer coinId={"bitcoin"} fetchHistory={this.props.fetchBitcoinHistory} color={"rgb(193, 125, 38)"}/>
                             {/* </div>
                             <div className="row-div"> */}
-                              <MiniChartContainer coinId={"ethereum"} fetchHistory={this.props.fetchEthereumHistory} color={"rgb(140,174,85)"}/>
+                              <MiniChartContainer coinId={"bitcoin-cash"} fetchHistory={this.props.fetchBitcoinCashHistory} color={"rgb(140,174,85)"}/>
                             </div>
                             <div className="row-div"> 
-                              <MiniChartContainer coinId={"ripple"} fetchHistory={this.props.fetchRippleHistory} color={"rgb(22, 82, 240)"}/>
+                              <MiniChartContainer coinId={"ethereum"} fetchHistory={this.props.fetchEthereumHistory} color={"rgb(22, 82, 240)"}/>
                             {/* </div>
                             <div className="row-div"> */}
-                              <MiniChartContainer coinId={"bitcoin-cash"} fetchHistory={this.props.fetchBitcoinCashHistory} color={"rgb(130, 130, 130)"}/>
+                              <MiniChartContainer coinId={"litecoin"} fetchHistory={this.props.fetchLitecoinCashHistory} color={"rgb(130, 130, 130)"}/>
                             </div>
                             <div className="row-div">
-                              <MiniChartContainer coinId={"litecoin"} fetchHistory={this.props.fetchLitecoinHistory} color={"rgb(0,0,0)"}/>
+                              <MiniChartContainer coinId={"ripple"} fetchHistory={this.props.fetchRippleHistory} color={"rgb(0,0,0)"}/>
                             {/* </div>
                             <div className="row-div"> */}
                               <MiniChartContainer coinId={"stellar"} fetchHistory={this.props.fetchStellarHistory} color={"rgb(0,0,0)"}/>
                             </div>
                           </div>
                           <div className="watchlist-bottom">
-                            <Link to={"/prices"} style={{textDecoration : "none"}}>Discover More Assets</Link>
+                            <Link to={"/prices"} className="discover-more-assets" style={{textDecoration : "none"}}>Discover More Assets</Link>
                           </div>
                         </div>
                       </div>

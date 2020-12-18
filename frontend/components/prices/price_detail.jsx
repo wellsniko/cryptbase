@@ -87,8 +87,6 @@ class PriceDetail extends React.Component {
                     </div>
                     <div className="overview">Overview</div>
                     
-                    {/* <div id="floating-price"><h1 >{(!coin.current_price) ? coin.current_price : (coin.current_price).toLocaleString('en-US', {style: 'currency',currency: 'USD',
-})}</h1></div> */}
                     
                 </div>
                     <div className="detail-main-section">

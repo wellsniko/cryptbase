@@ -24,7 +24,7 @@ const mapDispatchToProps = dispatch => ({
 //   fetchBitcoinHistory: (id) => dispatch(fetchBitcoinHistory(id)),
 //   fetchEthereumHistory: (id) => dispatch(fetchEthereumHistory(id)),
 //   fetchLitecoinHistory: (id) => dispatch(fetchLitecoinHistory(id))
-    // fetchHistory: () => dispatch(ownProps.fetchHistory)
+    fetchHistory: () => dispatch(ownProps.fetchHistory)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MiniChart);
