@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Portfolio from './portfolio';
-import { fetchCoins,fetchBitcoinHistory, fetchLitecoinHistory, fetchEthereumHistory } from '../../actions/coin_actions';
+import { fetchCoins,fetchBitcoinHistory, fetchEthereumHistory, fetchRippleHistory, fetchBitcoinCashHistory, fetchLitecoinHistory, fetchStellarHistory} from '../../actions/coin_actions';
 
 
 
@@ -17,7 +17,10 @@ const mapDispatchToProps = dispatch => ({
   fetchCoins: () => dispatch(fetchCoins()),
   fetchBitcoinHistory: (id) => dispatch(fetchBitcoinHistory(id)),
   fetchEthereumHistory: (id) => dispatch(fetchEthereumHistory(id)),
-  fetchLitecoinHistory: (id) => dispatch(fetchLitecoinHistory(id))
+  fetchRippleHistory: (id) => dispatch(fetchRippleHistory(id)),
+  fetchBitcoinCashHistory: (id) => dispatch(fetchBitcoinCashHistory(id)),
+  fetchLitecoinHistory: (id) => dispatch(fetchLitecoinHistory(id)),
+  fetchStellarHistory: (id) => dispatch(fetchStellarHistory(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Portfolio);

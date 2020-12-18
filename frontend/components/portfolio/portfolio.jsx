@@ -9,7 +9,10 @@ class Portfolio extends React.Component {
     this.props.fetchCoins();
     this.props.fetchBitcoinHistory("bitcoin");
     this.props.fetchEthereumHistory("ethereum");
+    this.props.fetchRippleHistory("ripple");
+    this.props.fetchBitcoinCashHistory("bitcoin-cash");
     this.props.fetchLitecoinHistory("litecoin");
+    this.props.fetchStellarHistory("stellar");
   }
 
   render() {
@@ -35,11 +38,26 @@ class Portfolio extends React.Component {
                   <div className="portfolio-left-down-1">
                       <div className="portfolio-left-chart">
                         <div className="chart-box">
-                          <div className="watchlist-header"></div>
+                          <div className="watchlist-header"><h2 className="watchlist-h2">Watchlist</h2></div>
                           <div className="watchlist-body">
-
-                            <MiniChartContainer coinId={"bitcoin"} fetchHistory={this.props.fetchBitcoinHistory}/>
-                            <MiniChartContainer coinId={"ethereum"} fetchHistory={this.props.fetchEthereumHistory}/>
+                            <div className="row-div">
+                              <MiniChartContainer coinId={"bitcoin"} fetchHistory={this.props.fetchBitcoinHistory} color={"rgb(193, 125, 38)"}/>
+                            {/* </div>
+                            <div className="row-div"> */}
+                              <MiniChartContainer coinId={"ethereum"} fetchHistory={this.props.fetchEthereumHistory} color={"rgb(140,174,85)"}/>
+                            </div>
+                            <div className="row-div"> 
+                              <MiniChartContainer coinId={"ripple"} fetchHistory={this.props.fetchRippleHistory} color={"rgb(22, 82, 240)"}/>
+                            {/* </div>
+                            <div className="row-div"> */}
+                              <MiniChartContainer coinId={"bitcoin-cash"} fetchHistory={this.props.fetchBitcoinCashHistory} color={"rgb(130, 130, 130)"}/>
+                            </div>
+                            <div className="row-div">
+                              <MiniChartContainer coinId={"litecoin"} fetchHistory={this.props.fetchLitecoinHistory} color={"rgb(0,0,0)"}/>
+                            {/* </div>
+                            <div className="row-div"> */}
+                              <MiniChartContainer coinId={"stellar"} fetchHistory={this.props.fetchStellarHistory} color={"rgb(0,0,0)"}/>
+                            </div>
                           </div>
                           <div className="watchlist-bottom"></div>
                         </div>

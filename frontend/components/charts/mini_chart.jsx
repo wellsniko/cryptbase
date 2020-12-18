@@ -7,8 +7,8 @@ import { Line } from "react-chartjs-2";
 class MiniChart extends React.Component {
       componentDidMount() {
         // this.props.fetchCoins();
-        console.log(this.props.fetchHistory)
-        this.props.fetchHistory(this.props.coinId)
+        
+        // this.props.fetchHistory(this.props.coinId)
     }
 
 
@@ -33,14 +33,12 @@ class MiniChart extends React.Component {
                 label: "Temporary",
                 data: priceData,
                 fill: false,
-                backgroundColor: "rgb(22, 82, 240)",
-                borderColor: "rgb(22, 82, 240)",
+                backgroundColor: this.props.color,
+                borderColor: this.props.color,
                 pointRadius: 1
             }]
         }
     
-
-
         const options = {
             responsive: true, 
             maintainAspectRatio: false,
@@ -54,23 +52,20 @@ class MiniChart extends React.Component {
                 }],
                 xAxes: [{
                     gridLines: {
-                        display: true,
+                        display: false,
                         drawBorder: true,
                         drawOnChartArea: false
                     }, 
                     ticks: {
                         autoskip: true,
-                        maxTicksLimit: 6,
-                        maxRotation: 0,
-                        minRotation: 0
-                    },
-                
+                        display: false
+                    }, 
                 }]
             }
         }
         
         return (
-            <div id="holding-chart" style={{height: 340, width: 1006}}>
+            <div className="mini-holding-chart" style={{height: 205, width: 481}}>
             <Line data={data} options={options} />
             </div>
 

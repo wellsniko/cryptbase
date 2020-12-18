@@ -17,7 +17,7 @@ end
 
 
 json.orders do 
-    json.array!(user.orders.sort_by{|o| o[:created_at]}) do |order|
+    json.array!(user.orders.sort_by{|o| o[:created_at]}).reverse! do |order|
         json.id order.id
         json.coin_id order.coin_id
         json.quantity order.quantity

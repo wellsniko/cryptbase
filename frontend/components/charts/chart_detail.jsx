@@ -64,7 +64,8 @@ class ChartDetail extends React.Component {
                 fill: false,
                 backgroundColor: "rgb(22, 82, 240)",
                 borderColor: "rgb(22, 82, 240)",
-                pointRadius: 1
+                pointRadius: 1,
+                lineRadius: 2,
             }]
         }
     

@@ -17,7 +17,7 @@ const Nav2 = ({ currentUser, logout }) => {
   );
 
 
-  return currentUser ? <Redirect to="/dashboard"/> : noUserNavBar();
+  return currentUser ? <> </> : noUserNavBar();
 };
 
 

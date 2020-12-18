@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => ({
     coinId: ownProps.coinId,
     watchlist: state.entities.watchlist,
     fetchHistory: ownProps.fetchHistory,
+    color: ownProps.color,
     // priceData: state.entities.watchlist[ownProps.coinId].prices
     state: state,
 });

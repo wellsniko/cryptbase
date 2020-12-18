@@ -22,7 +22,7 @@ const App = () => (
           <SideNavContainer/>
             <TopNavContainer/>
           <Switch>
-            <Route exact path="/" component={HomepageContainer}/>
+            <AuthRoute exact path="/" component={HomepageContainer}/>
             <AuthRoute exact path="/login" component={LogInFormContainer}/>
             <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
                 <ProtectedRoute exact path="/dashboard" component={DashboardContainer}/>

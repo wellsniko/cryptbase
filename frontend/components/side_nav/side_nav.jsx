@@ -12,6 +12,10 @@ import {Link, Redirect, Switch, HashRouter, Route} from 'react-router-dom'
 
 
 const SideNav = ({ currentUser, logout }) => {
+
+
+    
+
     const userHere = () => (
     <>
         <nav className="side-nav">

@@ -9,8 +9,15 @@ import HeaderContainer from "../header/header_container";
 // import NavContainer from '../nav/nav_container';
 // import Nav2Container from '../nav2/nav2_container';
 // import {Link, Redirect, Switch, HashRouter, Route} from 'react-router-dom'
+import {withRouter} from 'react-router'
 
-const TopNav = ({ currentUser, logout }) => {
+const TopNav = (props) => {
+      console.log(props)
+  // const titleHelper = ()=> {
+  //       if 
+  //   }
+  
+
 
   const userHere = () => (
     <nav className="main-top-nav">
@@ -26,7 +33,7 @@ const TopNav = ({ currentUser, logout }) => {
             
             </div>
             <div className="top-nav-div-1-2">
-              <button className="logout-top-nav" onClick={logout}>
+              <button className="logout-top-nav" onClick={props.logout}>
                 <span className="logout-span-top">Log Out</span>
                 
                 </button>
@@ -39,9 +46,10 @@ const TopNav = ({ currentUser, logout }) => {
     </nav>
   )
 
-   return currentUser ?  userHere() : <> </>
+
+   return props.currentUser ?  userHere() : <> </>
 };
 
 
 
-export default TopNav;
+export default withRouter(TopNav);

@@ -46,7 +46,7 @@ const Homepage = ({ currentUser, logout }) => {
     </hgroup>
   );
 
-  return currentUser ? <Redirect to="/dashboard"/> : noCurrentUser();
+  return currentUser ? <> </> : noCurrentUser();
 };
 
 
