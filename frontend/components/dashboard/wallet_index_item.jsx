@@ -53,7 +53,7 @@ return (
      <td className="t2-r1">
          <div className="div-t2-new">
             <label className="label-t2-r1" >
-           Temporary%
+           {wallet.orders.length}
 
             </label>
         </div> 

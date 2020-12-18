@@ -12,7 +12,7 @@ import HeaderContainer from "../header/header_container";
 import {withRouter} from 'react-router'
 
 const TopNav = (props) => {
-      console.log(props)
+      // console.log(props)
   // const titleHelper = ()=> {
   //       if 
   //   }
@@ -20,12 +20,16 @@ const TopNav = (props) => {
     switch (props.location.pathname){
       case "/dashboard": 
           return "Home"
-      case "/porfolio":
+      case "/portfolio":
         return "Portfolio"
+      case "/rewards":
+        return "Rewards"
+      case "/rewards":
+        return "Rewards"
       default:
         return "Prices"
       
-  }
+    }
   }
 
 

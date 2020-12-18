@@ -25,7 +25,7 @@ class PriceIndex extends React.Component {
     const colorChooser = (percentage)=> {
     return percentage >= 0 ? {color:`rgb(5, 177, 105)`} : {color:`rgb(223, 95, 103)`};
   }
-  console.log(coins)
+  // console.log(coins)
 
     
     

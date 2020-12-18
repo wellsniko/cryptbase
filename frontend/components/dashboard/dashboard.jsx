@@ -18,18 +18,43 @@ class Dashboard extends React.Component {
   render() {
     if (!this.props.currentUser) {
       return <> </> 
-    }
+    } 
+    // if (!this.props.coins){
+    //   return <> </>
+    // } if (!Object.values(this.props.currentUser.wallets)[1]quantity) {
+    //   return <> </>
+    // }
     const { coins, currentUser, ordersArray} = this.props;
 
-    // const allocationCalc = ()=> {
+    // // const allocationCalc = ()=> {
     
-    //   let totalValue = Object.values(props.wallets).map((wallet, idx) => (
-    //     wallet.quantity * props.coins.find(coin => coin.id === wallet.coin_id).current_value))
+    // //   let totalValue = Object.values(props.wallets).map((wallet, idx) => (
+    // //     wallet.quantity * props.coins.find(coin => coin.id === wallet.coin_id).current_value))
         
-    //     return totalValue   
-    // }
+    // //     return totalValue   
+    // // }
+    
 
     const wallets = currentUser.wallets
+    
+    // const portfolioBalance = () => (
+    //   coins.map(coin => (
+    //    coin.current_price 
+    //   )))
+
+    //   const walletQuantity = () => (
+    //     Object.values(wallets).map(wallet =>(
+    //       Number(wallet.quantity) * (coins.find(o=>o.id === wallet.coin_id)).current_price
+    //     ))
+    //   )
+      
+    //       console.log(walletQuantity())
+    //   console.log(portfolioBalance())
+    // console.log(currentUser.wallets)
+    // console.log(currentUser.wallets["bitcoin"].quantity)
+    // console.log(portfolioBalance)
+
+
     return (
         <div className="main-user-page">
           <div className="main-user-page-2">
@@ -82,7 +107,7 @@ class Dashboard extends React.Component {
                           <tr id="t2-head-row">
                             <th className="t2-h1"> <div className="div-t2-h1"><label className="label-t2-h1">Asset</label></div> </th>
                             <th className="t2-h1"><div className="div-t2-h1"><label className="label-t2-h1">Balance</label></div></th>
-                            <th className="t2-h1"><div className="div-t2-new-h"><label className="label-t2-h1">Allocation</label></div></th>
+                            <th className="t2-h1"><div className="div-t2-new-h"><label className="label-t2-h1">Orders</label></div></th>
                           </tr>
                         </thead>
                         <tbody className="coin-table-body">  
@@ -111,7 +136,7 @@ class Dashboard extends React.Component {
                               <td className="t2-r1">
                                   <div className="div-t2-new">
                                       <label className="label-t2-r1" >
-                                    Temporary%
+                                    
 
                                       </label>
                                   </div> 
