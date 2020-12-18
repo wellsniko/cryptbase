@@ -89,7 +89,7 @@ class MiniChart extends React.Component {
                     </div>
                 </div> 
                 <div className="inside-mini-box-2">
-                    <label className="hr-24-mini">24hr</label> <br/>
+                    <label className="hr-24-mini">24hr</label> 
                        <label className="mini-change-percentage" style={colorChooser(coin.price_change_percentage_24h)}> {coin.price_change_percentage_24h>= 0 ? "+" + (coin.price_change_percentage_24h).toFixed(2) + "%" : (coin.price_change_percentage_24h).toFixed(2) + "%"}</label>
                 </div>
                 </div>

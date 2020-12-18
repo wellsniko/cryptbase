@@ -12,7 +12,7 @@ import DashboardContainer from './dashboard/dashboard_container'
 import PriceIndexContainer from './prices/price_index_container'
 import SideNavContainer from './side_nav/side_nav_container'
 import TopNavContainer from './top_nav/top_nav_container'
-import PortfolioContainer from './portfolio/portfolio_container'
+// import PortfolioContainer from './portfolio/portfolio_container'
 import PriceDetailContainer from './prices/price_detail_container'
 
 const App = () => (
@@ -26,7 +26,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LogInFormContainer}/>
             <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
                 <ProtectedRoute exact path="/dashboard" component={DashboardContainer}/>
-                <ProtectedRoute exact path="/portfolio" component={PortfolioContainer}/>
+                {/* <ProtectedRoute exact path="/portfolio" component={PortfolioContainer}/> */}
                 <ProtectedRoute exact path="/prices" component={PriceIndexContainer}/>
                 <ProtectedRoute exact path="/prices/:coinId" component={PriceDetailContainer}/>
         

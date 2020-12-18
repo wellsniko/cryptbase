@@ -69,6 +69,9 @@ class ChartDetail extends React.Component {
             }]
         }
     
+        const colorChooser = (percentage)=> {
+            return percentage >= 0 ? {color:`rgb(5, 177, 105)`} : {color:`rgb(223, 95, 103)`};
+        }
 
 
         const options = {
@@ -76,6 +79,7 @@ class ChartDetail extends React.Component {
             maintainAspectRatio: false,
             ticks: {display: false},
             showScale: false,
+            legend: {display: false},
             scales: 
                 { 
                 yAxes: [{ 
@@ -100,8 +104,25 @@ class ChartDetail extends React.Component {
         }
         
         return (
-            <div id="holding-chart" style={{height: 340, width: 1006}}>
+                <div>
+               <div className="div-inside-mini-chart-2">
+                    <div className="inside-mini-box-1-1">
+                   
+                    <div className="mini-coin-price-2">
+                        {(coin.current_price).toLocaleString('en-US', {style: 'currency',currency: 'USD'})}
+                        
+                    </div>
+                     <label className="mini-change-percentage-2" style={colorChooser(coin.price_change_percentage_24h)}> {coin.price_change_percentage_24h>= 0 ? "+" + (coin.price_change_percentage_24h).toFixed(2) + "%" : (coin.price_change_percentage_24h).toFixed(2) + "%"}</label>
+                </div> 
+                <div className="inside-mini-box-2">
+                    <label className="hr-24-mini-2">24hr</label> <br/>
+                      
+                </div>
+                </div>
+
+            <div id="holding-chart" style={{height: 285, width: 1006}}>
             <Line data={data} options={options} />
+            </div>
             </div>
          );
     }

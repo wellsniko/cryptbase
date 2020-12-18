@@ -111,7 +111,7 @@ body, html {
 .bottom-blue {
     background-color: rgb(22, 82, 240);
     /* height: 100%; !TEMPORARY*/   
-    height: 1200px;
+    height: 1300px;
     margin: 0;
     
 }
@@ -1443,6 +1443,7 @@ ul li a {
     padding: 8px 24px;
     border-radius: 4px;
     margin: 0px -12px;
+    height: 175px;
 }
 
 .div-under-chart {
@@ -1928,7 +1929,7 @@ ul li a {
     padding-bottom: 24px;
     flex-shrink: 0;
 }
-
+/* 
 .order-header-div {
     display: flex;
     -webkit-box-pack: start;
@@ -1941,16 +1942,37 @@ ul li a {
     border-bottom: 1px solid rgb(236, 239, 241);
     border-top: none;
     flex-shrink: 0;
+} */
+
+.order-header-h3 {
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.3;
+    color: rgb(5, 15, 25);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
 }
 
+
 .order-header-div {
-    font-variant: tabular-nums;
+    /* font-variant: tabular-nums;
     font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     line-height: 1.3;
     color: rgb(5, 15, 25);
     font-size: 18px;
     display: block;
-    margin: 0px;
+    margin: 0px; */
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgb(236, 239, 241);
+    border-top: none;
+    flex-shrink: 0;
 }
 
 .order-body-div-1 {
@@ -2035,9 +2057,21 @@ ul li a {
     position: inherit;
     display: flex;
     justify-content: space-between;
-    width: 99%;
-    margin-top: 2px;
-    margin-left: 1px;
+    width: 98%;
+    margin-top: 4px;
+    margin-left: 5px;
+}
+
+.div-inside-mini-chart-2 {
+    position: inherit;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* margin-top: 7px; */
+    /* margin-left: 5px; */
+    padding-top: 16px;
+    padding-left: 20px;
+    padding-right: 25px;
 }
 
 .mini-coin-name {
@@ -2046,6 +2080,18 @@ ul li a {
     display: flex;
     font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: rgb(5, 15, 25);
+    transition: color 80ms ease-in-out 0s;
+}
+
+.mini-coin-name-2 {
+    align-items: center;
+    width: 122px;
+    display: flex;
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 22px;
     font-weight: 500;
     line-height: 1.6;
     color: rgb(5, 15, 25);
@@ -2061,10 +2107,24 @@ ul li a {
     font-weight: 500;
 }
 
+.mini-coin-price-2 {
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.3;
+    color: rgb(5, 15, 25);
+    font-size: 50px;
+    font-weight: 349;
+}
 
 .hr-24-mini {
     color: rgba(17, 51, 83, 0.6);
-    font-size: 11px
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.hr-24-mini-2 {
+    color: rgba(17, 51, 83, 0.6);
+    font-size: 17px;
+    margin-bottom: 3px;
 }
 
 
@@ -2082,4 +2142,34 @@ ul li a {
     color: rgba(17, 51, 83, 0.6);
     transition: all 0.25s ease 0s;
     cursor: pointer;
+}
+
+.inside-mini-box-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.inside-mini-box-1-1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.mini-change-percentage-2 {
+    padding-left: 14px;
+    font-size: 22px;
+    padding-top: 11px;
+}
+
+
+
+.order-list {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border: 1px solid rgb(236, 239, 241);
+    border-radius: 4px;
+    box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
 }
