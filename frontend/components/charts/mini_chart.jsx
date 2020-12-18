@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, Redirect } from 'react-router-dom';
 // import TradingBoxContainer from '../trading_box/trading_box_container'
 {/* <Link to={`/price/${props.coin.id}`}></Link> */}
 import { Line } from "react-chartjs-2";
@@ -13,23 +13,33 @@ class MiniChart extends React.Component {
 
 
     render() { 
+        // debugger
 
-        if (!this.props.coinId){
-            return <></>
+        
+        if (typeof this.props.coinId === 'undefined') {
+           return <> </>
         } 
-        if (!this.props.state.entities.watchlist[this.props.coinId]){
+        if (typeof this.props.state.entities.watchlist[this.props.coinId] === 'undefined'){
             return <> </>
         }
-        if (!this.props.state) {
+        if (typeof this.props.state === 'undefined') {
             return <> </>
         }
-        if (!this.props.state.entities.coins) {
-            return <></>
+        if (!this.props.coins) {
+           return <> </>
         }
+        if (Object.values(this.props.coins).length < 28) {
+           return <> </>
+        }
+        // if (typeof this.props.coins === 'object') {
+        //    return <> </>
+        // }
+        
         const pricesData = this.props.state.entities.watchlist[this.props.coinId].prices
         // const { coinId, coin, pricesData} = this.props;
         // console.log(coin)
-        const coin = this.props.state.entities.coins.find(o=> o.id === this.props.coinId)
+        console.log(this.props.coins) 
+        const coin = this.props.coins.find(o=> o.id === this.props.coinId)
           
         const dateData = pricesData.map(element => new Date (element[0]-28800).toLocaleString("en-US", {hour: "numeric", minute: "numeric"}))
         const priceData = pricesData.map(element => element[1])

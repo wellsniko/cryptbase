@@ -96,7 +96,7 @@ const SideNav = ({ currentUser, logout }) => {
     </>
     )
 
-     return currentUser ?  userHere() : <Redirect to="/"/>
+     return currentUser ?  userHere() : <> </>
 }
 
 

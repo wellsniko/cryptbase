@@ -17,6 +17,7 @@ const mapStateToProps = (state, ownProps) => ({
     color: ownProps.color,
     // priceData: state.entities.watchlist[ownProps.coinId].prices
     state: state,
+    coins: state.entities.coins
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -24,7 +25,7 @@ const mapDispatchToProps = dispatch => ({
 //   fetchBitcoinHistory: (id) => dispatch(fetchBitcoinHistory(id)),
 //   fetchEthereumHistory: (id) => dispatch(fetchEthereumHistory(id)),
 //   fetchLitecoinHistory: (id) => dispatch(fetchLitecoinHistory(id))
-    fetchHistory: () => dispatch(ownProps.fetchHistory)
+    // fetchHistory: () => dispatch(ownProps.fetchHistory)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MiniChart);

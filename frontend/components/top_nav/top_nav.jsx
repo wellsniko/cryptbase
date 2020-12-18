@@ -47,7 +47,7 @@ const TopNav = (props) => {
   )
 
 
-   return props.currentUser ?  userHere() : <> </>
+   return props.currentUser ? userHere() : <> </>
 };
 
 
