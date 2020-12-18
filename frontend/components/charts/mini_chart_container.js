@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 //   state: state,
 //   currentUser: state.entities.users[state.session.id],
 //   ordersArray: state.entities.users[state.session.id].orders,
-
+    // coin: state.entities.coins.find(o=> o.id === ownProps.coinId),
     coinId: ownProps.coinId,
     watchlist: state.entities.watchlist,
     fetchHistory: ownProps.fetchHistory,

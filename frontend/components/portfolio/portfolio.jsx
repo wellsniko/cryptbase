@@ -59,7 +59,9 @@ class Portfolio extends React.Component {
                               <MiniChartContainer coinId={"stellar"} fetchHistory={this.props.fetchStellarHistory} color={"rgb(0,0,0)"}/>
                             </div>
                           </div>
-                          <div className="watchlist-bottom"></div>
+                          <div className="watchlist-bottom">
+                            <Link to={"/prices"} style={{textDecoration : "none"}}>Discover More Assets</Link>
+                          </div>
                         </div>
                       </div>
                   </div>
