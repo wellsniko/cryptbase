@@ -38,7 +38,7 @@ class MiniChart extends React.Component {
         const pricesData = this.props.state.entities.watchlist[this.props.coinId].prices
         // const { coinId, coin, pricesData} = this.props;
         // console.log(coin)
-        console.log(this.props.coins) 
+        // console.log(this.props.coins) 
         const coin = this.props.coins.find(o=> o.id === this.props.coinId)
           
         const dateData = pricesData.map(element => new Date (element[0]-28800).toLocaleString("en-US", {hour: "numeric", minute: "numeric"}))

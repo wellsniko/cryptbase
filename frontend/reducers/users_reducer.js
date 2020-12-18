@@ -1,4 +1,5 @@
-import { RECEIVE_CURRENT_USER, RECEIVE_ORDER_DATA } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER} from '../actions/session_actions';
+import {RECEIVE_ORDER_DATA} from '../actions/trading_actions'
 
 
 const usersReducer = (state = {}, action) => {
@@ -8,11 +9,11 @@ const usersReducer = (state = {}, action) => {
       return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
     // case RECEIVE_ORDER_DATA:
       
-			// newState = merge({}, oldState, { [action.orderData.id]: action.userData });  {3: {bitcoin: {4: }
-			// // debugger
-			// // newState[action.userData.id].wallets = action.userData.wallets;				// "overwrite" old state portfolio
-			// // debugger
-			// return newState;
+		// 	return Object.assign({}, state, { [action.currentUser.id["messages"]]: action.userData });  
+		// 	// debugger
+		// 	// newState[action.userData.id].wallets = action.userData.wallets;				// "overwrite" old state portfolio
+		// 	// debugger
+		
     default:
       return state;
   }

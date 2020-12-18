@@ -6,6 +6,7 @@ class TradingBox extends React.Component {
     super(props);
     this.state = {
       quantity: "0",
+      // button: "BUY"
     }
  
     this.handleBuy = this.handleBuy.bind(this);
@@ -21,48 +22,82 @@ class TradingBox extends React.Component {
 
 
     handleBuy() {
-        
+        this.props.removeErrors()
         const { userId, coinId, current_price, coin, fetchUser } = this.props;
         const { quantity } = this.state;
         const orderParams = { 
-            quantity: Number(quantity),
+            quantity: Number(quantity/current_price),
             price: current_price,
-            total_value: (current_price * quantity),
+            total_value: (quantity),
             coin_id: coinId, 
             user_id: userId,
             type: "BUY" 
         };
         // debugger
-        debugger
-        this.props.buyCoin(orderParams);                   
-        alert(`You purchased ${quantity} ${coin.symbol}`);
         
-        setTimeout(() => fetchUser(userId), 100)
+        this.props.buyCoin(orderParams);
+        setTimeout(() => fetchUser(userId).then(()=> {
+        if (this.props.errors.length < 1){
+          alert(`You successfully purchased ${Number(quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of ${coin.symbol}`);
+        }}), 200)
+        // .then(()=> {
+        // if (this.props.errors.length < 1){
+        //   alert(`You purchased $${Number(quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of ${coin.symbol}`);
+        // }})
+        //  setTimeout(() => if (this.props.errors.length < 1){
+        //   alert(`You purchased $${Number(quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of ${coin.symbol}`);
+        // })
         
+                 
     }
 
     handleSell() {
+      this.props.removeErrors()
         
         const { userId, coinId, current_price, coin, fetchUser } = this.props;
         const { quantity } = this.state;
         const orderParams = { 
-            quantity: Number(quantity),
+            quantity: Number(quantity/current_price),
             price: current_price,
-            total_value: (current_price * quantity),
+            total_value: (quantity),
             coin_id: coinId, 
             user_id: userId,
             type: "SELL" 
         };
         // debugger
         this.props.sellCoin(orderParams);                   
-        alert(`You sold ${quantity} ${coin.symbol}`);
-        setTimeout(() => fetchUser(userId), 100)
+        // alert(`You sold ${quantity} ${coin.symbol}`);
+
+        
+        setTimeout(() => fetchUser(userId).then(()=> {
+        if (this.props.errors.length < 1){
+          alert(`You successfully sold ${Number(quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of ${coin.symbol}`);
+        }}), 200)
         
     }
+
+    renderErrors() {
+      return(
+        <div className="error-danger">
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </div>
+      );
+    }
+
+    componentWillUnmount() {						
+		  this.props.removeErrors();
+	}
 
 
 
     render() {
+      if (!this.props) {
+        return <> </>
+      }
    
        
         return (
@@ -88,12 +123,13 @@ class TradingBox extends React.Component {
                           </div>
                         </div>
                       </div>
-                      <span className="you-can-buy-up-to">You can buy up to ${this.props.state.entities.users[this.props.userId].wallets["usd"].quantity} of {this.props.coin.name}</span>
+                      <span className="you-can-buy-up-to">You can buy up to {Number(this.props.state.entities.users[this.props.userId].wallets["usd"].quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of {this.props.coin.name}</span>
                       <div className="one-time-purchase-1">
                         <button className="one-time-purchase-2">
                           One time purchase
                         </button>
                       </div>
+                      <div >{this.renderErrors()}</div>
                       <div className="buy-box-body-inside">
                         <div>
                           <button className="buy-sell-button" onClick={this.handleBuy}>
@@ -110,9 +146,9 @@ class TradingBox extends React.Component {
                         <span >Current Price: </span> <span >{this.props.current_price}</span> */}
                         
                         <div className="buy-box-bottom">
-                          <p className="balance-buy-box">{this.props.coin.name}&nbsp;balance</p>
+                          <p className="balance-buy-box">Your&nbsp;{this.props.coin.name}&nbsp;balance:</p>
                           <div className="buy-box-balance-2">
-                            <p className="balance-buy-box-2">{this.props.state.entities.users[this.props.userId].wallets[this.props.coinId].quantity}&nbsp;{this.props.coin.symbol}</p>
+                            <p className="balance-buy-box-2">{(Number(this.props.state.entities.users[this.props.userId].wallets[this.props.coinId].quantity)).toFixed(2)}&nbsp;{this.props.coin.symbol}</p>
                           </div>
                         </div>
                     </div>

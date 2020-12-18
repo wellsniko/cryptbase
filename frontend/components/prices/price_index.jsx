@@ -10,12 +10,23 @@ class PriceIndex extends React.Component {
     this.props.fetchCoins();
   }
 
+
+  
+
   render() {
+    if (!this.props.coins){
+      return <> </>
+    }
+
     const { coins} = this.props;
     // debugger
     // let newPercentage;
     // coins == undefined ? newPercentage = null : newPercentage = (coins[0].price_change_percentage_24h >= 0 ? "+" + coins[0].price_change_percentage_24h.toFixed(2)+"%" : "-" + coins[0].price_change_percentage_24h + "%" );
-    
+    const colorChooser = (percentage)=> {
+    return percentage >= 0 ? {color:`rgb(5, 177, 105)`} : {color:`rgb(223, 95, 103)`};
+  }
+  console.log(coins)
+
     
     
     return (
@@ -27,8 +38,8 @@ class PriceIndex extends React.Component {
             <div className="price-index-title">
              <h1>
                <span id="in-last-24">In the last 24 hours</span>
-               
-               <span id="market-is">Market is </span> <span>+%</span>
+               {/* coins[0] not working!!! */}
+               <span id="market-is">Market is </span> <span style={{color:`rgb(5, 177, 105)`}}>+3.2%</span><span id="market-is">&nbsp;in last 24 hours </span>
              </h1>
             </div>
               <section className="price-index-section">

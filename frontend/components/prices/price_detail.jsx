@@ -6,7 +6,7 @@ import ChartDetailContainer from '../charts/chart_detail_container'
 import { Line } from "react-chartjs-2";
 
 class PriceDetail extends React.Component {
- 
+    
 
     componentDidMount() {
         
@@ -148,7 +148,7 @@ class PriceDetail extends React.Component {
                                                     </label>
                                                 </div>
                                                 <div className="div-under-text-2">
-                                                   Temporary 
+                                                   60% Buy 
                                                 </div>
                                                 
                                             </div>
@@ -159,7 +159,7 @@ class PriceDetail extends React.Component {
                                                     </label>
                                                 </div>
                                                 <span className="span-under-text">
-                                                    Temporary
+                                                    90 Days
                                                 </span>
                                                 
                                             </div>

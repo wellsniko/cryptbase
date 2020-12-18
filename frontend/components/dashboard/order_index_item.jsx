@@ -30,7 +30,7 @@ const OrderIndexItem = props => {
 
 return (
     <div className="order-row-item">
-       {order.quantity}&nbsp;{order.transaction_type}&nbsp;{order.created_at}
+       {Number(order.quantity).toFixed(2)}&nbsp;&nbsp;&nbsp;&nbsp;{order.coin_id}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{order.transaction_type}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{new Date (order.created_at).toLocaleString("en-US", {day: "numeric", month: "numeric", year: "numeric", hour: "numeric", minute: "numeric"})}
     </div>
 
 

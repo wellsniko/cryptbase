@@ -16,13 +16,23 @@ const TopNav = (props) => {
   // const titleHelper = ()=> {
   //       if 
   //   }
-  
+  const getTitle = () => {
+    switch (props.location.pathname){
+      case "/dashboard": 
+          return "Home"
+      case "/porfolio":
+        return "Portfolio"
+      default:
+        return "Prices"
+      
+  }
+  }
 
 
   const userHere = () => (
     <nav className="main-top-nav">
      
-        <div className="top-nav-div-1">Home</div>
+        <div className="top-nav-div-1">{getTitle()}</div>
         <div className="top-nav-div-2"></div>
         <div className="top-nav-div-3">
           <div className="top-nav-div-3-3">

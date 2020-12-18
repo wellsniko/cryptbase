@@ -5,6 +5,9 @@ class Api::OrdersController < ApplicationController
 
     def create
         # debugger
+        if order_params[:quantity].to_f == 0
+            render json: ["You can't have an order of $0, silly"], status: 422
+        end
         unless logged_in? && (current_user.id == order_params[:user_id].to_i)
             render json: ['Invalid params'], status: 422
         end
@@ -31,6 +34,8 @@ class Api::OrdersController < ApplicationController
             
                 @order.save!
                 # render :json {}
+                # render :json ["Congrats, your buy order was successful"]
+                
             end
 
         elsif order_params[:type] == "SELL"
