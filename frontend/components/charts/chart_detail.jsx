@@ -126,7 +126,7 @@ class ChartDetail extends React.Component {
                 </div>
                 </div>
 
-            <div id="holding-chart" style={{height: 285, width: 1006}}>
+            <div id="holding-chart" style={{height: 285}}>
             <Line data={data} options={options} />
             </div>
             </div>

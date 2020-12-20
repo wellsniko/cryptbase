@@ -110,7 +110,7 @@ class MiniChart extends React.Component {
                 </div>
                 </div>
 
-                <div className="mini-holding-chart" style={{height: 155, width: 481}}>
+                <div className="mini-holding-chart" style={{height: 155}}>
                 <Line data={data} options={options} />
             </div>
 </div>

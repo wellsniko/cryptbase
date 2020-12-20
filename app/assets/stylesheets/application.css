@@ -1530,6 +1530,7 @@ ul li a {
 
 #holding-chart {
     position: relative;
+    width: 100%;
     
 }
 
@@ -2090,6 +2091,7 @@ ul li a {
 
 .mini-holding-chart {
     border-bottom: 1px solid rgb(236, 239, 241);
+    width: 100%;
     
 }
 
