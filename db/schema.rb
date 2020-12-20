@@ -34,16 +34,6 @@ ActiveRecord::Schema.define(version: 2020_12_18_184234) do
     t.datetime "created_at"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "session_token", null: false
-    t.string "password_digest", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["session_token"], name: "index_users_on_session_token", unique: true
-  end
-
   create_table "wallets", force: :cascade do |t|
     t.string "coin_id", null: false
     t.integer "user_id", null: false
