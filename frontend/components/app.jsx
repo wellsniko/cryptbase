@@ -20,15 +20,15 @@ const App = () => (
 
   <>
           <SideNavContainer/>
-            <TopNavContainer/>
+          <TopNavContainer/>
           <Switch>
             <AuthRoute exact path="/" component={HomepageContainer}/>
             <AuthRoute exact path="/login" component={LogInFormContainer}/>
             <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
-                <ProtectedRoute exact path="/dashboard" component={DashboardContainer}/>
+            <ProtectedRoute exact path="/dashboard" component={DashboardContainer}/>
           
-                <ProtectedRoute exact path="/prices" component={PriceIndexContainer}/>
-                <ProtectedRoute exact path="/prices/:coinId" component={PriceDetailContainer}/>
+            <ProtectedRoute exact path="/prices" component={PriceIndexContainer}/>
+            <ProtectedRoute exact path="/prices/:coinId" component={PriceDetailContainer}/>
         
           </Switch>
     </>

@@ -6,7 +6,8 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.decimal :quantity, null: false
       t.decimal :price, null: false
       t.string :transaction_type, null: false
-      t.timestamps
+      t.decimal :total_value, null: false
     end
   end
 end
+
