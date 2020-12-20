@@ -1,21 +1,21 @@
 class User < ApplicationRecord
 
-    validates :email, presence: true, uniqueness: true
-    validates :password_digest, presence: true
-    validates :password, length: {minimum: 6}, allow_nil: true
+    # validates :email, presence: true, uniqueness: true
+    # validates :password_digest, presence: true
+    # validates :password, length: {minimum: 6}, allow_nil: true
 
-    attr_reader :password
+    # attr_reader :password
 
-    after_create :create_wallets
-    after_initialize :ensure_session_token
+    # after_create :create_wallets
+    # after_initialize :ensure_session_token
     
-    has_many :wallets,
-        foreign_key: :user_id,
-        class_name: :Wallet
+    # has_many :wallets,
+    #     foreign_key: :user_id,
+    #     class_name: :Wallet
 
-    has_many :orders,
-        through: :wallets,
-        source: :orders
+    # has_many :orders,
+    #     through: :wallets,
+    #     source: :orders
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email.downcase)
