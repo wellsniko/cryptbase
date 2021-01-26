@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
 
   render() {
     const demoUser = {
-      email: "niko",
+      email: "niko@niko.com",
       password: "password"
     }
 

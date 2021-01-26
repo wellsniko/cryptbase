@@ -1,15 +1,15 @@
 import React from 'react';
-import { Link, withRouter, Redirect } from 'react-router-dom';
+// import { Link, withRouter, Redirect } from 'react-router-dom';
 // import TradingBoxContainer from '../trading_box/trading_box_container'
 {/* <Link to={`/price/${props.coin.id}`}></Link> */}
 import { Line } from "react-chartjs-2";
 
 class MiniChart extends React.Component {
-      componentDidMount() {
-        this.props.fetchCoins();
+    //   componentDidMount() {
+    //     this.props.fetchCoins();
         
-        // this.props.fetchHistory(this.props.coinId)
-    }
+    //     // this.props.fetchHistory(this.props.coinId)
+    // }
 
 
     render() { 

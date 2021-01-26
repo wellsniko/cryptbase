@@ -6,7 +6,7 @@ import OrderIndexItem from './order_index_item';
 
 class Dashboard extends React.Component {
   componentDidMount() {
-    // this.props.fetchCoins();
+    this.props.fetchCoins();
     this.props.fetchBitcoinHistory("bitcoin");
     this.props.fetchEthereumHistory("ethereum");
     this.props.fetchRippleHistory("ripple");

@@ -77,6 +77,8 @@ export const fetchCoinPriceData = id => dispatch => (
   ))
 );
 
+
+
 export const fetchCoin24hrData = id => dispatch => (
   APIUtil.fetchCoin24hrData(id)
   .then(data=> (dispatch(receiveHistoricalPrices(data))
