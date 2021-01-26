@@ -6,8 +6,12 @@ const CoinsReducer = (oldState = {}, action) => {
 
   if (action.type === RECEIVE_COINS) {
 
-      return Object.values(action.coins)
-      
+      // return Object.values(action.coins)
+    //   return Object.values(action.coins).map(coin => (
+    //     {[coin.id]:coin}
+    // ))
+    return (action.coins).reduce(
+      (obj, coin) => Object.assign(obj, { [coin.id]: coin }), {});
 
   } else {
     return oldState;

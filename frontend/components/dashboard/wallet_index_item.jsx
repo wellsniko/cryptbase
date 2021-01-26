@@ -27,7 +27,7 @@ const WalletIndexItem = props => {
     return percentage >= 0 ? {color:`rgb(5, 177, 105)`} : {color:`rgb(223, 95, 103)`};
   }
   const {wallet} = props;
-
+  // console.log(this.props)
 return (
     
 
@@ -44,7 +44,7 @@ return (
 
      <td className="t2-r1"> <div className="div-t2-r1"><label className="label-t2-r1">
        <div className="div-t2-r1" > 
-            <label style={{color: `black`}}>{(props.coin.current_price * wallet.quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})}&nbsp;&nbsp;</label>
+            <label style={{color: `black`}}>{(props.value).toLocaleString('en-US', {style: 'currency',currency: 'USD'})}&nbsp;&nbsp;</label>
             <label style={{color: `rgba(17, 51, 83, 0.6)`}}>{wallet.quantity}&nbsp;{props.coin.symbol.toUpperCase()}</label>
           </div>
         </label>

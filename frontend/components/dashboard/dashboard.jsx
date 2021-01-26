@@ -19,6 +19,9 @@ class Dashboard extends React.Component {
     if (!this.props.currentUser) {
       return <> </> 
     } 
+    if (!this.props.coins){
+      return null
+    }
     // if (!this.props.coins){
     //   return <> </>
     // } if (!Object.values(this.props.currentUser.wallets)[1]quantity) {
@@ -37,10 +40,30 @@ class Dashboard extends React.Component {
 
     const wallets = currentUser.wallets
     
+    // if (!wallets){
+    //   return <> </>
+    // }
+    // console.log(wallets)
+    let walletArray = []
+    // Object.values(wallets).map((wallet, idx) => {
+    //                         console.log(wallets)
+            
+    //   })
+    // console.log(wallets)
+    Object.values(wallets).forEach((wallet, idx) =>{
+      if (coins[wallet.coin_id]){ 
+       
+        walletArray.push( { coin_id :coins[wallet.coin_id].id, orders: wallet.orders, value: ((coins[wallet.coin_id].current_price) * wallet.quantity), quantity: wallet.quantity });
+        }
+         if (wallet.coin_id === "usd") walletArray.push( { coin_id : "usd", value: Number(wallet.quantity), quantity: wallet.quantity, orders: [] });
+    })
+    const sortedWalletArray = walletArray.sort((a, b) => (a.value < b.value) ? 1 : (a.value === b.value) ? ((a.value < b.value) ? 1 : -1) : -1 )
+    console.log(sortedWalletArray)
     // const portfolioBalance = () => (
     //   coins.map(coin => (
     //    coin.current_price 
     //   )))
+    // console.log(sortedWalletArray)
 
     //   const walletQuantity = () => (
     //     Object.values(wallets).map(wallet =>(
@@ -113,7 +136,48 @@ class Dashboard extends React.Component {
                         <tbody className="coin-table-body">  
 
 
-                              <tr className="price-index-row">
+                              {/* <tr className="price-index-row">
+                              <td className="t2-r1"> 
+                                
+                                  
+                                    <div className="div-t2-usd" > 
+                                    <h3 className="index-image-2">$</h3>
+                                      <label style={{color: `black`}}>&nbsp;&nbsp;&nbsp;US Dollar&nbsp;&nbsp;</label>
+                                      
+                                    </div>
+                               
+                              </td>
+
+                              <td className="t2-r1"> <div className="div-t2-r1"><label className="label-t2-r1">
+                                <div className="div-t2-r1" > 
+                                      <label style={{color: `black`}}>{(wallets.usd.quantity * 1).toLocaleString('en-US', {style: 'currency',currency: 'USD'})}&nbsp;&nbsp;</label>
+                                      <label style={{color: `rgba(17, 51, 83, 0.6)`}}>&nbsp;USD</label>
+                                    </div>
+                                  </label>
+                                </div> 
+                              </td>
+                              <td className="t2-r1">
+                                  <div className="div-t2-new">
+                                      <label className="label-t2-r1" >
+                                    
+
+                                      </label>
+                                  </div> 
+                              </td>
+
+                            </tr> */}
+                         
+
+                            {/* {let walletArray = Object.values(wallets).map((wallet, idx) =>(
+                              (coins.find(o => o.id === wallet.coin_id)).current_price * wallet.quantity
+                            ))} */}
+                            
+                         
+                          {sortedWalletArray.map((wallet, idx) => {
+                            // console.log(wallet)
+                            if (wallet.coin_id === "usd"){
+                              return (
+                                <tr key={`${idx}`} className="price-index-row">
                               <td className="t2-r1"> 
                                 
                                   
@@ -143,9 +207,17 @@ class Dashboard extends React.Component {
                               </td>
 
                             </tr>
-                          {Object.values(wallets).map((wallet, idx) => (
-                            <WalletIndexItem wallet={wallet} key={idx} id={idx} wallets={wallets} coins={coins} coin={coins.find(o => o.id === wallet.coin_id)}/>
-                          ))}
+                              )
+                            } else {
+
+                            
+
+
+                            return (
+                            // <WalletIndexItem wallet={wallet} key={idx} id={idx} wallets={wallets} coins={coins} coin={coins[wallet.coin_id]}/>
+                            <WalletIndexItem wallet={wallet} key={idx} id={idx} value={wallet.value} coins={coins} coin={coins[wallet.coin_id]}/>
+                            )
+                          }})}
                             </tbody>
                           </table>
                         </div>

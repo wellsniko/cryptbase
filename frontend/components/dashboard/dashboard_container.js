@@ -6,7 +6,7 @@ import { fetchCoins,fetchBitcoinHistory, fetchEthereumHistory, fetchRippleHistor
 
 
 const mapStateToProps = state => ({
-  coins: Object.values(state.entities.coins),
+  coins: state.entities.coins,
   // state: state,
   currentUser: state.entities.users[state.session.id],
   ordersArray: state.entities.users[state.session.id].orders,
