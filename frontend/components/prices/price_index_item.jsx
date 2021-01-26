@@ -20,9 +20,17 @@ const PriceIndexItem = props => {
     return percentage >= 0 ? {color:`rgb(5, 177, 105)`} : {color:`rgb(223, 95, 103)`};
   }
 
+  // const changeBackground = (e) => {
+  //   e.target.style.background = 'red';
+  // }
+
+  // const removeBackground = (e) => {
+  //   e.target.style.background = 'none';
+  // }
+
 return (
   
-  <tr className="price-index-row">
+  <tr className="price-index-row" >
     
      <td className="t2-r1"> <div className="div-t2-r1"><label className="label-t2-r1" style={{color: `rgba(17, 51, 83, 0.6)`}}>{props.id + 1}</label></div> </td>
      <td className="josh"> 

@@ -1,10 +1,29 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, withRouter  } from 'react-router-dom';
 import CoinIndexContainer from '../prices/nu_price_index_container'
 import NavContainer from '../nav/nav_container'
 import HeaderContainer from '../header/header_container'
 
-const Homepage = ({ currentUser, logout }) => {
+class Homepage extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+
+    };
+    // this.handleSubmit = this.handleSubmit.bind(this);
+  }
+   update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+  
+  render(){
+    console.log(this.state)
+    
+
+    // console.log(this.props)
   const noCurrentUser = () => (
     <div className="home-body">
       <header>
@@ -25,8 +44,8 @@ const Homepage = ({ currentUser, logout }) => {
                 </p>
             <div className="home-email-address-div">
               <form className="home-email-address"> 
-                <input id="home-email-address" type="text" placeholder="email"/>  
-                <Link className="home-link-get-started" to="/signup">Get started</Link>
+                <input id="home-email-address" type="text" onChange={this.update('email')} placeholder="email"/>  
+                <Link className="home-link-get-started" email={this.state.email}  to={{pathname:`/signup`, state: {email: this.state.email}}}>Get started</Link>
               </form> 
             </div>
             </div> 
@@ -46,8 +65,10 @@ const Homepage = ({ currentUser, logout }) => {
     </hgroup>
   );
 
-  return currentUser ? <> </> : noCurrentUser();
+  return (this.props.currentUser? null : noCurrentUser())
+
+  }
 };
 
 
-export default Homepage;
+export default withRouter(Homepage);

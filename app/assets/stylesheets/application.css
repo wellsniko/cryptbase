@@ -945,6 +945,13 @@ th label {
 .price-index-row {
     background: rgb(255, 255, 255);
     user-select: none;
+
+}
+
+.price-index-row:hover {
+   background: rgb(250, 251, 252);
+    /* user-select: none; */
+
 }
 
 .t2-r1:first-child {

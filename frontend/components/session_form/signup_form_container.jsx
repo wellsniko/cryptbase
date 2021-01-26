@@ -4,8 +4,15 @@ import { Link } from 'react-router-dom';
 import { signup, removeErrors, login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = ({ errors}, ownProps) => {
+
+  let myEmail
+  if (!ownProps.location.state) {
+    myEmail=""
+  } else {myEmail = ownProps.location.state.email}
+
   return {
+    inEmail: myEmail,
     errors: errors.session,
     formType: 'signup',
     navLink: <Link to="/login">log in instead</Link>,

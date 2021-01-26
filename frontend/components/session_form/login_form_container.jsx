@@ -5,12 +5,13 @@ import { login, removeErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = ({ errors }) => {
+
   return {
+    inEmail: "",
     errors: errors.session,
     navLink: <Link to="/signup">sign up instead</Link>,
     formType: "login",
     formText: ["Sign in to Cryptbase", "SIGN IN"],
-    
   };
 };
 
