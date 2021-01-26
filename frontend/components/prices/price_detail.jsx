@@ -148,7 +148,7 @@ class PriceDetail extends React.Component {
                                                     </label>
                                                 </div>
                                                 <div className="div-under-text-2">
-                                                   60% Buy 
+                                                   {coin.price_change_percentage_24h < .03 && coin.price_change_percentage_24h > -.03 ? coin.price_change_percentage_24h > 0 ? coin.price_change_percentage_24h * 30 + "% Hold" : coin.price_change_percentage_24h * -30 + "% Hold" : coin.price_change_percentage_24h > 0 ? coin.price_change_percentage_24h * 11 > 1 ? "70% Sell" : coin.price_change_percentage_24h * 11 + "% Sell" : coin.price_change_percentage_24h * 11 < 1 ? "60% Buy" : coin.price_change_percentage_24h * 11 + "% Buy"}
                                                 </div>
                                                 
                                             </div>
