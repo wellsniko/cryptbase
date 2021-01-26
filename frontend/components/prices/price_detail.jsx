@@ -148,7 +148,10 @@ class PriceDetail extends React.Component {
                                                     </label>
                                                 </div>
                                                 <div className="div-under-text-2">
-                                                   {coin.price_change_percentage_24h < .03 && coin.price_change_percentage_24h > -.03 ? coin.price_change_percentage_24h > 0 ? coin.price_change_percentage_24h * 30 + "% Hold" : coin.price_change_percentage_24h * -30 + "% Hold" : coin.price_change_percentage_24h > 0 ? coin.price_change_percentage_24h * 11 > 1 ? "70% Sell" : coin.price_change_percentage_24h * 11 + "% Sell" : coin.price_change_percentage_24h * 11 < 1 ? "60% Buy" : coin.price_change_percentage_24h * 11 + "% Buy"}
+                                                   {coin.price_change_percentage_24h /100 < .03 && coin.price_change_percentage_24h /100 > -.03 ? coin.price_change_percentage_24h /100 > 0 ? 
+                                                   (coin.price_change_percentage_24h* 30).toFixed(0) + "% Hold" : (coin.price_change_percentage_24h * -30).toFixed(0) + "% Hold" : 
+                                                   coin.price_change_percentage_24h /100 > 0 ? coin.price_change_percentage_24h /100 * 11 > 1 ? "70% Sell" : 
+                                                   (coin.price_change_percentage_24h* 11).toFixed(0) + "% Sell" : coin.price_change_percentage_24h /100 * 11 < 1 ? "60% Buy" : (coin.price_change_percentage_24h * 11).toFixed(0) + "% Buy"}
                                                 </div>
                                                 
                                             </div>
@@ -159,7 +162,8 @@ class PriceDetail extends React.Component {
                                                     </label>
                                                 </div>
                                                 <span className="span-under-text">
-                                                    90 Days
+                                                    {coin.total_volume? (coin.circulating_supply * 3).toString().slice(0,2) : null} Days
+                                                    {/* {console.log(coin.total_volume)} */}
                                                 </span>
                                                 
                                             </div>
