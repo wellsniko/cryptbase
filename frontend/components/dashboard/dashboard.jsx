@@ -58,7 +58,7 @@ class Dashboard extends React.Component {
          if (wallet.coin_id === "usd") walletArray.push( { coin_id : "usd", value: Number(wallet.quantity), quantity: wallet.quantity, orders: [] });
     })
     const sortedWalletArray = walletArray.sort((a, b) => (a.value < b.value) ? 1 : (a.value === b.value) ? ((a.value < b.value) ? 1 : -1) : -1 )
-    console.log(sortedWalletArray)
+
     // const portfolioBalance = () => (
     //   coins.map(coin => (
     //    coin.current_price 
@@ -174,7 +174,7 @@ class Dashboard extends React.Component {
                             
                          
                           {sortedWalletArray.map((wallet, idx) => {
-                            // console.log(wallet)
+                            
                             if (wallet.coin_id === "usd"){
                               return (
                                 <tr key={`${idx}`} className="price-index-row">
