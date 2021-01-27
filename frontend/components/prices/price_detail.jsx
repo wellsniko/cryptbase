@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import TradingBoxContainer from '../trading_box/trading_box_container'
 {/* <Link to={`/price/${props.coin.id}`}></Link> */}
 import ChartDetailContainer from '../charts/chart_detail_container'
+import CoinNewsItem from './coin_news_item'
 import { Line } from "react-chartjs-2";
 
 class PriceDetail extends React.Component {
@@ -12,6 +13,7 @@ class PriceDetail extends React.Component {
         
         this.props.fetchCoinPriceData(this.props.coinId);   
         this.props.fetchCoin24hrData(this.props.coinId)
+        this.props.fetchCoinNews("btc")
     }
 
     render() {
@@ -68,6 +70,7 @@ class PriceDetail extends React.Component {
         //         }
         //     ]
         //     }
+        if (!coin.news) return null
 
         return (
             <>
@@ -181,12 +184,44 @@ class PriceDetail extends React.Component {
                                     </div>
                                 </div>
                                 </div>
+                                <div id="coin-info box">
+                                    <div id="coin-info-box-2">
+                                        <div id="coin-info-box-3">
+                                            <div id="coin-info-margin-bottom">
+                                                <div id="coin-info-padding">
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="news-detail">
+                                    <div id="news-detail-2">
+                                        <div id="news-detail-3">
+                                            <div id="news-body">
+                                                <h2 id="news-h2">{coin.name}'s Top Stories</h2>
+                                                <div>{console.log(coin.news[0].title)}
+                                                    {(coin.news).map((story, idx)=> (
+                                                        <CoinNewsItem story={story} key={idx}/>
+                                                    ))}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
                             </div>
                             <div id="buy-box-column">
                                 <TradingBoxContainer coin={coin} coinId={coinId}/>
                             </div>
                         </div>
-                        
+
+
                     </div>
                     </div>
                 </div>

@@ -76,6 +76,17 @@ export const fetchCoins = () => (
         method: 'GET',
     })
 )
+
+export const fetchCoinNews = (symbol) => (
+    $.ajax({
+        url: `https://cors-anywhere.herokuapp.com/https://cryptopanic.com/api/v1/posts/?auth_token=62060cbf8b7979c691140501d6d2b70f8e76c1fc&currencies=${symbol}`,
+        method: 'GET',
+          headers:{
+    'X-Requested-With': 'XMLHttpRequest'
+  }
+    })
+)
+// &public=true
 // https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin%2Cethereum&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24hr
 // .then(coins => coins.map(coin => (
 //         {[coin.id]:coin}
