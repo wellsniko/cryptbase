@@ -71,7 +71,7 @@ class TradingBox extends React.Component {
             buyAction: "first",
             sellAction: "first"           
           })
-        }}), 200)
+        }}), 250)
 
       }
 
@@ -99,7 +99,7 @@ class TradingBox extends React.Component {
           buyBoxId: "buy-box-main-modal",
           sellAction: "second"                
         })
-      }
+      } else {
       this.props.removeErrors()
         
         const { userId, coinId, current_price, coin, fetchUser } = this.props;
@@ -127,7 +127,9 @@ class TradingBox extends React.Component {
             buyAction: "first",
             sellAction: "first"           
           })
-        }}), 200)
+        }}), 250)
+
+      }
         
     }
 

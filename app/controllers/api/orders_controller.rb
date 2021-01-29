@@ -5,19 +5,20 @@ class Api::OrdersController < ApplicationController
 
     def create
         # debugger
-        if order_params[:quantity].to_f == 0
-            render json: ["You can't have an order of $0, silly"], status: 422
-        end
-        unless logged_in? && (current_user.id == order_params[:user_id].to_i)
-            render json: ['Invalid params'], status: 422
-        end
+
 
         user_wallet = Wallet.find_wallet(order_params[:user_id], order_params[:coin_id])
         user_usd_wallet = Wallet.find_wallet(order_params[:user_id], "usd")
 
         if order_params[:type] == "BUY"
             if order_params[:total_value].to_f > user_usd_wallet.quantity
-                render json: ['Not enough USD to make purchase'], status: 422   
+                render json: ['Not enough USD to make purchase'], status: 422          
+            elsif order_params[:quantity].to_f == 0
+                    render json: ["You can't have an order of $0, silly"], status: 422
+           
+            elsif !logged_in? || (current_user.id != order_params[:user_id].to_i)
+                    render json: ['Invalid params'], status: 422
+             
             else
                 user_usd_wallet.update_quantity(order_params[:total_value].to_f * -1)
                 user_wallet.update_quantity(order_params[:quantity].to_f)
@@ -41,6 +42,11 @@ class Api::OrdersController < ApplicationController
         elsif order_params[:type] == "SELL"
             if order_params[:quantity].to_f > user_wallet.quantity
                 render json: ['Not enough to sell'], status: 422   
+            elsif order_params[:quantity].to_f == 0
+                    render json: ["You can't have an order of $0, silly"], status: 422
+      
+            elsif !logged_in? || (current_user.id != order_params[:user_id].to_i)
+                    render json: ['Invalid params'], status: 422
             else
                 user_usd_wallet.update_quantity(order_params[:total_value].to_f)
                 user_wallet.update_quantity(order_params[:quantity].to_f * -1)
