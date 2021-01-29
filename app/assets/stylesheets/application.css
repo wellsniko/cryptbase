@@ -1587,6 +1587,41 @@ ul li a {
     height: 544px;
 }
 
+.buy-box-main-modal {
+    display: flex;
+    /* width: 100%;
+    position: relative; */
+    background: rgb(255, 255, 255);
+    border-right: 1px solid rgb(236, 239, 241);
+    border-bottom: 1px solid rgb(236, 239, 241);
+    border-left: 1px solid rgb(236, 239, 241);
+    border-image: initial;
+    border-radius: 4px;
+    box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
+    border-top: none;
+    margin-bottom: 24px;
+    /* height: 544px; */
+        top: 50%;
+    left: 50%;
+    position: absolute;
+    min-height: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+}
+
+#buy-box-modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
 
 
 .buy-box-2 {
@@ -2353,6 +2388,7 @@ ul li a {
 
 #news-h2 {
     margin-bottom: 16px;
+    margin-top: 0px;
     padding: 0px;
     font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     line-height: 1.3;
@@ -2360,7 +2396,6 @@ ul li a {
     font-size: 22px;
     font-weight: 500;
     display: block;
-    margin: 0px;
 }
 
 

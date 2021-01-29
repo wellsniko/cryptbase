@@ -23,7 +23,7 @@ const CoinNewsItem = props => {
   // const changeBackground = (e) => {
   //   e.target.style.background = 'red';
   // }
-console.log(props)
+// console.log(props)
   // const removeBackground = (e) => {
   //   e.target.style.background = 'none';
   // }
@@ -32,15 +32,15 @@ return (
   <article id="news-article">
 
       <div id="news-div-1">
-        <Link id="news-title-link">
+        <div id="news-title-link">
             <h3 id="news-title-h3">{props.story.title}</h3>
-        </Link>
-        
+        </div>
+        <div>{new Date(props.story.published_at).toLocaleString("en-US", {day: "numeric", month: "numeric", year: "numeric", hour: "numeric", minute: "numeric"})}</div>
       </div>
-
-      <Link id="news-photo-link">
-        
-      </Link>
+      
+      <a id="news-photo-link" target="_blank" href={`${props.story.url.slice(0,38)}click/`}>
+        Source
+      </a>
   </article>
 
 )};

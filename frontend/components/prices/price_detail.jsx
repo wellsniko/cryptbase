@@ -10,14 +10,15 @@ class PriceDetail extends React.Component {
     
 
     componentDidMount() {
+       this.props.fetchCoin24hrData(this.props.coinId)
+        this.props.fetchCoinPriceData(this.props.coinId)
         
-        this.props.fetchCoinPriceData(this.props.coinId);   
-        this.props.fetchCoin24hrData(this.props.coinId)
-        this.props.fetchCoinNews("btc")
+        // this.props.fetchCoinNews("btc") 
+    //    this.props.fetchCoinNews(this.props.coinId)
     }
 
     render() {
-       
+        // console.log(this.props.coin)
         const { coinId, coin} = this.props;
         
         const normalNumConverter = (num) => {
@@ -70,7 +71,7 @@ class PriceDetail extends React.Component {
         //         }
         //     ]
         //     }
-        if (!coin.news) return null
+        // if (!coin.news) return null
 
         return (
             <>
@@ -184,7 +185,7 @@ class PriceDetail extends React.Component {
                                     </div>
                                 </div>
                                 </div>
-                                <div id="coin-info box">
+                                {/* <div id="coin-info box">
                                     <div id="coin-info-box-2">
                                         <div id="coin-info-box-3">
                                             <div id="coin-info-margin-bottom">
@@ -195,16 +196,16 @@ class PriceDetail extends React.Component {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                                 <div id="news-detail">
                                     <div id="news-detail-2">
                                         <div id="news-detail-3">
                                             <div id="news-body">
                                                 <h2 id="news-h2">{coin.name}'s Top Stories</h2>
-                                                <div>{console.log(coin.news[0].title)}
-                                                    {(coin.news).map((story, idx)=> (
+                                                <div>
+                                                    {/* {(coin.news).map((story, idx)=> (
                                                         <CoinNewsItem story={story} key={idx}/>
-                                                    ))}
+                                                    ))} */}
 
                                                 </div>
                                             </div>

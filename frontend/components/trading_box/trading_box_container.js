@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { fetchUser, removeErrors } from '../../actions/session_actions';
 import { buyCoin, sellCoin } from '../../actions/trading_actions';
 import TradingBox from './trading_box';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   
