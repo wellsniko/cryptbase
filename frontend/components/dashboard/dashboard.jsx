@@ -234,9 +234,11 @@ class Dashboard extends React.Component {
                            <div className="order-body-div-1">
                              <div className="order-body-div-2">
                                   <div>
-                                    {ordersArray.map((order, idx) => (  
-                                      <OrderIndexItem order={order} key={idx}/>
-                                      ))}
+                                    {ordersArray.map((order, idx) => 
+                                    {  
+                                      return (
+                                      <OrderIndexItem order={order} key={idx} coin={coins[order.coin_id]}/>
+                                    )})}
 
                                   </div>
                              </div>

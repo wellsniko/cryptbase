@@ -5,8 +5,8 @@ import { Link, withRouter } from 'react-router-dom';
 
 
 const OrderIndexItem = props => {
-    if (!props.order) {
-        return <></>
+    if (!props.order || !props.coin) {
+        return null
     }
 
   const numConverter = (num) => {
@@ -30,7 +30,14 @@ const OrderIndexItem = props => {
 
 return (
     <div className="order-row-item">
-       {Number(order.quantity).toFixed(2)}&nbsp;&nbsp;&nbsp;&nbsp;{order.coin_id}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{order.transaction_type}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{new Date (order.created_at).toLocaleString("en-US", {day: "numeric", month: "numeric", year: "numeric", hour: "numeric", minute: "numeric"})}
+      <div className="order-image-div">
+        <img className="coin-order-image" src={`${props.coin.image}`} alt=""/>
+      </div>
+      <div>
+        <h4 className="order-h4">{order.transaction_type === "BUY" ? `Bought ${props.coin.name}` : `Sold ${props.coin.name}`}</h4>
+        <p className="order-p">{order.transaction_type === "BUY" ? `+${Number(order.quantity).toFixed(4)}` : `-${Number(order.quantity).toFixed(4)}`}&nbsp;on&nbsp;{new Date (order.created_at).toLocaleString("en-US", {day: "numeric", month: "numeric", year: "numeric", hour: "numeric", minute: "numeric"})}</p>
+      </div>
+       {/* {Number(order.quantity).toFixed(4)}&nbsp;&nbsp;&nbsp;&nbsp;{order.coin_id}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{new Date (order.created_at).toLocaleString("en-US", {day: "numeric", month: "numeric", year: "numeric", hour: "numeric", minute: "numeric"})} */}
     </div>
 
 
