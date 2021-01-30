@@ -27,7 +27,7 @@ const OrderIndexItem = props => {
     return percentage >= 0 ? {color:`rgb(5, 177, 105)`} : {color:`rgb(223, 95, 103)`};
   }
   const {order} = props;
-
+ console.log("colin")
 return (
     <div className="order-row-item">
       <div className="order-image-div">

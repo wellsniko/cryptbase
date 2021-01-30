@@ -37,11 +37,11 @@ class SessionForm extends React.Component {
       </div>
     );
   }
-  demoLogin(e) {
-    e.preventDefault();
-    const user = { email: "teddyroosevelt@test.com", password: "password" };
-    this.props.processForm(user)
-  }
+  // demoLogin(e) {
+  //   e.preventDefault();
+  //   const user = { email: "teddyroosevelt@test.com", password: "password" };
+  //   this.props.processForm(user)
+  // }
   
   componentWillUnmount() {						
 		this.props.removeErrors();

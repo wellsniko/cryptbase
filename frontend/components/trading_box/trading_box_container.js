@@ -11,10 +11,11 @@ const mapStateToProps = (state, ownProps) => {
   const coinId = ownProps.coinId
   const current_price = ownProps.coin.current_price
   const errors = state.errors.session
+  const fromIndex = ownProps.fromIndex
   
 
   return ({
-    buyingPower, userId, coinId, current_price, state, errors
+    buyingPower, userId, coinId, current_price, state, errors, fromIndex
   });
 };
 

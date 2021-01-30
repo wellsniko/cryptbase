@@ -18,6 +18,7 @@ class TradingBox extends React.Component {
     this.handleBuy = this.handleBuy.bind(this);
     this.onQuantityChange = this.onQuantityChange.bind(this);
     this.handleSell = this.handleSell.bind(this);
+    // this.handleFromIndex = this.handleFromIndex.bind(this)
   }
 
     onQuantityChange(e) {
@@ -149,13 +150,32 @@ class TradingBox extends React.Component {
 		  this.props.removeErrors();
 	}
 
+    componentDidMount(){
+      this.handleFromIndex()
+    }
+
+    handleFromIndex(){
+      if (this.props.fromIndex){
+      this.setState({
+          backgroundId: "buy-box-modal-background",
+          buyBoxId: "buy-box-main-modal",
+          buyAction: "second",
+          sellAction: "second"
+      })} else {
+        return null
+      }
+    }
 
 
     render() {
       if (!this.props) {
         return <> </>
       }
-   
+      
+
+      if (this.props.fromIndex && this.state.backgroundId == "na"){
+        return null
+      }
        
         return (
           <div id={this.state.backgroundId} onClick={this.closeFormat}>

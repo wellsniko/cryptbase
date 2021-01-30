@@ -35,9 +35,10 @@ export const receiveCoinNews = news => ({
 
 
 
-export const receiveBitcoinPrices = data => ({
+export const receiveBitcoinPrices = (data, id) => ({
   type: RECEIVE_BITCOIN_PRICES,
-  data
+  data,
+  id
 })
 
 export const receiveEthereumPrices = data => ({
@@ -103,7 +104,7 @@ export const fetchCoin24hrData = id => dispatch => (
 
 export const fetchBitcoinHistory = (id) => dispatch => (
   APIUtil.fetchCoin24hrData(id)
-  .then(data => (dispatch(receiveBitcoinPrices(data))
+  .then(data => (dispatch(receiveBitcoinPrices(data, id))
   ))
 );
 

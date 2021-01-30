@@ -12,7 +12,7 @@ const WatchlistReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type){
   case RECEIVE_BITCOIN_PRICES: 
-      return Object.assign({}, oldState, {["bitcoin"]:action.data})
+      return Object.assign({}, oldState, {[action.id]:action.data})
   case RECEIVE_ETHEREUM_PRICES:
     return Object.assign({}, oldState, {["ethereum"]:action.data} );
   case RECEIVE_RIPPLE_PRICES:

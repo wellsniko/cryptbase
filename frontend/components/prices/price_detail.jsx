@@ -11,10 +11,8 @@ class PriceDetail extends React.Component {
 
     componentDidMount() {
        this.props.fetchCoin24hrData(this.props.coinId)
-        this.props.fetchCoinPriceData(this.props.coinId)
-        
-        // this.props.fetchCoinNews("btc") 
-    //    this.props.fetchCoinNews(this.props.coinId)
+        this.props.fetchCoinPriceData(this.props.coinId).then(data=> this.props.fetchCoinNews(data.coin[0].symbol))
+       
     }
 
     render() {
@@ -71,7 +69,7 @@ class PriceDetail extends React.Component {
         //         }
         //     ]
         //     }
-        // if (!coin.news) return null
+        if (!coin.news) return null
 
         return (
             <>
@@ -203,9 +201,9 @@ class PriceDetail extends React.Component {
                                             <div id="news-body">
                                                 <h2 id="news-h2">{coin.name}'s Top Stories</h2>
                                                 <div>
-                                                    {/* {(coin.news).map((story, idx)=> (
+                                                    {(coin.news).map((story, idx)=> (
                                                         <CoinNewsItem story={story} key={idx}/>
-                                                    ))} */}
+                                                    ))}
 
                                                 </div>
                                             </div>
@@ -218,7 +216,7 @@ class PriceDetail extends React.Component {
 
                             </div>
                             <div id="buy-box-column">
-                                <TradingBoxContainer coin={coin} coinId={coinId}/>
+                                <TradingBoxContainer fromIndex={false} coin={coin} coinId={coinId}/>
                             </div>
                         </div>
 
