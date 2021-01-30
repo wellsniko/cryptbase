@@ -27,12 +27,18 @@ class Dashboard extends React.Component {
     const wallets = currentUser.wallets
     
     let walletArray = []
+    let totalBalance = 0
 
     Object.values(wallets).forEach((wallet, idx) =>{
       if (coins[wallet.coin_id]){ 
         walletArray.push( { coin_id :coins[wallet.coin_id].id, orders: wallet.orders, value: ((coins[wallet.coin_id].current_price) * wallet.quantity), quantity: wallet.quantity });
+        totalBalance = totalBalance + Number((coins[wallet.coin_id].current_price) * wallet.quantity)
       }
-      if (wallet.coin_id === "usd") walletArray.push( { coin_id : "usd", value: Number(wallet.quantity), quantity: wallet.quantity, orders: [] });
+      if (wallet.coin_id === "usd") {
+        walletArray.push( { coin_id : "usd", value: Number(wallet.quantity), quantity: wallet.quantity, orders: [] });
+        totalBalance = totalBalance + Number(wallet.quantity)
+      }
+      
     })
 
     const sortedWalletArray = walletArray.sort((a, b) => (a.value < b.value) ? 1 : (a.value === b.value) ? ((a.value < b.value) ? 1 : -1) : -1 )
@@ -77,8 +83,10 @@ class Dashboard extends React.Component {
                       <div className="portfolio-left-down-2">
                         <div className="your-assets-1">
                           <div className="your-assets-top">
-                            <h2 className="your-assets-header">Your Assets</h2>
-
+                            <div className="wallets-header-div">
+                              <h2 className="your-assets-header">Your Assets:</h2>
+                              <h2 className="your-assets-header-2">{totalBalance.toLocaleString('en-US', {style: 'currency',currency: 'USD'})}</h2>
+                            </div>
                           <table id="price-table">
                                 <thead id="t2-head">
                                   <tr id="t2-head-row">
