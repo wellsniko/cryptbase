@@ -2028,6 +2028,10 @@ ul li a {
     margin-bottom: auto;
 }
 
+.index-item-modal{
+    
+}
+
 .detail-header {
     display: flex;
     flex-direction: row;

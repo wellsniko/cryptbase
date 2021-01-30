@@ -6,10 +6,12 @@ class PriceIndexItem extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        priceBox: false
+        priceBox: false,
+        priceBox2: false
 
       }
       this.closeFormat = this.closeFormat.bind(this)
+      this.handleTradeComponent = this.handleTradeComponent.bind(this)
     }
 
     closeFormat(){
@@ -17,6 +19,13 @@ class PriceIndexItem extends React.Component {
             priceBox: false                  
           })
     }
+
+    handleTradeComponent() {
+            this.setState({
+            priceBox: false                
+        })
+      }
+    
 
     render() {
 
@@ -33,6 +42,7 @@ class PriceIndexItem extends React.Component {
     const colorChooser = (percentage)=> {
       return percentage >= 0 ? {color:`rgb(5, 177, 105)`} : {color:`rgb(223, 95, 103)`};
     }
+
 
       return (
         
@@ -51,11 +61,13 @@ class PriceIndexItem extends React.Component {
             
             </Link> 
           </td>
+
           <td className="t2-r1"> <div className="div-t2-r1">{this.state.priceBox ? 
-          <div onClick={this.closeFormat}>
-          <TradingBoxContainer fromIndex={this.state.priceBox} coin={this.props.coin} coinId={this.props.coin.id}/> 
+          <div className="index-item-modal" onClick={this.closeFormat}>
+            <TradingBoxContainer helperParent={this.handleTradeComponent} fromIndex={this.state.priceBox} coin={this.props.coin} coinId={this.props.coin.id}/> 
           </div>
-          : null}
+          : null }
+
           <label className="label-t2-r1">{(this.props.coin.current_price).toLocaleString('en-US', {style: 'currency',currency: 'USD',
             })}</label></div> </td>
           <td className="t2-r1"> <div className="div-t2-r1"><label className="label-t2-r1" style={colorChooser(this.props.coin.price_change_percentage_24h)}>{this.props.coin.price_change_percentage_24h >= 0 ? "+" + (this.props.coin.price_change_percentage_24h).toFixed(2) + "%" : (this.props.coin.price_change_percentage_24h).toFixed(2) + "%"}</label></div> </td>

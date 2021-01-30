@@ -55,11 +55,11 @@ class TradingBox extends React.Component {
             user_id: userId,
             type: "BUY" 
         };
-      
+        
         this.props.buyCoin(orderParams);
         setTimeout(() => fetchUser(userId).then(()=> {
         if (this.props.errors.length < 1){
-          alert(`You successfully purchased ${Number(quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of ${coin.symbol}`);        
+          alert(`You successfully purchased ${Number(quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of ${coin.symbol.toUpperCase()}`);        
           this.setState({
             quantity: "0",
             backgroundId: "na",
@@ -67,6 +67,7 @@ class TradingBox extends React.Component {
             buyAction: "first",
             sellAction: "first"           
           })
+          if (this.props.fromIndex)this.props.helperParent()
         }}), 250)
       }
                  
@@ -105,6 +106,7 @@ class TradingBox extends React.Component {
             buyAction: "first",
             sellAction: "first"           
           })
+          if (this.props.fromIndex) this.props.helperParent()
         }}), 250)
 
       }
@@ -149,10 +151,6 @@ class TradingBox extends React.Component {
         return <> </>
       }
       
-
-      if (this.props.fromIndex && this.state.backgroundId == "na"){
-        return null
-      }
        
         return (
           <div id={this.state.backgroundId} onClick={this.closeFormat}>
