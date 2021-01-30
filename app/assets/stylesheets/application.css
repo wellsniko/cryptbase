@@ -187,7 +187,7 @@ div {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 2px;
-    -webkit-box-shadow: 0 1px 0 0 rgba(0,0,0,.02) inset;
+    box-shadow: 0 1px 0 0 rgba(0,0,0,.02) inset;
     border-radius: 1px;
     padding: 9px;
     border: 1px solid #f1f3f5;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav2Container from '../nav2/nav2_container'
 import HeaderContainer from '../header/header_container'
-import { Link, Redirect } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -11,7 +11,6 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.demoLogin = this.demoLogin.bind
   }
 
   update(field) {
@@ -37,11 +36,6 @@ class SessionForm extends React.Component {
       </div>
     );
   }
-  // demoLogin(e) {
-  //   e.preventDefault();
-  //   const user = { email: "teddyroosevelt@test.com", password: "password" };
-  //   this.props.processForm(user)
-  // }
   
   componentWillUnmount() {						
 		this.props.removeErrors();

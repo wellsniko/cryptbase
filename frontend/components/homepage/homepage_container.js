@@ -1,6 +1,4 @@
 import { connect } from 'react-redux';
-
-import { signup } from '../../actions/session_actions';
 import Homepage from './homepage';
 
 const mapStateToProps = ({ session, entities: { users } }) => {

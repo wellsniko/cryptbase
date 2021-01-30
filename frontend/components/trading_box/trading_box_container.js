@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { fetchUser, removeErrors } from '../../actions/session_actions';
 import { buyCoin, sellCoin } from '../../actions/trading_actions';
 import TradingBox from './trading_box';
-import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   
@@ -13,12 +12,10 @@ const mapStateToProps = (state, ownProps) => {
   const errors = state.errors.session
   const fromIndex = ownProps.fromIndex
   
-
   return ({
     buyingPower, userId, coinId, current_price, state, errors, fromIndex
   });
 };
-
 
 const mapDispatchToProps = (dispatch) => {
   return ({

@@ -1,17 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
 import PriceIndexItem from './price_index_item';
 
 
 class PriceIndex extends React.Component {
+  
   componentDidMount() {
-    
     this.props.fetchCoins();
   }
-
-
-  
 
   render() {
     if (!this.props.coins){
@@ -22,13 +17,9 @@ class PriceIndex extends React.Component {
     }
 
     const { coins} = this.props;
-    // debugger
-    // let newPercentage;
-    // coins == undefined ? newPercentage = null : newPercentage = (coins[0].price_change_percentage_24h >= 0 ? "+" + coins[0].price_change_percentage_24h.toFixed(2)+"%" : "-" + coins[0].price_change_percentage_24h + "%" );
     const colorChooser = (percentage)=> {
       return percentage >= 0 ? {color:`rgb(5, 177, 105)`} : {color:`rgb(223, 95, 103)`};
     }
-  // console.log(coins)
 
     let implication
     if (((coins["bitcoin"].price_change_percentage_24h + coins["ethereum"].price_change_percentage_24h) /2) < 0) {
@@ -39,20 +30,17 @@ class PriceIndex extends React.Component {
 
     return (
       <>
-
         <div className="main-user-page">
           <div className="main-user-page-2">
             <div className ="price-index-body">
             <div className="price-index-title">
              <h1>
                <span id="in-last-24">In the past 24 hours</span>
-               {/* coins[0] not working!!! */}
                <span id="market-is">Market is {`${implication}`}&nbsp;</span> 
                <span style={colorChooser((coins["bitcoin"].price_change_percentage_24h + coins["ethereum"].price_change_percentage_24h) /2)}>
                   {(coins["bitcoin"].price_change_percentage_24h + coins["ethereum"].price_change_percentage_24h) /2 >= 0 ?
                   ((coins["bitcoin"].price_change_percentage_24h + coins["ethereum"].price_change_percentage_24h) /2).toFixed(2) + "%" :
                   ((coins["bitcoin"].price_change_percentage_24h + coins["ethereum"].price_change_percentage_24h) /-2).toFixed(2) + "%"}</span>
-                  {/* <span id="market-is"> </span> */}
              </h1>
             </div>
               <section className="price-index-section">
@@ -72,7 +60,7 @@ class PriceIndex extends React.Component {
                   <tbody className="coin-table-body">
                     {
                       Object.values(coins).map((coin, idx) => (
-                        <PriceIndexItem coin={coin}  key={idx} id={idx}/> //"bitcoin"
+                        <PriceIndexItem coin={coin}  key={idx} id={idx}/>
                       ))
                     }
                   </tbody>
@@ -89,8 +77,3 @@ class PriceIndex extends React.Component {
 
 export default PriceIndex;            
                     
-                    
-                    
-                    // <div className="coin-index-dashboard">
-                    //   <CoinIndexContainer/>
-                    // </div>

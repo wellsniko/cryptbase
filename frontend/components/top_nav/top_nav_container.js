@@ -6,8 +6,6 @@ import TopNav from './top_nav';
 const mapStateToProps = ({ session, entities: { users } }) => {
   return {
     currentUser: users[session.id],
-    
-
   };
 };
 

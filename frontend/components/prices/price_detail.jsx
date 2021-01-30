@@ -1,14 +1,10 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
 import TradingBoxContainer from '../trading_box/trading_box_container'
-{/* <Link to={`/price/${props.coin.id}`}></Link> */}
 import ChartDetailContainer from '../charts/chart_detail_container'
 import CoinNewsItem from './coin_news_item'
-import { Line } from "react-chartjs-2";
 
 class PriceDetail extends React.Component {
     
-
     componentDidMount() {
        this.props.fetchCoin24hrData(this.props.coinId)
         this.props.fetchCoinPriceData(this.props.coinId).then(data=> this.props.fetchCoinNews(data.coin[0].symbol))
@@ -16,7 +12,6 @@ class PriceDetail extends React.Component {
     }
 
     render() {
-        // console.log(this.props.coin)
         const { coinId, coin} = this.props;
         
         const normalNumConverter = (num) => {
@@ -44,31 +39,7 @@ class PriceDetail extends React.Component {
             ? "$" +(Math.abs(Number(num)) / 1.0e+3).toFixed(1) + "K"
             : ""
         }
-        // const priceData = []
 
-        //     coin.prices.forEach(day => {
-        //         priceData.push(day[1])
-        //     })
-                
-        // const dateData = []
-
-        //     coin.prices.forEach(day => {
-        //         dateData.push(day[0])
-        //     })
-            
-
-        //     const data = {
-        //         labels: dateData,
-        //         datasets: [
-        //         {
-        //         label: "First dataset",
-        //         data: priceData,
-        //         fill: true,
-        //         backgroundColor: "rgba(75,192,192,0.2)",
-        //         borderColor: "rgba(75,192,192,1)"
-        //         }
-        //     ]
-        //     }
         if (!coin.news) return null
 
         return (
@@ -165,7 +136,6 @@ class PriceDetail extends React.Component {
                                                 </div>
                                                 <span className="span-under-text">
                                                     {coin.total_volume? (coin.circulating_supply * 3).toString().slice(0,2) : null} Days
-                                                    {/* {console.log(coin.total_volume)} */}
                                                 </span>
                                                 
                                             </div>
@@ -201,7 +171,7 @@ class PriceDetail extends React.Component {
                                             <div id="news-body">
                                                 <h2 id="news-h2">{coin.name}'s Top Stories</h2>
                                                 <div>
-                                                    {(coin.news).map((story, idx)=> (
+                                                    { (!coin.news) ? <div> Sorry, I get 50 API requests to this API per hour. I guess there's more traffic than usual. </div> : (coin.news).map((story, idx)=> (
                                                         <CoinNewsItem story={story} key={idx}/>
                                                     ))}
 

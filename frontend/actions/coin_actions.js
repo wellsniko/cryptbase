@@ -72,7 +72,7 @@ export const receiveStellarPrices = data => ({
 
 export const fetchCoins = () => dispatch => (
   APIUtil.fetchCoins()
-  .then(coins => dispatch(receiveCoins(coins)))  //coins.coins
+  .then(coins => dispatch(receiveCoins(coins)))  
 );
 
 export const fetchCoinPriceData = id => dispatch => (
@@ -98,8 +98,6 @@ export const fetchCoin24hrData = id => dispatch => (
   .then(data=> (dispatch(receiveHistoricalPrices(data))
   ))
 );
-
-
 
 
 export const fetchBitcoinHistory = (id) => dispatch => (

@@ -1,13 +1,9 @@
 import { connect } from 'react-redux';
-
 import Dashboard from './dashboard';
 import { fetchCoins,fetchBitcoinHistory, fetchEthereumHistory, fetchRippleHistory, fetchBitcoinCashHistory, fetchLitecoinHistory, fetchStellarHistory} from '../../actions/coin_actions';
 
-
-
 const mapStateToProps = state => ({
   coins: state.entities.coins,
-  // state: state,
   currentUser: state.entities.users[state.session.id],
   ordersArray: state.entities.users[state.session.id].orders,
   watchlist: state.entities.watchlist

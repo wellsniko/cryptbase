@@ -1,9 +1,12 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
 
-const Nav2 = ({ currentUser, logout }) => {
-  const noUserNavBar = () => (
-    <nav className="nav-bar">
+const Nav2 = ({ currentUser }) => {
+
+  if (currentUser) {
+    return null
+  } else {
+    return (
+      <nav className="nav-bar">
         <div>
             <a>Products</a>
         </div>
@@ -13,11 +16,9 @@ const Nav2 = ({ currentUser, logout }) => {
         <div>
             <a>Prices</a>
         </div>
-    </nav>
-  );
-
-
-  return currentUser ? <> </> : noUserNavBar();
+      </nav>
+    )
+  }
 };
 
 

@@ -1,6 +1,5 @@
 import {RECEIVE_COIN, RECEIVE_HISTORICAL_PRICES, RECEIVE_COIN_NEWS} from '../actions/coin_actions';
 
-
 const CoinReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type){
@@ -14,18 +13,6 @@ const CoinReducer = (oldState = {}, action) => {
     return oldState;
   
   }
-// };
-//   switch (action.type) {
-//     case RECEIVE_SESSION_ERRORS:
-//       return action.errors;
-//     case RECEIVE_CURRENT_USER:
-//       return [];
-//     case REMOVE_ERRORS:
-//       return [];
-//     default:
-//       return state;
-//   }
-// };
 }
 export default CoinReducer;
 

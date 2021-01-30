@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class TradingBox extends React.Component {
   constructor(props) {
     super(props);
@@ -10,10 +9,8 @@ class TradingBox extends React.Component {
       buyBoxId: "buy-box-main",
       buyAction: "first",
       sellAction: "first"
-
-
-      // button: "BUY"
     }
+
     this.closeFormat = this.closeFormat.bind(this)
     this.handleBuy = this.handleBuy.bind(this);
     this.onQuantityChange = this.onQuantityChange.bind(this);
@@ -38,7 +35,6 @@ class TradingBox extends React.Component {
 
     handleBuy() {
 
-
       if (this.state.buyAction === "first") {
         this.setState({
           backgroundId: "buy-box-modal-background",
@@ -59,8 +55,7 @@ class TradingBox extends React.Component {
             user_id: userId,
             type: "BUY" 
         };
-        // debugger
-        
+      
         this.props.buyCoin(orderParams);
         setTimeout(() => fetchUser(userId).then(()=> {
         if (this.props.errors.length < 1){
@@ -73,26 +68,11 @@ class TradingBox extends React.Component {
             sellAction: "first"           
           })
         }}), 250)
-
       }
-
-
-
-
-
-        // .then(()=> {
-        // if (this.props.errors.length < 1){
-        //   alert(`You purchased $${Number(quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of ${coin.symbol}`);
-        // }})
-        //  setTimeout(() => if (this.props.errors.length < 1){
-        //   alert(`You purchased $${Number(quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of ${coin.symbol}`);
-        // })
-        
                  
     }
 
     handleSell() {
-
 
       if (this.state.sellAction === "first") {
         this.setState({
@@ -113,11 +93,8 @@ class TradingBox extends React.Component {
             user_id: userId,
             type: "SELL" 
         };
-        // debugger
-        this.props.sellCoin(orderParams);                   
-        // alert(`You sold ${quantity} ${coin.symbol}`);
 
-        
+        this.props.sellCoin(orderParams);                   
         setTimeout(() => fetchUser(userId).then(()=> {
         if (this.props.errors.length < 1){
           alert(`You successfully sold ${Number(quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of ${coin.symbol.toUpperCase()}`);
@@ -219,9 +196,6 @@ class TradingBox extends React.Component {
                             </div>
                           
                           </div>
-                            {/* <span >Symbol: </span> <span >{this.props.coin.symbol}</span>
-                            <br/>
-                            <span >Current Price: </span> <span >{this.props.current_price}</span> */}
                             
                             <div className="buy-box-bottom">
                               <p className="balance-buy-box">Your&nbsp;{this.props.coin.name}&nbsp;balance:</p>
