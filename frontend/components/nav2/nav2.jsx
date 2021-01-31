@@ -1,23 +1,24 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
 
-const Nav2 = ({ currentUser, logout }) => {
-  const noUserNavBar = () => (
-    <nav className="nav-bar">
+const Nav2 = ({ currentUser }) => {
+
+  if (currentUser) {
+    return null
+  } else {
+    return (
+      <nav className="nav-bar">
         <div>
-            <a>Products</a>
+            <a href="https://github.com/wellsniko" target="_blank" rel="noreferrer">Github</a>
         </div>
         <div>
-            <a>Help</a>
+            <a href="https://github.com/wellsniko/cryptbase" target="_blank" rel="noreferrer">Git Repo</a>
         </div>
         <div>
-            <a>Prices</a>
+            <a href="https://www.linkedin.com/in/niko-wells-16134aa0/" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
-    </nav>
-  );
-
-
-  return currentUser ? <> </> : noUserNavBar();
+      </nav>
+    )
+  }
 };
 
 

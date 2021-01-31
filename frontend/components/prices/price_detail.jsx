@@ -1,21 +1,17 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
 import TradingBoxContainer from '../trading_box/trading_box_container'
-{/* <Link to={`/price/${props.coin.id}`}></Link> */}
 import ChartDetailContainer from '../charts/chart_detail_container'
-import { Line } from "react-chartjs-2";
+import CoinNewsItem from './coin_news_item'
 
 class PriceDetail extends React.Component {
     
-
     componentDidMount() {
-        
-        this.props.fetchCoinPriceData(this.props.coinId);   
-        this.props.fetchCoin24hrData(this.props.coinId)
+       this.props.fetchCoin24hrData(this.props.coinId)
+        this.props.fetchCoinPriceData(this.props.coinId).then(data=> this.props.fetchCoinNews(data.coin[0].symbol))
+       
     }
 
     render() {
-       
         const { coinId, coin} = this.props;
         
         const normalNumConverter = (num) => {
@@ -43,31 +39,8 @@ class PriceDetail extends React.Component {
             ? "$" +(Math.abs(Number(num)) / 1.0e+3).toFixed(1) + "K"
             : ""
         }
-        // const priceData = []
 
-        //     coin.prices.forEach(day => {
-        //         priceData.push(day[1])
-        //     })
-                
-        // const dateData = []
-
-        //     coin.prices.forEach(day => {
-        //         dateData.push(day[0])
-        //     })
-            
-
-        //     const data = {
-        //         labels: dateData,
-        //         datasets: [
-        //         {
-        //         label: "First dataset",
-        //         data: priceData,
-        //         fill: true,
-        //         backgroundColor: "rgba(75,192,192,0.2)",
-        //         borderColor: "rgba(75,192,192,1)"
-        //         }
-        //     ]
-        //     }
+        if (!coin.news) return null
 
         return (
             <>
@@ -148,7 +121,10 @@ class PriceDetail extends React.Component {
                                                     </label>
                                                 </div>
                                                 <div className="div-under-text-2">
-                                                   60% Buy 
+                                                   {coin.price_change_percentage_24h /100 < .03 && coin.price_change_percentage_24h /100 > -.03 ? coin.price_change_percentage_24h /100 > 0 ? 
+                                                   (coin.price_change_percentage_24h* 30).toFixed(0) + "% Hold" : (coin.price_change_percentage_24h * -30).toFixed(0) + "% Hold" : 
+                                                   coin.price_change_percentage_24h /100 > 0 ? coin.price_change_percentage_24h /100 * 11 > 1 ? "70% Sell" : 
+                                                   (coin.price_change_percentage_24h* 11).toFixed(0) + "% Sell" : coin.price_change_percentage_24h /100 * 11 < 1 ? "60% Buy" : (coin.price_change_percentage_24h * 11).toFixed(0) + "% Buy"}
                                                 </div>
                                                 
                                             </div>
@@ -159,7 +135,7 @@ class PriceDetail extends React.Component {
                                                     </label>
                                                 </div>
                                                 <span className="span-under-text">
-                                                    90 Days
+                                                    {coin.total_volume? (coin.circulating_supply * 3).toString().slice(0,2) : null} Days
                                                 </span>
                                                 
                                             </div>
@@ -177,12 +153,44 @@ class PriceDetail extends React.Component {
                                     </div>
                                 </div>
                                 </div>
+                                {/* <div id="coin-info box">
+                                    <div id="coin-info-box-2">
+                                        <div id="coin-info-box-3">
+                                            <div id="coin-info-margin-bottom">
+                                                <div id="coin-info-padding">
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> */}
+                                <div id="news-detail">
+                                    <div id="news-detail-2">
+                                        <div id="news-detail-3">
+                                            <div id="news-body">
+                                                <h2 id="news-h2">{coin.name}'s Top Stories</h2>
+                                                <div>
+                                                    { (!coin.news) ? <div> Sorry, I get 50 API requests to this API per hour. I guess there's more traffic than usual. </div> : (coin.news).map((story, idx)=> (
+                                                        <CoinNewsItem story={story} key={idx}/>
+                                                    ))}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
                             </div>
                             <div id="buy-box-column">
-                                <TradingBoxContainer coin={coin} coinId={coinId}/>
+                                <TradingBoxContainer fromIndex={false} coin={coin} coinId={coinId}/>
                             </div>
                         </div>
-                        
+
+
                     </div>
                     </div>
                 </div>

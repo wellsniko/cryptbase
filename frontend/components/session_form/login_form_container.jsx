@@ -4,15 +4,13 @@ import { Link } from 'react-router-dom';
 import { login, removeErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
-const mapStateToProps = ({ errors }) => {
-  return {
+const mapStateToProps = ({ errors }) => ({
+    inEmail: "",
     errors: errors.session,
     navLink: <Link to="/signup">sign up instead</Link>,
     formType: "login",
     formText: ["Sign in to Cryptbase", "SIGN IN"],
-    
-  };
-};
+ })
 
 const mapDispatchToProps = dispatch => {
   return {

@@ -108,6 +108,16 @@ body, html {
     -webkit-font-smoothing: antialiased;
 }
 
+.home-body-2 {
+    background-color: rgb(22, 82, 240);
+    /* height: 100%; !TEMPORARY*/   
+    height: 100vh;
+    margin: 0;
+    font-family: Graphik,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
 .bottom-blue {
     background-color: rgb(22, 82, 240);
     /* height: 100%; !TEMPORARY*/   
@@ -187,7 +197,7 @@ div {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 2px;
-    -webkit-box-shadow: 0 1px 0 0 rgba(0,0,0,.02) inset;
+    box-shadow: 0 1px 0 0 rgba(0,0,0,.02) inset;
     border-radius: 1px;
     padding: 9px;
     border: 1px solid #f1f3f5;
@@ -516,7 +526,7 @@ div {
     left: 0px;
     top: 0px;
     right: 0px;
-    z-index: 1;
+    z-index: 5;
     margin-left: 237px;
     display: flex;
     -webkit-box-pack: justify;
@@ -702,6 +712,7 @@ div {
     overflow: visible;
     border-radius: 6px;
     box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
+    margin-bottom: 24px;
 }
 
 :root {
@@ -828,7 +839,9 @@ div {
 }
 
 
-/* price index price_index */
+.price-index-title-h1 {
+    margin: 0;
+}
 
 .price-index-title {
     /* border-bottom-color: rgb(53, 57, 59); */
@@ -877,11 +890,22 @@ div {
 
 #t2-head-row {
     border-bottom: 1px solid rgb(236, 239, 241);
+    height: 53px;
 }
 
 .t2-h1 {
     padding: 16px 48px 16px 0px;
     text-align: left;
+}
+
+.header-wallet-value {
+    padding: 16px 0px 16px 0px;
+    text-align: left;
+}
+
+.t2-h1-new-h {
+    padding: 16px 0px 16px 0px;
+    /* text-align: left; */
 }
 /* .t2-h1 label {
     width: 100%;
@@ -902,6 +926,11 @@ div {
     -webkit-box-align: center;
     align-items: center;
 }
+
+.label-t2-r1 {
+    cursor: pointer;
+}
+
 .div-t2-usd{
     display: flex;
     flex-direction: row;
@@ -945,24 +974,32 @@ th label {
 .price-index-row {
     background: rgb(255, 255, 255);
     user-select: none;
+    height: 72px;
+
 }
 
-.t2-r1:first-child {
-    padding-left: 32px;
+.price-index-row:hover {
+   background: rgb(250, 251, 252);
+    /* user-select: none; */
+
 }
+
+/* .t2-r1:first-child {
+    padding-left: 32px;
+} */
 
 .t2-r1 {
-    padding: 14px 48px 14px 0px;
+    /* padding: 14px 48px 14px 0px; */
     border-top: 1px solid rgb(236, 239, 241);
     cursor: pointer;
-    min-width: 140px;
+    /* min-width: 140px; */
 }
 
 .josh {
-    padding: 14px 48px 14px 0px;
+    /* padding: 14px 48px 14px 0px; */
     border-top: 1px solid rgb(236, 239, 241);
     cursor: pointer;
-    width: 46vw;
+    width: 39vw;
 }
 
 .josh2 {
@@ -972,12 +1009,49 @@ th label {
     width: 45vw;
 }
 
+.t2-r1-usd {
+    padding-left: 32px;
+    border-top: 1px solid rgb(236, 239, 241)
+}
+
 .index-link {
+    padding: 14px 48px 14px 0px;
     display: flex;
     flex: 1 1 auto;
     -webkit-box-align: center;
     align-items: center;
     flex-direction: row;
+    cursor: pointer;
+}
+
+.index-link-wallet-value {
+    padding: 14px 0px 14px 0px;
+    display: flex;
+    flex: 1 1 auto;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.index-link-r-l {
+    padding: 14px 22px 14px 0px;
+    display: flex;
+    flex: 1 1 auto;
+    -webkit-box-align: center;
+    text-align: center;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.index-link-num {
+    padding: 14px 48px 14px 32px;
+    display: flex;
+    flex: 1 1 auto;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
 }
 
 .index-image {
@@ -1010,6 +1084,7 @@ th label {
     fill: rgb(244, 198, 34);
     stroke-width: 1px;
     cursor: pointer;
+    font-size: 27px;
 }
 
 .price-index-title {
@@ -1068,8 +1143,8 @@ th label {
 
 #logo-logged-in {
     
-    padding-left: 5px;
-    margin-bottom: 35px;
+    padding-left: 16px;
+
     top: 0;
     margin-left: 16px;
     
@@ -1099,7 +1174,7 @@ ul li a {
     align-items: center;
     font-size: 14px;
     font-weight: 600;
-    margin-left: 16px;
+    /* margin-left: 16px; */
     text-decoration: none;
 }
 
@@ -1147,6 +1222,7 @@ ul li a {
 
 .side-nav-li {
     margin-bottom: 22px;
+    border-radius: 5px;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -1211,7 +1287,7 @@ ul li a {
     transition: color 0.25s ease 0s;
 }
 
-.side-nav-links:hover {
+.side-nav-li:hover {
     background: rgb(246, 249, 252);
 }
 
@@ -1236,8 +1312,8 @@ ul li a {
 }
 
 .side-image-new {
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
     fill: none;
 }
 
@@ -1561,7 +1637,7 @@ ul li a {
 
 .span-under-text-r {
     text-transform: uppercase;
-}
+} 
 
 .buy-box-main {
     display: flex;
@@ -1577,6 +1653,77 @@ ul li a {
     border-top: none;
     margin-bottom: 24px;
     height: 544px;
+    z-index: 4;
+}
+
+.order-h4 {
+    line-height: 1;
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    color: rgb(5, 15, 25);
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+    margin: 0px 0px 8px 16px;
+}
+
+.order-image-div {
+    min-width: 42px;  
+}
+
+.order-p {
+    line-height: 1;
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 400;
+    color: rgba(17, 51, 83, 0.6);
+    display: block;
+    margin: 0px 0px 0px 16px;
+    
+}
+
+
+.coin-order-image {
+    flex-shrink: 0;
+    fill: rgba(17, 51, 83, 0.6);
+    width: 36px;
+    height: 36px;
+}
+
+.buy-box-main-modal {
+    display: flex;
+    /* width: 100%;
+    position: relative; */
+    background: rgb(255, 255, 255);
+    border-right: 1px solid rgb(236, 239, 241);
+    border-bottom: 1px solid rgb(236, 239, 241);
+    border-left: 1px solid rgb(236, 239, 241);
+    border-image: initial;
+    border-radius: 4px;
+    box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
+    border-top: none;
+    margin-bottom: 24px;
+    /* height: 544px; */
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    min-height: 50%;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+}
+
+#buy-box-modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
 }
 
 
@@ -1898,6 +2045,12 @@ ul li a {
     top: 280px;
 }
 
+.wallets-header-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
                         
                         
 .your-assets-1 {
@@ -1919,7 +2072,6 @@ ul li a {
     align-items: center;
     flex-direction: column;
     position: relative;
-    /* padding: 16px 24px; */
     border-bottom: none;
 }
 
@@ -1929,7 +2081,23 @@ ul li a {
     color: rgb(5, 15, 25);
     font-size: 22px;
     font-weight: 575;
-    padding-right: 790px;
+    align-self: flex-start;
+    padding-left: 24px;
+}
+.your-assets-header-2 {
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.3;
+    color: rgb(5, 15, 25);
+    font-size: 24px;
+    font-weight: 575;
+    align-self: flex-start;
+    padding-left: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.index-item-modal{
+    
 }
 
 .detail-header {
@@ -1990,14 +2158,20 @@ ul li a {
 }
 
 .div-t2-new {
-    text-align: right;
+    /* text-align: right; */
+    width: 100%;
+}
+
+.div-t2-r1 {
+    cursor: pointer;
 }
 
 .div-t2-new-h {
     /* display: flex; */
     -webkit-box-align: center;
     /* align-items: center; */
-    text-align: right;
+    text-align: center;
+    width: 100%
 }
 
 .order-list {
@@ -2053,6 +2227,13 @@ ul li a {
     flex-shrink: 0;
 }
 
+/* .fab {
+    font-family: "Font Awesome 5 Brands";
+}
+
+.fa-3x {
+    font-size: 3em;
+} */
 .order-body-div-1 {
     position: relative;
     flex: 1 1 0%;
@@ -2083,8 +2264,8 @@ ul li a {
     -webkit-box-pack: start;
     /* justify-content: flex-start; */
     -webkit-box-align: center;
-    justify-content: space-between;
-    font-weight: 400px;
+    justify-content: flex-start;
+    font-weight: 400;
 }
 
 .watchlist-header {
@@ -2265,3 +2446,139 @@ ul li a {
     background: rgb(255, 255, 255);
 }
 
+#coin-info-box {
+    position: relative;
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: none 0s ease 0s;
+}
+
+#coin-info-box-2 {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    opacity: 1;
+}
+
+#coin-info-box-3 {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+}
+
+#coin-info-margin-bottom {
+    display: flex;
+    width: 100%;
+    margin-bottom: 24px;
+    overflow: hidden;
+    background: white;
+    border: 1px solid rgb(236, 239, 241);
+    border-radius: 6px;
+    box-shadow: rgb(17 51 83 / 2%) 0px 4px 12px 0px;
+    flex-direction: row;
+}
+
+#coin-info-padding {
+    flex: 1 1 auto;
+    padding: 32px;
+    background: rgb(255, 255, 255);
+    border-top: none;
+    border-bottom: none;
+    margin-bottom: 0px;
+}
+
+#news-detail {
+    position: relative;
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: none 0s ease 0s;
+}
+
+#news-detail-2 {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    opacity: 1;
+}
+
+#news-detail-3 {
+    width: 100%;
+}
+
+#news-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0px;
+    overflow: hidden;
+    border: 1px solid rgb(236, 239, 241);
+    border-radius: 6px;
+    box-shadow: rgb(17 51 83 / 2%) 0px 4px 12px 0px;
+    padding: 32px 32px 0px;
+    background: rgb(255, 255, 255);
+}
+
+#news-h2 {
+    margin-bottom: 16px;
+    margin-top: 0px;
+    padding: 0px;
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.3;
+    color: rgb(5, 15, 25);
+    font-size: 22px;
+    font-weight: 500;
+    display: block;
+}
+
+
+
+#news-article {
+    opacity: 1;
+    transition: opacity 200ms ease-in 0s;
+    display: flex;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    width: 100%;
+    padding: 24px 0px;
+    border-bottom: 1px solid rgb(236, 239, 241);    
+}
+
+#news-div-1 {
+    flex: 1 1 0%;
+}
+
+#news-photo-link {
+    display: flex;
+    flex: 0 0 auto;
+    color: rgba(17, 51, 83, 0.6);
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.25s ease 0s;
+}
+
+#news-title-link {
+    display: inline-block;
+    margin: 0px 0px 8px;
+    color: rgba(17, 51, 83, 0.6);
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.25s ease 0s;
+}
+
+#news-title-h3 {
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.3;
+    color: rgb(5, 15, 25);
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    margin: 0px;
+}

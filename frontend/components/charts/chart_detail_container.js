@@ -5,21 +5,11 @@ import { fetchCoinPriceData, fetchCoin24hrData } from '../../actions/coin_action
 
 
 
-const mapStateToProps = (state, ownProps) => {
-    // console.log(ownProps)
-       
-
-
-    return {
-        // coinId: ownProps.match.params.coinId,
+const mapStateToProps = (state, ownProps) => ({
         coin: ownProps.coin,
         pricesData: ownProps.coin.prices,
         coinId: ownProps.coin.id,
-
-        
-        // coin: dispatch(fetchCoinPriceData(ownProps.match.params.coinId))
-        // coin: state.entities.coins.coinId
-}};
+});
 
 const mapDispatchToProps = dispatch => ({
   fetchCoinPriceData: (id) => dispatch(fetchCoinPriceData(id)), //"bitcoin"
