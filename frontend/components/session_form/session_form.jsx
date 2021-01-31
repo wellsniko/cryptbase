@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
     <label><input type="text" placeholder="Last name" className="last-name-form"/></label></div> : nameInput = null
     
     return (
-      <div className="home-body">
+      <div className="home-body-2">
       <header>
         
         <Link to="/" className="cryptbase-logo">Cryptbase</Link>
@@ -95,7 +95,7 @@ class SessionForm extends React.Component {
               
           </form>
         </div>
-        <div className="bottom-blue"></div>
+        {/* <div className="bottom-blue"></div> */}
       </div>
       </div>
     );

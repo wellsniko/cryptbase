@@ -53,7 +53,7 @@ class PriceIndex extends React.Component {
                       <th className="t2-h1"><div className="div-t2-h1"><label className="label-t2-h1">Price</label></div></th>
                       <th className="t2-h1"><div className="div-t2-h1"><label className="label-t2-h1">Change</label></div></th>
                       <th className="t2-h1"><div className="div-t2-h1"><label className="label-t2-h1">Market Cap</label></div></th>
-                      <th className="t2-h1"><div className="div-t2-h1"><label className="label-t2-h1">Trade</label></div></th>
+                      <th className="t2-h1"><div className="div-t2-h1"><label className="label-t2-h1">&nbsp;&nbsp;&nbsp;Trade</label></div></th>
                       <th className="t2-h1"><div className="div-t2-h1"><label className="label-t2-h1">Watch</label></div></th>
                     </tr>
                   </thead>

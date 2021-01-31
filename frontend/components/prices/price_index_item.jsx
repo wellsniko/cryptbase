@@ -73,7 +73,7 @@ class PriceIndexItem extends React.Component {
           <td className="t2-r1"> <div className="div-t2-r1"><label className="label-t2-r1" style={colorChooser(this.props.coin.price_change_percentage_24h)}>{this.props.coin.price_change_percentage_24h >= 0 ? "+" + (this.props.coin.price_change_percentage_24h).toFixed(2) + "%" : (this.props.coin.price_change_percentage_24h).toFixed(2) + "%"}</label></div> </td>
           <td className="t2-r1"> <div className="div-t2-r1"><label className="label-t2-r1">{numConverter(this.props.coin.market_cap)}</label></div> </td>
           <td className="t2-r1"> <div className="div-t2-r1"><label className="label-t2-r1"> <button id="index-trade-button" onClick={() => this.setState({priceBox: true})}>Trade</button>  </label></div> </td>
-          <td className="t2-r1"> <div className="div-t2-r1"><label className="label-t2-r1" id="price-index-star">&#9734;</label></div> </td>
+          <td className="t2-r1"> <div className="div-t2-r1"><label className="label-t2-r1" id="price-index-star">&nbsp;&nbsp;&nbsp;&#9734;</label></div> </td>
         </tr>
         
       )

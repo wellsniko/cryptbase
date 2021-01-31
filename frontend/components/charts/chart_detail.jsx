@@ -11,7 +11,7 @@ class ChartDetail extends React.Component {
 
         const { coinId, coin, pricesData} = this.props;
         const dateData = pricesData.map(element => new Date (element[0]-28800).toLocaleString("en-US", {hour: "numeric", minute: "numeric"}))
-        const priceData = pricesData.map(element => element[1])
+        const priceData = pricesData.map(element => element[1].toFixed(2))
 
         const data = {
             labels: dateData,
@@ -32,11 +32,21 @@ class ChartDetail extends React.Component {
 
 
         const options = {
-            responsive: true, 
+            responsive: true,
             maintainAspectRatio: false,
             ticks: {display: false},
             showScale: false,
             legend: {display: false},
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+                callbacks: {
+                    label: function(t, d) {
+                    var yLabel = t.yLabel >= 1000 ? '$' + t.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : '$' + t.yLabel;
+                    return yLabel;
+                    }
+                }
+            },
             scales: 
                 { 
                 yAxes: [{ 

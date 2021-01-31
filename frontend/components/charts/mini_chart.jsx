@@ -1,5 +1,6 @@
 import React from 'react';
 import { Line } from "react-chartjs-2";
+import {Link} from 'react-router-dom'
 
 class MiniChart extends React.Component {
 
@@ -13,12 +14,11 @@ class MiniChart extends React.Component {
         const pricesData = this.props.state.entities.watchlist[this.props.coinId].prices
         const coin = this.props.coins[this.props.coinId]
         const dateData = pricesData.map(element => new Date (element[0]-28800).toLocaleString("en-US", {hour: "numeric", minute: "numeric"}))
-        const priceData = pricesData.map(element => element[1])
+        const priceData = pricesData.map(element => element[1].toFixed(3))
  
         const data = {
             labels: dateData,
             datasets: [{
-                label: coin.name,
                 data: priceData,
                 fill: false,
                 backgroundColor: this.props.color,
@@ -34,6 +34,16 @@ class MiniChart extends React.Component {
             showScale: false,
             legend: {display: false},
             title: {display: false},
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+                callbacks: {
+                    label: function(t, d) {
+                    var yLabel = t.yLabel >= 1000 ? '$' + t.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : '$' + t.yLabel;
+                    return yLabel;
+                    }
+                }
+            },
             scales: 
                 { 
                 yAxes: [{ 
@@ -61,6 +71,7 @@ class MiniChart extends React.Component {
         return (
             
             <div>
+                <Link to={`/prices/${coin.id}`} style={{ textDecoration: 'none' }}> 
                 <div className="div-inside-mini-chart">
                     <div className="inside-mini-box">
                         <div className="mini-coin-name">
@@ -81,6 +92,7 @@ class MiniChart extends React.Component {
                 <div className="mini-holding-chart" style={{height: 155}}>
                     <Line data={data} options={options} />
                 </div>
+                </Link>
             </div>
 
          );
