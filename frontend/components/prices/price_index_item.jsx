@@ -10,15 +10,10 @@ class PriceIndexItem extends React.Component {
         priceBox2: false
 
       }
-      this.closeFormat = this.closeFormat.bind(this)
+
       this.handleTradeComponent = this.handleTradeComponent.bind(this)
     }
 
-    closeFormat(){
-          this.setState({
-            priceBox: false                  
-          })
-    }
 
     handleTradeComponent() {
             this.setState({
@@ -75,11 +70,7 @@ class PriceIndexItem extends React.Component {
           <td className="t2-r1"> 
           <Link to={`/prices/${this.props.coin.id}`} className="index-link"style={{ textDecoration: 'none', color: "black" }}>
             <div className="div-t2-r1">
-              {this.state.priceBox ? 
-              <div className="index-item-modal" onClick={this.closeFormat}>
-                <TradingBoxContainer helperParent={this.handleTradeComponent} fromIndex={this.state.priceBox} coin={this.props.coin} coinId={this.props.coin.id}/> 
-              </div>
-              : null }
+   
               
                 <label className="label-t2-r1">{(this.props.coin.current_price).toLocaleString('en-US', {style: 'currency',currency: 'USD',
                   })}
@@ -103,7 +94,18 @@ class PriceIndexItem extends React.Component {
               </div>
             </Link>
           </td>
-          <td className="t2-r1"> <div className="div-t2-r1"><label className="label-t2-r1"> <button id="index-trade-button" onClick={() => this.setState({priceBox: true})}>Trade</button>  </label></div> </td>
+
+          <td className="t2-r1">
+            <div className="div-t2-r1">
+                         {this.state.priceBox ? 
+              <div className="index-item-modal" onClick={this.handleTradeComponent}>
+                <TradingBoxContainer helperParent={this.handleTradeComponent} fromIndex={this.state.priceBox} coin={this.props.coin} coinId={this.props.coin.id}/> 
+              </div>
+              : null }
+              <label className="label-t2-r1"> <button id="index-trade-button" onClick={() => this.setState({priceBox: true})}>Trade</button>  </label>
+            </div> 
+          </td>
+
           <td className="t2-r1"> 
             <div className="div-t2-r1">
               {biggestCoins.includes(this.props.coin.symbol) ? 

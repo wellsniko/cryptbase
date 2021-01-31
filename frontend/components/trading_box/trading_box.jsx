@@ -18,9 +18,6 @@ class TradingBox extends React.Component {
     // this.handleFromIndex = this.handleFromIndex.bind(this)
   }
 
-    // onQuantityChange(e) {
-    //     this.setState({quantity: e.target.value});
-    // }
       
     onQuantityChange(e) {
       !Number(e.currentTarget.value) && (e.currentTarget.value !== "" ) && (e.currentTarget.value !== ".") ? null :
