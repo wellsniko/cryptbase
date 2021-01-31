@@ -8,19 +8,19 @@ const Nav = ({ currentUser, logout }) => {
         return (
             <nav className="nav-bar">
                 <div>
-                    <a>Prices</a>
+                    <a href="https://github.com/wellsniko" target="_blank" rel="noreferrer">Github</a>
                 </div>
                 <div>
-                    <a>Products</a>
+                   <a href="https://github.com/wellsniko/cryptbase" target="_blank" rel="noreferrer">Git Repo</a>
                 </div>
                 <div>
-                    <a>Company</a>
+                    <a href="https://www.linkedin.com/in/niko-wells-16134aa0/" target="_blank" rel="noreferrer">LinkedIn</a>
                 </div>
                 <div>
-                    <a>Earn Crypto</a>
+                    <a href="http://findyoursquad.herokuapp.com/#/" target="_blank" rel="noreferrer">Earn Crypto</a>
                 </div>
                 <div>
-                    <a id="promotion">Get $158+</a>
+                    <a href="https://wellsniko.github.io/fleet_space/" id="promotion" target="_blank" rel="noreferrer">Get 158+</a>
                 </div>
             </nav>
         )

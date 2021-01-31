@@ -8,13 +8,13 @@ const Nav2 = ({ currentUser }) => {
     return (
       <nav className="nav-bar">
         <div>
-            <a>Products</a>
+            <a href="https://github.com/wellsniko" target="_blank" rel="noreferrer">Github</a>
         </div>
         <div>
-            <a>Help</a>
+            <a href="https://github.com/wellsniko/cryptbase" target="_blank" rel="noreferrer">Git Repo</a>
         </div>
         <div>
-            <a>Prices</a>
+            <a href="https://www.linkedin.com/in/niko-wells-16134aa0/" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
       </nav>
     )
