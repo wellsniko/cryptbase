@@ -91,8 +91,8 @@ class Dashboard extends React.Component {
                                 <thead id="t2-head">
                                   <tr id="t2-head-row">
                                     <th className="t2-h1"> <div className="div-t2-h1"><label className="label-t2-h1">Asset</label></div> </th>
-                                    <th className="t2-h1"><div className="div-t2-h1"><label className="label-t2-h1">Balance</label></div></th>
-                                    <th className="t2-h1"><div className="div-t2-new-h"><label className="label-t2-h1">Orders</label></div></th>
+                                    <th className="header-wallet-value"><div className="div-t2-h1"><label className="label-t2-h1">Balance</label></div></th>
+                                    <th className="index-link-r-l"><div className="div-t2-new-h"><label className="label-t2-h1">Orders</label></div></th>
                                   </tr>
                                 </thead>
 
@@ -104,7 +104,7 @@ class Dashboard extends React.Component {
                                       return (
                                         <tr key={`${idx}`} className="price-index-row">
 
-                                          <td className="t2-r1">                    
+                                          <td className="t2-r1-usd">                    
                                                 <div className="div-t2-usd" > 
                                                   <h3 className="index-image-2">$</h3>
                                                   <label style={{color: `black`}}>&nbsp;&nbsp;&nbsp;US Dollar&nbsp;&nbsp;</label>

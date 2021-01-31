@@ -34,7 +34,7 @@ class PriceIndex extends React.Component {
           <div className="main-user-page-2">
             <div className ="price-index-body">
             <div className="price-index-title">
-             <h1>
+             <h1 className="price-index-title-h1">
                <span id="in-last-24">In the past 24 hours</span>
                <span id="market-is">Market is {`${implication}`}&nbsp;</span> 
                <span style={colorChooser((coins["bitcoin"].price_change_percentage_24h + coins["ethereum"].price_change_percentage_24h) /2)}>
@@ -42,6 +42,8 @@ class PriceIndex extends React.Component {
                   ((coins["bitcoin"].price_change_percentage_24h + coins["ethereum"].price_change_percentage_24h) /2).toFixed(2) + "%" :
                   ((coins["bitcoin"].price_change_percentage_24h + coins["ethereum"].price_change_percentage_24h) /-2).toFixed(2) + "%"}</span>
              </h1>
+              {/* <input type="text"/> */}
+
             </div>
               <section className="price-index-section">
               <div className="price-index">
@@ -54,7 +56,7 @@ class PriceIndex extends React.Component {
                       <th className="t2-h1"><div className="div-t2-h1"><label className="label-t2-h1">Change</label></div></th>
                       <th className="t2-h1"><div className="div-t2-h1"><label className="label-t2-h1">Market Cap</label></div></th>
                       <th className="t2-h1"><div className="div-t2-h1"><label className="label-t2-h1">&nbsp;&nbsp;&nbsp;Trade</label></div></th>
-                      <th className="t2-h1"><div className="div-t2-h1"><label className="label-t2-h1">Watch</label></div></th>
+                      <th className="t2-h1"><div className="div-t2-h1"><label className="label-t2-h1">&nbsp;&nbsp;Watch</label></div></th>
                     </tr>
                   </thead>
                   <tbody className="coin-table-body">

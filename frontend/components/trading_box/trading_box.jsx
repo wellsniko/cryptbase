@@ -4,7 +4,7 @@ class TradingBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      quantity: "0",
+      quantity: "",
       backgroundId: "na",
       buyBoxId: "buy-box-main",
       buyAction: "first",
@@ -18,17 +18,28 @@ class TradingBox extends React.Component {
     // this.handleFromIndex = this.handleFromIndex.bind(this)
   }
 
+    // onQuantityChange(e) {
+    //     this.setState({quantity: e.target.value});
+    // }
+      
     onQuantityChange(e) {
-        this.setState({quantity: e.target.value});
-    }
+      !Number(e.currentTarget.value) && (e.currentTarget.value !== "" ) && (e.currentTarget.value !== ".") ? null :
+        this.setState({
+          quantity: e.currentTarget.value,
+        });
+     }   
 
     closeFormat(){
       if (this.state.backgroundId !== "na") {
         this.setState({
           backgroundId: "na",
-          buyBoxId: "buy-box-main"                   
+          buyBoxId: "buy-box-main",
+          buyAction: "first",
+          sellAction: "first"                 
         })
+        
       }
+      this.props.removeErrors()
     }
     
 
@@ -171,7 +182,7 @@ class TradingBox extends React.Component {
                               <div className="input-quantity-area-2">
                                 <div className="input-quantity-area-3">
                                   <span className="input-span-buy">$</span>
-                                  <input className="input-quantity-input" type="decimal" placeholder={this.state.quantity} onChange={this.onQuantityChange}/>
+                                  <input className="input-quantity-input" type="decimal" value={this.state.quantity} placeholder="0" onChange={this.onQuantityChange}/>
                                 </div>
                               </div>
                             </div>
