@@ -108,8 +108,6 @@ class User < ApplicationRecord
         ]
 
         default_coins.each { |coin| self.watchlist.push(coin)}
-       
-
 
     end
 

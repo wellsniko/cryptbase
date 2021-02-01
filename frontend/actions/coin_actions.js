@@ -73,8 +73,6 @@ export const receiveWatchlistPrices = (data, id) => ({
 // })
 
 
-
-
 export const fetchCoins = () => dispatch => (
   APIUtil.fetchCoins()
   .then(coins => dispatch(receiveCoins(coins)))  

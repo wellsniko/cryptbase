@@ -140,7 +140,7 @@ class PriceIndex extends React.Component {
                   <tbody className="coin-table-body">
                     {
                       coinList.map((coin, idx) => (
-                        <PriceIndexItem coin={coin}  key={idx} id={idx} watchlistCoins={this.props.watchlistCoins}/>
+                        <PriceIndexItem coin={coin}  key={idx} id={idx} userId={this.props.userId} changeWatchlist={this.props.changeWatchlist} watchlistCoins={this.props.watchlistCoins}/>
                       ))
                     }
                   </tbody>

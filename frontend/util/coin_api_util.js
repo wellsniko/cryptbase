@@ -1,9 +1,11 @@
-// export const editWatchlist = userId => (
-//   $.ajax({
-//     method: 'GET',
-//     url: `/api/users/${userId}`,
-//   })
-// );
+export const editWatchlist = (data) => (
+  $.ajax({
+    method: 'PUT',
+    url: `/api/users/${data.userId}`,
+    coin: data.coin
+  })
+);
+
 
 
 

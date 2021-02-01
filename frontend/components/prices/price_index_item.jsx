@@ -10,7 +10,7 @@ class PriceIndexItem extends React.Component {
         priceBox2: false
 
       }
-
+      // this.changeWatchlist = this.changeWatchlist.bind(this)
       this.handleTradeComponent = this.handleTradeComponent.bind(this)
     }
 
@@ -39,6 +39,8 @@ class PriceIndexItem extends React.Component {
     }
 
     const biggestCoins = ["btc", "eth", "ltc", "bch", "xlm", "xrp"]
+
+    // const data = {userId: this.props.userId, coin: this.props.coin.id}
 
 
       return (
@@ -110,11 +112,11 @@ class PriceIndexItem extends React.Component {
             <div className="div-t2-r1">
               {this.props.watchlistCoins.includes(this.props.coin.id) ? 
               <label className="label-t2-r1" id="price-index-star" style={{color: "gold"}}>&nbsp;&nbsp;&nbsp;&#9733;</label> : 
-              <label className="label-t2-r1" id="price-index-star" style={{color: "#dadada"}}>&nbsp;&nbsp;&nbsp;&#9734;</label>}
+              <label className="label-t2-r1" id="price-index-star" style={{color: "#dadada"}} >&nbsp;&nbsp;&nbsp;&#9734;</label>} 
             </div>
           </td>
         </tr>
-        
+        // onClick={() => this.props.changeWatchlist(data)}
       )
     }
 }
