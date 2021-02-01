@@ -108,7 +108,7 @@ class PriceIndexItem extends React.Component {
 
           <td className="t2-r1"> 
             <div className="div-t2-r1">
-              {biggestCoins.includes(this.props.coin.symbol) ? 
+              {this.props.watchlistCoins.includes(this.props.coin.id) ? 
               <label className="label-t2-r1" id="price-index-star" style={{color: "gold"}}>&nbsp;&nbsp;&nbsp;&#9733;</label> : 
               <label className="label-t2-r1" id="price-index-star" style={{color: "#dadada"}}>&nbsp;&nbsp;&nbsp;&#9734;</label>}
             </div>

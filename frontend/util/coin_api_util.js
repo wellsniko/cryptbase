@@ -1,3 +1,13 @@
+// export const editWatchlist = userId => (
+//   $.ajax({
+//     method: 'GET',
+//     url: `/api/users/${userId}`,
+//   })
+// );
+
+
+
+
 export const fetchCoinPriceData = (id) => (
     $.ajax({
         method: 'GET',

@@ -74,9 +74,9 @@ class PriceIndex extends React.Component {
     } else if (this.state.sortParams === "price" && this.state.sortWay === "ASC") {
       coinList = Object.values(coins).sort((b, a) => (a.current_price < b.current_price) ? 1 : (a.current_price === b.current_price) ? ((a.current_price < b.current_price) ? 1 : -1) : -1)       
     } else if (this.state.sortParams === "name" && this.state.sortWay === "DESC") {
-      coinList = Object.values(coins).sort((a, b) => (a.id < b.id) ? 1 : (a.id === b.id) ? ((a.id < b.id) ? 1 : -1) : -1) 
+      coinList = Object.values(coins).sort((a, b) => (a.name.toUpperCase() < b.name.toUpperCase()) ? 1 : (a.name.toUpperCase() === b.name.toUpperCase()) ? ((a.name.toUpperCase() < b.name.toUpperCase()) ? 1 : -1) : -1) 
     } else if (this.state.sortParams === "name" && this.state.sortWay === "ASC") {
-      coinList = Object.values(coins).sort((b, a) => (a.id < b.id) ? 1 : (a.id === b.id) ? ((a.id < b.id) ? 1 : -1) : -1)       
+      coinList = Object.values(coins).sort((b, a) => (a.name.toUpperCase() < b.name.toUpperCase()) ? 1 : (a.name.toUpperCase() === b.name.toUpperCase()) ? ((a.name.toUpperCase() < b.name.toUpperCase()) ? 1 : -1) : -1)       
     } else if (this.state.sortParams === "priceChange" && this.state.sortWay === "DESC") {
       coinList = Object.values(coins).sort((b, a) => (a.price_change_percentage_24h < b.price_change_percentage_24h) ? 1 : (a.price_change_percentage_24h === b.price_change_percentage_24h) ? ((a.price_change_percentage_24h < b.price_change_percentage_24h) ? 1 : -1) : -1)       
     } else if (this.state.sortParams === "priceChange" && this.state.sortWay === "ASC") {
@@ -95,7 +95,7 @@ class PriceIndex extends React.Component {
             <div id="grey-triangle">&#x25B2;</div>
             <div id="selected-triangle">&#x25BC;</div>
           </div>)
-      } else if (arg === this.state.sortParams && this.state.sortWay === "DESC"){
+      } else if (arg === this.state.sortParams && this.state.sortWay === "ASC"){
         return (                      
           <div id="sorting-triangles">
             <div id="selected-triangle">&#x25B2;</div>
@@ -140,7 +140,7 @@ class PriceIndex extends React.Component {
                   <tbody className="coin-table-body">
                     {
                       coinList.map((coin, idx) => (
-                        <PriceIndexItem coin={coin}  key={idx} id={idx}/>
+                        <PriceIndexItem coin={coin}  key={idx} id={idx} watchlistCoins={this.props.watchlistCoins}/>
                       ))
                     }
                   </tbody>

@@ -3,7 +3,8 @@ import PriceIndex from './price_index';
 import { fetchCoins } from '../../actions/coin_actions';
 
 const mapStateToProps = state => ({
-  coins: state.entities.coins
+  coins: state.entities.coins,
+  watchlistCoins: state.entities.users[state.session.id].watchlist
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -3,12 +3,13 @@ import * as APIUtil from '../util/coin_api_util';
 export const RECEIVE_COINS = 'RECEIVE_COINS';
 export const RECEIVE_COIN = 'RECEIVE_COIN';
 export const RECEIVE_HISTORICAL_PRICES = 'RECEIVE_HISTORICAL_PRICES';
-export const RECEIVE_BITCOIN_PRICES = 'RECEIVE_BITCOIN_PRICES';
-export const RECEIVE_ETHEREUM_PRICES = 'RECEIVE_ETHEREUM_PRICES';
-export const RECEIVE_RIPPLE_PRICES = 'RECEIVE_RIPPLE_PRICES';
-export const RECEIVE_BITCOIN_CASH_PRICES = 'RECEIVE_BITCOIN_CASH_PRICES';
-export const RECEIVE_LITECOIN_PRICES = 'RECEIVE_LITECOIN_PRICES';
-export const RECEIVE_STELLAR_PRICES = 'RECEIVE_STELLAR_PRICES';
+export const RECEIVE_WATCHLIST_PRICES = 'RECEIVE_WATCHLIST_PRICES'
+// export const RECEIVE_BITCOIN_PRICES = 'RECEIVE_BITCOIN_PRICES';
+// export const RECEIVE_ETHEREUM_PRICES = 'RECEIVE_ETHEREUM_PRICES';
+// export const RECEIVE_RIPPLE_PRICES = 'RECEIVE_RIPPLE_PRICES';
+// export const RECEIVE_BITCOIN_CASH_PRICES = 'RECEIVE_BITCOIN_CASH_PRICES';
+// export const RECEIVE_LITECOIN_PRICES = 'RECEIVE_LITECOIN_PRICES';
+// export const RECEIVE_STELLAR_PRICES = 'RECEIVE_STELLAR_PRICES';
 export const RECEIVE_COIN_NEWS = "RECEIVE_COIN_NEWS"
 
 
@@ -35,37 +36,41 @@ export const receiveCoinNews = news => ({
 
 
 
-export const receiveBitcoinPrices = (data, id) => ({
-  type: RECEIVE_BITCOIN_PRICES,
+export const receiveWatchlistPrices = (data, id) => ({
+  type: RECEIVE_WATCHLIST_PRICES,
   data,
   id
 })
 
-export const receiveEthereumPrices = data => ({
-  type: RECEIVE_ETHEREUM_PRICES,
-  data
-})
-
-export const receiveRipplePrices = data => ({
-  type: RECEIVE_RIPPLE_PRICES,
-  data
-})
-
-export const receiveBitcoinCashPrices = data => ({
-  type: RECEIVE_BITCOIN_CASH_PRICES,
-  data
-})
-
-export const receiveLitecoinPrices = data => ({
-  type: RECEIVE_LITECOIN_PRICES,
-  data
-})
 
 
-export const receiveStellarPrices = data => ({
-  type: RECEIVE_STELLAR_PRICES,
-  data
-})
+
+
+// export const receiveEthereumPrices = data => ({
+//   type: RECEIVE_ETHEREUM_PRICES,
+//   data
+// })
+
+// export const receiveRipplePrices = data => ({
+//   type: RECEIVE_RIPPLE_PRICES,
+//   data
+// })
+
+// export const receiveBitcoinCashPrices = data => ({
+//   type: RECEIVE_BITCOIN_CASH_PRICES,
+//   data
+// })
+
+// export const receiveLitecoinPrices = data => ({
+//   type: RECEIVE_LITECOIN_PRICES,
+//   data
+// })
+
+
+// export const receiveStellarPrices = data => ({
+//   type: RECEIVE_STELLAR_PRICES,
+//   data
+// })
 
 
 
@@ -93,6 +98,22 @@ export const fetchCoinNews = symbol => dispatch => (
 
 
 
+
+
+
+
+export const fetchCoinWatchlistData = id => dispatch => (
+  APIUtil.fetchCoin24hrData(id)
+  .then(data=> (dispatch(receiveWatchlistPrices(data, id))
+  ))
+);
+
+
+
+
+
+
+
 export const fetchCoin24hrData = id => dispatch => (
   APIUtil.fetchCoin24hrData(id)
   .then(data=> (dispatch(receiveHistoricalPrices(data))
@@ -100,41 +121,41 @@ export const fetchCoin24hrData = id => dispatch => (
 );
 
 
-export const fetchBitcoinHistory = (id) => dispatch => (
-  APIUtil.fetchCoin24hrData(id)
-  .then(data => (dispatch(receiveBitcoinPrices(data, id))
-  ))
-);
+// export const fetchBitcoinHistory = (id) => dispatch => (
+//   APIUtil.fetchCoin24hrData(id)
+//   .then(data => (dispatch(receiveBitcoinPrices(data, id))
+//   ))
+// );
 
-export const fetchEthereumHistory = (id) => dispatch => (
-  APIUtil.fetchCoin24hrData(id)
-  .then(data => (dispatch(receiveEthereumPrices(data))
-  ))
-);
+// export const fetchEthereumHistory = (id) => dispatch => (
+//   APIUtil.fetchCoin24hrData(id)
+//   .then(data => (dispatch(receiveEthereumPrices(data))
+//   ))
+// );
 
-export const fetchRippleHistory = (id) => dispatch => (
-  APIUtil.fetchCoin24hrData(id)
-  .then(data => (dispatch(receiveRipplePrices(data))
-  ))
-);
+// export const fetchRippleHistory = (id) => dispatch => (
+//   APIUtil.fetchCoin24hrData(id)
+//   .then(data => (dispatch(receiveRipplePrices(data))
+//   ))
+// );
 
-export const fetchBitcoinCashHistory = (id) => dispatch => (
-  APIUtil.fetchCoin24hrData(id)
-  .then(data => (dispatch(receiveBitcoinCashPrices(data))
-  ))
-);
+// export const fetchBitcoinCashHistory = (id) => dispatch => (
+//   APIUtil.fetchCoin24hrData(id)
+//   .then(data => (dispatch(receiveBitcoinCashPrices(data))
+//   ))
+// );
 
-export const fetchLitecoinHistory = (id) => dispatch => (
-  APIUtil.fetchCoin24hrData(id)
-  .then(data => (dispatch(receiveLitecoinPrices(data))
-  ))
-);
+// export const fetchLitecoinHistory = (id) => dispatch => (
+//   APIUtil.fetchCoin24hrData(id)
+//   .then(data => (dispatch(receiveLitecoinPrices(data))
+//   ))
+// );
 
 
-export const fetchStellarHistory = (id) => dispatch => (
-  APIUtil.fetchCoin24hrData(id)
-  .then(data => (dispatch(receiveStellarPrices(data))
-  ))
-);
+// export const fetchStellarHistory = (id) => dispatch => (
+//   APIUtil.fetchCoin24hrData(id)
+//   .then(data => (dispatch(receiveStellarPrices(data))
+//   ))
+// );
 
 

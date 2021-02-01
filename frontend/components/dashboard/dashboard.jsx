@@ -7,12 +7,17 @@ import OrderIndexItem from './order_index_item';
 class Dashboard extends React.Component {
   componentDidMount() {
     this.props.fetchCoins();
-    this.props.fetchBitcoinHistory("bitcoin");
-    this.props.fetchEthereumHistory("ethereum");
-    this.props.fetchRippleHistory("ripple");
-    this.props.fetchBitcoinCashHistory("bitcoin-cash");
-    this.props.fetchLitecoinHistory("litecoin");
-    this.props.fetchStellarHistory("stellar");
+    // this.props.fetchBitcoinHistory("bitcoin");
+    // this.props.fetchEthereumHistory("ethereum");
+    // this.props.fetchRippleHistory("ripple");
+    // this.props.fetchBitcoinCashHistory("bitcoin-cash");
+    // this.props.fetchLitecoinHistory("litecoin");
+    // this.props.fetchStellarHistory("stellar");
+    
+    this.props.watchlistCoins.forEach((id, idx) =>{
+      this.props.fetchCoinWatchlistData(id)
+    })
+    
   }
 
   render() {
@@ -56,18 +61,18 @@ class Dashboard extends React.Component {
 
                       <div className="watchlist-body">
                         <div className="row-div">
-                          <MiniChartContainer coinId={"bitcoin"} color={"rgb(193, 125, 38)"}/>
-                          <MiniChartContainer coinId={"bitcoin-cash"} color={"rgb(140,174,85)"}/>
+                          <MiniChartContainer coinId={this.props.watchlistCoins[0]} color={"rgb(193, 125, 38)"}/>
+                          <MiniChartContainer coinId={this.props.watchlistCoins[1]} color={"rgb(140,174,85)"}/>
                         </div>
 
                         <div className="row-div"> 
-                          <MiniChartContainer coinId={"ethereum"} color={"rgb(22, 82, 240)"}/>
-                          <MiniChartContainer coinId={"litecoin"} color={"rgb(130, 130, 130)"}/>
+                          <MiniChartContainer coinId={this.props.watchlistCoins[2]} color={"rgb(22, 82, 240)"}/>
+                          <MiniChartContainer coinId={this.props.watchlistCoins[3]} color={"rgb(130, 130, 130)"}/>
                         </div>
 
                         <div className="row-div">
-                          <MiniChartContainer coinId={"ripple"} color={"rgb(0,0,0)"}/>
-                          <MiniChartContainer coinId={"stellar"} color={"rgb(0,0,0)"}/>
+                          <MiniChartContainer coinId={this.props.watchlistCoins[4]} color={"rgb(0,0,0)"}/>
+                          <MiniChartContainer coinId={this.props.watchlistCoins[5]} color={"rgb(0,0,0)"}/>
                         </div>
                       </div>
 
