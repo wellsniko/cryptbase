@@ -917,6 +917,22 @@ div {
     transition: color 80ms ease-in-out 0s;
 } */
 
+#grey-triangle {
+    color: #B8C2CC;
+}
+
+#selected-triangle {
+    color: #1652F0;
+}
+
+#sorting-triangles {
+    display: flex;
+    flex-direction: column;
+    font-size: 7px;
+    margin-left: 6px;
+}
+
+
 .t2-h1:first-child {
     padding-left: 32px;
 }
@@ -925,6 +941,13 @@ div {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
+}
+
+.div-t2-h1-hov{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 93px;
 }
 
 .label-t2-r1 {
@@ -943,6 +966,32 @@ div {
     white-space: nowrap;
      color: rgba(17, 51, 83, 0.6);
     font-size: 14px;
+}
+
+.label-t2-h1-h {
+    font-weight: 400;
+    white-space: nowrap;
+     color: rgba(17, 51, 83, 0.6);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.label-t2-h1-h:hover {
+    color:  rgb(22, 82, 240);
+
+}
+
+.label-t2-h1-h-2 {
+    font-weight: 400;
+    white-space: nowrap;
+     color: rgba(17, 51, 83, 0.6);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.label-t2-h1-h-2:hover {
+    color:  rgb(22, 82, 240);
+
 }
 
 th label {

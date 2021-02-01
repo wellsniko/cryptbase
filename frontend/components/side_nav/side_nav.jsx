@@ -12,6 +12,8 @@ const SideNav = ({ currentUser}) => {
                         <div className="side-div-1">
                             <div className="side-div-2">
                                 <img src={window.homeImage} className="side-image-new"/>
+                                                                {/* <img src={window.portfolioImage} className="side-image-new"/> */}
+
                             </div>
                         </div>
                         <span className="side-span">Home</span>
@@ -22,7 +24,6 @@ const SideNav = ({ currentUser}) => {
                         <div className="side-div-1">
                             <div className="side-div-2">
                                 <img src={window.pricesImage} className="side-image-new"/>
-                                {/* <img src={window.portfolioImage} className="side-image-new"/> */}
                             </div>
                         </div>
                         <span className="side-span">Prices</span>
