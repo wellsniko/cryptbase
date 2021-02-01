@@ -12,6 +12,6 @@ class Api::CoinsController < ApplicationController
     private
     def coin_params
         params.permit(:id)
-    end  #! Does this work
+    end 
 
 end

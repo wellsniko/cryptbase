@@ -12,6 +12,8 @@ const SideNav = ({ currentUser}) => {
                         <div className="side-div-1">
                             <div className="side-div-2">
                                 <img src={window.homeImage} className="side-image-new"/>
+                                                                {/* <img src={window.portfolioImage} className="side-image-new"/> */}
+
                             </div>
                         </div>
                         <span className="side-span">Home</span>
@@ -32,7 +34,7 @@ const SideNav = ({ currentUser}) => {
                         <div className="side-nav-links">
                             <div className="side-div-1">
                                 <div className="side-div-2">
-                                    <img src={window.portfolioImage} className="side-image-new"/>
+                                    <img src={window.github1} className="side-image-new"/>
                                 </div>
                             </div>
                             
@@ -47,7 +49,7 @@ const SideNav = ({ currentUser}) => {
                         <div className="side-nav-links">
                             <div className="side-div-1">
                                 <div className="side-div-2">
-                                    <img src={window.giftImage} className="side-image-new"/>
+                                    <img src={window.github2} className="side-image-new"/>
                                 </div>
                             </div>
                             
@@ -60,11 +62,37 @@ const SideNav = ({ currentUser}) => {
                         <div className="side-nav-links">
                             <div className="side-div-1">
                                 <div className="side-div-2">
-                                    <img src={window.bellImage} className="side-image-new"/>
+                                    <img src={window.linkedin} className="side-image-new-2"/>
                                 </div>
                             </div>
                             
                          <span className="side-span">LinkedIn</span>
+                        </div>
+                        </a>
+                    </li>
+
+                    <li className="side-nav-li"><a href="http://findyoursquad.herokuapp.com/#/" target="_blank" rel="noreferrer"><i className="fab fa-github fa-3x"></i>
+                        <div className="side-nav-links">
+                            <div className="side-div-1">
+                                <div className="side-div-2">
+                                    <img src={window.findyoursquad} className="side-image-new"/>
+                                </div>
+                            </div>
+                            
+                         <span className="side-span">FindYourSquad</span>
+                        </div>
+                        </a>
+                    </li>
+
+                    <li className="side-nav-li"><a href="https://wellsniko.github.io/fleet_space/" target="_blank" rel="noreferrer"><i className="fab fa-github fa-3x"></i>
+                        <div className="side-nav-links">
+                            <div className="side-div-1">
+                                <div className="side-div-2">
+                                    <img src={window.fleetspace} className="side-image-new"/>
+                                </div>
+                            </div>
+                            
+                         <span className="side-span">Fleetspace</span>
                         </div>
                         </a>
                     </li>

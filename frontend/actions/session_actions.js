@@ -1,5 +1,5 @@
 import * as APIUtil from '../util/session_api_util';
-
+import * as CoinAPIUtil from '../util/coin_api_util'
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
@@ -18,6 +18,17 @@ export const receiveErrors = errors => ({
   type: RECEIVE_SESSION_ERRORS,
   errors
 });
+
+
+
+
+
+export const changeWatchlist = (data) => dispatch =>(
+  CoinAPIUtil.editWatchlist(data)
+  .then(user => (dispatch(receiveCurrentUser(user))))
+)
+
+
 
 export const signup = user => dispatch => (
   APIUtil.signup(user).then(user => (

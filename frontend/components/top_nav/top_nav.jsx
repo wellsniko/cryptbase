@@ -1,5 +1,6 @@
 import React from "react";
 import {withRouter} from 'react-router'
+import {Link} from 'react-router-dom'
 
 const TopNav = (props) => {
 
@@ -28,7 +29,7 @@ const TopNav = (props) => {
           <div className="top-nav-div-3-3">
             <div className="top-nav-div-1-1">
               <button className="top-nav-buy-sell">
-                <span className="span-top-buy-sell">Buy / Sell</span>
+                <Link to={`/prices`} style={{ textDecoration: 'none', color: "white"}}><span className="span-top-buy-sell">Buy / Sell</span></Link>
               </button>
             
             </div>

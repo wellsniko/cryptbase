@@ -1,3 +1,15 @@
+export const editWatchlist = (data) => (
+  $.ajax({
+    method: 'PUT',
+    url: `/api/users/${data.userId}`,
+    coin: data.coin
+  })
+);
+
+
+
+
+
 export const fetchCoinPriceData = (id) => (
     $.ajax({
         method: 'GET',

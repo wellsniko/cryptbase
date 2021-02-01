@@ -4,10 +4,11 @@ class User < ApplicationRecord
     validates :password_digest, presence: true
     validates :password, length: {minimum: 6}, allow_nil: true
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
+    validates :watchlist, length: {maximum: 6}
 
     attr_reader :password
 
-    after_create :create_wallets
+    after_create :create_wallets, :create_watchlist
     after_initialize :ensure_session_token
     
     has_many :wallets,
@@ -93,6 +94,21 @@ class User < ApplicationRecord
                     :wallet_address => SecureRandom.hex(16))
             end
         end
+    end
+
+
+    def create_watchlist
+        default_coins = [
+            'bitcoin',
+            'bitcoin-cash',
+            'ethereum',
+            'litecoin',
+            'ripple',
+            'stellar'
+        ]
+
+        default_coins.each { |coin| self.watchlist.push(coin)}
+
     end
 
    
