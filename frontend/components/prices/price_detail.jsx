@@ -175,7 +175,7 @@ class PriceDetail extends React.Component {
                                             <div id="news-body">
                                                 <h2 id="news-h2">{coin.name}'s Top Stories</h2>
                                                 <div>
-                                                    { (!coin.news) ? <div> Sorry, I get 50 API requests to this API per hour. I guess there's more traffic than usual. </div> : (coin.news).map((story, idx)=> (
+                                                    { (!coin.news) ? <div style={{paddingBottom: "20px"}}> Sorry, I ran out of requests for this News API for this hour. There's probably more traffic than usual. </div> : (coin.news).map((story, idx)=> (
                                                         <CoinNewsItem story={story} key={idx}/>
                                                     ))}
 
