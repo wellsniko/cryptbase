@@ -16,8 +16,8 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find_by(id: params[:id])
-    @user.watchlist.shift
-    @user.watchlist.push(params[:coin])
+    @user.update(user_params)
+    # @user.watchlist.push(params[:coin])
     render :show
   end
 
@@ -25,10 +25,10 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :password) # :watchlist
   end
 
-  def user_watchlist_params
-    params.require(:user).permit(:coin)
-  end
+  # def user_watchlist_params
+  #   params.require(:user).permit(:coin)
+  # end
 end

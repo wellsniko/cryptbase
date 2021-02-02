@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
     let nameInput;
     (this.props.formType === "signup") ? nameInput = <div className="first-last-name-form"><label><input type="text" placeholder="First name" className="first-name-form"/></label>
     <label><input type="text" placeholder="Last name" className="last-name-form"/></label></div> : nameInput = null
-    
+   
     return (
       <div className="home-body-2">
       <header>
@@ -88,7 +88,9 @@ class SessionForm extends React.Component {
                 />
               </label>
               <div className={`${this.props.formType}-session-submit-line`}>
-                <button className={`${this.props.formType}-session-submit-2`} onClick={() => this.props.login(demoUser)}>Demo Login</button>
+                {this.props.formType === "login" ? <button className={`${this.props.formType}-session-submit-2`} onClick={() => this.props.login(demoUser)}>Demo Login</button> :
+                null }
+                
                 <input className={`${this.props.formType}-session-submit`} type="submit" value={this.props.formText[1]} />
               </div>
             </div>
