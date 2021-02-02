@@ -40,7 +40,7 @@ class PriceIndexItem extends React.Component {
 
     const biggestCoins = ["btc", "eth", "ltc", "bch", "xlm", "xrp"]
 
-    // const data = {userId: this.props.userId, coin: this.props.coin.id}
+    // const data = {userId: this.props.userId, user: {watchlist: this.props.watchlistCoins.slice(0,2).push(this.props.coin.id)}}
 
 
       return (

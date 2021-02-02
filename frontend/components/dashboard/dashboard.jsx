@@ -156,8 +156,21 @@ class Dashboard extends React.Component {
                     <div className="order-body-div-1">
                       <div className="order-body-div-2">
                         <div>
-
-                            {ordersArray.map((order, idx) => {  
+                            { ordersArray.length < 1 ? 
+                                  <div className="order-row-item">
+                                  <div className="order-image-div">
+                                    
+                                  </div>
+                                  <div>
+                                    <h4 className="order-h4">No orders</h4>
+                                  </div>
+                                  {/* {Number(order.quantity).toFixed(4)}&nbsp;&nbsp;&nbsp;&nbsp;{order.coin_id}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{new Date (order.created_at).toLocaleString("en-US", {day: "numeric", month: "numeric", year: "numeric", hour: "numeric", minute: "numeric"})} */}
+                                </div>
+                            
+                            
+                            
+                            : 
+                            ordersArray.map((order, idx) => {  
                               return (
                                 <OrderIndexItem order={order} key={idx} coin={coins[order.coin_id]}/>
                               )

@@ -2,12 +2,14 @@ import React from 'react';
 import TradingBoxContainer from '../trading_box/trading_box_container'
 import ChartDetailContainer from '../charts/chart_detail_container'
 import CoinNewsItem from './coin_news_item'
+import OrderIndexItem from '../dashboard/order_index_item'
 
 class PriceDetail extends React.Component {
     
     componentDidMount() {
        this.props.fetchCoin24hrData(this.props.coinId)
-        this.props.fetchCoinPriceData(this.props.coinId).then(data=> this.props.fetchCoinNews(data.coin[0].symbol))
+        this.props.fetchCoinPriceData(this.props.coinId)
+        .then(data=> this.props.fetchCoinNews(data.coin[0].symbol))
        
     }
 
@@ -40,7 +42,9 @@ class PriceDetail extends React.Component {
             : ""
         }
 
-        if (!coin.news) return null
+        let ordersArray = this.props.ordersArray.filter(order => order.coin_id === coin.id)
+
+        // if (!coin.news) return null
 
         return (
             <>
@@ -171,7 +175,7 @@ class PriceDetail extends React.Component {
                                             <div id="news-body">
                                                 <h2 id="news-h2">{coin.name}'s Top Stories</h2>
                                                 <div>
-                                                    { (!coin.news) ? <div> Sorry, I get 50 API requests to this API per hour. I guess there's more traffic than usual. </div> : (coin.news).map((story, idx)=> (
+                                                    { (!coin.news) ? <div style={{paddingBottom: "20px"}}> Sorry, I ran out of requests for this News API for this hour. There's probably more traffic than usual. </div> : (coin.news).map((story, idx)=> (
                                                         <CoinNewsItem story={story} key={idx}/>
                                                     ))}
 
@@ -187,6 +191,41 @@ class PriceDetail extends React.Component {
                             </div>
                             <div id="buy-box-column">
                                 <TradingBoxContainer fromIndex={false} coin={coin} coinId={coinId}/>
+
+                                                <div className="portfolio-body-right">
+                                            <div className="order-list"> 
+                                                <div className="order-header-div">
+                                                <h3 className="order-header-h3">Recent {coin.name} Transactions</h3>
+                                                </div>
+                                                <div className="order-body-div-1">
+                                                <div className="order-body-div-2">
+                                                    <div>
+                                                        { ordersArray.length < 1 ? 
+                                                            <div className="order-row-item">
+                                                            <div className="order-image-div">
+                                                                
+                                                            </div>
+                                                            <div>
+                                                                <h4 className="order-h4">No orders</h4>
+                                                            </div>
+                                                            {/* {Number(order.quantity).toFixed(4)}&nbsp;&nbsp;&nbsp;&nbsp;{order.coin_id}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{new Date (order.created_at).toLocaleString("en-US", {day: "numeric", month: "numeric", year: "numeric", hour: "numeric", minute: "numeric"})} */}
+                                                            </div>
+                                                        
+                                                        
+                                                        
+                                                        : 
+                                                        ordersArray.map((order, idx) => {  
+                                                        return (
+                                                            <OrderIndexItem order={order} key={idx} coin={coin}/>
+                                                        )
+                                                        })}
+
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                
                             </div>
                         </div>
 

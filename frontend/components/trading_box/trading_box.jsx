@@ -222,8 +222,9 @@ class TradingBox extends React.Component {
                               </div>
                             </div>
                           </div>
-
-                          <span className="you-can-buy-up-to">You can buy up to {Number(this.props.state.entities.users[this.props.userId].wallets["usd"].quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of {this.props.coin.name}</span>
+                          {this.state.buyAction === "hidden" ?   <span className="you-can-buy-up-to">You can sell up to {Number((this.props.state.entities.users[this.props.userId].wallets[this.props.coin.id].quantity)*this.props.current_price).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of {this.props.coin.name}</span>:
+                          <span className="you-can-buy-up-to">You can buy up to {Number(this.props.state.entities.users[this.props.userId].wallets["usd"].quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of {this.props.coin.name}</span>}
+                          
                           </div>
                           
                           <div id="trading-image-div">

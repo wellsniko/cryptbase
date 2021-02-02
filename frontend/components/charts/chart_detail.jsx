@@ -11,7 +11,9 @@ class ChartDetail extends React.Component {
 
         const { coinId, coin, pricesData} = this.props;
         const dateData = pricesData.map(element => new Date (element[0]-28800).toLocaleString("en-US", {hour: "numeric", minute: "numeric"}))
-        const priceData = pricesData.map(element => element[1].toFixed(2))
+        
+        let priceData 
+        pricesData[0][1] < 1 ? priceData = pricesData.map(element => element[1].toFixed(4)) : priceData = pricesData.map(element => element[1].toFixed(2))
 
         const data = {
             labels: dateData,
