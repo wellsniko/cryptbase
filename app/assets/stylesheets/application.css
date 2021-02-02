@@ -2595,7 +2595,7 @@ ul li a {
     overflow: hidden;
     border: 1px solid rgb(236, 239, 241);
     border-radius: 6px;
-    box-shadow: rgb(17, 51, 83, 0.02) 0px 4px 12px 0px;
+    box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
     padding: 32px 32px 0px;
     background: rgb(255, 255, 255);
 }
