@@ -5,7 +5,8 @@ import { fetchCoinPriceData, fetchCoin24hrData, fetchCoinNews } from '../../acti
 const mapStateToProps = (state, ownProps) => ({
   coinId: ownProps.match.params.coinId,
   coin: state.entities.coin,
-  symbol: state.entities.coin.symbol
+  symbol: state.entities.coin.symbol,
+  ordersArray: state.entities.users[state.session.id].orders,
 })
 
 const mapDispatchToProps = dispatch => ({
