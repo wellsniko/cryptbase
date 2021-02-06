@@ -19,7 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-
+if (process.env.NODE_ENV !== 'production') {
+    const {whyDidYouUpdate} = require('why-did-you-update')
+    whyDidYouUpdate(React)
+}
   window.store = store;
   const root = document.getElementById("root");
   ReactDOM.render(<Root store = {store}/>, root);

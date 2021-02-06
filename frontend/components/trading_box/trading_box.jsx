@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 
-class TradingBox extends React.Component {
+class TradingBox extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

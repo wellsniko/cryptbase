@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import { Link } from 'react-router-dom';
 import MiniChartContainer from '../charts/mini_chart_container'
 import WalletIndexItem from './wallet_index_item';
@@ -13,12 +13,18 @@ class Dashboard extends React.Component {
     // this.props.fetchBitcoinCashHistory("bitcoin-cash");
     // this.props.fetchLitecoinHistory("litecoin");
     // this.props.fetchStellarHistory("stellar");
-    
+
     this.props.watchlistCoins.forEach((id, idx) =>{
       this.props.fetchCoinWatchlistData(id)
     })
     
   }
+
+      shouldComponentUpdate(nextProps, nextState) {
+
+        return nextProps != this.props;
+    }
+
 
   render() {
     if (!this.props.currentUser) {

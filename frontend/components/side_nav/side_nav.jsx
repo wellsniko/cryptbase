@@ -1,9 +1,10 @@
 import React from "react";
 import { NavLink} from 'react-router-dom'
 
-const SideNav = ({ currentUser}) => {
-
-    const userHere = () => (
+const SideNav = ({ currentUser}) => (
+    
+    currentUser ? 
+  
         <>
             <nav className="side-nav">
                 <h2 id="logo-logged-in"><NavLink style={{textDecoration: "none", color: 'rgb(22, 82, 240)'}} to="/dashboard">Cryptbase</NavLink></h2>
@@ -99,11 +100,11 @@ const SideNav = ({ currentUser}) => {
                 
                 </ul>
             </nav> 
-        </>
+        </> : null 
+    
     )
 
-     return currentUser ?  userHere() : null
-}
+
 
 
 

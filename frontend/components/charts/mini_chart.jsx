@@ -1,17 +1,23 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import { Line } from "react-chartjs-2";
 import {Link} from 'react-router-dom'
 
-class MiniChart extends React.Component {
+class MiniChart extends PureComponent {
+
+    // shouldComponentUpdate(nextProps, nextState) {
+        
+    //     // console.log(this.props)
+    //     // console.log(nextProps)
+    //     return nextProps.watchlist != this.props.watchlist 
+    // }
 
     render() { 
-
-        if (typeof this.props.coinId === 'undefined' || typeof this.props.state.entities.watchlist[this.props.coinId] === 'undefined' || typeof this.props.state === 'undefined' || !this.props.coins || Object.values(this.props.coins).length < 28) {
+        
+        if (typeof this.props.coinId === 'undefined' || typeof this.props.watchlist[this.props.coinId] === 'undefined' || typeof this.props.watchlist[this.props.coinId] === 'undefined' || !this.props.coins || Object.values(this.props.coins).length < 28) {
            return null
         } 
 
-        
-        const pricesData = this.props.state.entities.watchlist[this.props.coinId].prices
+        const pricesData = this.props.watchlist[this.props.coinId].prices
         const coin = this.props.coins[this.props.coinId]
         const dateData = pricesData.map(element => new Date (element[0]-28800).toLocaleString("en-US", {hour: "numeric", minute: "numeric"}))
         const priceData = pricesData.map(element => element[1].toFixed(3))

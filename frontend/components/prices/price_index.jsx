@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import PriceIndexItem from './price_index_item';
 
 
-class PriceIndex extends React.Component {
+class PriceIndex extends PureComponent {
     constructor(props) {
       super(props);
       this.state = {

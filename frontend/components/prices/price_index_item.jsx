@@ -14,6 +14,10 @@ class PriceIndexItem extends React.Component {
       this.handleTradeComponent = this.handleTradeComponent.bind(this)
     }
 
+      shouldComponentUpdate(nextProps, nextState) {
+        return nextState != this.state
+    }
+  
 
     handleTradeComponent() {
             this.setState({

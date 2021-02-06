@@ -5,7 +5,7 @@ const mapStateToProps = (state, ownProps) => ({
     coinId: ownProps.coinId,
     watchlist: state.entities.watchlist,
     color: ownProps.color,
-    state: state,
+    // state: state,
     coins: state.entities.coins
 });
 
