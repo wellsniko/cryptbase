@@ -7,13 +7,17 @@ import OrderIndexItem from '../dashboard/order_index_item'
 class PriceDetail extends React.Component {
     
     componentDidMount() {
-       this.props.fetchCoin24hrData(this.props.coinId)
         this.props.fetchCoinPriceData(this.props.coinId)
+       this.props.fetchCoin24hrData(this.props.coinId)
         .then(data=> this.props.fetchCoinNews(data.coin[0].symbol))
+      
+    window.scrollTo(0, 0)
+
        
     }
 
     render() {
+         if (!this.props.coin) return null
         const { coinId, coin} = this.props;
         
         const normalNumConverter = (num) => {
@@ -44,7 +48,6 @@ class PriceDetail extends React.Component {
 
         let ordersArray = this.props.ordersArray.filter(order => order.coin_id === coin.id)
 
-        // if (!coin.news) return null
 
         return (
             <>
@@ -118,7 +121,7 @@ class PriceDetail extends React.Component {
                                                     {coin.market_cap_rank} 
                                                 </span>
                                             </div>
-                                            <div className="div-under-chart">
+                                            <div className="div-under-chart-12">
                                                 <div className="div-under-text-1">
                                                     <label className="chart-div-label">
                                                         Trading Activity
