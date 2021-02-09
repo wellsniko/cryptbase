@@ -1,5 +1,5 @@
 import React from "react";
-import TradeModal from './modal/trade_modal'
+// import TradeModal from './modal/trade_modal'
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -20,7 +20,7 @@ const App = () => (
 
 
   <>
-    <TradeModal/>
+    {/* <TradeModal/> */}
     <SideNavContainer/>
     <TopNavContainer/>
 

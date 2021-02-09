@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import { Link} from 'react-router-dom';
 import TradingBoxContainer from '../trading_box/trading_box_container'
 
@@ -14,9 +14,11 @@ class PriceIndexItem extends React.Component {
       this.handleTradeComponent = this.handleTradeComponent.bind(this)
     }
 
-      shouldComponentUpdate(nextProps, nextState) {
-        return nextState != this.state
-    }
+    //   shouldComponentUpdate(nextProps, nextState) {
+    //     //   console.log(nextProps)
+    //     // console.log(this.props)
+    //     return nextState != this.state || nextProps != this.props
+    // }
   
 
     handleTradeComponent() {
@@ -46,7 +48,8 @@ class PriceIndexItem extends React.Component {
 
     // const data = {userId: this.props.userId, user: {watchlist: this.props.watchlistCoins.slice(0,2).push(this.props.coin.id)}}
 
-
+    // console.log(this.state)
+    // console.log(this.props)
       return (
         
         <tr className="price-index-row" >

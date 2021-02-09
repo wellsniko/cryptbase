@@ -20,6 +20,7 @@ class PriceIndex extends React.Component {
 
 
   filterCoins(param){
+    // console.log(this.state)
     if (this.state.sortParams !== param) {
       this.setState({
         sortParams: param,

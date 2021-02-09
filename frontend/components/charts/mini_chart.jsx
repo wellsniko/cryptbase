@@ -2,13 +2,10 @@ import React, {PureComponent} from 'react';
 import { Line } from "react-chartjs-2";
 import {Link} from 'react-router-dom'
 
-class MiniChart extends PureComponent {
+class MiniChart extends React.Component {
 
     // shouldComponentUpdate(nextProps, nextState) {
-        
-    //     // console.log(this.props)
-    //     // console.log(nextProps)
-    //     return nextProps.watchlist != this.props.watchlist 
+    //     return this.props.watchlist[this.props.coinId] != nextProps.watchlist[this.props.coinId]
     // }
 
     render() { 
