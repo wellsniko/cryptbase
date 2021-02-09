@@ -68,7 +68,7 @@ export const fetchCoins = () => (
 
 export const fetchCoinNews = (symbol) => (
     $.ajax({
-        url: `https://cryptopanic.com/api/v1/posts/?auth_token=62060cbf8b7979c691140501d6d2b70f8e76c1fc&currencies=${symbol}`,
+        url: `https://cors-anywhere.herokuapp.com/https://cryptopanic.com/api/v1/posts/?auth_token=62060cbf8b7979c691140501d6d2b70f8e76c1fc&currencies=${symbol}`,
         method: 'GET',
           headers:{
     'X-Requested-With': 'XMLHttpRequest'
