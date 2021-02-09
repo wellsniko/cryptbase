@@ -11,12 +11,21 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this)
   }
 
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  demoLogin(){
+
+    this.setState({
+      email: "niko@niko.com",
+      password: "password"
+    })
   }
 
   handleSubmit(e) {
@@ -42,10 +51,6 @@ class SessionForm extends React.Component {
 	}
 
   render() {
-    const demoUser = {
-      email: "niko@niko.com",
-      password: "password"
-    }
 
     let nameInput;
     (this.props.formType === "signup") ? nameInput = <div className="first-last-name-form"><label><input type="text" placeholder="First name" className="first-name-form"/></label>
@@ -88,10 +93,11 @@ class SessionForm extends React.Component {
                 />
               </label>
               <div className={`${this.props.formType}-session-submit-line`}>
-                {this.props.formType === "login" ? <button className={`${this.props.formType}-session-submit-2`} onClick={() => this.props.login(demoUser)}>Demo Login</button> :
+                <input className={`${this.props.formType}-session-submit`} type="submit" value={this.props.formText[1]} />
+                {this.props.formType === "login" ? <button className={`${this.props.formType}-session-submit-2`} onClick={this.demoLogin}>Demo Login</button> :
                 null }
                 
-                <input className={`${this.props.formType}-session-submit`} type="submit" value={this.props.formText[1]} />
+                
               </div>
             </div>
               

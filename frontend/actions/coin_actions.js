@@ -91,7 +91,7 @@ export const fetchCoinNews = symbol => dispatch => (
     {
     return (
       dispatch(receiveCoinNews(news))
-  )})
+  )}, err => console.log(err))
 );
 
 
