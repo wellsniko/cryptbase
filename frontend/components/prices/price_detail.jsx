@@ -7,11 +7,9 @@ import OrderIndexItem from '../dashboard/order_index_item'
 class PriceDetail extends React.Component {
     
     componentDidMount() {
-        this.props.fetchCoinPriceData(this.props.coinId)
-       this.props.fetchCoin24hrData(this.props.coinId)
-        .then(data=> this.props.fetchCoinNews(data.coin[0].symbol))
-      
-    window.scrollTo(0, 0)
+        this.props.fetchCoinPriceData(this.props.coinId).then(data=> this.props.fetchCoinNews(data.coin[0].symbol))
+        this.props.fetchCoin24hrData(this.props.coinId)  
+        window.scrollTo(0, 0)
 
        
     }
