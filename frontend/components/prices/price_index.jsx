@@ -120,7 +120,6 @@ class PriceIndex extends React.Component {
                   ((coins["bitcoin"].price_change_percentage_24h + coins["ethereum"].price_change_percentage_24h) /2).toFixed(2) + "%" :
                   ((coins["bitcoin"].price_change_percentage_24h + coins["ethereum"].price_change_percentage_24h) /-2).toFixed(2) + "%"}</span>
              </h1>
-              {/* <input type="text"/> */}
 
             </div>
               <section className="price-index-section">

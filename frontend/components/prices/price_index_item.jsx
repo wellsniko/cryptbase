@@ -34,14 +34,13 @@ class PriceIndexItem extends React.Component {
         : Math.abs(Number(num));
       }
 
-    const colorChooser = (percentage)=> {
-      return percentage >= 0 ? {color:`rgb(5, 177, 105)`} : {color:`rgb(223, 95, 103)`};
-    }
+      const colorChooser = (percentage)=> {
+        return percentage >= 0 ? {color:`rgb(5, 177, 105)`} : {color:`rgb(223, 95, 103)`};
+      }
 
-    const biggestCoins = ["btc", "eth", "ltc", "bch", "xlm", "xrp"]
+      const biggestCoins = ["btc", "eth", "ltc", "bch", "xlm", "xrp"]
 
-    // const data = {userId: this.props.userId, user: {watchlist: this.props.watchlistCoins.slice(0,2).push(this.props.coin.id)}}
-
+      if (!this.props.coin) return null 
 
       return (
         
