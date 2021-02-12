@@ -100,7 +100,6 @@ body, html {
 
 .home-body {
     background-color: rgb(22, 82, 240);
-    /* height: 100%; !TEMPORARY*/   
     height: 687px;
     margin: 0;
     font-family: Graphik,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
@@ -110,7 +109,6 @@ body, html {
 
 .home-body-2 {
     background-color: rgb(22, 82, 240);
-    /* height: 100%; !TEMPORARY*/   
     height: 100vh;
     margin: 0;
     font-family: Graphik,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
@@ -120,7 +118,6 @@ body, html {
 
 .bottom-blue {
     background-color: rgb(22, 82, 240);
-    /* height: 100%; !TEMPORARY*/   
     height: 1300px;
     margin: 0;
     
@@ -337,15 +334,6 @@ div {
     align-items: center;
     flex-direction: column;
     flex: 1 0 auto;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
-    /* max-width: 480px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 4px;
-    box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
-    padding: 24px;
-    margin-bottom: 24px; */
 }
 
 .signup-form-container>h1 {
@@ -590,57 +578,13 @@ div {
     line-height: 1.5;
 }
 
-/* 
-.user-box {
-    display: flex;
-    flex: 1 1 auto;
-    -webkit-box-align: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0px 24px;
-    background: rgb(246, 249, 252);
-    left: 235px;
-    top: 65px;
-} */
-
-/* .portfolio-value {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 auto;
-    margin: 0px;
-    padding: 500px;
-    width: 100%;
-    border: 5px;
-    border-color: grey;
-    left: 235px;
-    top: 65px;
-} */
-
 .main-user-page {
-    /* flex: 1 1 0%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    opacity: 1;
-    flex: 1 1 auto;
-    -webkit-box-align: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0px;
-    background: rgb(246, 249, 252);
-    left: 235px;
-    top: 65px;
-    padding: 0px 24px;
-    .iSFnzL { */
-    
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
     margin-left: 237px;
     padding-top: 68px;
-    min-height: var(--full-view-height,100vh);
-/* } */
-    
+    min-height: var(--full-view-height,100vh); 
 }
 
 .main-user-page-2 {
@@ -651,11 +595,10 @@ div {
     flex-direction: column;
     padding: 0px 24px;
     background: rgb(246, 249, 252);
-    /* overflow-anchor: none; */
 }
 
 .price-detail-page *, .price-index * {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 
@@ -687,7 +630,6 @@ div {
 #main-chart{
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
     border-color: rgb(53, 57, 59);
     background-image: initial;
     background-color: rgb(24, 26, 27);
@@ -696,7 +638,6 @@ div {
     flex: 0 0 auto;
     height: 522;
     width: 1088;
-    /* min-height: 310px; */
     border: 1px solid rgb(236, 239, 241);
     background: rgb(255, 255, 255);
     overflow: visible;
@@ -846,8 +787,6 @@ div {
 }
 
 .price-index-title {
-    /* border-bottom-color: rgb(53, 57, 59); */
-
     display: flex;
     align-items: flex-end;
     margin-bottom: 32px;
@@ -907,17 +846,7 @@ div {
 
 .t2-h1-new-h {
     padding: 16px 0px 16px 0px;
-    /* text-align: left; */
 }
-/* .t2-h1 label {
-    width: 100%;
-    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.6;
-    color: rgba(17, 51, 83, 0.6);
-    transition: color 80ms ease-in-out 0s;
-} */
 
 #grey-triangle {
     color: #B8C2CC;
@@ -1007,15 +936,6 @@ th label {
     text-align: left;
 }
 
-/* .dpbZwc {
-    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.6;
-    color: rgba(17, 51, 83, 0.6);
-    transition: color 80ms ease-in-out 0s;
-} */
-
 .t2-body {
     padding: 0px;
     border: none;
@@ -1031,23 +951,14 @@ th label {
 
 .price-index-row:hover {
    background: rgb(250, 251, 252);
-    /* user-select: none; */
-
 }
 
-/* .t2-r1:first-child {
-    padding-left: 32px;
-} */
-
 .t2-r1 {
-    /* padding: 14px 48px 14px 0px; */
     border-top: 1px solid rgb(236, 239, 241);
     cursor: pointer;
-    /* min-width: 140px; */
 }
 
 .josh {
-    /* padding: 14px 48px 14px 0px; */
     border-top: 1px solid rgb(236, 239, 241);
     cursor: pointer;
     width: 39vw;
@@ -1112,11 +1023,10 @@ th label {
 
 
 .index-image-2 {
-    /* width: 36px;
-    height: 36px; */
     padding: 0;
     margin: 8px;
 }
+
 #index-trade-button {
     position: relative;
     width: auto;
@@ -1172,9 +1082,6 @@ th label {
     background-color: rgb(5, 177, 105);
 }
 
-
-/* side_nav side nav */
-
 .side-nav {
     position: fixed;
     display: flex;
@@ -1187,18 +1094,13 @@ th label {
     min-width: 237px;
     max-width: 237px;
     border-right: 1px solid rgb(241, 243, 245);
-    background: rgb(255, 255, 255);
-    /* margin: 18px 8px; */
-    
+    background: rgb(255, 255, 255);    
 }
 
 #logo-logged-in {
-    
     padding-left: 16px;
-
     top: 0;
     margin-left: 16px;
-    
     display: flex;
     -webkit-box-pack: center;
     justify-content: center;
@@ -1225,51 +1127,14 @@ ul li a {
     align-items: center;
     font-size: 14px;
     font-weight: 600;
-    /* margin-left: 16px; */
     text-decoration: none;
 }
 
-/* .side-nav ul {
-    margin: 18px 8px;
-    list-style-type: none;
-    position: absolute;
-    padding: 0px;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
-    top: 30;
-} */
-
-
 .side-nav-logged-in {
-    /* margin: 18px 8px;
-    list-style-type: none;
-    padding: 0px;
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px; */
     margin: 18px 8px;
     list-style-type: none;
     padding: 0px;
 }
-
-
-/* .side-nav-logged-in li {
-    margin-bottom: 22px;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    padding-left: 8px;
-    height: 48px;
-    cursor: pointer;
-} */
 
 .side-nav-li {
     margin-bottom: 22px;
@@ -1282,23 +1147,7 @@ ul li a {
     cursor: pointer;
 }
 
-/* color: rgb(22, 82, 240); */
-/* color: rgba(17, 51, 83, 0.6); */
-
 .side-nav-links {
-    /* -webkit-box-align: center;
-    align-items: center;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    color: rgba(17, 51, 83, 0.6);
-    cursor: pointer;
-    font-size: 16px;
-    text-decoration: none;
-    transition: color 0.25s ease 0s;
-    margin-left: 0px; */
-
-    
     -webkit-box-align: center;
     align-items: center;
     display: flex;
@@ -1312,26 +1161,12 @@ ul li a {
 }
 
 .selected-side-nav-links {
-    /* -webkit-box-align: center;
-    align-items: center;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    color: rgba(17, 51, 83, 0.6);
-    cursor: pointer;
-    font-size: 16px;
-    text-decoration: none;
-    transition: color 0.25s ease 0s;
-    margin-left: 0px; */
-
     color: rgb(22, 82, 240);
     -webkit-box-align: center;
     align-items: center;
     display: flex;
     width: 100%;
     height: 100%;
-
-   
     cursor: pointer;
     font-size: 16px;
     text-decoration: none;
@@ -1377,6 +1212,7 @@ ul li a {
 .discover-more-assets {
     color: rgba(17, 51, 83, 0.6);
 }
+
 .discover-more-assets:hover {
     color: rgb(22, 82, 240);
 }
@@ -1388,8 +1224,7 @@ ul li a {
     align-items: center;
     font-size: 14px;
     font-weight: 720;
-    margin-left: 16px;
-    
+    margin-left: 16px; 
 }
 
 
@@ -1425,11 +1260,13 @@ ul li a {
     display: flex;
     flex-direction: row;
 }
+
 .top-nav-div-1-1 {
     display: flex;
     flex-direction: row;
     cursor: pointer;
 }
+
 .top-nav-div-1-2 {
     display: flex;
     flex-direction: row;
@@ -1506,7 +1343,6 @@ ul li a {
     font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-weight: 500;
 }
-
 
 .price-detail-body {
     display: flex;
@@ -1599,17 +1435,6 @@ ul li a {
     width: 100%;
 }
 
-/* #chart-component canvas, #main-chart canvas{
-    width: 1088 !important;
-    height: 362 !important;
-   
-} */
-/* 
-.chartjs-size-monitor {
-    width: 1088 !important;
-    height: 362 !important;
-} */
-
 .under-chart  {
     position: relative;
     flex: 1 1 0%;
@@ -1652,7 +1477,6 @@ ul li a {
     flex-direction: column;
     max-width: 200px;
     width: 25%;
-    /* margin: 14px 0px; */
     margin-top: 0px;
     margin-right: 0px;
     margin-bottom: 28px;
@@ -1668,7 +1492,6 @@ ul li a {
     margin-right: 0px;
     margin-bottom: 28px;
     margin-left: 0px;
-    /* margin: 14px 0px; */
     padding-left: 12px;
 }
 .chart-column {
@@ -1776,18 +1599,10 @@ ul li a {
 
 .buy-box-main-modal {
     display: flex;
-    /* width: 100%;
-    position: relative; */
-    /* background: rgb(255, 255, 255);
-    border-right: 1px solid rgb(236, 239, 241);
-    border-bottom: 1px solid rgb(236, 239, 241);
-    border-left: 1px solid rgb(236, 239, 241);
-    border-image: initial; */
     border-radius: 4px;
     box-shadow: rgba(17, 51, 83, 0.02) 0px 4px 12px 0px;
     border-top: none;
     margin-bottom: 24px;
-    /* height: 544px; */
     top: 50%;
     left: 50%;
     position: absolute;
@@ -1866,17 +1681,10 @@ ul li a {
     min-height: 64px;
 }
 
-/* .buy-sell-convert:last-child {
-    /* border-top-left-radius: 4px; */
-    /* border-right: 1px solid rgb(236, 239, 241);
- */ 
-
 .buy-sell-selected  {
-
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     border-top: 2px solid rgb(22, 82, 240);
-    /* border-right: 1px solid rgb(236, 239, 241); */
     display: flex;
     flex-direction: row;
     user-select: none;
@@ -1912,22 +1720,6 @@ ul li a {
     background-color: rgba(17, 51, 83, 0.02);
     border-top: 1px solid rgb(236, 239, 241);
 }
-        /* display: flex;
-    flex-direction: row;
-    user-select: none;
-    flex: 1 1 0%;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 500;
-    color: rgb(22, 82, 240);
-    background-color: rgb(252, 252, 251);
-    border-bottom: none;
-    border-top: 2px solid rgb(22, 82, 240);
-    border-left: .5px grey */
 
 #trading-image {
     height: 85px;
@@ -1955,7 +1747,6 @@ ul li a {
     align-items: center;
     -webkit-box-pack: center;
     justify-content: center;
-    /* cursor: pointer; */
     font-size: 18px;
     font-weight: 500;
     border-bottom: 1px solid rgb(236, 239, 241);
@@ -2211,7 +2002,6 @@ ul li a {
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-pack: justify;
-    /* justify-content: space-between; */
     margin-bottom: 24px;
     min-height: 63px;
 }
@@ -2263,7 +2053,6 @@ ul li a {
 }
 
 .div-t2-new {
-    /* text-align: right; */
     width: 100%;
 }
 
@@ -2272,9 +2061,7 @@ ul li a {
 }
 
 .div-t2-new-h {
-    /* display: flex; */
     -webkit-box-align: center;
-    /* align-items: center; */
     text-align: center;
     width: 100%
 }
@@ -2283,7 +2070,6 @@ ul li a {
     display: flex;
     flex-direction: column;
     width: 100%;
-    /* padding-bottom: 24px; */
     flex-shrink: 0;
 }
 
@@ -2299,13 +2085,6 @@ ul li a {
 
 
 .order-header-div {
-    /* font-variant: tabular-nums;
-    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    line-height: 1.3;
-    color: rgb(5, 15, 25);
-    font-size: 18px;
-    display: block;
-    margin: 0px; */
     display: flex;
     -webkit-box-pack: start;
     justify-content: flex-start;
@@ -2319,13 +2098,6 @@ ul li a {
     flex-shrink: 0;
 }
 
-/* .fab {
-    font-family: "Font Awesome 5 Brands";
-}
-
-.fa-3x {
-    font-size: 3em;
-} */
 .order-body-div-1 {
     position: relative;
     flex: 1 1 0%;
@@ -2354,7 +2126,6 @@ ul li a {
     flex-shrink: 0;
     cursor: pointer;
     -webkit-box-pack: start;
-    /* justify-content: flex-start; */
     -webkit-box-align: center;
     justify-content: flex-start;
     font-weight: 400;
@@ -2420,8 +2191,6 @@ ul li a {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    /* margin-top: 7px; */
-    /* margin-left: 5px; */
     padding-top: 16px;
     padding-left: 20px;
     padding-right: 25px;
