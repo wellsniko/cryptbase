@@ -158,25 +158,13 @@ class PriceDetail extends React.Component {
                                     </div>
                                 </div>
                                 </div>
-                                {/* <div id="coin-info box">
-                                    <div id="coin-info-box-2">
-                                        <div id="coin-info-box-3">
-                                            <div id="coin-info-margin-bottom">
-                                                <div id="coin-info-padding">
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> */}
                                 <div id="news-detail">
                                     <div id="news-detail-2">
                                         <div id="news-detail-3">
                                             <div id="news-body">
                                                 <h2 id="news-h2">{coin.name}'s Top Stories</h2>
                                                 <div>
-                                                    { (!coin.news) ? <div style={{paddingBottom: "20px"}}> Sorry, I ran out of requests for this News API for this hour. There's probably more traffic than usual. </div> : (coin.news).map((story, idx)=> (
+                                                    { (!coin.news) ? <div style={{paddingBottom: "20px"}}> Sorry, I'm temporarily limited on this API call. There's probably more traffic than usual. </div> : (coin.news).map((story, idx)=> (
                                                         <CoinNewsItem story={story} key={idx}/>
                                                     ))}
 
@@ -185,9 +173,6 @@ class PriceDetail extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-
-
-
 
                             </div>
                             <div id="buy-box-column">
