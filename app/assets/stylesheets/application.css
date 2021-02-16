@@ -1810,6 +1810,16 @@ ul li a {
     margin: 16px 0px;
 }
 
+.buying-selling-error {
+    color: #b94a48;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 16px 0px;
+}
+
 .one-time-purchase-2 {
     cursor: pointer;
     border-radius: 18px;

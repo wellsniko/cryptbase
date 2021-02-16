@@ -11,9 +11,10 @@ const mapStateToProps = (state, ownProps) => {
   const current_price = ownProps.coin.current_price
   const errors = state.errors.session
   const fromIndex = ownProps.fromIndex
+  const coinBalance = state.entities.users[userId].wallets[coinId].quantity
   
   return ({
-    buyingPower, userId, coinId, current_price, state, errors, fromIndex
+    buyingPower, userId, coinId, current_price, state, errors, fromIndex, coinBalance
   });
 };
 

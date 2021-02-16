@@ -18,7 +18,6 @@ class TradingBox extends React.Component {
     // this.handleFromIndex = this.handleFromIndex.bind(this)
   }
 
-      
     onQuantityChange(e) {
       !Number(e.currentTarget.value) && (e.currentTarget.value !== "" ) && (e.currentTarget.value !== ".") && (e.currentTarget.value !== 0) ? null :
         this.setState({
@@ -188,11 +187,18 @@ class TradingBox extends React.Component {
       }
     }
 
-
+    
     render() {
       if (!this.props) {
         return <> </>
       }
+      console.log(this.state.quantity)
+      console.log(this.props.currentPrice)
+      //       console.log((Number(this.state.quantity))
+      
+      // console.log(Number(this.props.currentPrice))
+      // console.log(this.props.coinBalance)
+      // console.log(this.state.quantity)
       
        
         return (
@@ -222,13 +228,15 @@ class TradingBox extends React.Component {
                               </div>
                             </div>
                           </div>
-                          {this.state.buyAction === "hidden" ?   <span className="you-can-buy-up-to">You can sell up to {Number((this.props.state.entities.users[this.props.userId].wallets[this.props.coin.id].quantity)*this.props.current_price).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of {this.props.coin.name}</span>:
-                          <span className="you-can-buy-up-to">You can buy up to {Number(this.props.state.entities.users[this.props.userId].wallets["usd"].quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of {this.props.coin.name}</span>}
-                          
+                            {this.state.buyAction === "hidden" ?   <span className="you-can-buy-up-to">You can sell up to {Number((this.props.state.entities.users[this.props.userId].wallets[this.props.coin.id].quantity)*this.props.current_price).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of {this.props.coin.name}</span>:
+                            <span className="you-can-buy-up-to">You can buy up to {Number(this.props.state.entities.users[this.props.userId].wallets["usd"].quantity).toLocaleString('en-US', {style: 'currency',currency: 'USD'})} of {this.props.coin.name}</span>}
+                            
+                            {this.state.sellAction === 'hidden' ? Number(this.state.quantity) > Number(this.props.buyingPower) ? <span className="buying-selling-error">You can't afford to purchase this amount</span> : null : 
+                            Number((this.state.quantity)/(this.props.current_price)) > Number(this.props.coinBalance) ? <span className="buying-selling-error">Unable to sell this amount</span> : null}
+
                           </div>
                           
                           <div id="trading-image-div">
-
                             <img id="trading-image" src={this.props.coin.image} alt=""/>
                           </div>
                           
