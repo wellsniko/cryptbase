@@ -55,7 +55,7 @@ class PriceDetail extends React.Component {
                     <div className="price-detail-title">
                    <div className="detail-header">
                        <div className="detail-header-image-div">
-                           <img className="lil-detail-image" src={`${coin.image}`} alt=""/>
+                           {!coin.image ? null : <img className="lil-detail-image" src={`${coin.image}`} alt=""/>}
                        </div>
                        <div className="name-and-sym-detail">
                           <h1 className="detail-name-main"> &nbsp; &nbsp;{coin.name}</h1> 

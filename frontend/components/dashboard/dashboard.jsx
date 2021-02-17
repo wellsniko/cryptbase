@@ -6,28 +6,21 @@ import OrderIndexItem from './order_index_item';
 
 class Dashboard extends React.Component {
   componentDidMount() {
-    this.props.fetchCoins();
-    // this.props.fetchBitcoinHistory("bitcoin");
-    // this.props.fetchEthereumHistory("ethereum");
-    // this.props.fetchRippleHistory("ripple");
-    // this.props.fetchBitcoinCashHistory("bitcoin-cash");
-    // this.props.fetchLitecoinHistory("litecoin");
-    // this.props.fetchStellarHistory("stellar");
-    
-    this.props.watchlistCoins.forEach((id, idx) =>{
+      this.props.fetchCoins();    
+      this.props.watchlistCoins.forEach((id, idx) =>{
       this.props.fetchCoinWatchlistData(id)
     })
     
   }
 
   render() {
+    
     if (!this.props.currentUser) {
       return <> </> 
     } 
     if (!this.props.coins){
       return null
     }
-
     const { coins, currentUser, ordersArray} = this.props;
     const wallets = currentUser.wallets
     

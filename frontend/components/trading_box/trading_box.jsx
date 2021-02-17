@@ -192,14 +192,6 @@ class TradingBox extends React.Component {
       if (!this.props) {
         return <> </>
       }
-      console.log(this.state.quantity)
-      console.log(this.props.currentPrice)
-      //       console.log((Number(this.state.quantity))
-      
-      // console.log(Number(this.props.currentPrice))
-      // console.log(this.props.coinBalance)
-      // console.log(this.state.quantity)
-      
        
         return (
           <div id={this.state.backgroundId} onClick={this.closeFormat}>
