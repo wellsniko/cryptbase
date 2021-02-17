@@ -2,6 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from './store/store';
 import Root from './components/root'
+import ReactGA from 'react-ga';
+
+initializeReactGA()
+
+function initializeReactGA() {
+    ReactGA.initialize('G-W428D18TVH');
+    ReactGA.pageview('/homepage');
+}
 
 document.addEventListener("DOMContentLoaded", () => {
 

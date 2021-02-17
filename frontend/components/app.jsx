@@ -10,6 +10,14 @@ import PriceIndexContainer from './prices/price_index_container'
 import SideNavContainer from './side_nav/side_nav_container'
 import TopNavContainer from './top_nav/top_nav_container'
 import PriceDetailContainer from './prices/price_detail_container'
+import ReactGA from 'react-ga';
+
+initializeReactGA()
+
+function initializeReactGA() {
+    ReactGA.initialize('G-W428D18TVH');
+    ReactGA.pageview('/homepage');
+}
 
 const App = () => (
 
