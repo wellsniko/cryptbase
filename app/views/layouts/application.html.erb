@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Cryptbase</title>
+  <head>    
+    <meta property="og:title" content="Cryptbase" />
+    <meta property='og:image' content="<%= image_url('cryptbase_sc.png') %>"/>
+    <meta property="og:description" content="Cryptbase, a clone of the popular cryptocurrency site, Coinbase, is a web app that allows users to buy, sell, and manage a cryptocurrency portfolio."/>
+    <meta property="og:url" content="http://cryptbase.herokuapp.com/#/"/>
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script type="text/javascript">window.homeImage= '<%=image_url('home-icon-home-house-icon-house-icon-free-11553508857ouiuhg9nsa.png')%>'</script>
@@ -16,11 +20,8 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <title>Cryptbase</title>
 
-    <meta property="og:title" content="Cryptbase" />
-    <meta property='og:image' content="<%= image_url('cryptbase_sc.png') %>"/>
-    <meta property="og:description" content="Cryptbase, a clone of the popular cryptocurrency site, Coinbase, is a web app that allows users to buy, sell, and manage a cryptocurrency portfolio."/>
-    <meta property="og:url" content="http://cryptbase.herokuapp.com/#/"/>
 
 
   </head>
