@@ -13,4 +13,4 @@ This is my first Full Stack Project, and the initial work was done in a 10 day p
 * After logging in, users are directed to their dashboard, which displays their portolio and ownership of each currency, and details on their past orders.
 * Logged in users can see a more detailed cryptocurrency index page with links to a detail page for each coin.
 * Detail page for each currency displays a price chart, more details on the currency, and a buy box to purchase or sell the currency with the User's USD.
-* Buy Box is fully functioning with error messages for invalid purchases and alerts for successful purchases.
+* Buy Box is fully functioning with error messages for invalid purchases and alerts for successful purchases.4

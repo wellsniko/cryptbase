@@ -1004,6 +1004,7 @@ th label {
     text-align: center;
     flex-direction: row;
     cursor: pointer;
+    color:black;
 }
 
 .index-link-num {
