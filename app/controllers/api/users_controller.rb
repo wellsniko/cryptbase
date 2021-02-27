@@ -14,13 +14,6 @@ class Api::UsersController < ApplicationController
     render :show
   end
 
-  def update
-    @user = User.find_by(id: params[:id])
-    @user.update(user_params)
-    # @user.watchlist.push(params[:coin])
-    render :show
-  end
-
 
   private
 
@@ -28,7 +21,4 @@ class Api::UsersController < ApplicationController
     params.require(:user).permit(:email, :password) # :watchlist
   end
 
-  # def user_watchlist_params
-  #   params.require(:user).permit(:coin)
-  # end
 end

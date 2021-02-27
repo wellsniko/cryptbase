@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
   currentUser: state.entities.users[state.session.id],
   ordersArray: state.entities.users[state.session.id].orders,
   watchlist: state.entities.watchlist,
-  watchlistCoins: state.entities.users[state.session.id].watchlist
+  watchlistCoins: state.entities.users[state.session.id].watchlist.coins
 });
 
 const mapDispatchToProps = dispatch => ({

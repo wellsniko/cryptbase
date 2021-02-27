@@ -1,11 +1,6 @@
-# require 'byebug'
-
 class Api::OrdersController < ApplicationController
 
-
     def create
-        # debugger
-
 
         user_wallet = Wallet.find_wallet(order_params[:user_id], order_params[:coin_id])
         user_usd_wallet = Wallet.find_wallet(order_params[:user_id], "usd")

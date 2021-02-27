@@ -1,8 +1,11 @@
 json.extract! user, :id, :email
 
+json.watchlist do 
+    json.extract! user.watchlist, :id, :user_id, :coins
+    
+end
 
-json.set! "watchlist", user.watchlist.coins
-
+# json.set! "watchlist", user.watchlist.coins
 
 json.wallets do  
     user.wallets.each do |wallet|

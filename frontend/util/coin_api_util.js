@@ -1,8 +1,8 @@
-export const editWatchlist = (data) => (
+export const editWatchlist = (watchlistParams) => (
   $.ajax({
     method: 'PUT',
-    url: `/api/users/${data.userId}`,
-    user: data
+    url: `/api/watchlists/${watchlistParams.user_id}`,
+    data: {watchlistParams}
   })
 );
 

@@ -5,7 +5,7 @@ import {changeWatchlist} from '../../actions/session_actions'
 
 const mapStateToProps = state => ({
   coins: state.entities.coins,
-  watchlistCoins: state.entities.users[state.session.id].watchlist,
+  watchlistCoins: state.entities.users[state.session.id].watchlist.coins,
   userId: state.session.id
 });
 
