@@ -12,6 +12,7 @@ class PriceIndexItem extends React.Component {
       }
       // this.changeWatchlist = this.changeWatchlist.bind(this)
       this.handleTradeComponent = this.handleTradeComponent.bind(this)
+      this.watchlistFunction = this.watchlistFunction.bind(this)
     }
 
 
@@ -20,6 +21,20 @@ class PriceIndexItem extends React.Component {
             priceBox: false                
         })
       }
+
+    watchlistFunction() {
+      var possibleWatchlist = this.props.watchlist.coins.slice()
+      possibleWatchlist.push(this.props.coin.id)
+
+      const watchlistParams = {
+          id: this.props.watchlist.id,
+          user_id: this.props.userId,
+          coins: possibleWatchlist
+      }
+
+      this.props.changeWatchlist(watchlistParams)
+
+    }
     
 
     render() {
@@ -38,8 +53,10 @@ class PriceIndexItem extends React.Component {
         return percentage >= 0 ? {color:`rgb(5, 177, 105)`} : {color:`rgb(223, 95, 103)`};
       }
 
-      const biggestCoins = ["btc", "eth", "ltc", "bch", "xlm", "xrp"]
 
+      // console.log(possibleWatchlist)
+      // // console.log(this.props.watchlist.coins)
+      // console.log(this.props.coin.id)
       if (!this.props.coin) return null 
 
       return (
@@ -109,9 +126,9 @@ class PriceIndexItem extends React.Component {
 
           <td className="t2-r1"> 
             <div className="div-t2-r1">
-              {this.props.watchlistCoins.includes(this.props.coin.id) ? 
+              {this.props.watchlist.coins.includes(this.props.coin.id) ? 
               <label className="label-t2-r1" id="price-index-star" style={{color: "gold"}}>&nbsp;&nbsp;&nbsp;&#9733;</label> : 
-              <label className="label-t2-r1" id="price-index-star" style={{color: "#dadada"}} >&nbsp;&nbsp;&nbsp;&#9734;</label>} 
+              <label className="label-t2-r1" id="price-index-star" onClick={this.watchlistFunction} style={{color: "#dadada"}} >&nbsp;&nbsp;&nbsp;&#9734;</label>} 
             </div>
           </td>
         </tr>

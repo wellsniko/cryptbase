@@ -19,11 +19,9 @@ export const receiveErrors = errors => ({
   errors
 });
 
-
-
-export const changeWatchlist = (data) => dispatch =>(
-  CoinAPIUtil.editWatchlist(data)
-  .then(user => (dispatch(receiveCurrentUser(user))))
+export const changeWatchlist = (watchlistParams) => dispatch =>(
+  CoinAPIUtil.editWatchlist(watchlistParams)
+  .then(watchlist => dispatch(fetchUser(watchlist.user_id)))
 )
 
 

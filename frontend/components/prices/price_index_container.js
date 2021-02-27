@@ -5,13 +5,13 @@ import {changeWatchlist} from '../../actions/session_actions'
 
 const mapStateToProps = state => ({
   coins: state.entities.coins,
-  watchlistCoins: state.entities.users[state.session.id].watchlist.coins,
+  watchlist: state.entities.users[state.session.id].watchlist,
   userId: state.session.id
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchCoins: () => dispatch(fetchCoins()),
-  changeWatchlist: (data) => dispatch(changeWatchlist(data))
+  changeWatchlist: (watchlistParams) => dispatch(changeWatchlist(watchlistParams))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PriceIndex);

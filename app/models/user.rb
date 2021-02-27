@@ -4,7 +4,7 @@ class User < ApplicationRecord
     validates :password_digest, presence: true
     validates :password, length: {minimum: 6}, allow_nil: true
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
-    validates :watchlist, length: {maximum: 6}
+    # validates :watchlist, length: {maximum: 6}
 
     attr_reader :password
 
