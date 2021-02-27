@@ -10,20 +10,19 @@ import PriceIndexContainer from './prices/price_index_container'
 import SideNavContainer from './side_nav/side_nav_container'
 import TopNavContainer from './top_nav/top_nav_container'
 import PriceDetailContainer from './prices/price_detail_container'
-import ReactGa from 'react-ga';
+import {createBrowserHistory} from 'history'
+import ReactGA from 'react-ga';
 
-// initializeReactGA()
-
-// function initializeReactGA() {
-//     ReactGA.initialize('UA-189972380-1');
-//     ReactGA.pageview('/homepage');
-// }
 
 const App = () => {
 
     useEffect(()=>{
-      ReactGa.initialize('UA-189972380-1')
-      ReactGa.pageview(window.location.pathname + window.location)
+      const history = createBrowserHistory()
+      ReactGA.initialize('UA-189972380-1');
+      history.listen((location, action) => {
+          ReactGA.pageview(location.pathname + location.hash);
+          // console.log(location)
+      });
     },[])
 
     return (
