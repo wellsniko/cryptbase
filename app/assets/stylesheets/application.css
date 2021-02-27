@@ -1572,6 +1572,8 @@ ul li a {
     font-weight: 400;
     display: block;
     margin-left: auto;
+    position: absolute;
+    right: 24px;
 }
 
 .order-image-div {
@@ -1586,7 +1588,7 @@ ul li a {
     font-weight: 400;
     color: rgba(17, 51, 83, 0.6);
     display: block;
-    margin: 0px 0px 0px 16px;
+    margin: 10px 0px 0px 16px;
     
 }
 
