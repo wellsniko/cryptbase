@@ -10,6 +10,10 @@ class User < ApplicationRecord
 
     after_create :create_wallets, :create_watchlist
     after_initialize :ensure_session_token
+
+    has_one :watchlist,
+        foreign_key: :user_id,
+        class_name: :Watchlist
     
     has_many :wallets,
         foreign_key: :user_id,
@@ -98,18 +102,33 @@ class User < ApplicationRecord
 
 
     def create_watchlist
-        default_coins = [
-            'bitcoin',
-            'bitcoin-cash',
-            'ethereum',
-            'litecoin',
-            'ripple',
-            'stellar'
-        ]
-
-        default_coins.each { |coin| self.watchlist.push(coin)}
-
+        Watchlist.create(
+            :coins => [
+                'bitcoin',
+                'bitcoin-cash',
+                'ethereum',
+                'litecoin',
+                'ripple',
+                'stellar'
+            ],
+            :user_id => self.id)
     end
+
+
+
+    # def create_watchlist
+    #     default_coins = [
+    #         'bitcoin',
+    #         'bitcoin-cash',
+    #         'ethereum',
+    #         'litecoin',
+    #         'ripple',
+    #         'stellar'
+    #     ]
+
+    #     default_coins.each { |coin| self.watchlist.push(coin)}
+
+    # end
 
    
 
