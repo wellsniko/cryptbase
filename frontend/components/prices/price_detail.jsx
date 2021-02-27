@@ -5,6 +5,11 @@ import CoinNewsItem from './coin_news_item'
 import OrderIndexItem from '../dashboard/order_index_item'
 
 class PriceDetail extends React.Component {
+    constructor(props) {
+        super(props)
+      this.watchlistFunctionAdd = this.watchlistFunctionAdd.bind(this)
+      this.watchlistFunctionRemove = this.watchlistFunctionRemove.bind(this)
+    }
     
     componentDidMount() {
         this.props.fetchCoinPriceData(this.props.coinId).then(data=> this.props.fetchCoinNews(data.coin[0].symbol))
@@ -13,6 +18,42 @@ class PriceDetail extends React.Component {
 
        
     }
+
+
+    watchlistFunctionAdd() {
+      var possibleWatchlist = this.props.watchlist.coins.slice()
+      possibleWatchlist.unshift(this.props.coin.id)
+
+      const watchlistParams = {
+          id: this.props.watchlist.id,
+          user_id: this.props.userId,
+          coins: possibleWatchlist
+      }
+
+      this.props.changeWatchlist(watchlistParams)
+
+    }
+
+    watchlistFunctionRemove() {
+      var possibleWatchlist = this.props.watchlist.coins.slice()
+      
+
+      var filteredWatchlist = possibleWatchlist.filter(coinId => (
+        coinId !== this.props.coin.id
+      ));
+
+      const watchlistParams = {
+          id: this.props.watchlist.id,
+          user_id: this.props.userId,
+          coins: filteredWatchlist
+      }
+
+      this.props.changeWatchlist(watchlistParams)
+
+    }
+
+
+
 
     render() {
          if (!this.props.coin) return null
@@ -47,6 +88,7 @@ class PriceDetail extends React.Component {
         let ordersArray = this.props.ordersArray.filter(order => order.coin_id === coin.id)
 
 
+
         return (
             <>
             <div className="main-user-page">
@@ -54,17 +96,48 @@ class PriceDetail extends React.Component {
                 <div className="price-detail-body">
                     <div className="price-detail-title">
                    <div className="detail-header">
-                       <div className="detail-header-image-div">
-                           {!coin.image ? null : <img className="lil-detail-image" src={`${coin.image}`} alt=""/>}
-                       </div>
-                       <div className="name-and-sym-detail">
-                          <h1 className="detail-name-main"> &nbsp; &nbsp;{coin.name}</h1> 
-                          <h1 className="detail-sym-main">{coin.symbol}</h1>
-                       </div>
-                       
+                       <div className="header-and-image-flex">
+                        <div className="detail-header-image-div">
+                            {!coin.image ? null : <img className="lil-detail-image" src={`${coin.image}`} alt=""/>}
+                        </div>
+                        <div className="name-and-sym-detail">
+                            <h1 className="detail-name-main"> &nbsp; &nbsp;{coin.name}</h1> 
+                            <h1 className="detail-sym-main">{coin.symbol}</h1>
+                        </div>
+                        </div>
+                        <div className="noclaass">
+
+
+                            {this.props.watchlist.coins.includes(this.props.coinId) ? 
+                            
+                        
+                            <div type="light" onClick={this.watchlistFunctionRemove} className="two-stars-detail"><span className="detail-watchlist-button">
+                                <svg fill="none" height="23" viewBox="0 0 24 23" width="24" filled="filled" className="star-here-filled">
+                                    <path d="M12.713 1.443l2.969 6.015 6.637.965a.794.794 0 01.44 1.354l-4.804 4.681 1.135 6.612a.794.794 0 01-1.152.837L12 18.787l-5.938 3.121a.795.795 0 01-1.152-.838l1.134-6.612L1.24 9.777a.794.794 0 01.44-1.354l6.638-.965 2.968-6.015a.795.795 0 011.425 0z" stroke="#becada">
+                                    </path>
+                                </svg>
+                                <span className="span-wat-ch">Watchlist</span></span>
+                            </div> :
+                            
+                            <div onClick={this.watchlistFunctionAdd} type="light" className="two-stars-detail"><span className="detail-watchlist-button">
+                                <svg fill="none" height="23" viewBox="0 0 24 23" width="24" filled="" className="watchlist-add-here">
+                                    <path d="M12.713 1.443l2.969 6.015 6.637.965a.794.794 0 01.44 1.354l-4.804 4.681 1.135 6.612a.794.794 0 01-1.152.837L12 18.787l-5.938 3.121a.795.795 0 01-1.152-.838l1.134-6.612L1.24 9.777a.794.794 0 01.44-1.354l6.638-.965 2.968-6.015a.795.795 0 011.425 0z" stroke="#becada">
+                                    </path>
+                                </svg>
+                                <span className="span-wat-ch">Add to Watchlist</span></span>
+                            </div>
+                            
+                            }
+                        </div>
+                        
                     </div>
                     <div className="overview">Overview</div>
                     
+
+
+
+
+
                     
                 </div>
                     <div className="detail-main-section">

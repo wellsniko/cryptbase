@@ -10,9 +10,10 @@ class PriceIndexItem extends React.Component {
         priceBox2: false
 
       }
-      // this.changeWatchlist = this.changeWatchlist.bind(this)
+
       this.handleTradeComponent = this.handleTradeComponent.bind(this)
-      this.watchlistFunction = this.watchlistFunction.bind(this)
+      this.watchlistFunctionAdd = this.watchlistFunctionAdd.bind(this)
+      this.watchlistFunctionRemove = this.watchlistFunctionRemove.bind(this)
     }
 
 
@@ -22,14 +23,33 @@ class PriceIndexItem extends React.Component {
         })
       }
 
-    watchlistFunction() {
+
+    watchlistFunctionAdd() {
       var possibleWatchlist = this.props.watchlist.coins.slice()
-      possibleWatchlist.push(this.props.coin.id)
+      possibleWatchlist.unshift(this.props.coin.id)
 
       const watchlistParams = {
           id: this.props.watchlist.id,
           user_id: this.props.userId,
           coins: possibleWatchlist
+      }
+
+      this.props.changeWatchlist(watchlistParams)
+
+    }
+
+    watchlistFunctionRemove() {
+      var possibleWatchlist = this.props.watchlist.coins.slice()
+      
+
+      var filteredWatchlist = possibleWatchlist.filter(coinId => (
+        coinId !== this.props.coin.id
+      ));
+
+      const watchlistParams = {
+          id: this.props.watchlist.id,
+          user_id: this.props.userId,
+          coins: filteredWatchlist
       }
 
       this.props.changeWatchlist(watchlistParams)
@@ -127,8 +147,8 @@ class PriceIndexItem extends React.Component {
           <td className="t2-r1"> 
             <div className="div-t2-r1">
               {this.props.watchlist.coins.includes(this.props.coin.id) ? 
-              <label className="label-t2-r1" id="price-index-star" style={{color: "gold"}}>&nbsp;&nbsp;&nbsp;&#9733;</label> : 
-              <label className="label-t2-r1" id="price-index-star" onClick={this.watchlistFunction} style={{color: "#dadada"}} >&nbsp;&nbsp;&nbsp;&#9734;</label>} 
+              <label className="label-t2-r1" id="price-index-star" onClick={this.watchlistFunctionRemove}style={{color: "gold"}}>&nbsp;&nbsp;&nbsp;&#9733;</label> : 
+              <label className="label-t2-r1" id="price-index-star" onClick={this.watchlistFunctionAdd} style={{color: "#dadada"}} >&nbsp;&nbsp;&nbsp;&#9734;</label>} 
             </div>
           </td>
         </tr>
