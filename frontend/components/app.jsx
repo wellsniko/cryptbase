@@ -12,6 +12,7 @@ import TopNavContainer from './top_nav/top_nav_container'
 import PriceDetailContainer from './prices/price_detail_container'
 import {createBrowserHistory} from 'history'
 import ReactGA from 'react-ga';
+import GoogleAnalytics from './ga.jsx'
 
 
 const App = () => {
@@ -20,8 +21,8 @@ const App = () => {
       const history = createBrowserHistory()
       ReactGA.initialize('UA-189972380-1');
       history.listen((location, action) => {
-          ReactGA.pageview(location.pathname + location.hash);
-          // console.log(location)
+          ReactGA.pageview(location.hash);
+          console.log(location.hash)
       });
     },[])
 
@@ -39,6 +40,7 @@ const App = () => {
           <ProtectedRoute exact path="/prices" component={PriceIndexContainer}/>
           <ProtectedRoute exact path="/prices/:coinId" component={PriceDetailContainer}/>
         </Switch>
+
       </>
     )
 }

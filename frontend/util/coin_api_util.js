@@ -1,5 +1,5 @@
 export const editWatchlist = (watchlistParams) => {
-  console.log(watchlistParams)
+//   console.log(watchlistParams)
   return (
     $.ajax({
         method: 'PUT',

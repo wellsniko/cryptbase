@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link} from 'react-router-dom';
 import TradingBoxContainer from '../trading_box/trading_box_container'
+import ReactGA from 'react-ga'
 
 class PriceIndexItem extends React.Component {
     constructor(props) {
@@ -58,6 +59,14 @@ class PriceIndexItem extends React.Component {
     
 
     render() {
+
+
+      const recordReactGA = (button) => {
+        ReactGA.event({
+            category:"Price Index Item",
+            action: button
+        })
+      }
 
       const numConverter = (num) => {
 
@@ -145,7 +154,7 @@ class PriceIndexItem extends React.Component {
           </td>
 
           <td className="t2-r1"> 
-            <div className="div-t2-r1">
+            <div className="div-t2-r1" onClick={()=>recordReactGA("Watchlist button")}>
               {this.props.watchlist.coins.includes(this.props.coin.id) ? 
               <label className="label-t2-r1" id="price-index-star" onClick={this.watchlistFunctionRemove}style={{color: "gold"}}>&nbsp;&nbsp;&nbsp;&#9733;</label> : 
               <label className="label-t2-r1" id="price-index-star" onClick={this.watchlistFunctionAdd} style={{color: "#dadada"}} >&nbsp;&nbsp;&nbsp;&#9734;</label>} 

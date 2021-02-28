@@ -1,14 +1,22 @@
 import React from "react";
 import { NavLink} from 'react-router-dom'
+import ReactGA from 'react-ga'
 
 const SideNav = ({ currentUser}) => {
+
+    const recordReactGA = (button) => {
+        ReactGA.event({
+            category:"SideNav",
+            action: button
+        })
+    }
 
     const userHere = () => (
         <>
             <nav className="side-nav">
-                <h2 id="logo-logged-in"><NavLink style={{textDecoration: "none", color: 'rgb(22, 82, 240)'}} to="/dashboard">Cryptbase</NavLink></h2>
+                <h2 id="logo-logged-in"><NavLink onClick={() => recordReactGA("'Cryptbase' logo link(dashboard)")} style={{textDecoration: "none", color: 'rgb(22, 82, 240)'}} to="/dashboard">Cryptbase</NavLink></h2>
                 <ul className="side-nav-logged-in">
-                    <li className="side-nav-li"><NavLink to="/dashboard" activeClassName="selected-side-nav-links" className="side-nav-links">
+                    <li className="side-nav-li"><NavLink to="/dashboard" onClick={() => recordReactGA("dashboard link")} activeClassName="selected-side-nav-links" className="side-nav-links">
                         <div className="side-div-1">
                             <div className="side-div-2">
                                 <img src={window.homeImage} className="side-image-new"/>
@@ -20,7 +28,7 @@ const SideNav = ({ currentUser}) => {
                         </NavLink>
                     </li>
 
-                    <li className="side-nav-li"><NavLink activeClassName="selected-side-nav-links" to="/prices" className="side-nav-links">
+                    <li className="side-nav-li"><NavLink activeClassName="selected-side-nav-links" onClick={() => recordReactGA("prices link")} to="/prices" className="side-nav-links">
                         <div className="side-div-1">
                             <div className="side-div-2">
                                 <img src={window.pricesImage} className="side-image-new"/>
@@ -30,7 +38,7 @@ const SideNav = ({ currentUser}) => {
                         </NavLink>
                     </li>
                     
-                    <li className="side-nav-li"><a href="https://github.com/wellsniko" target="_blank" rel="noreferrer"><i className="fab fa-github fa-3x"></i>
+                    <li className="side-nav-li"><a href="https://github.com/wellsniko" onClick={()=>recordReactGA("My Github Link")} target="_blank" rel="noreferrer"><i className="fab fa-github fa-3x"></i>
                         <div className="side-nav-links">
                             <div className="side-div-1">
                                 <div className="side-div-2">
@@ -45,7 +53,7 @@ const SideNav = ({ currentUser}) => {
 
 
 
-                    <li className="side-nav-li"><a href="https://github.com/wellsniko/cryptbase" target="_blank" rel="noreferrer"><i className="fab fa-github fa-3x"></i>
+                    <li className="side-nav-li"><a href="https://github.com/wellsniko/cryptbase" onClick={() => recordReactGA("Cryptbase Repo link")} target="_blank" rel="noreferrer"><i className="fab fa-github fa-3x"></i>
                         <div className="side-nav-links">
                             <div className="side-div-1">
                                 <div className="side-div-2">
@@ -58,7 +66,7 @@ const SideNav = ({ currentUser}) => {
                         </a>
                     </li>
 
-                    <li className="side-nav-li"><a href="https://www.linkedin.com/in/niko-wells-16134aa0/" target="_blank" rel="noreferrer"><i className="fab fa-github fa-3x"></i>
+                    <li className="side-nav-li"><a href="https://www.linkedin.com/in/niko-wells-16134aa0/" target="_blank" onClick={() => recordReactGA("LinkedIn Link")} rel="noreferrer"><i className="fab fa-github fa-3x"></i>
                         <div className="side-nav-links">
                             <div className="side-div-1">
                                 <div className="side-div-2">
@@ -71,7 +79,7 @@ const SideNav = ({ currentUser}) => {
                         </a>
                     </li>
 
-                    <li className="side-nav-li"><a href="http://findyoursquad.herokuapp.com/#/" target="_blank" rel="noreferrer"><i className="fab fa-github fa-3x"></i>
+                    <li className="side-nav-li"><a href="http://findyoursquad.herokuapp.com/#/" target="_blank" onClick={() => recordReactGA("Squad link")} rel="noreferrer"><i className="fab fa-github fa-3x"></i>
                         <div className="side-nav-links">
                             <div className="side-div-1">
                                 <div className="side-div-2">
@@ -84,7 +92,7 @@ const SideNav = ({ currentUser}) => {
                         </a>
                     </li>
 
-                    <li className="side-nav-li"><a href="https://wellsniko.github.io/fleet_space/" target="_blank" rel="noreferrer"><i className="fab fa-github fa-3x"></i>
+                    <li className="side-nav-li"><a href="https://wellsniko.github.io/fleet_space/" target="_blank" onClick={() => recordReactGA("Fleetspace link")} rel="noreferrer"><i className="fab fa-github fa-3x"></i>
                         <div className="side-nav-links">
                             <div className="side-div-1">
                                 <div className="side-div-2">
