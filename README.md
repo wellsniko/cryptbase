@@ -1,16 +1,69 @@
-# Cryptbase
+[Live App](http://cryptbase.herokuapp.com)
 
-Cryptbase is a clone of Coinbase, a web app that allows users to buy, sell, and manage a cryptocurrency portfolio. It was built with Ruby on Rails and Postgres on the backend, and a frontend of React and Redux.
+Cryptbase is a web app that allows users to buy, sell, and manage a cryptocurrency portfolio,
+aiming to be a pixel-perfect clone of the popular trading app, Coinbase.
+[Coinbase](https://coinbase.com/). "Blockchain is the future!"
 
-This is my first Full Stack Project, and the initial work was done in a 10 day period, with plans to be improved upon in the coming months.
 
-### Features
+# Technologies
 
-* Encrypted user authentication in frontend and backend.
-* Users can sign up, log in, or select a demo login to be automatically directed to the demo user's dashboard.
-* New User's are initialized with $100,000 USD to purchase currencies.
-* Users can see a list of the top 30 cryptocurrencies and their current prices before logging in.
-* After logging in, users are directed to their dashboard, which displays their portolio and ownership of each currency, and details on their past orders.
-* Logged in users can see a more detailed cryptocurrency index page with links to a detail page for each coin.
-* Detail page for each currency displays a price chart, more details on the currency, and a buy box to purchase or sell the currency with the User's USD.
-* Buy Box is fully functioning with error messages for invalid purchases and alerts for successful purchases.4
+
+## Frontend
+
+-   Javascript
+-   React + Redux
+-   Chart.js
+-   Webpack / npm
+
+
+## Backend
+
+-   Ruby on Rails
+-   Postgresql
+-   JBuilder
+
+
+# Features
+
+
+## Account
+
+-   Secure login and signup using BCrypt.
+-   Demo Login.
+-   New users are given $100k to play around with.
+
+!login gif
+
+
+## Dashboard
+
+The main dashboard page acts as the management console for the users's owned currencies and currencies on the user's watchlist.
+
+-   6 of the user's wathlist currencies are displayed with current price and a price graph of the last 24 hours.
+-   The user's wallets for each currency are listed in dollar value descending order.
+-   Recent orders' time, price, and total value are displayed on the right of the dashboard.
+
+
+
+## Prices
+
+The prices section serves as an index page for all the stocks available on Cryptbase.
+
+-   Each currency's name, logo, symbol, current price, 24hr price chang, and market cap are displayed on this page.
+-   Currencies can be sorted by their information by clicking on the header row of the table.
+-   Users can add and remove currencies from their watchlist with the star icon on the end of every currency's row.
+-   Users can quickly buy and sell currencies by clicking the "Trade" button, which brings up a modal that allows for transactions.
+
+
+
+## Currency Detail Page
+
+Each currency can be examined in more detail. Currency detail pages
+contain:
+
+-   a price graph of the last 24 hours.
+-   the user's recent orders for this currency, if any.
+-   daily performance indicators.
+-   recent news articles and/or social media posts about the currency.
+-   a button to add or remove the currency from your watchlist.
+-   a section to buy and sell, along with info on the user's current balance of the currency.
