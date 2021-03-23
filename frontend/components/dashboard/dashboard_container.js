@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => ({
   // fetchBitcoinCashHistory: (id) => dispatch(fetchBitcoinCashHistory(id)),
   // fetchLitecoinHistory: (id) => dispatch(fetchLitecoinHistory(id)),
   // fetchStellarHistory: (id) => dispatch(fetchStellarHistory(id)),
-  fetchCoinWatchlistData: (id) => dispatch(fetchCoinWatchlistData(id))
+  fetchCoinWatchlistData: (id, days) => dispatch(fetchCoinWatchlistData(id, days))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

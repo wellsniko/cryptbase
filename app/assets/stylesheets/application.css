@@ -2258,9 +2258,20 @@ ul li a {
 }
 
 .hr-24-mini-2 {
-    color: rgba(17, 51, 83, 0.6);
-    font-size: 17px;
-    margin-bottom: 3px;
+    margin-bottom: 23px;
+    font-family: Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(17, 51, 83, 0.3);
+    cursor: pointer;
+    transition: color 200ms ease-in-out 0s;
+}
+
+.hr-24-mini-2:hover {
+    color: black;
 }
 
 
@@ -2285,6 +2296,15 @@ ul li a {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+
+.inside-mini-box-3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    width: 220px;
+    justify-content: space-evenly;
 }
 
 .inside-mini-box-1-1 {

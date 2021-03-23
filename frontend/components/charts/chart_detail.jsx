@@ -2,6 +2,24 @@ import React from 'react';
 import { Line } from "react-chartjs-2";
 
 class ChartDetail extends React.Component {
+        constructor(props) {
+        super(props)
+        this.state = {
+            chartTime: "24H"
+        }
+        this.updateChart = this.updateChart.bind(this)
+    }
+
+    updateChart(time){
+        let days 
+        time === "24H" ? days = 1 : time === "1W" ? days = 7 : time === "1M" ? days = 30 : time === "1Y" ? days = 365 : time === "ALL" ? days = "max" : days = 1
+        this.props.fetchCoinChartData(this.props.coinId, days)
+        this.setState({chartTime: time})
+    }
+
+    componentDidMount(){
+        this.props.fetchCoinChartData(this.props.coinId, 1)  
+    }
 
     render() { 
 
@@ -83,8 +101,12 @@ class ChartDetail extends React.Component {
                     </div>
                      <label className="mini-change-percentage-2" style={colorChooser(coin.price_change_percentage_24h)}> {coin.price_change_percentage_24h>= 0 ? "+" + (coin.price_change_percentage_24h).toFixed(2) + "%" : (coin.price_change_percentage_24h).toFixed(2) + "%"}</label>
                 </div> 
-                <div className="inside-mini-box-2">
-                    <label className="hr-24-mini-2">24hr</label> <br/>
+                <div className="inside-mini-box-3">
+                    <label style={this.state.chartTime==="24H" ? {color:"rgb(22, 82, 240)"} : {}} className="hr-24-mini-2" onClick={() => this.updateChart("24H")}>24H</label> 
+                    <label style={this.state.chartTime==="1W" ? {color:"rgb(22, 82, 240)"} : {}} className="hr-24-mini-2" onClick={() => this.updateChart("1W")}>1W</label> 
+                    <label style={this.state.chartTime==="1M" ? {color:"rgb(22, 82, 240)"} : {}} className="hr-24-mini-2" onClick={() => this.updateChart("1M")}>1M</label> 
+                    <label style={this.state.chartTime==="1Y" ? {color:"rgb(22, 82, 240)"} : {}} className="hr-24-mini-2" onClick={() => this.updateChart("1Y")}>1Y</label> 
+                    <label style={this.state.chartTime==="ALL" ? {color:"rgb(22, 82, 240)"} : {}} className="hr-24-mini-2" onClick={() => this.updateChart("ALL")}>ALL</label> 
                       
                 </div>
                 </div>

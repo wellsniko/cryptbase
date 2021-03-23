@@ -8,7 +8,7 @@ class Dashboard extends React.Component {
   componentDidMount() {
       this.props.fetchCoins();    
       this.props.watchlistCoins.forEach((id, idx) =>{
-      this.props.fetchCoinWatchlistData(id)
+      this.props.fetchCoinWatchlistData(id, 1)
     })
     
   }
