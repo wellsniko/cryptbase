@@ -65,8 +65,8 @@ export const fetchCoinNews = symbol => dispatch => (
 
 
 
-export const fetchCoinWatchlistData = id => dispatch => (
-  APIUtil.fetchCoin24hrData(id)
+export const fetchCoinWatchlistData = (id, days) => dispatch => (
+  APIUtil.fetchCoinChartData(id,days)
   .then(data=> (dispatch(receiveWatchlistPrices(data, id))
   ))
 );
@@ -77,8 +77,8 @@ export const fetchCoinWatchlistData = id => dispatch => (
 
 
 
-export const fetchCoin24hrData = id => dispatch => (
-  APIUtil.fetchCoin24hrData(id)
+export const fetchCoinChartData = (id,days) => dispatch => (
+  APIUtil.fetchCoinChartData(id, days)
   .then(data=> (dispatch(receiveHistoricalPrices(data))
   ))
 );

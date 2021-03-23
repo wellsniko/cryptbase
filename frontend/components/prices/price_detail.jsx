@@ -13,7 +13,6 @@ class PriceDetail extends React.Component {
     
     componentDidMount() {
         this.props.fetchCoinPriceData(this.props.coinId).then(data=> this.props.fetchCoinNews(data.coin[0].symbol))
-        this.props.fetchCoin24hrData(this.props.coinId)  
         window.scrollTo(0, 0)
 
        
@@ -145,7 +144,7 @@ class PriceDetail extends React.Component {
                             <div className="chart-column">
                               <div className="chart-and-under">
                                 <div id="main-chart">
-                                <ChartDetailContainer coin={coin}/>
+                                <ChartDetailContainer coin={coin} coinId={coinId}/>
                                 </div>
                             
                                 <div className="under-chart">

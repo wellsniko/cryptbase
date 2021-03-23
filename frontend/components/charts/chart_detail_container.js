@@ -1,19 +1,19 @@
 import { connect } from 'react-redux';
 
 import ChartDetail from './chart_detail';
-import { fetchCoinPriceData, fetchCoin24hrData } from '../../actions/coin_actions';
+import { fetchCoinPriceData, fetchCoinChartData } from '../../actions/coin_actions';
 
 
 
 const mapStateToProps = (state, ownProps) => ({
         coin: ownProps.coin,
         pricesData: ownProps.coin.prices,
-        coinId: ownProps.coin.id,
+        coinId: ownProps.coinId,
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchCoinPriceData: (id) => dispatch(fetchCoinPriceData(id)), //"bitcoin"
-  fetchCoin24hrData: (id) => dispatch(fetchCoin24hrData(id))
+  fetchCoinChartData: (id, days) => dispatch(fetchCoinChartData(id, days))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChartDetail);

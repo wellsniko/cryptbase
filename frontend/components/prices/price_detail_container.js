@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PriceDetail from './price_detail';
-import { fetchCoinPriceData, fetchCoin24hrData, fetchCoinNews } from '../../actions/coin_actions';
+import { fetchCoinPriceData, fetchCoinChartData, fetchCoinNews } from '../../actions/coin_actions';
 import {changeWatchlist} from '../../actions/session_actions'
 
 const mapStateToProps = (state, ownProps) => ({
@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchCoinPriceData: (id) => dispatch(fetchCoinPriceData(id)), 
-  fetchCoin24hrData: (id) => dispatch(fetchCoin24hrData(id)),
+  fetchCoinChartData: (id, days) => dispatch(fetchCoinChartData(id, days)),
   fetchCoinNews: (symbol) => dispatch(fetchCoinNews(symbol)),
   changeWatchlist: (watchlistParams) => dispatch(changeWatchlist(watchlistParams))
 
