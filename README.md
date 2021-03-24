@@ -60,11 +60,11 @@ The prices section serves as an index page for all the stocks available on Crypt
 Each currency can be examined in more detail. Currency detail pages
 contain:
 
--   a dynamic price graph for the last 24 hours, last week, last month, last year, or all time.
--   the user's recent orders for this currency, if any.
--   daily performance indicators.
--   a button to add or remove the currency from your watchlist.
--   a section to buy and sell, along with info on the user's current balance of the currency.
--   recent news articles and/or social media posts about the currency.
+-   A dynamic price graph for the last 24 hours, last week, last month, last year, or all time.
+-   The user's recent orders for this currency, if any.
+-   Daily performance indicators.
+-   A button to add or remove the currency from your watchlist.
+-   A section to buy and sell, along with info on the user's current balance of the currency.
+-   Recent news articles and/or social media posts about the currency.
 
 <img src="app/assets/images/price_detail.gif?raw=true" width="1000">
