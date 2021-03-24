@@ -1,8 +1,7 @@
 [Live App](http://cryptbase.herokuapp.com)
 
 Cryptbase is a web app that allows users to buy, sell, and manage a cryptocurrency portfolio,
-aiming to be a pixel-perfect clone of the popular trading app, Coinbase.
-[Coinbase](https://coinbase.com/). "Blockchain is the future!"
+aiming to be a pixel-perfect clone of the popular trading app, [Coinbase](https://coinbase.com/).
 
 
 # Technologies
