@@ -61,7 +61,7 @@ The prices section serves as an index page for all the stocks available on Crypt
 Each currency can be examined in more detail. Currency detail pages
 contain:
 
--   a price graph of the last 24 hours.
+-   a dyanmic price graph of the last 24 hours, last week, last month, last year, or all time.
 -   the user's recent orders for this currency, if any.
 -   daily performance indicators.
 -   recent news articles and/or social media posts about the currency.
