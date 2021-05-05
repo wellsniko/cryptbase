@@ -2,7 +2,6 @@ class Api::WatchlistsController < ApplicationController
 
 
     def update
-        
         @watchlist = Watchlist.find(params[:id]) 
         if @watchlist.update(watchlist_params)
             render json: @watchlist

@@ -15,7 +15,6 @@ class TradingBox extends React.Component {
     this.handleBuy = this.handleBuy.bind(this);
     this.onQuantityChange = this.onQuantityChange.bind(this);
     this.handleSell = this.handleSell.bind(this);
-    // this.handleFromIndex = this.handleFromIndex.bind(this)
   }
 
     onQuantityChange(e) {
@@ -51,15 +50,11 @@ class TradingBox extends React.Component {
         })
       } else if (this.state.buyAction === "hidden" && this.state.sellAction === "second") {
         this.setState({
-          // backgroundId: "buy-box-modal-background",
-          // buyBoxId: "buy-box-main-modal",
           sellAction: "hidden",
           buyAction: "second"               
         })
       }        else if (this.state.buyAction === "hidden") {
         this.setState({
-          // backgroundId: "buy-box-modal-background",
-          // buyBoxId: "buy-box-main-modal",
           buyAction: "first",
           sellAction: "hidden"                
         })
@@ -107,15 +102,11 @@ class TradingBox extends React.Component {
         })
       } else if (this.state.sellAction === "hidden" && this.state.buyAction === "second") {
         this.setState({
-          // backgroundId: "buy-box-modal-background",
-          // buyBoxId: "buy-box-main-modal",
           sellAction: "second",
           buyAction: "hidden"               
         })
       }  else if (this.state.sellAction === "hidden") {
         this.setState({
-          // backgroundId: "buy-box-modal-background",
-          // buyBoxId: "buy-box-main-modal",
           sellAction: "first",
           buyAction: "hidden"               
         })

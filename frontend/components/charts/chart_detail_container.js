@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchCoinPriceData: (id) => dispatch(fetchCoinPriceData(id)), //"bitcoin"
+  fetchCoinPriceData: (id) => dispatch(fetchCoinPriceData(id)),
   fetchCoinChartData: (id, days) => dispatch(fetchCoinChartData(id, days))
 });
 

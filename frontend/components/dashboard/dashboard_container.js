@@ -12,12 +12,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchCoins: () => dispatch(fetchCoins()),
-  // fetchBitcoinHistory: (id) => dispatch(fetchBitcoinHistory(id)),
-  // fetchEthereumHistory: (id) => dispatch(fetchEthereumHistory(id)),
-  // fetchRippleHistory: (id) => dispatch(fetchRippleHistory(id)),
-  // fetchBitcoinCashHistory: (id) => dispatch(fetchBitcoinCashHistory(id)),
-  // fetchLitecoinHistory: (id) => dispatch(fetchLitecoinHistory(id)),
-  // fetchStellarHistory: (id) => dispatch(fetchStellarHistory(id)),
   fetchCoinWatchlistData: (id, days) => dispatch(fetchCoinWatchlistData(id, days))
 });
 

@@ -12,19 +12,9 @@ import TopNavContainer from './top_nav/top_nav_container'
 import PriceDetailContainer from './prices/price_detail_container'
 import {createBrowserHistory} from 'history'
 import ReactGA from 'react-ga';
-// import GoogleAnalytics from './ga.jsx'
 import GA from './ga.jsx'
 
 const App = () => {
-
-    // useEffect(()=>{
-    //   const history = createBrowserHistory()
-    //   ReactGA.initialize('UA-189972380-1');
-    //   history.listen((location, action) => {
-    //       ReactGA.pageview(location.hash);
-    //       console.log(location)
-    //   });
-    // },[])
 
     return (
       <>

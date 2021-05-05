@@ -20,7 +20,6 @@ class Api::OrdersController < ApplicationController
 
                 @order = Order.new(
                     wallet_id: user_wallet.id,
-                    # user_id: order_params[:user_id],
                     coin_id: order_params[:coin_id],
                     quantity: order_params[:quantity].to_f,                             
                     price: order_params[:price].to_f,
@@ -29,8 +28,6 @@ class Api::OrdersController < ApplicationController
                 )
             
                 @order.save!
-                # render :json {}
-                # render :json ["Congrats, your buy order was successful"]
                 
             end
 
@@ -48,7 +45,6 @@ class Api::OrdersController < ApplicationController
 
                 @order = Order.new(
                     wallet_id: user_wallet.id,
-                    # user_id: order_params[:user_id],
                     coin_id: order_params[:coin_id],
                     quantity: order_params[:quantity].to_f,                             
                     price: order_params[:price].to_f,
@@ -58,9 +54,6 @@ class Api::OrdersController < ApplicationController
             
                 @order.save!
                 
-                # render :json { 
-                #     current_user.id {wallets : order_params[:coin_id] { quantity: user_wallet.quantity }}, 
-                #  }
             end
                 
         else

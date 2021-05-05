@@ -82,10 +82,6 @@ class PriceIndexItem extends React.Component {
         return percentage >= 0 ? {color:`rgb(5, 177, 105)`} : {color:`rgb(223, 95, 103)`};
       }
 
-
-      // console.log(possibleWatchlist)
-      // // console.log(this.props.watchlist.coins)
-      // console.log(this.props.coin.id)
       if (!this.props.coin) return null 
 
       return (
@@ -161,7 +157,6 @@ class PriceIndexItem extends React.Component {
             </div>
           </td>
         </tr>
-        // onClick={() => this.props.changeWatchlist(data)}
       )
     }
 }

@@ -60,9 +60,6 @@ class PriceIndex extends React.Component {
       implication = "up"
     }
 
-
-    // let walletArray = []
-    // let totalBalance = 0
     let coinList
 
     if (this.state.sortParams === "marketCap" && this.state.sortWay === "DESC") {
